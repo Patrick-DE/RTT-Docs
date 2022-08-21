@@ -1,0 +1,1 @@
+Firefox plus the FoxyProxy extension or Proxychains, Proxifier is ideal for pivoting a browser into the network, to view internal web applications.

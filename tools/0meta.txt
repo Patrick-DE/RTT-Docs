@@ -1,0 +1,11 @@
+```meta
+phases: 0
+requirements: 
+results: 
+category: 
+opsec: 
+oss: 
+source: 
+description: 
+undetected: 
+```
