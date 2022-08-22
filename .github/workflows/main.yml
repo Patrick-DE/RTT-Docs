@@ -41,7 +41,8 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.GH_PAT }}
         with:
           source_file: 'output'
-          destination-github-username: 'Patrick-DE'
-          destination-repository-name: 'RTT-Website'
-          user-email: github@eisenschmidt.family
-          target-branch: main
+          destination_repo: 'Patrick-DE/RTT-Website'
+          destination_folder: 'test-dir'
+          user_email: 'github@eisenschmidt.family'
+          user_name: 'Patrick-DE'
+          commit_message: 'GitHub Bot'
