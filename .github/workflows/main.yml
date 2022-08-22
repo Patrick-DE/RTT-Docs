@@ -33,18 +33,10 @@ jobs:
         with:
           python-version: '3.9' 
       - run: python generateJSON.py
-
-      - name: 📂 Sync public files
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: ${{ secrets.ftp_server }}
-          username: ${{ secrets.ftp_username }}
-          password: ${{ secrets.ftp_password }}
-          local-dir: ./
-          remote-dir: ./build
           
       - name: 🔨 Trigger website build
-        uses: cpina/github-action-push-to-another-repository@main
+        #uses: cpina/github-action-push-to-another-repository@main # deletes everything
+        uses: dmnemec/copy_file_to_another_repo_action@main        #do not delete everything, override, create folders automatically
         env:
           API_TOKEN_GITHUB: ${{ secrets.GH_PAT }}
         with:
