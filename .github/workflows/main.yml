@@ -16,34 +16,14 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:    
   web-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Deploying
     runs-on: ubuntu-latest
     
     steps:
-      - name: 🚚 Checkout parser
-        uses: actions/checkout@v3
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
         with:
-          repository: Patrick-DE/RTT-Parser
           token: ${{ secrets.GH_PAT }}
-          
-      - name: 🚚 Get latest docs
-        uses: actions/checkout@v2
-        with:
-          path: docs
-          
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9' 
-      - run: python generateJSON.py
-          
-      - name: 🔨 Trigger website build
-        #uses: cpina/github-action-push-to-another-repository@main # deletes everything
-        uses: dmnemec/copy_file_to_another_repo_action@main        #do not delete everything, override, create folders automatically
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.GH_PAT }}
-        with:
-          source_file: 'output/'
-          destination_repo: 'Patrick-DE/RTT-Website'
-          user_email: 'github@eisenschmidt.family'
-          user_name: 'Patrick-DE'
-          commit_message: 'GitHub Bot'
+          repository: Patrick-DE/RTT-Website
+          event-type: ci
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
