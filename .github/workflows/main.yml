@@ -25,5 +25,5 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
           repository: Patrick-DE/RTT-Website
-          event-type: ci
+          event-type: web-deploy
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
