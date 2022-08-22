@@ -40,7 +40,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.GH_PAT }}
         with:
-          source-directory: 'output'
+          source_file: 'output'
           destination-github-username: 'Patrick-DE'
           destination-repository-name: 'RTT-Website'
           user-email: github@eisenschmidt.family
