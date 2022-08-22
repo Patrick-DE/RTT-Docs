@@ -20,17 +20,16 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v2
-        with:
-          path: docs
-        
-      - name: Checkout additional tools
+      - name: 🚚 Checkout parser
         uses: actions/checkout@v3
         with:
           repository: Patrick-DE/RTT-Parser
           token: ${{ secrets.GH_PAT }}
-          path: parser
+          
+      - name: 🚚 Get latest docs
+        uses: actions/checkout@v2
+        with:
+          path: docs
           
       - uses: actions/setup-python@v4
         with:
