@@ -22,12 +22,15 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
+        with:
+          path: docs
         
       - name: Checkout additional tools
         uses: actions/checkout@v3
         with:
           repository: Patrick-DE/RTT-Parser
           token: ${{ secrets.GH_PAT }}
+          path: parser
           
       - uses: actions/setup-python@v4
         with:
