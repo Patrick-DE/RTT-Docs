@@ -25,5 +25,5 @@ We can abuse these by modifying existing GPOs or creating and linking new GPOs t
 ttp: T1000
 requirements: admin
 results: vulngpo
-description: Extract kerberos ticket from memory
+description: 
 ```
