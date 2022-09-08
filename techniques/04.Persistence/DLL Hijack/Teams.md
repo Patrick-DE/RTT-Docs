@@ -1,14 +1,18 @@
 # Teams
+Path: %localappdata%\Microsoft\Teams\current\  
+❗ Use DLL proxying against crashing  
 
-These are some of the dll working as of november 2021:
-* ncrypt.dll  -> dll loaded and execution
-* CRYPTBASE.DLL
-* CRYPTSP.dll
-* crypt32.dll
-* MSASN1.dll
-* wintrust.dll
-* winnlsres.dll -> the content of the dll is not executed
-* MSVCP140_CLR0400.dll "-> will lead to an error and
+| dll | working | not working |
+| --- | ------- | ----------- |
+| ncrypt.dll | even without proxying |  |
+| CRYPTBASE.DLL |  |  |
+| CRYPTSP.dll |  |  |
+| crypt32.dll |  |  |
+| MSASN1.dll |  |  |
+| wintrust.dll |  |  |
+| winnlsres.dll |  |  | 
+| MSVCP140_CLR0400.dll |  |  |
+| version.dll | 21H1-19043 |  |
 
 ## Tools
 ########
