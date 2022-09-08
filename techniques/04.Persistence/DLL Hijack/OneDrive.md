@@ -2,20 +2,19 @@
 OneDrive.exe is located at %localappdata%\Microsoft\OneDrive
 Try to load ColorAdapterClient.dll at startup located in C:\Windows\System32\ on win
 Can hijack dll by creating %localappdata%\Microsoft\OneDrive\ColorAdapterClient.dll
-With DLL proxying against crashing
+Use DLL proxying against crashing
 
-These are some of the dll working as of november 2021:  
-Path: "C:\Users\AppData\Local\Microsoft\OneDrive\"  
-* SspiCli.dll
-* iertutil.dll
-* ncrypt.dll
-* CRYPTBASE.DLL
-* CRYPTSP.dll
-* profapi.dll
-* OneDriveTelemetryExperimental.dll
-* FileSyncTelemetryExtensions.dll
-
-
+| dll | working | not working |
+| --- | ------- | ----------- |
+| SspiCli.dll| 1909 | |
+| iertutil.dll| 1909 | |
+| ncrypt.dll| 1909 | |
+| CRYPTBASE.DLL| 1909 | |
+| CRYPTSP.dll| 1909 | |
+| profapi.dll| 1909 | |
+| OneDriveTelemetryExperimental.dll| 1909 | |
+| FileSyncTelemetryExtensions.dll| 1909 | |
+| version.dll| 1909 | 21H1-19043 |
 
 
 ## Tools
