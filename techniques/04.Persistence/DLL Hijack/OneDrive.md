@@ -1,21 +1,23 @@
 # OneDrive
-Path: %localappdata%\Microsoft\OneDrive  
-Try to load ColorAdapterClient.dll at startup located in C:\Windows\System32\ on win  
-Can hijack dll by creating %localappdata%\Microsoft\OneDrive\ColorAdapterClient.dll  
+Steps:
+* Install OneDrive from [here](https://hansbrender.com/all-onedrive-versions/)
+* Create your payload
+* Clone metadata from ColorAdapterClient.dll from C:\Windows\System32\ onto your payload  
+* Create the file %localappdata%\Microsoft\OneDrive\ColorAdapterClient.dll  
 
 ❗ Use DLL proxying against crashing  
 
 | dll | working | not working |
 | --- | ------- | ----------- |
-| SspiCli.dll| 1909 | |
-| iertutil.dll| 1909 | |
-| ncrypt.dll| 1909 | |
-| CRYPTBASE.DLL| 1909 | |
-| CRYPTSP.dll| 1909 | |
-| profapi.dll| 1909 | |
-| OneDriveTelemetryExperimental.dll| 1909 | |
-| FileSyncTelemetryExtensions.dll| 1909 | |
-| version.dll| 1909 | 21H1-19043 |
+| SspiCli.dll| 20H2 | |
+| iertutil.dll| 20H2 | |
+| ncrypt.dll| 20H2 | |
+| CRYPTBASE.DLL| 20H2 | |
+| CRYPTSP.dll| 20H2 | |
+| profapi.dll| 20H2 | |
+| OneDriveTelemetryExperimental.dll| 20H2 | |
+| FileSyncTelemetryExtensions.dll| 20H2 | |
+| version.dll| 20H2 | 21H1-19043 |
 
 
 ## Tools
