@@ -1,8 +1,9 @@
 # OneDrive
-OneDrive.exe is located at %localappdata%\Microsoft\OneDrive
-Try to load ColorAdapterClient.dll at startup located in C:\Windows\System32\ on win
-Can hijack dll by creating %localappdata%\Microsoft\OneDrive\ColorAdapterClient.dll
-Use DLL proxying against crashing
+Path: %localappdata%\Microsoft\OneDrive  
+Try to load ColorAdapterClient.dll at startup located in C:\Windows\System32\ on win  
+Can hijack dll by creating %localappdata%\Microsoft\OneDrive\ColorAdapterClient.dll  
+
+❗ Use DLL proxying against crashing  
 
 | dll | working | not working |
 | --- | ------- | ----------- |
