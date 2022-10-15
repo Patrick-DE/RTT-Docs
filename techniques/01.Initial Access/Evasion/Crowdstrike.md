@@ -1,7 +1,5 @@
 # Crowdstrike
 
-#notready
-
 ## Execution
 * Lunch Loader.dll via rundll32.exe using ShellBrowserWindow
 * Loader.dll does Process Injection into own process with ETW and DLL blocking
@@ -22,7 +20,7 @@
 
 
 ```meta
-ttp: T1000
+ttp: TA0005
 requirements: 
 results: 
 description: Bypass of Crowdstrike

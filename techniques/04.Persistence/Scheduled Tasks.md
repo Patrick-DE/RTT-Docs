@@ -13,7 +13,7 @@ The Windows Task Scheduler allows tje creation of tasks which are associated wit
 
 
 ```meta
-ttp: T1000
+ttp: T1053
 requirements: 
 results: persistence
 description: Get Persistence via Teams DLL hijacking

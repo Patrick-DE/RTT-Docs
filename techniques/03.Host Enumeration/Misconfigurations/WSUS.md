@@ -9,7 +9,7 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: T1546
 requirements: 
 results: 
 description: Identify if the Windows Update Service is running via the insecure protocol http

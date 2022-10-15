@@ -1,6 +1,6 @@
 # ldapadd
 
-## [[Add user to AD]]
+## [[Create Account]]
 Add a new user to the AD via ldap
 1. Create the file called user.ldif.txt
     ```bash

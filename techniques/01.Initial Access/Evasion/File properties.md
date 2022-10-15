@@ -1,7 +1,5 @@
 # File Properties
 
-
-
 ### Store Payload
 
 * Powershell command resides in the "Author" property
@@ -32,7 +30,7 @@
 
 
 ```meta
-ttp: T1000
+ttp: TA0005
 requirements: 
 results: 
 description: Macro leveraging file properties to hide its paylods and StdIn to avoid logging

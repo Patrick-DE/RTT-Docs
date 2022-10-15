@@ -27,7 +27,7 @@ The CHM files can be automatically create via [creating Compiled HTML Help file]
 ########
 
 ```meta
-ttp: T1000
+ttp: T1218.001
 internal: false
 requirements:
 results: user, admin

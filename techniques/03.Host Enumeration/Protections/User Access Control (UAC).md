@@ -6,7 +6,7 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: M1052
 requirements: 
 results: 
 description: Identify if UAC is enabled

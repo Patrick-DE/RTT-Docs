@@ -13,7 +13,7 @@ When a user clicks on an HTML page having the following format, Microsoft Word w
 ########
 
 ```meta
-ttp: T1000
+ttp:
 internal: false
 requirements: 
 results: 

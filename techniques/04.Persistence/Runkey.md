@@ -8,7 +8,7 @@ AutoRun values in HKCU and HKLM allow applications to start on boot. They are of
 
 
 ```meta
-ttp: T1000
+ttp: T1547.001
 requirements: 
 results: persistence
 description: Get Persistence via Teams DLL hijacking

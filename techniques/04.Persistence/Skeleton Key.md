@@ -9,7 +9,7 @@ The Skeleton Key must be used on Domain Controllers where as LSASS will be patch
 
 
 ```meta
-ttp: T1000
+ttp: S0007
 requirements:
 results: 
 description: 

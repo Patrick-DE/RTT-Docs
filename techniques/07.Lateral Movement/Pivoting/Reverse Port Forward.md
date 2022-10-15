@@ -18,7 +18,7 @@ Has two functions which do the job:
 
 
 ```meta
-ttp: T1000
+ttp: T1572
 requirements: admin
 results: 
 description: 

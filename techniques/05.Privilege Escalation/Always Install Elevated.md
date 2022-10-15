@@ -40,7 +40,7 @@ beacon> connect localhost 4444
 
 
 ```meta
-ttp: T1000
+ttp: T1548
 requirements: 
 results: admin
 description: This registry value enables an user to install applications with access to higher level folders/registry keys

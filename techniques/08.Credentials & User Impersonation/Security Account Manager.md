@@ -8,7 +8,7 @@ Important to check for credentails reuse.
 
 
 ```meta
-ttp: T1000
+ttp: T1003.002
 requirements: admin
 results: 
 description: 

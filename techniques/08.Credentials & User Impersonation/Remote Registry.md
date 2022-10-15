@@ -7,7 +7,7 @@ The [DAMP](https://github.com/HarmJ0y/DAMP) project modify host-based DACL to en
 
 
 ```meta
-ttp: T1000
+ttp: T1112
 requirements:
 results: 
 description: 

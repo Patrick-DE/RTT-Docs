@@ -23,7 +23,7 @@ This means we can find 4768's where the encryption type is RC4, which can be sig
 
 
 ```meta
-ttp: T1000
+ttp: T1550.002
 requirements:
 results: 
 description:

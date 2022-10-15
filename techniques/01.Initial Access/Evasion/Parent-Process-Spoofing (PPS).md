@@ -21,7 +21,7 @@ event.module : sysmon and event.type : process_start and process.parent.executab
 ########
 
 ```meta
-ttp: T1000
+ttp: T1134.004
 requirements: 
 results: 
 description: 

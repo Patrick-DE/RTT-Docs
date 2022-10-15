@@ -1,5 +1,11 @@
 # Teams
-Path: %localappdata%\Microsoft\Teams\current\  
+## Pre requisits
+OneDrive needs to be installed into %appdata% and NOT program files in order to work.
+
+## Path
+> %localappdata%\Microsoft\Teams\current\  
+
+
 ❗ Use DLL proxying against crashing  
 
 | dll | working | not working |
@@ -20,7 +26,7 @@ Path: %localappdata%\Microsoft\Teams\current\
 
 
 ```meta
-ttp: T1000
+ttp: T1574.001
 requirements: 
 results: persistence
 description: Get Persistence via Teams DLL hijacking

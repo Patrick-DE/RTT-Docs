@@ -32,7 +32,7 @@ Tools
 ########
 
 ```meta
-ttp: T1000
+ttp: T1592
 internal: false
 requirements: 
 results: webserver, database, emailserver, vpnserver, sshserver

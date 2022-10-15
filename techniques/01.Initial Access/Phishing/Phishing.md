@@ -3,7 +3,7 @@
 
 
 ```meta
-ttp: T1000
+ttp: T1566
 internal: false
 requirements:
 results: user, admin

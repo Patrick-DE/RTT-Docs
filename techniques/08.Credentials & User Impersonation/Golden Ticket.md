@@ -20,7 +20,7 @@ Windows logs:
 
 
 ```meta
-ttp: T1000
+ttp: T1558.001
 requirements: krbtgt
 results: ticket
 description: Extract kerberos ticket from memory

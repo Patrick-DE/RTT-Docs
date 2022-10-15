@@ -22,7 +22,7 @@ We're not limited to forging user certificates, we can do the same for machines.
 
 
 ```meta
-ttp: T1000
+ttp: T1588.004
 requirements:
 results: 
 description: 

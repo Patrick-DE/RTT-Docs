@@ -12,7 +12,7 @@ Excel-DNA has another attribute that may hinder coverage with Yara, likely unkno
 
 
 ```meta
-ttp: T1000
+ttp: T1137.006
 requirements: 
 results: persistence
 opsec: true

@@ -29,7 +29,7 @@ Set-MpPreference -ExclusionPath "<path>"
 
 
 ```meta
-ttp: T1000
+ttp: T1562.001
 requirements:
 results: 
 description: 

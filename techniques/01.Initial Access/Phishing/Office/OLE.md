@@ -4,7 +4,7 @@ For example, a user can embed a spreadsheet (which is data that belongs to the s
 When the word-processing application displays the document to the user, it can establish a connection and can interact with the spreadsheet application to display the spreadsheet data to the user
 
 Embed for example:
-* malicious Office documents
+* Malicious Office documents
 * VBS files 
 * JS files 
 * EXE files 
@@ -27,7 +27,7 @@ Animation tab > Animation Pane > navigate to the Animation Pane > choose object 
 ########
 
 ```meta
-ttp: T1000
+ttp:
 internal: false
 requirements:
 results: user, admin

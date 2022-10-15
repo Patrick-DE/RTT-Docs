@@ -8,7 +8,7 @@ If active, plain-text passwords are stored in LSASS (Local Security Authority Su
 ########
 
 ```meta
-ttp: T1000
+ttp: T1003
 requirements: 
 results: credential.plaintext
 description: Identify if WDigest is still enabled, allowing an attacker to steal plaintext credentials

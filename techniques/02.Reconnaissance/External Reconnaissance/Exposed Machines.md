@@ -17,7 +17,7 @@ Use [[NMAP]] and [[Nessus]] in order to detect the following exposed machines
 
 
 ```meta
-ttp: T1000
+ttp: T1595
 internal: false
 requirements: 
 results: database

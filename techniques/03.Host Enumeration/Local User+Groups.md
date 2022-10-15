@@ -4,7 +4,7 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: T1069.001
 requirements: 
 results: 
 description: Identify local groups

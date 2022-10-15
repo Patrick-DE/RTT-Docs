@@ -24,7 +24,7 @@ End Sub
 ########
 
 ```meta
-ttp: T1000
+ttp: T1059.005
 internal: false
 requirements: 
 results: user, admin

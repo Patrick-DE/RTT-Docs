@@ -6,7 +6,7 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: T1543.003
 requirements: 
 results:
 description: Identify services

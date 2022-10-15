@@ -32,7 +32,7 @@ beacon> dcsync edu.evil.corp EDU\krbtgt
 
 
 ```meta
-ttp: T1000
+ttp: T1003.006
 requirements:
 results: 
 description: 

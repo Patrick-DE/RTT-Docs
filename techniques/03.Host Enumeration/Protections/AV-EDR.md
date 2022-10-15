@@ -7,7 +7,7 @@ Query Processes and identify yourself or let CobaltStrike identify the AV proces
 ########
 
 ```meta
-ttp: T1000
+ttp: M1049
 requirements:
 results: 
 description: 

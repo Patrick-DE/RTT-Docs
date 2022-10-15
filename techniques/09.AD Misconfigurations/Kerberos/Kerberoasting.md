@@ -30,7 +30,7 @@ You can find them in Kibana with:
 
 
 ```meta
-ttp: T1000
+ttp: T1558.003
 requirements:
 results: 
 description: 

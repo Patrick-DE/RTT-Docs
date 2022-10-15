@@ -20,7 +20,7 @@ PowerShell logging will also provide the script block and/or transactional log, 
 
 
 ```meta
-ttp: T1000
+ttp: T1021.006
 requirements: admin
 results: 
 description: 

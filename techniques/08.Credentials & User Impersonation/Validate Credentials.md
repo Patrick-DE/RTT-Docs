@@ -9,7 +9,7 @@ ADExplorer can be used to login and verify
 ########
 
 ```meta
-ttp: T1000
+ttp: T1078
 requirements:
 results: 
 description: Validate Credentials

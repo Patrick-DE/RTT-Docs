@@ -12,7 +12,7 @@ Cannot be send via Email. Use second stage (link,zip,iso) delivery method.
 ########
 
 ```meta
-ttp: T1000
+ttp: T1218.005
 internal: false
 requirements:
 results: user, admin

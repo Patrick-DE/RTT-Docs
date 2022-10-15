@@ -5,7 +5,7 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: T1069.002
 requirements:
 results: 
 description: 

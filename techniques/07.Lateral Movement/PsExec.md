@@ -30,7 +30,7 @@ Find the associated service.
 
 
 ```meta
-ttp: T1000
+ttp: T1021.006
 requirements: 
 results: admin
 description: Get Persistence via Teams DLL hijacking

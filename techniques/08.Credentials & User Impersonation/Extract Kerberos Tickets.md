@@ -9,7 +9,7 @@ It is possible to extract all kerberos tickets via [[Rubeus#Extract Kerberos Tic
 
 
 ```meta
-ttp: T1000
+ttp: T1558
 requirements:
 results: ticket, hash
 description: Extract kerberos ticket from memory

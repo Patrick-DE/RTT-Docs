@@ -33,7 +33,7 @@ connect localhost 4444
 
 
 ```meta
-ttp: T1000
+ttp: T1574.009
 requirements: 
 results: admin
 description: Hijacking the search order hirarchy of a applications DLL.

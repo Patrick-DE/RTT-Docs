@@ -33,7 +33,7 @@ You can use this table as a reference for different GUIDs after you found which 
 ########
 
 ```meta
-ttp: T1000
+ttp: M1040
 requirements:
 results: 
 description: 

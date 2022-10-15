@@ -4,8 +4,8 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: T1562.002
 requirements: 
 results: 
-description: Identify local groups
+description: Identify events being forwarded
 ```

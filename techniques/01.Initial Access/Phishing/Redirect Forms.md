@@ -1,5 +1,5 @@
-Targeting PayPal example
-If were wanted to use PayPal for phishing, we would like our custom JavaScript code to do the following:
+# Redirect forms with Paypal
+## Process
 1. Run on HTML form load
 2. Intercept all requests directed to PayPal
 3. Route all requests to our server, eventhough the victims browser still communicate with the original PayPal webpage.
@@ -36,7 +36,7 @@ Notice the amount of space characters `data:text/html,https://accounts.google.co
 ########
 
 ```meta
-ttp: T1000
+ttp: 
 internal: false
 requirements:
 results: user, admin

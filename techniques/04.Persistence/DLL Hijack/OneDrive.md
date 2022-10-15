@@ -1,5 +1,11 @@
 # OneDrive
-Steps:
+## Pre requisits
+OneDrive needs to be installed into %appdata% and NOT program files in order to work.
+ 
+## Path
+> %localappdata%\Microsoft\OneDrive\
+
+## Process
 * Install OneDrive from [here](https://hansbrender.com/all-onedrive-versions/)
 * Create your payload
 * Clone metadata from ColorAdapterClient.dll from C:\Windows\System32\ onto your payload  
@@ -17,7 +23,7 @@ Steps:
 | profapi.dll| 20H2 | |
 | OneDriveTelemetryExperimental.dll| 20H2 | |
 | FileSyncTelemetryExtensions.dll| 20H2 | |
-| version.dll| 20H2 | 21H1-19043 |
+| version.dll| 20H2 | 21H1 |
 
 
 ## Tools
@@ -26,7 +32,7 @@ Steps:
 
 
 ```meta
-ttp: T1000
+ttp: T1574.001
 requirements: 
 results: persistence
 description: Get Persistence via OneDrive DLL hijacking

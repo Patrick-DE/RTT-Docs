@@ -15,7 +15,7 @@ Use [[NMAP]] in order to detect the following services
 
 
 ```meta
-ttp: T1000
+ttp: T1595.001
 requirements: 
 results: vulnerableservice
 description: Identify services within the network

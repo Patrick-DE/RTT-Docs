@@ -9,7 +9,7 @@ A Silver Ticket is a forged TGS, signed using the secret material (RC4/AES keys)
 
 
 ```meta
-ttp: T1000
+ttp: T1558.002
 requirements: krbtgt
 results: ticket
 description: Extract kerberos ticket from memory

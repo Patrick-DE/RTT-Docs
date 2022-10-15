@@ -19,7 +19,7 @@ Cobalt Strike has some [[UAC-Bypass]] included.
 
 
 ```meta
-ttp: T1000
+ttp: T1548.002
 requirements: 
 results: admin
 description: UAC bypass to elevate from medium into a high integrity process

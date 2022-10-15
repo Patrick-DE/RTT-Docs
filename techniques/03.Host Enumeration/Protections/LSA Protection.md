@@ -6,7 +6,7 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: M1025
 requirements: 
 results: 
 description: Identify weaknesses on the local system

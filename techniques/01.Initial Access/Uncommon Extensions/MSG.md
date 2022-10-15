@@ -9,7 +9,7 @@ MSG file is a file format for storing Microsoft Outlook and Exchange message fil
 ########
 
 ```meta
-ttp: T1000
+ttp: T1204.002
 internal: false
 requirements:
 results: user, admin

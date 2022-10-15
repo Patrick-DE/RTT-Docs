@@ -7,7 +7,7 @@ Applications, files and shortcuts within a user's startup folder are launched au
 ########
 
 ```meta
-ttp: T1000
+ttp: T1547.001
 requirements: 
 results: persistence
 description: Starting executables located in the start up folder

@@ -19,7 +19,7 @@ Since Windows10 1703 the process `Lsalso.exe` is running.
 ########
 
 ```meta
-ttp: T1000
+ttp: M1043
 requirements: 
 results: 
 description: 

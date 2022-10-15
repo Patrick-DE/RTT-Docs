@@ -35,7 +35,7 @@ In Kibana:
 
 
 ```meta
-ttp: T1000
+ttp: T1550.002
 requirements: admin
 results: 
 description: 

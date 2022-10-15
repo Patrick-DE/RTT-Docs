@@ -12,7 +12,7 @@ When binaries are executed via WMI (using process call create), it will be a chi
 
 
 ```meta
-ttp: T1000
+ttp: T1047
 requirements: wmi, ticket
 results: localuser, localadmin, admin
 description: Get Persistence via Teams DLL hijacking

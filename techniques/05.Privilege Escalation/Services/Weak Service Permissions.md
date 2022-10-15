@@ -57,7 +57,7 @@ beacon> connect localhost 4444
 
 
 ```meta
-ttp: T1000
+ttp: T1574.010
 requirements: 
 results: admin
 description: Weak service permissions can be abused in order to change the binpath

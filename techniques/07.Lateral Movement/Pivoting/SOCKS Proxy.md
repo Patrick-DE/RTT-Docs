@@ -38,7 +38,7 @@ You can use [[Mimikatz#Spawn process with injected credentials]] - [[Pass-the-Ha
 
 
 ```meta
-ttp: T1000
+ttp: T1572
 requirements: admin
 results: 
 description: 

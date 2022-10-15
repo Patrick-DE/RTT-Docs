@@ -38,7 +38,7 @@ Any user can hijack or even register new COM objects within HKCU - these only ap
 
 
 ```meta
-ttp: T1000
+ttp: T1546.015
 requirements: 
 results: persistence
 description: Buying ages domains in order to bypass trust based connections

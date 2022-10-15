@@ -16,7 +16,7 @@ Identify a web proxy via:
 
 
 ```meta
-ttp: T1000
+ttp:
 requirements: 
 results: 
 description: Identify web proxies which could block downloads or exfiltrations

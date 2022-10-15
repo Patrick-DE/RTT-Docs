@@ -8,7 +8,7 @@ https://labs.mwrinfosecurity.com/assets/BlogFiles/one-template-to-rule-them-all-
 ########
 
 ```meta
-ttp: T1000
+ttp: T1204.002
 internal: false
 requirements: 
 results: 

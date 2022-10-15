@@ -7,7 +7,7 @@ Search for "Cert Publishers" group in AD
 ########
 
 ```meta
-ttp: T1000
+ttp: T1046
 requirements: admin
 results: 
 description: 

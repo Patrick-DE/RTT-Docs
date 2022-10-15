@@ -10,7 +10,7 @@ The following steps will descript the usage of this so called feature:
 ########
 
 ```meta
-ttp: T1000
+ttp: 
 internal: false
 requirements:
 results: user, admin

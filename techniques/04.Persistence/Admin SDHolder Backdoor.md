@@ -11,7 +11,7 @@ The AdminSDHolder attribute itself is not protected so if we modify the DACL on 
 ########
 
 ```meta
-ttp: T1000
+ttp: T1098
 requirements:
 results: 
 description: 

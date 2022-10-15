@@ -23,7 +23,7 @@ beacon> ls \\srv2\c$
 
 
 ```meta
-ttp: T1000
+ttp: T1558
 requirements: admin
 results: 
 description: 

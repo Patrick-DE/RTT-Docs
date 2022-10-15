@@ -5,7 +5,7 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: 
 internal: false
 requirements:
 results: 

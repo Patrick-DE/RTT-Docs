@@ -7,7 +7,7 @@ Things to check:
 * PSExec
 
 ```meta
-ttp: T1000
+ttp: M1037
 requirements: 
 results: 
 description: 

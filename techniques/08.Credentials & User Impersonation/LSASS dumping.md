@@ -12,7 +12,7 @@ This feature retrieves NTLM hashes which can be used with [[Pass-the-Hash]] or c
 ########
 
 ```meta
-ttp: T1000
+ttp: T1003.001
 requirements: admin
 results: 
 description: 

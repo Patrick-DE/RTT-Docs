@@ -6,7 +6,7 @@
 ########
 
 ```meta
-ttp: T1000
+ttp: T1210
 requirements: 
 results:
 description: Priv Escalation via PrinterBug

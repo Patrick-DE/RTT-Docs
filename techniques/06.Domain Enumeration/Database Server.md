@@ -50,7 +50,7 @@ Frankfurt
 
 
 ```meta
-ttp: T1000
+ttp: T1046
 requirements: 
 results: database
 description: Identify databases within the network

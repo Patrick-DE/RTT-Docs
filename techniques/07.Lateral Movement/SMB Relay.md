@@ -21,7 +21,7 @@ Note: this works only if the “Network security: LAN Manager authentication lev
 
 
 ```meta
-ttp: T1000
+ttp: T1557.001
 requirements: and(smbv1,smbsigningoff)
 results: user, admin
 description: Relay smb connections to gain access to another workstation

@@ -8,7 +8,7 @@ Internal web apps are incredibly prevalent and are a great source of data. Think
 ########
 
 ```meta
-ttp: T1000
+ttp: T1046
 requirements: 
 results: webserver
 description: Identify web server within the network via domain

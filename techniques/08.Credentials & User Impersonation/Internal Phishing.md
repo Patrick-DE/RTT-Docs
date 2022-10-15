@@ -10,7 +10,7 @@
 
 
 ```meta
-ttp: T1000
+ttp: T1566
 requirements: 
 results: 
 description: Internal phishing campagne
