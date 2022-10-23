@@ -3,7 +3,7 @@
 ## [[Local User+Groups]]
 1. Create User:
     ```bash
-    net user nviso Nv1so12345! /ADD /DOMAIN
+    net user Patrick patrick12345! /ADD /DOMAIN
     ```
 2. List local / domain groups
     ```bash
@@ -19,10 +19,10 @@
     ```
 1. Add User to domain /local group
     ```sh
-    net group "Domänen-Admins" nviso /add /domain
+    net group "Domänen-Admins" Patrick /add /domain
 
-    net localgroup "Remote Desktop Users" nviso /add
-    net localgroup "Administrators" nviso /add
+    net localgroup "Remote Desktop Users" Patrick /add
+    net localgroup "Administrators" Patrick /add
     ```
 
 ## [[Domain Controller]]

