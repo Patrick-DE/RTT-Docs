@@ -15,7 +15,7 @@ List COM Object Methods for WScript.Shell.1
 
 ## [[Unquoted Service Path]]
 Get ACLs of services
-```cmd
+```ps
 powershell Get-Acl -Path "C:\Program Files\Vuln Services" | fl
   
 Path   : Microsoft.PowerShell.Core\FileSystem::C:\Program Files\Vuln Services
@@ -28,6 +28,15 @@ Access : CREATOR OWNER Allow  FullControl
  NT SERVICE\TrustedInstaller Allow  FullControl
  APPLICATION PACKAGE AUTHORITY\ALL APPLICATION PACKAGES Allow  ReadAndExecute, Synchronize
  APPLICATION PACKAGE AUTHORITY\ALL RESTRICTED APPLICATION PACKAGES Allow  ReadAndExecute, Synchronize
+```
+
+## [[Common Language Runtime (CLR) Versions]]
+```ps
+dir %WINDIR%\Microsoft.Net\Framework\ /s /b | find "System.dll"
+
+[System.IO.File]::Exists("$env:windir\Microsoft.Net\Framework\v2.0.50727\System.dll")
+
+[System.IO.File]::Exists("$env:windir\Microsoft.Net\Framework\v4.0.30319 System.dll")
 ```
 
 ```meta
