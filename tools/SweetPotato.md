@@ -24,7 +24,6 @@ beacon> connect localhost 4444
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux 
 source: https://github.com/CCob/SweetPotato
 description: Force a SYSTEM service to authenticate to a rogue or man-in-the-middle service that the attacker creates. This rogue service is then able to impersonate the SYSTEM service whilst it's trying to authenticate.

@@ -49,7 +49,6 @@ Global Group memberships     *Domain Users         *Roaming Users
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: 
 description: 

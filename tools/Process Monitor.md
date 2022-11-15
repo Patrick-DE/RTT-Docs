@@ -18,7 +18,6 @@ Verify that the entry does exist in HKLM, but not in HKCU.
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win, #linux
 source: https://docs.microsoft.com/en-us/sysinternals/downloads/procmon
 description: Process Monitor is an advanced monitoring tool for Windows that shows real-time file system, Registry and process/thread activity.

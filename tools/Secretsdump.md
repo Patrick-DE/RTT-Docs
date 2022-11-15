@@ -16,7 +16,6 @@ Receiving machine passwords via impacket (Admin):
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/SecureAuthCorp/impacket/blob/master/examples/secretsdump.py 
 description: Dump credentials remote and local via sam

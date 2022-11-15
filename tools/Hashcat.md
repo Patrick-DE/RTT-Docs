@@ -52,7 +52,6 @@ hashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 5600 ntlm.txt C:\Temp\nt
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://hashcat.net/hashcat/
 description: 

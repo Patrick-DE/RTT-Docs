@@ -21,7 +21,6 @@ Password : Sup3rman
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/djhohnstein/SharpChromium
 description: Dump cookies, history, saved logins from chrome

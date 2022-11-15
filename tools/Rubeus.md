@@ -432,7 +432,6 @@ beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Debug\Rubeus.exe asktgt /use
 phases: 08,09,10
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/GhostPack/Rubeus
 description: 

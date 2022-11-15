@@ -22,7 +22,6 @@ Get-ItemPropertyValue HKLM:\SOFTWARE\Microsoft\PowerShell\*\PowerShellEngine
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: Windows
 description: Registry query stuff

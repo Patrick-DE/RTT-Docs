@@ -61,7 +61,6 @@ Started service 3695e43 on srv2
 ```meta
 requirements: admin
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/praetorian-inc/PortBender
 description: TCP Port Redirection Utility for Cobalt Strike

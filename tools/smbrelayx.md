@@ -15,7 +15,6 @@
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbrelayx.py
 description: Relax SMB requests to target 

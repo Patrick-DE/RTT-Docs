@@ -16,7 +16,6 @@ bettercap -G 192.168.1.1 -T 192.168.1.102 --proxy-https
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/bettercap/bettercap
 description: A suite for man in the middle attacks

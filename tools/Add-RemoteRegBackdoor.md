@@ -32,7 +32,6 @@ srv2        5d0d485386727a8a92498a2c188627ec
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: 
 source: https://github.com/HarmJ0y/DAMP/blob/master/Add-RemoteRegBackdoor.ps1
 description: Implements a new remote registry backdoor that allows for the remote retrieval of a system's machine account hash.

@@ -97,7 +97,7 @@ beacon> execute-assembly C:\Tools\ADSearch\ADSearch\bin\Debug\ADSearch.exe --sea
 requirements: domainuser,domainadmin
 results:
 category: Enumeration
-opsec: true
+stealthy: true
 oss: #win
 source: https://github.com/tomcarver16/ADSearch
 description: Has fewer built-in searches compared to PowerView and SharpView, but it does allow you to specify custom LDAP queries which can be powerful

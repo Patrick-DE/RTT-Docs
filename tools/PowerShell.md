@@ -42,7 +42,6 @@ dir %WINDIR%\Microsoft.Net\Framework\ /s /b | find "System.dll"
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: 
 description: PowerShell

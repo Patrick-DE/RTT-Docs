@@ -70,7 +70,6 @@ WmiFilter        :
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: Windows additional features
 description: Help administrate AD environments

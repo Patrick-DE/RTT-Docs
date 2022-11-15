@@ -7,7 +7,6 @@ Show domain name & dns
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: 
 description: 

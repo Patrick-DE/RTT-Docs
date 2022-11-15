@@ -28,7 +28,6 @@ With its MultiRelay tool, we can relay the hashes to other machines on the LAN a
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/lgandx/Responder
 description: Responder is an LLMNR, NBT-NS and MDNS poisoner.

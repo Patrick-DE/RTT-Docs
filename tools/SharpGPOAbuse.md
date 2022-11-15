@@ -25,7 +25,6 @@ beacon> execute-assembly C:\Tools\SharpGPOAbuse\SharpGPOAbuse\bin\Debug\SharpGPO
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: 
 source: https://github.com/FSecureLABS/SharpGPOAbuse
 description: 

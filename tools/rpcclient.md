@@ -18,7 +18,6 @@ Enumerate the current users privs
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux 
 source: https://www.mankier.com/1/rpcclient
 description: tool for executing client side MS-RPC functions

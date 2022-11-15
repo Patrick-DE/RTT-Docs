@@ -6,7 +6,6 @@
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: 
 description: 

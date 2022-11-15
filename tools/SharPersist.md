@@ -56,7 +56,6 @@ execute-assembly C:\Tools\SharPersist\SharPersist\bin\Debug\SharPersist.exe -t r
 ```meta
 requirements: 
 results: persistence
-opsec: 
 oss: #win 
 source: https://github.com/mandiant/SharPersist
 description: Windows persistence toolkit written in C#

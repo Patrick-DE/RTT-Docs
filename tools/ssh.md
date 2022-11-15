@@ -15,7 +15,6 @@ ssh -i foo.pem root@<REMOTE> -R 81:localhost:80 -f -N
 phases: 00
 requirements: 
 results: 
-opsec: 
 oss: #linux, #win
 source: 
 description: 

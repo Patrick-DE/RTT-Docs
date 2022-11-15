@@ -27,5 +27,5 @@ ttp: T1550.002
 requirements:
 results: 
 description:
-opsec: true
+stealthy: true
 ``` 

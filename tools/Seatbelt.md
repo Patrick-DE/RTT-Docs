@@ -52,7 +52,6 @@ Current Token's Privileges
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win 
 source: https://github.com/GhostPack/Seatbelt
 description: Seatbelt is a .NET application written in C# that has various "host safety-checks". The information it gathers includes general OS info, installed antivirus, AppLocker, audit policies, local users and groups, logon sessions, UAC, Windows Firewall and more.

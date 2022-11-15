@@ -4,7 +4,6 @@
 ```meta
 requirements: 
 results: credentials.plaintext
-opsec: 
 oss: #win
 source: https://github.com/0x09AL/RdpThief
 description: 

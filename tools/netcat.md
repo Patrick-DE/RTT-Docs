@@ -35,7 +35,7 @@ Quelle: [https://www.sans.org/security-resources/sec560/netcat\_cheat\_sheet\_v
 phases: 02
 requirements: 
 results: 
-opsec: true
+stealthy: true
 methods: 
 oss: #win
 source: http://netcat.sourceforge.net/

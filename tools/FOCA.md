@@ -12,7 +12,6 @@ Download [here](https://github.com/ElevenPaths/FOCA/releases)
 requirements: 
 results:
 description: Tool to find metadata and hidden information in the documents.
-opsec: 
 oss: #win
 source:https://github.com/ElevenPaths/FOCA
 ```

@@ -20,7 +20,6 @@ optional arguments:
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #py
 source: https://github.com/mdsecactivebreach/Chameleon
 description: A tool for domain categorisation

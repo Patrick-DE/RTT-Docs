@@ -108,7 +108,6 @@ beacon> execute-assembly C:\Tools\Certify\Certify\bin\Release\Certify.exe find /
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/GhostPack/Certify
 description: Used to query certificate information for [[Misconfigured Certificate Templates]]

@@ -28,7 +28,6 @@ don/sql2.bin" -o "/mnt/c/Users/patri/Downloads/sql2.dmp"
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/codewhitesec/HandleKatz
 description: This tool was implemented as part of our Brucon2021 conference talk and demonstrates the usage of cloned handles to Lsass in order to create an obfuscated memory dump of the same.

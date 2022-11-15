@@ -76,9 +76,9 @@ Vuln-Service-1                            C:\Program Files\Vuln Services\Service
 ```meta
 requirements: 
 results: 
-opsec: 
+stealthy: true
 oss: #win
 source: 
-description: VBA Obfuscation Tools combined with an MS office document generator
+description: 
 undetected: 
 ```

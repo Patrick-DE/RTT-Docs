@@ -25,7 +25,6 @@ Options:
 requirements: 
 results: 
 category:
-opsec: 
 oss: #win
 source: https://github.com/icyguider/Nimcrypt2
 description: .NET, PE, & Raw Shellcode Packer/Loader written in Nim

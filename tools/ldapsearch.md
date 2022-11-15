@@ -21,7 +21,7 @@ requirements:
 results:
 description: Allows you to specify custom LDAP queries
 category: Enumeration
-opsec: true
+stealthy: true
 oss: #linux
 source: https://linux.die.net/man/1/ldapsearch
 ```

@@ -45,7 +45,6 @@ Any groups that have an edge to machines via LAPS:
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/BloodHoundAD/BloodHound
 description: 

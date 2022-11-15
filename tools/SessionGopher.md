@@ -22,7 +22,6 @@ Invoke-SessionGopher -Target 10.10.10.10 -u domain.com\adm-arvanaghi -p s3cr3tP@
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #ps1
 source: https://github.com/Arvanaghi/SessionGopher
 description: SessionGopher is a PowerShell tool that uses WMI to extract saved session information for remote access tools such as WinSCP, PuTTY, SuperPuTTY, FileZilla, and Microsoft Remote Desktop. It can be run remotely or locally.

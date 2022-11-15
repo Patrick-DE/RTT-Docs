@@ -25,7 +25,6 @@ Add a new user to the AD via ldap
 phases: 05,07
 requirements: 
 results: 
-opsec: 
 oss: #win, #linux
 source: https://www.thegeekstuff.com/2015/02/openldap-add-users-groups/
 description: Add user to OU

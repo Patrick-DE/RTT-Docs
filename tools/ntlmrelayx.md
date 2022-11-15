@@ -12,7 +12,6 @@ proxychains python3 /usr/local/bin/ntlmrelayx.py -t smb://10.10.17.68 -smb2suppo
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/SecureAuthCorp/impacket/tree/master/impacket/examples/ntlmrelayx
 description: NTLM relay tool

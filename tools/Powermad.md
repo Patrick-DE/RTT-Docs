@@ -12,7 +12,6 @@ Set the `msDS-AllowedToActOnBehalfOfOtherIdentity` to the current machine
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #ps1
 source: https://github.com/Kevin-Robertson/Powermad
 description: PowerShell MachineAccountQuota and DNS exploit tools

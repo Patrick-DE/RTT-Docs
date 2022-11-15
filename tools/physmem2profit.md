@@ -24,7 +24,6 @@
 requirements: admin
 results: 
 category: 
-opsec: 
 oss: #win
 source: https://github.com/FSecureLABS/physmem2profit
 description: Used to create a minidump of a target hosts' LSASS process by analysing physical memory remotely

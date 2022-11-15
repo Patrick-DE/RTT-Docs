@@ -27,7 +27,6 @@ Done. Saved forged certificate to fake.pfx with the password 'password'
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/GhostPack/ForgeCert
 description: Generate certs

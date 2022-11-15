@@ -15,6 +15,6 @@ Excel-DNA has another attribute that may hinder coverage with Yara, likely unkno
 ttp: T1137.006
 requirements: 
 results: persistence
-opsec: true
+stealthy: true
 description: Dropping an XLL template to XLStart folder in order to gain persistence through launching Excel
 ```

@@ -9,7 +9,6 @@
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/GoSecure/WSuspicious
 description: WSUS exploitation tool

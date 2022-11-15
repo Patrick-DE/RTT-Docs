@@ -25,7 +25,6 @@ Search for interesting file extensions
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #py
 source: https://github.com/blacklanternsecurity/MANSPIDER
 description: Spider entire networks for juicy files sitting on SMB shares. Search filenames or file content - regex supported!

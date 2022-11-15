@@ -48,7 +48,6 @@ Options
 phases: 08
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/nmap/ncrack
 description: Password spray against a lot of services

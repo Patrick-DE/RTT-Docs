@@ -7,7 +7,6 @@ Double-click them to open the **Node Content Editor** and replace these strings 
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/PKISolutions/Asn1Editor.WPF
 description: Change a bit in the ticket in order to change the service

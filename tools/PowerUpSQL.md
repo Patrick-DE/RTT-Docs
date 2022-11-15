@@ -113,7 +113,6 @@ Links       :
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/NetSPI/PowerUpSQL
 description: SQL Exploitation Tools

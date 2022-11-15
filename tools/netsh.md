@@ -69,7 +69,7 @@ Aspects to note about netsh port forwards:
 ```meta
 requirements: admin
 results: 
-opsec: true
+stealthy: true
 methods: 
 oss: #win
 source: 

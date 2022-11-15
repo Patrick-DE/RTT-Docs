@@ -30,7 +30,6 @@ Processes started via DCOM may also be seen where the parent is `svchost.exe` (s
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/EmpireProject/Empire/blob/master/data/module_source/lateral_movement/Invoke-DCOM.ps1
 description: Lateral Move via DCOM

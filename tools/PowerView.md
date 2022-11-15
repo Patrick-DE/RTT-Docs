@@ -469,7 +469,6 @@ Get-DomainTrustMapping              #this function enumerates all trusts for the
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
 description: PowerView is a PowerShell tool to gain network situational awareness on Windows domains.

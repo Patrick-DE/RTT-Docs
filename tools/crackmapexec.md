@@ -33,7 +33,6 @@ phases: 07,08
 requirements: 
 results: 
 category: 
-opsec: 
 oss: #linux
 source: https://github.com/byt3bl33d3r/CrackMapExec
 description: 

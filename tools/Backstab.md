@@ -41,7 +41,6 @@ Usage: backstab.exe <-n name || -p PID> [options]
 ```meta
 requirements: admin
 results: 
-opsec: 
 oss: #win
 source: https://github.com/Yaxser/Backstab
 description: A tool to kill antimalware protected processes

@@ -53,7 +53,6 @@ sudo nmap -sU -p 161 --scripts=snmp-brute --script-args=snmp.brute.communitiesdb
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux, #win
 source: https://linux.die.net/man/1/snmpwalk
 description: snmpwalk is an SNMP application that uses SNMP GETNEXT requests to query a network entity for a tree of information.

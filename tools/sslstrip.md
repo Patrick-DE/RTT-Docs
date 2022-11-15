@@ -34,7 +34,6 @@ How to proceed:
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/moxie0/sslstrip
 description: sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping attacks.

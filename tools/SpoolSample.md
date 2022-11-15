@@ -12,7 +12,6 @@ beacon> execute-assembly C:\Tools\SpoolSample\SpoolSample\bin\Debug\SpoolSample.
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/leechristensen/SpoolSample
 description: 

@@ -141,7 +141,6 @@ proxychains nmap -n -Pn -sT -p445,3389,5985 10.10.1.20
 requirements: 
 results: 
 category:
-opsec: 
 oss: #linux, #win
 source: https://nmap.org/
 description: Nmap Free Security Scanner, Port Scanner, & Network Exploration Tool 

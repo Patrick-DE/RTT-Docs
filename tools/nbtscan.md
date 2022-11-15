@@ -48,7 +48,6 @@ Scans the whole 192.168.1.0/24 subnet, list all names received from each host (-
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/charlesroelli/nbtscan
 description: NBTscan is a program for scanning IP networks for NetBIOS name information. It sends NetBIOS status query to each address in supplied range and lists received information in human readable form.

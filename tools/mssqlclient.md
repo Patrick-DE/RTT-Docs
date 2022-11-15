@@ -26,7 +26,6 @@ SRV1
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux 
 source: Impacket
 description: Interact with MSSQL DB

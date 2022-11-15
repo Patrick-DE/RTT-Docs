@@ -17,7 +17,6 @@ Launch mmc.exe, click File > Add\remove snap-in > Shared Folders
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win 
 source: 
 description: MMC console from windows

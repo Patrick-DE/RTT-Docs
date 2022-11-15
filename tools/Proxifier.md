@@ -20,7 +20,6 @@ You will then see the traffic being proxied in Proxifier, and ADExplorer connect
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://www.proxifier.com/
 description: Tunnel (GUI) apps that run on Windows via SOCKS

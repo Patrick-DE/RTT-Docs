@@ -18,7 +18,7 @@ Scan internal network
 phases: 02,06
 requirements: 
 results: 
-opsec: true
+stealthy: true
 oss: #linux
 source: https://github.com/sensepost/gowitness
 description: Pictures of webservers

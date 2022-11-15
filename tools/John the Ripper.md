@@ -11,7 +11,6 @@ Cracking netntlmv2
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://www.openwall.com/john/
 description: 

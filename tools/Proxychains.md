@@ -14,7 +14,6 @@
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/haad/proxychains
 description: Proxies traffix through the netter

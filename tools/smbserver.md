@@ -25,7 +25,6 @@ Impacket v0.9.24.dev1+20210720.100427.cd4fe47c - Copyright 2021 SecureAuth Corpo
 requirements: admin
 results: 
 category: 
-opsec: 
 oss: #py
 source: https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbserver.py
 description: 

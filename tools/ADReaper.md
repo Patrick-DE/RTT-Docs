@@ -177,7 +177,7 @@ To list AD objects with Unconstrained Delegation enabled,
 
 requirements: domainuser,domainadmin
 results:
-opsec: true
+stealthy: true
 oss: #win, #linux
 source: https://github.com/AidenPearce369/ADReaper
 description: ADReaper is a tool written in Golang which enumerates an Active Directory environment with LDAP queries within few seconds

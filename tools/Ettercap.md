@@ -32,7 +32,6 @@ sudo ettercap -G
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #linux
 source: https://github.com/Ettercap/ettercap
 description: A suite for man in the middle attacks

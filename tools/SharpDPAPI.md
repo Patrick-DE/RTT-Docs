@@ -18,7 +18,6 @@ beacon> execute-assembly C:\Tools\SharpDPAPI\SharpDPAPI\bin\Debug\SharpDPAPI.exe
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win 
 source: https://github.com/GhostPack/SharpDPAPI
 description: Dump the private key from a AD CS server

@@ -27,7 +27,6 @@ Get Trust of domain
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/BloodHoundAD/SharpHound
 description: Ingestor for Bloodhound

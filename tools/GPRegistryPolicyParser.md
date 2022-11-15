@@ -40,7 +40,6 @@ ValueData   : 1   <-- LAPS is enabled
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: https://github.com/PowerShell/GPRegistryPolicyParser
 description: These cmdlets will allow you to work with .POL files, which contain the registry keys enacted by Group Policy.

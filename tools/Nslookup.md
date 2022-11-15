@@ -21,7 +21,6 @@ Find exchange server via nslookup
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win
 source: 
 description: Nameserver lookups on the network

@@ -51,7 +51,6 @@ svc_mssql::EDU:[...snip...]
 ```meta
 requirements: 
 results: 
-opsec: 
 oss: #win 
 source: https://github.com/Kevin-Robertson/InveighZero
 description: Inveigh is a cross-platform .NET IPv4/IPv6 machine-in-the-middle tool.

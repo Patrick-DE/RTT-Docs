@@ -10,7 +10,6 @@
 requirements: 
 results: 
 category: 
-opsec: 
 oss: #linux
 source: 
 description: 
