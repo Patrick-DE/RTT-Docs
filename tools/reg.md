@@ -7,6 +7,14 @@ reg query HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\Pow
 reg query HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ModuleLogging
 
 reg query HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+
+reg query HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShellCore\Transcription
+"EnableTranscripting"=dword:00000001
+"OutputDirectory"="c:\\windows\\temp\\pstranscripts"
+
+reg query HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\PowerShell\Transcription
+"EnableTranscripting"=dword:00000001
+"OutputDirectory"="c:\\windows\\temp\\pstranscripts"
 ```
 
 ## [[PowerShell-Version]]
