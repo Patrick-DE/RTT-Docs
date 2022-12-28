@@ -1122,7 +1122,7 @@
         "ttp": "T1557.001",
         "external": false,
         "description": "Identify weaknesses on the local system",
-        "content": "## Tools\n########\n########",
+        "content": "Returns 0 if disabled.\n`$(Get-ItemProperty -Path \"HKLM:\\Software\\Policies\\Microsoft\\Windows NT\\DNSClient\" -name EnableMulticast).EnableMulticast`\n\nIf it returns an error then it is not set.n`Get-ItemProperty -Path \"HKLM:\\Software\\Policies\\Microsoft\\Windows NT\\DNSClient\" -name EnableMulticast`## Tools\n########\n########",
         "category": "Misconfigurations",
         "stealthy": false,
         "changes": [],
