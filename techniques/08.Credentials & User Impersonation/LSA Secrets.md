@@ -1,9 +1,0 @@
-
-Adversaries with SYSTEM access to a host may attempt to access Local Security Authority (LSA) secrets, which can contain a variety of different credential materials, such as credentials for service accounts. LSA secrets are stored in the registry at HKEY_LOCAL_MACHINE\SECURITY\Policy\Secrets. LSA secrets can also be dumped from memory.
-
-```meta
-ttp: T1003.004
-requirements: admin
-results: 
-description: 
-```
