@@ -5,11 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: merger",
+            "name": "Merger",
             "type": "python",
             "request": "launch",
             //"cwd": "/home/patrick",
             "program": "${workspaceFolder}/merger/merger.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "GetAPTData",
+            "type": "python",
+            "request": "launch",
+            //"cwd": "/home/patrick",
+            "program": "${workspaceFolder}/apts/getAptData.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },
