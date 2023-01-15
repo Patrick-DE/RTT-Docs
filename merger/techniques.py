@@ -8,10 +8,11 @@ from tools import Command
 class Step(object):
     def __init__(self):
         self.id : str=str(uuid.uuid4())
-        self.position : numbers = -1
         self.name: str= "NoName"
-        self.description: str= "NoDescription"
-        self.commands: List[Command] = []
+        self.description: str= "N/A"
+        #self.commands: List[Command] = []
+        self.requirements : str = ""
+        self.results : str = ""
 
 class Technique(object):
     def __init__(self):
@@ -64,38 +65,93 @@ class Methodology(object):
         delattr(self, "changes")
         return json.dumps(self, default=lambda o: o.__dict__)
 
-
+#https://codebeautify.org/json-to-json-schema-generator
 TechniqueSchema = {
-  "type": "object",
-  "properties": {
-    "id": {"type": "string"},
-    "name": {"type": "string"},
-    "phase": {"type": "string"},
-    "ttp": {"type": "string"},
-    "external": {"type": "boolean"},
-    "description": {"type": "string"},
-    "content": {"type": "string"},
-    "category": {"type": "string"},
-    "stealthy": {"type": "boolean"},
-    "changes": {
-      "type": "array",
-      "items": [{"type": "string"}]
-    },
-    "tools": {
-      "type": "array",
-      "items": [{"type": "string"}]
-    },
-    "steps": {
-      "type": "array",
-      "items": [{"type": "object"}]
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "definitions": {
+        "Technique": {
+            "title": "Technique",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phase": {
+                    "type": "string"
+                },
+                "ttp": {
+                    "type": "string"
+                },
+                "external": {
+                    "type": "boolean"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "stealthy": {
+                    "type": "boolean"
+                },
+                "changes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "tools": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "steps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Step"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "phase",
+                "ttp",
+                "description",
+            ],
+        },
+        "Step": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "requirements": {
+                    "type": "string"
+                },
+                "results": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+            ],
+        }
     }
-  },
-  "required": [
-    "id",
-    "name",
-    "phase",
-    "ttp",
-    "description",
-    "category"
-  ]
 }

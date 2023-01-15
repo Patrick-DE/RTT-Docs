@@ -63,9 +63,9 @@ for issue in issues:
         base.append(body)
 
     if typ == ToolSchema:
-        f = open('../tools.json', 'w')
+        f = open('./tools.json', 'w')
     elif typ == TechniqueSchema:
-        f = open('../techniques.json', 'w')
+        f = open('./techniques.json', 'w')
 
-    f.write(json.dumps(base))
+    f.write(json.dumps(base, indent=4))
     f.close
