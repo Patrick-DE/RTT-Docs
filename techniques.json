@@ -983,15 +983,30 @@
         "stealthy": false,
         "changes": [
             "\n## [[mmc]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Local users and Groups",
-            "\n## [[Net]]\n1. Create User:\n    ```bash\n    net user Patrick patrick12345! /ADD /DOMAIN\n    ```\n2. List local / domain groups\n    ```bash\n    net group /domain\n\n    Gruppenkonten f\u00fcr \\\\dc1.testdomain.local\n    -------------------------------------------------------------------------------\n    *$7O...\n    *Abteilung_....\n    *Dom\u00e4nen-Admins\n    \n    net localgroup [group (Remote Dektop Users)]\n    ```\n1. Add User to domain /local group\n    ```sh\n    net group \"Dom\u00e4nen-Admins\" Patrick /add /domain\n\n    net localgroup \"Remote Desktop Users\" Patrick /add\n    net localgroup \"Administrators\" Patrick /add\n    ```",
-            "\n## [[wmic]]\nGet local user accounts\n```cmd\nwmic useraccount list\n```"
+            "\n## [[Net]]\n1. Create User:\n    '''bash\n    net user Patrick patrick12345! /ADD /DOMAIN\n    '''\n2. List local / domain groups\n    '''bash\n    net group /domain\n\n    Gruppenkonten f\u00fcr \\\\dc1.testdomain.local\n    -------------------------------------------------------------------------------\n    *$7O...\n    *Abteilung_....\n    *Dom\u00e4nen-Admins\n    \n    net localgroup [group (Remote Dektop Users)]\n    '''\n1. Add User to domain /local group\n    '''sh\n    net group \"Dom\u00e4nen-Admins\" Patrick /add /domain\n\n    net localgroup \"Remote Desktop Users\" Patrick /add\n    net localgroup \"Administrators\" Patrick /add\n    '''",
+            "\n## [[wmic]]\nGet local user accounts\n'''cmd\nwmic useraccount list\n'''"
         ],
         "tools": [
             "mmc",
             "Net",
             "wmic"
         ],
-        "steps": []
+        "steps": [
+            {
+                "id": "022f5b3b-423a-4419-872d-75d644b18c4c",
+                "name": "Identify local user",
+                "description": "",
+                "requirements": "",
+                "results": "localuser"
+            },
+            {
+                "id": "f552eb3c-c133-4bd3-ab11-f526e490bf11",
+                "name": "Identify local group",
+                "description": "",
+                "requirements": "",
+                "results": "localgroup"
+            }
+        ]
     },
     {
         "id": "a3d6c2ea-a7cb-49c9-9119-8d27f9017fed",
