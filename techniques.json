@@ -2,7 +2,7 @@
     {
         "id": "52259804-a1fb-4a97-be85-3544e4612ff9",
         "name": "Cobalt Strike",
-        "phase": "00.Infrastructure",
+        "phase": "00. Infrastructure",
         "ttp": "S0154",
         "external": true,
         "description": "Setup and configuring Cobalt Strike server",
@@ -20,7 +20,7 @@
     {
         "id": "f79f55a9-b0c5-4f0f-91f8-eb309e3b9d05",
         "name": "Payload Hosting",
-        "phase": "00.Infrastructure",
+        "phase": "00. Infrastructure",
         "ttp": "T1105",
         "external": true,
         "description": "Possibilities to host payloads externally without getting blocked (domain blocking vs. subdomain blocking)",
@@ -34,7 +34,7 @@
     {
         "id": "61bda7a3-a3ec-4a72-95b9-6282d0c59916",
         "name": "Redirector",
-        "phase": "00.Infrastructure",
+        "phase": "00. Infrastructure",
         "ttp": "T1583",
         "external": true,
         "description": "Setup of redirectors in order to avoid leaking the c2 servers ip address",
@@ -56,7 +56,7 @@
     {
         "id": "f7454737-d821-4d25-a712-8fcac8537c17",
         "name": "Aged Domains",
-        "phase": "00.Infrastructure",
+        "phase": "00. Infrastructure",
         "ttp": "T1583.001",
         "external": true,
         "description": "Buying ages domains in order to bypass trust based network filtering",
@@ -76,7 +76,7 @@
     {
         "id": "038b4138-cd4b-4c17-af49-06a83bede7d7",
         "name": "Categorize Domain",
-        "phase": "00.Infrastructure",
+        "phase": "00. Infrastructure",
         "ttp": "T1583.001",
         "external": true,
         "description": "Categorizing / Regategorizing domains in order to bypass trust based network filtering",
@@ -94,7 +94,7 @@
     {
         "id": "ee8a5da2-a82d-4bfe-a439-56c699242b97",
         "name": "Domain Fronting",
-        "phase": "00.Infrastructure",
+        "phase": "00. Infrastructure",
         "ttp": "T1090.004",
         "external": true,
         "description": "Domain Fronting in order to avoid burning the original IP of the c2 server",
@@ -108,7 +108,7 @@
     {
         "id": "578f0caf-f3a9-49b4-a0ec-caf6b1903fd4",
         "name": "Password Spraying",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1110.003",
         "external": true,
         "description": "Password spraying on services with cewl or",
@@ -128,7 +128,7 @@
     {
         "id": "0af4c866-7ced-4851-882a-639295a66ca9",
         "name": "Crowdstrike",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "TA0005",
         "external": false,
         "description": "Bypass of Crowdstrike",
@@ -142,7 +142,7 @@
     {
         "id": "d0bd1d39-35f3-4735-9124-4593b6db1a2b",
         "name": "File properties",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "TA0005",
         "external": false,
         "description": "Macro leveraging file properties to hide its paylods and StdIn to avoid logging",
@@ -156,7 +156,7 @@
     {
         "id": "fd695c1f-d629-43ed-adb2-2cfc31b4a91b",
         "name": "Loader",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "TA0005",
         "external": false,
         "description": "NoDescription",
@@ -174,7 +174,7 @@
     {
         "id": "9c8d6ddd-f5f3-4806-8db1-3b8af7d6113e",
         "name": "Parent-Process-Spoofing (PPS)",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1134.004",
         "external": false,
         "description": "NoDescription",
@@ -188,7 +188,7 @@
     {
         "id": "5ab08195-c6c7-4788-92df-265c1cd2bc44",
         "name": "Open Redirects",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T0000",
         "external": true,
         "description": "Use open redirects to phish victims",
@@ -202,7 +202,7 @@
     {
         "id": "ed543564-a7e6-471f-8696-8170f5148a89",
         "name": "Phishing",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1566",
         "external": true,
         "description": "External Phishing via different tools to either gather credentials or plan a beacon",
@@ -226,7 +226,7 @@
     {
         "id": "40131a8c-a25c-435c-8594-e0c8159ea994",
         "name": "Redirect Forms",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T0000",
         "external": true,
         "description": "Use open redirects to phish victims",
@@ -240,7 +240,7 @@
     {
         "id": "2225c5d5-2051-472a-a918-a3f8a9bd00a1",
         "name": "MS16-032 (DDE)",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T0000",
         "external": true,
         "description": "MS15-032 (DDE) vuln",
@@ -254,7 +254,7 @@
     {
         "id": "2e4f5fac-80a7-4250-885d-d01f3d794462",
         "name": "Office Links",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T0000",
         "external": true,
         "description": "Office-handeld Links",
@@ -268,7 +268,7 @@
     {
         "id": "2ca0631d-690f-4343-a033-065aabf2d8eb",
         "name": "OLE",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T0000",
         "external": true,
         "description": "Object Linking and Embedding Objects in case macros are restricted.",
@@ -282,7 +282,7 @@
     {
         "id": "9e1695c5-c27b-45f5-a573-5a3449fb8ca8",
         "name": "ActiveX controls",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1204.002",
         "external": true,
         "description": "Using ActiveX controls in order to trigger execution via phishing",
@@ -296,7 +296,7 @@
     {
         "id": "97175308-e407-4747-8cad-77bce50b0c81",
         "name": "Clean Document",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1000",
         "external": true,
         "description": "Clean document proerties in order to hide your details",
@@ -310,7 +310,7 @@
     {
         "id": "f9f9bae5-8877-40b0-8adc-0dfd1f81d6d0",
         "name": "Macros",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1204.002",
         "external": true,
         "description": "Macros used for phishing attacks via office",
@@ -328,7 +328,7 @@
     {
         "id": "df05a83f-0203-450a-b074-21c56a5ae319",
         "name": "Remote Template Injection",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1221",
         "external": true,
         "description": "Macros used for phishing attacks via office",
@@ -342,7 +342,7 @@
     {
         "id": "56f2ec18-fc38-4502-9cb1-8d8278cf8e09",
         "name": "Shellcode Injection",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1204.002",
         "external": true,
         "description": "VBA Shellcode injection",
@@ -356,7 +356,7 @@
     {
         "id": "bea54459-bba3-4535-80a6-6ebacb32a3b9",
         "name": "VBA",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1059.005",
         "external": true,
         "description": "VBA execution via Office",
@@ -370,7 +370,7 @@
     {
         "id": "7484fee0-1307-4988-9180-50aa807f5f22",
         "name": "COM",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1137.006",
         "external": true,
         "description": "Dropping an COM file into the STARTUP folder to archive persistence and execute code when Outlook being launched",
@@ -389,7 +389,7 @@
     {
         "id": "a29d32b3-2e3e-44b5-8e75-5df624bd5deb",
         "name": "WLL",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1137.006",
         "external": true,
         "description": "Dropping an WLL file into the STARTUP folder to archive persistence and execute code when WLL being launched",
@@ -403,7 +403,7 @@
     {
         "id": "9b754c7b-50bf-4052-a690-45a4dd4be2f3",
         "name": "XLL",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1137.006",
         "external": true,
         "description": "Dropping an XLL file into the XLSTART folder to archive persistence and execute code when XLL being launched",
@@ -417,7 +417,7 @@
     {
         "id": "f89c3e5e-623f-4f14-9b97-21256c0ca971",
         "name": "Custom Actions",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1204.002",
         "external": true,
         "description": "NoDescription",
@@ -431,7 +431,7 @@
     {
         "id": "f9b9cc06-dbda-46ff-ad6e-de0537990f81",
         "name": "Custom UI part",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1204.002",
         "external": true,
         "description": "NoDescription",
@@ -445,7 +445,7 @@
     {
         "id": "4b0592f0-8e38-4a9e-86a4-4289ff827885",
         "name": "WiFi crack",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T0000",
         "external": true,
         "description": "Try to crack the WiFi in order to gain access to the internal network remotely",
@@ -463,7 +463,7 @@
     {
         "id": "98e8b34c-4b74-425f-a69e-34731f9268a4",
         "name": "CHM",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1218.001",
         "external": true,
         "description": "CHM file containing a custom JavaScript backdoor",
@@ -477,7 +477,7 @@
     {
         "id": "cb0837ac-4fa4-49ae-b07a-5cb94060b08a",
         "name": "HTA",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1218.005",
         "external": true,
         "description": "HTA executing JS or VBScript",
@@ -491,7 +491,7 @@
     {
         "id": "3ee71eb9-466f-4165-9545-78720271c26d",
         "name": "IQY",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1204.002",
         "external": true,
         "description": "IQY (Web Query) Excel files",
@@ -505,7 +505,7 @@
     {
         "id": "f5f9de12-9647-4782-8a56-51c8e90be3ee",
         "name": "LNK",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1204.002",
         "external": true,
         "description": "LNK (Shell Link file) remotly/localy executing code",
@@ -519,7 +519,7 @@
     {
         "id": "f5c6e064-3895-42ae-a617-90f735f87514",
         "name": "MSG",
-        "phase": "01.Initial Access",
+        "phase": "01. Initial Access",
         "ttp": "T1204.002",
         "external": true,
         "description": "MSG (email) file containing emails with embedded attachements",
@@ -533,7 +533,7 @@
     {
         "id": "2ec8cae8-6273-4ad7-93e6-777648bf477b",
         "name": "Active Reconnaissance",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1595",
         "external": true,
         "description": "Probing infrastructure and people , banner grabbing, web bugs.",
@@ -547,7 +547,7 @@
     {
         "id": "14f62892-4701-4be0-aca8-d2ca3b2f2f0d",
         "name": "Exposed Machines",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1595",
         "external": true,
         "description": "Identify services within the network",
@@ -569,7 +569,7 @@
     {
         "id": "fc9f5e77-ac7e-4792-b3be-793699cd8a81",
         "name": "Leaked Files",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1597",
         "external": true,
         "description": "Identify files on the internet which can be used for information gathering and for metadata analysis",
@@ -587,7 +587,7 @@
     {
         "id": "6cb8f07d-7217-45fd-a91a-d0db966d78b4",
         "name": "Metadata",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1594",
         "external": true,
         "description": "Identify metadata within files in order to identify usernames, IPs etc.",
@@ -606,7 +606,7 @@
     {
         "id": "dc347925-82ac-4fb4-8e76-3e05ef81059f",
         "name": "Passive Reconnaissance",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1592",
         "external": true,
         "description": "Identify publicly available services",
@@ -630,7 +630,7 @@
     {
         "id": "be1c0f32-c79b-40f8-ad56-05fb7dd1cfad",
         "name": "Contact details",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1589",
         "external": true,
         "description": "Identify employees contact details",
@@ -650,7 +650,7 @@
     {
         "id": "3d01c8aa-e4eb-4d8f-961b-03b66cd682c7",
         "name": "LinkedIn",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1593.001",
         "external": true,
         "description": "Identify employees based on LinkedIn",
@@ -670,7 +670,7 @@
     {
         "id": "13ce4a1a-f645-4f6d-b168-9009237e4dbb",
         "name": "Certificates",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1596.003",
         "external": true,
         "description": "Identify services and URLs through certificates",
@@ -686,7 +686,7 @@
     {
         "id": "27de647c-9ac7-4e12-87dc-f0ff814a20f6",
         "name": "DNS",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1596.001",
         "external": true,
         "description": "Identify services and URLs through DNS",
@@ -704,7 +704,7 @@
     {
         "id": "1644e4bf-c05d-42d9-865b-98411ded47e5",
         "name": "Domains",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1596.002",
         "external": true,
         "description": "Identify services and URLs Domains",
@@ -721,7 +721,7 @@
     {
         "id": "c37c32a4-4c76-4f17-8556-733f44c02629",
         "name": "IP Ranges",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1596.002",
         "external": true,
         "description": "Identify services and URLs through IP-Ranges",
@@ -740,7 +740,7 @@
     {
         "id": "6984151a-bbdb-43a5-a33f-47743b1352ce",
         "name": "Credentials",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1087",
         "external": false,
         "description": "Find credentials within knowledge bases or shares",
@@ -760,12 +760,49 @@
             "Mimikatz",
             "sslstrip"
         ],
-        "steps": []
+        "steps": [
+            {
+              "id": "ebdbadf0-e284-4e4b-8a66-59f3847f231e",
+              "name": "Find files containing credentials",
+              "description": "",
+              "requirements": {
+                "and": [
+                  {
+                    "or": [
+                      {
+                        "tag": "CRED:TICKET"
+                      },
+                      {
+                        "and": [
+                          {
+                            "tag": "CRED:USERNAME:NAME"
+                          },
+                          {
+                            "tag": "CRED:PASS:PLAIN"
+                          },
+                          {
+                            "tag": "AUTHN:DOMAIN"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "SERVICE:LDAP"
+                  }
+                ]
+              },
+              "results": [
+                "CRED:PASS",
+                "CRED:USERNAME"
+              ]
+            }
+        ]
     },
     {
         "id": "fc9c6492-13d1-42e0-b483-055a76a7c6a1",
         "name": "Find Mail Server",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1595.001",
         "external": false,
         "description": "Find mail server within a network",
@@ -785,7 +822,7 @@
     {
         "id": "215975da-84ae-4b96-bab6-4a9d0b027878",
         "name": "Find Web Server",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1595.001",
         "external": false,
         "description": "Find web server within a network",
@@ -805,7 +842,7 @@
     {
         "id": "1fa59a9a-65a1-42bc-ae2f-ba08dbac3488",
         "name": "Guest Access (SMB)",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1595.001",
         "external": false,
         "description": "Find SMB with guest access enabled",
@@ -829,7 +866,7 @@
     {
         "id": "56591923-a935-4f2f-8f79-ae33f8cb50df",
         "name": "OT Devices",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1595.001",
         "external": false,
         "description": "Identify common OT devices",
@@ -847,7 +884,7 @@
     {
         "id": "340acfa4-5d20-4539-ab58-b1548a3b108a",
         "name": "Shares",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1083",
         "external": false,
         "description": "Identify hosts with smb running on the network",
@@ -870,7 +907,7 @@
     {
         "id": "3149289a-f245-40a0-8612-0433b0f41781",
         "name": "SMB Signing",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1000",
         "external": false,
         "description": "Is SMB signing enabled",
@@ -890,7 +927,7 @@
     {
         "id": "b316363c-92cc-43ab-a78d-54d1971c3746",
         "name": "User enum",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1087",
         "external": false,
         "description": "Find users",
@@ -916,7 +953,7 @@
     {
         "id": "72938e82-6c59-4cc9-bad0-96609d5f5362",
         "name": "Vulnerable Machines",
-        "phase": "02.Reconnaissance",
+        "phase": "02. Reconnaissance",
         "ttp": "T1595.001",
         "external": false,
         "description": "Identify services within the network",
@@ -938,7 +975,7 @@
     {
         "id": "20d2d952-3da5-4ad9-ab3d-273e2ffbd3e4",
         "name": "Bookmarks-History",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1005",
         "external": false,
         "description": "Gather information about internal knowledgebases or target systems by reading the browsers history and bookmarks.",
@@ -956,7 +993,7 @@
     {
         "id": "971dde7b-5a4c-4b8e-908e-8e619591c959",
         "name": "Common Language Runtime (CLR) Versions",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1000",
         "external": false,
         "description": "Gather information about internal knowledgebases or target systems by reading the browsers history and bookmarks.",
@@ -974,7 +1011,7 @@
     {
         "id": "c7bf893c-5d7c-4177-9a5a-5a8828672770",
         "name": "Local User+Groups",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1069.001",
         "external": false,
         "description": "Identify local groups",
@@ -991,27 +1028,12 @@
             "Net",
             "wmic"
         ],
-        "steps": [
-            {
-                "id": "022f5b3b-423a-4419-872d-75d644b18c4c",
-                "name": "Identify local user",
-                "description": "",
-                "requirements": "",
-                "results": "localuser"
-            },
-            {
-                "id": "f552eb3c-c133-4bd3-ab11-f526e490bf11",
-                "name": "Identify local group",
-                "description": "",
-                "requirements": "",
-                "results": "localgroup"
-            }
-        ]
+        "steps": []
     },
     {
         "id": "a3d6c2ea-a7cb-49c9-9119-8d27f9017fed",
         "name": "Logged In Users",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1033",
         "external": false,
         "description": "Identify weaknesses on the local system",
@@ -1027,7 +1049,7 @@
     {
         "id": "cf173ad9-6f8b-47a0-8190-ebb7779928dd",
         "name": "Sensitive Files",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1005",
         "external": false,
         "description": "Identify files containing plain text passwords",
@@ -1048,7 +1070,7 @@
     {
         "id": "7c23ce11-7efc-448c-8c65-11faf0381a92",
         "name": "Web Proxies",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T0000",
         "external": false,
         "description": "Identify web proxies which could block downloads or exfiltrations",
@@ -1068,7 +1090,7 @@
     {
         "id": "3271fc61-147c-498a-bc97-a33dad5d2862",
         "name": "Event Forwarding",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1562.002",
         "external": false,
         "description": "Identify events being forwarded",
@@ -1084,7 +1106,7 @@
     {
         "id": "248fe325-396d-4c4e-9243-323fb35e5ca9",
         "name": "PowerShell Logging",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1000",
         "external": false,
         "description": "Identify PowerShell logging",
@@ -1103,7 +1125,7 @@
     {
         "id": "9ab0226d-0d10-4d57-a53a-7419798545d5",
         "name": "Windows Audit Policies",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1562.002",
         "external": false,
         "description": "Identify Windows Audit Policies",
@@ -1119,7 +1141,7 @@
     {
         "id": "d95f1a12-09f0-49c3-ac95-45a7b6de5e5c",
         "name": "AV-Exclusions",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1562.001",
         "external": false,
         "description": "NoDescription",
@@ -1133,7 +1155,7 @@
     {
         "id": "29fd5ca7-ad73-4a53-948c-f450757c8612",
         "name": "LLMNR",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1557.001",
         "external": false,
         "description": "Identify weaknesses on the local system",
@@ -1147,7 +1169,7 @@
     {
         "id": "4f26577f-fc57-4d99-98ba-d968895d2c23",
         "name": "PowerShell-Version",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1000",
         "external": false,
         "description": "Gather information about internal knowledgebases or target systems by reading the browsers history and bookmarks.",
@@ -1165,7 +1187,7 @@
     {
         "id": "b881fd94-ac61-43d6-a3fd-148439b99ebb",
         "name": "WDigest",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1003",
         "external": false,
         "description": "Identify if WDigest is still enabled, allowing an attacker to steal plaintext credentials",
@@ -1179,7 +1201,7 @@
     {
         "id": "5a744511-a3d3-4bde-a71c-bfcd5af8f54f",
         "name": "WSUS",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1546",
         "external": false,
         "description": "Identify if the Windows Update Service is running via the insecure protocol http",
@@ -1199,7 +1221,7 @@
     {
         "id": "b8d9f9e1-c296-4783-8664-072899e37a4b",
         "name": "Scheduled Tasks",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1053",
         "external": false,
         "description": "Identify scheduled tasks",
@@ -1219,7 +1241,7 @@
     {
         "id": "48943382-ec1c-42e0-9b24-1c1d460f3879",
         "name": "Services",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1543.003",
         "external": false,
         "description": "Identify services",
@@ -1239,7 +1261,7 @@
     {
         "id": "90eb48f9-0cad-487c-bc75-236088805749",
         "name": "AppLocker",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "M1038",
         "external": false,
         "description": "NoDescription",
@@ -1255,7 +1277,7 @@
     {
         "id": "9c7427cc-879e-40e2-a2db-6803d8b6c07c",
         "name": "Attack Surface Reduction Rules (ASR)",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "M1040",
         "external": false,
         "description": "NoDescription",
@@ -1269,7 +1291,7 @@
     {
         "id": "1e9b67c8-8037-4a10-8d33-f2a49d9d814a",
         "name": "AV-EDR",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "M1049",
         "external": false,
         "description": "NoDescription",
@@ -1288,7 +1310,7 @@
     {
         "id": "cb9fc815-8531-4513-848c-c310a22e7caf",
         "name": "Credential Guard",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "M1043",
         "external": false,
         "description": "NoDescription",
@@ -1304,7 +1326,7 @@
     {
         "id": "0f8b4c0f-e0b6-41a6-9935-8cbfe87ccfb9",
         "name": "Firewall",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "M1037",
         "external": false,
         "description": "NoDescription",
@@ -1318,7 +1340,7 @@
     {
         "id": "4b4ae673-f557-44b1-b4da-83d5a4cec299",
         "name": "LSA Protection",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "M1025",
         "external": false,
         "description": "Identify weaknesses on the local system",
@@ -1336,7 +1358,7 @@
     {
         "id": "b94a13b1-649f-4a4c-87a1-ba2cdb3779b6",
         "name": "User Access Control (UAC)",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "M1052",
         "external": false,
         "description": "Identify if UAC is enabled",
@@ -1354,7 +1376,7 @@
     {
         "id": "acb8cc72-86b1-472e-ba34-40bea0a505e0",
         "name": "Windows Update",
-        "phase": "03.Host Enumeration",
+        "phase": "03. Host Enumeration",
         "ttp": "T1000",
         "external": false,
         "description": "Identify which Windows Updates are installed",
@@ -1372,7 +1394,7 @@
     {
         "id": "0c4fa102-f140-4e4c-bae0-c6b13b786234",
         "name": "Admin SDHolder Backdoor",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1098",
         "external": false,
         "description": "NoDescription",
@@ -1386,7 +1408,7 @@
     {
         "id": "50c67e44-3137-416c-81d9-42c6eae97c7d",
         "name": "COM Hijacking",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1546.015",
         "external": false,
         "description": "Buying ages domains in order to bypass trust based connections",
@@ -1407,7 +1429,7 @@
     {
         "id": "4b735b18-7544-4d25-af21-a7aa341177ae",
         "name": "Create Account",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1136",
         "external": false,
         "description": "Adding a user to the AD for persistence",
@@ -1425,7 +1447,7 @@
     {
         "id": "9033ee38-f8f5-4aa7-9692-33542df7e312",
         "name": "DLL Sideloading",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1574.002",
         "external": false,
         "description": "Side-loading takes advantage of the DLL search order used by the loader by positioning both the victim application and malicious payload(s) alongside each other.",
@@ -1443,7 +1465,7 @@
     {
         "id": "1109bfa4-fc36-41f3-a877-53cbd649b276",
         "name": "Runkey",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1547.001",
         "external": false,
         "description": "Get Persistence via Teams DLL hijacking",
@@ -1457,7 +1479,7 @@
     {
         "id": "d8184aa4-cedf-4667-accc-575e2c468eba",
         "name": "Scheduled Tasks",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1053",
         "external": false,
         "description": "Get Persistence via Teams DLL hijacking",
@@ -1474,7 +1496,7 @@
     {
         "id": "695c76eb-0b11-4cf8-be62-962324935ba9",
         "name": "Skeleton Key",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "S0007",
         "external": false,
         "description": "NoDescription",
@@ -1492,7 +1514,7 @@
     {
         "id": "0a754708-8c08-4c64-ac2b-5f56b0835e41",
         "name": "Startup Folder",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1547.001",
         "external": false,
         "description": "Starting executables located in the start up folder",
@@ -1511,7 +1533,7 @@
     {
         "id": "0aad5932-3430-4426-b2ad-62d8f83cf5c2",
         "name": "XLL Template",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1137.006",
         "external": false,
         "description": "Dropping an XLL template to XLStart folder in order to gain persistence through launching Excel",
@@ -1525,7 +1547,7 @@
     {
         "id": "64d0f606-f49e-4473-a13a-042522f548e3",
         "name": "OneDrive",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1574.001",
         "external": false,
         "description": "Get Persistence via OneDrive DLL hijacking",
@@ -1539,7 +1561,7 @@
     {
         "id": "d9d27087-1f07-4982-a4c5-df801d9c055e",
         "name": "Search Order Hijacking",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1574.001",
         "external": false,
         "description": "Side-loading takes advantage of the DLL search order used by the loader by positioning both the victim application and malicious payload(s) alongside each other.",
@@ -1557,7 +1579,7 @@
     {
         "id": "c3e47c92-8488-4ba0-b66c-547241fbbdf9",
         "name": "Teams",
-        "phase": "04.Persistence",
+        "phase": "04. Persistence",
         "ttp": "T1574.001",
         "external": false,
         "description": "Get Persistence via Teams DLL hijacking",
@@ -1571,7 +1593,7 @@
     {
         "id": "ef68c56d-83f6-4f2a-9d7a-65cf88bca30b",
         "name": "Always Install Elevated",
-        "phase": "05.Privilege Escalation",
+        "phase": "05. Privilege Escalation",
         "ttp": "T1548",
         "external": false,
         "description": "This registry value enables an user to install applications with access to higher level folders/registry keys",
@@ -1585,7 +1607,7 @@
     {
         "id": "9b9fc55f-9ec4-4cd6-b0a3-5fcfe6a39134",
         "name": "Change Domain Objects",
-        "phase": "05.Privilege Escalation",
+        "phase": "05. Privilege Escalation",
         "ttp": "T1484",
         "external": false,
         "description": "NoDescription",
@@ -1603,7 +1625,7 @@
     {
         "id": "88fd66ea-35bd-48b2-a8a0-229a7c5fa173",
         "name": "UAC Bypasses",
-        "phase": "05.Privilege Escalation",
+        "phase": "05. Privilege Escalation",
         "ttp": "T1548.002",
         "external": false,
         "description": "UAC bypass to elevate from medium into a high integrity process",
@@ -1617,7 +1639,7 @@
     {
         "id": "33296a49-ec03-45c0-94c5-27b68a700550",
         "name": "Unquoted Service Path",
-        "phase": "05.Privilege Escalation",
+        "phase": "05. Privilege Escalation",
         "ttp": "T1574.009",
         "external": false,
         "description": "Hijacking the search order hirarchy of a applications DLL.",
@@ -1637,7 +1659,7 @@
     {
         "id": "7b2080cb-0a1f-48c2-a108-04022daf3c09",
         "name": "Weak Service Permissions",
-        "phase": "05.Privilege Escalation",
+        "phase": "05. Privilege Escalation",
         "ttp": "T1574.010",
         "external": false,
         "description": "Weak service permissions can be abused in order to change the binpath",
@@ -1651,7 +1673,7 @@
     {
         "id": "dacc4358-e199-4d19-bd6e-a5c225978bf4",
         "name": "Printer Bug",
-        "phase": "05.Privilege Escalation",
+        "phase": "05. Privilege Escalation",
         "ttp": "T1210",
         "external": false,
         "description": "Priv Escalation via PrinterBug",
@@ -1671,7 +1693,7 @@
     {
         "id": "eb910a47-68e9-436e-b016-94972cef4dcf",
         "name": "Certificate Store",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "NoDescription",
@@ -1685,7 +1707,7 @@
     {
         "id": "0603d9a4-0941-4583-b5a5-1df6e46878c3",
         "name": "Database Server",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "Identify databases within the network",
@@ -1705,7 +1727,7 @@
     {
         "id": "c06ed08c-3ef2-405e-9b00-10ddf90947ae",
         "name": "Domain SPN",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "Identify databases within the network",
@@ -1723,7 +1745,7 @@
     {
         "id": "4bd15813-9fa9-43ff-8e7a-fc8a36ca9b23",
         "name": "Domain Trust",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1482",
         "external": false,
         "description": "Identify databases within the network",
@@ -1741,7 +1763,7 @@
     {
         "id": "1ffb2611-d1b6-4414-99fa-c38c1832a351",
         "name": "PAM",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "NoDescription",
@@ -1755,7 +1777,7 @@
     {
         "id": "d76a4fbf-9eb0-4596-90f0-d77a98b55ff0",
         "name": "SCCM",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "NoDescription",
@@ -1769,7 +1791,7 @@
     {
         "id": "795b42bb-fe09-4c50-bdac-082128ee4a38",
         "name": "Web Server",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "Identify web server within the network via domain",
@@ -1786,7 +1808,7 @@
     {
         "id": "6468c4ec-587c-44d4-bc62-532a8b5ffe1c",
         "name": "Domain Admins",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1087.002",
         "external": false,
         "description": "NoDescription",
@@ -1800,7 +1822,7 @@
     {
         "id": "a91401ae-1c52-4657-9be3-1a48c0707a4f",
         "name": "Domain Computers",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "NoDescription",
@@ -1822,7 +1844,7 @@
     {
         "id": "f9352355-9d08-44f0-be7a-ccdf9d304007",
         "name": "Domain Controller",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "NoDescription",
@@ -1850,7 +1872,7 @@
     {
         "id": "1b468064-9714-4c1b-8958-18411548482b",
         "name": "Domain Forest",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1482",
         "external": false,
         "description": "NoDescription",
@@ -1868,7 +1890,7 @@
     {
         "id": "cb4a6e62-b8ab-46fe-b6a4-9ca88e83842a",
         "name": "Domain GPOs",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1615",
         "external": false,
         "description": "NoDescription",
@@ -1889,7 +1911,7 @@
     {
         "id": "1ef2d0f2-2762-4e8a-8b88-8f1cc4fc4fb6",
         "name": "Domain Groups",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1069.002",
         "external": false,
         "description": "NoDescription",
@@ -1909,7 +1931,7 @@
     {
         "id": "89dd2f45-1771-4acc-b07b-32d799919ad4",
         "name": "Domain Users",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1087.002",
         "external": false,
         "description": "NoDescription",
@@ -1929,7 +1951,7 @@
     {
         "id": "7f051fe7-6461-4459-b16f-416b924c125d",
         "name": "Domain",
-        "phase": "06.Domain Enumeration",
+        "phase": "06. Domain Enumeration",
         "ttp": "T1046",
         "external": false,
         "description": "NoDescription",
@@ -1957,7 +1979,7 @@
     {
         "id": "16097d41-d915-4e0a-aa53-d49b24f66995",
         "name": "DCOM",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1021.003",
         "external": false,
         "description": "NoDescription",
@@ -1975,7 +1997,7 @@
     {
         "id": "4c850e26-3460-4906-8e6f-612240140274",
         "name": "PowerShell Remoting",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1021.006",
         "external": false,
         "description": "NoDescription",
@@ -1989,7 +2011,7 @@
     {
         "id": "3ccc90c1-567c-4a22-a2f7-127a2ca5873e",
         "name": "PsExec",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1021.006",
         "external": false,
         "description": "Get Persistence via Teams DLL hijacking",
@@ -2003,7 +2025,7 @@
     {
         "id": "c33f8338-e69c-4ce4-a432-d482686bea32",
         "name": "SMB Relay",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1557.001",
         "external": false,
         "description": "Relay smb connections to gain access to another workstation",
@@ -2017,7 +2039,7 @@
     {
         "id": "c7a1afd1-c3a6-4771-bf44-9557775c34cf",
         "name": "WMI",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1047",
         "external": false,
         "description": "Get Persistence via Teams DLL hijacking",
@@ -2031,7 +2053,7 @@
     {
         "id": "7560eb03-f96c-4589-ba9c-914161082d8e",
         "name": "Browser",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1572",
         "external": false,
         "description": "User RDP in order to lateral move to other systems",
@@ -2045,7 +2067,7 @@
     {
         "id": "b9f95335-e93c-49a3-ad68-463bb48ae1c3",
         "name": "NTLM Relaying",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1557.001",
         "external": false,
         "description": "NoDescription",
@@ -2075,7 +2097,7 @@
     {
         "id": "69894386-19d7-4707-a914-42e82ae6f95d",
         "name": "RDP",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1021.001",
         "external": false,
         "description": "User RDP in order to lateral move to other systems",
@@ -2097,7 +2119,7 @@
     {
         "id": "f62214e8-fdd0-46dc-b5cb-1fe0e14c8d37",
         "name": "Reverse Port Forward",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1572",
         "external": false,
         "description": "NoDescription",
@@ -2115,7 +2137,7 @@
     {
         "id": "54a18071-811d-4f08-8e43-07f3cca11a93",
         "name": "SOCKS Proxy",
-        "phase": "07.Lateral Movement",
+        "phase": "07. Lateral Movement",
         "ttp": "T1572",
         "external": false,
         "description": "NoDescription",
@@ -2139,7 +2161,7 @@
     {
         "id": "5c704518-7314-4972-a66a-9e0914a2d7af",
         "name": "Cached Domain Credentials",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1003.005",
         "external": false,
         "description": "NoDescription",
@@ -2157,7 +2179,7 @@
     {
         "id": "d0287ca0-5103-4aaf-9eb4-0af85d656dc8",
         "name": "Crack Credentials",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1110",
         "external": false,
         "description": "Cracking different hashes to recover the password in the plaintext format.",
@@ -2177,7 +2199,7 @@
     {
         "id": "74baeff6-47ad-418a-be6a-01078da21066",
         "name": "Credential Prompt",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1056.002",
         "external": false,
         "description": "Creating a fake credential prompt could lead to the recovery of plaintext credentials",
@@ -2191,7 +2213,7 @@
     {
         "id": "fd9a1c16-c972-424a-a1f0-6a4e96067a2f",
         "name": "Data Protection API (DPAPI)",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1555",
         "external": false,
         "description": "NoDescription",
@@ -2213,7 +2235,7 @@
     {
         "id": "ad973bb9-b8aa-4b9f-a8be-899c610416d7",
         "name": "DCSync",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1003.006",
         "external": false,
         "description": "NoDescription",
@@ -2227,7 +2249,7 @@
     {
         "id": "10308992-7220-4fa9-8eea-ba7a2deaf61f",
         "name": "eKeys",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2245,7 +2267,7 @@
     {
         "id": "3e2a5a7d-c1b0-42b3-98d0-17cb6941f9d1",
         "name": "Extract Kerberos Tickets",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1558",
         "external": false,
         "description": "Extract kerberos ticket from memory",
@@ -2259,7 +2281,7 @@
     {
         "id": "9e7744a0-ed8a-4ebb-a832-4d5f8cd94170",
         "name": "Forged Certificates",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1588.004",
         "external": false,
         "description": "NoDescription",
@@ -2277,7 +2299,7 @@
     {
         "id": "2292b5f8-33d3-41de-bb90-17bf0b9679bd",
         "name": "Golden Ticket",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1558.001",
         "external": false,
         "description": "Extract kerberos ticket from memory",
@@ -2295,7 +2317,7 @@
     {
         "id": "9f70b922-eff9-4fdf-afd2-516d881f926a",
         "name": "Internal Phishing",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1566",
         "external": false,
         "description": "Internal phishing campagne",
@@ -2318,7 +2340,7 @@
     {
         "id": "2f75ecae-8b39-47ba-8a12-619404b8ea10",
         "name": "Keylogging",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1056.001",
         "external": false,
         "description": "Creating a fake credential prompt could lead to the recovery of plaintext credentials",
@@ -2332,7 +2354,7 @@
     {
         "id": "5f16f80a-3a0b-4987-868a-4ec7ef59f789",
         "name": "LSA Secrets",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1003.004",
         "external": false,
         "description": "NoDescription",
@@ -2346,7 +2368,7 @@
     {
         "id": "aa055bc4-2f48-437d-bca5-ec1f82985f19",
         "name": "LSASS dumping",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1003.001",
         "external": false,
         "description": "NoDescription",
@@ -2374,7 +2396,7 @@
     {
         "id": "00e83897-8668-4d5d-9888-8ff0d7c4acfe",
         "name": "Make Token",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2388,7 +2410,7 @@
     {
         "id": "87ca2738-4ac8-4533-8d43-c897da75f590",
         "name": "MITM",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T0830",
         "external": false,
         "description": "NoDescription",
@@ -2410,7 +2432,7 @@
     {
         "id": "8322df56-6eed-4862-b871-675bcbcdc8b5",
         "name": "NTDS",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1003.003",
         "external": false,
         "description": "NoDescription",
@@ -2424,7 +2446,7 @@
     {
         "id": "edd08324-6139-4706-bbe7-aa2857a10cd2",
         "name": "Overpass-the-Hash",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1550.002",
         "external": false,
         "description": "NoDescription",
@@ -2442,7 +2464,7 @@
     {
         "id": "4eaec5b9-9ee3-4108-8b71-61ec050fe6c8",
         "name": "Pass-the-Hash",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1550.002",
         "external": false,
         "description": "NoDescription",
@@ -2460,7 +2482,7 @@
     {
         "id": "a0aae509-b9d7-4313-a3d2-8d715a3ee1cc",
         "name": "Remote Registry",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1112",
         "external": false,
         "description": "NoDescription",
@@ -2478,7 +2500,7 @@
     {
         "id": "4dc1dc4d-e4d0-4458-b51e-874d080c0ac4",
         "name": "Security Account Manager",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1003.002",
         "external": false,
         "description": "NoDescription",
@@ -2498,7 +2520,7 @@
     {
         "id": "c423b306-a2e0-4e2a-ad08-ac83bd8f0c78",
         "name": "Silver Ticket",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1558.002",
         "external": false,
         "description": "Extract kerberos ticket from memory",
@@ -2516,7 +2538,7 @@
     {
         "id": "a5a297db-6273-4302-ba9d-dac57e30224e",
         "name": "SpawnAs",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2530,7 +2552,7 @@
     {
         "id": "094c790c-dd71-44f8-aeae-ac97d138abef",
         "name": "Steal Token",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1558",
         "external": false,
         "description": "NoDescription",
@@ -2544,7 +2566,7 @@
     {
         "id": "6bdbf381-10b4-4aec-944c-694b633b7711",
         "name": "Validate Credentials",
-        "phase": "08.Credentials & User Impersonation",
+        "phase": "08. Credentials & User Impersonation",
         "ttp": "T1078",
         "external": false,
         "description": "Validate Credentials",
@@ -2562,7 +2584,7 @@
     {
         "id": "0f8f858c-9417-4ae9-a47a-5139b129d2ee",
         "name": "Discretionary Access Control Lists (DACL)",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2580,7 +2602,7 @@
     {
         "id": "9ea8347c-cc06-47df-80c1-6a36c2bf8071",
         "name": "Group Policy (GPO)",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2604,7 +2626,7 @@
     {
         "id": "92ea815c-fcbf-48d1-8751-69fb0d9de1cf",
         "name": "WSUS",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "Identify if the Windows Update Service is running via the insecure protocol http",
@@ -2621,7 +2643,7 @@
     {
         "id": "63d62330-603b-4b4f-9db2-fb66c022b16f",
         "name": "Active Directory Certificate Service",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2635,7 +2657,7 @@
     {
         "id": "7cbd36e5-9a72-4725-b178-a6b89a1ce0d4",
         "name": "Misconfigured Certificate Templates",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2653,7 +2675,7 @@
     {
         "id": "bd1d373b-7444-468b-bc50-42cda4767d46",
         "name": "NTLM Relaying to ADCS",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2674,7 +2696,7 @@
     {
         "id": "25fc756b-f066-4049-a640-d8edc8389a85",
         "name": "User & Computer Persistence",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2692,7 +2714,7 @@
     {
         "id": "a710ffb5-b4c0-42c0-b382-2a6ec1617b74",
         "name": "One-Way (Inbound)",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2712,7 +2734,7 @@
     {
         "id": "263ba019-a0e0-4591-a36a-1a413372b742",
         "name": "One-Way (Outbound)",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2726,7 +2748,7 @@
     {
         "id": "173b106f-26bc-486f-bf47-5fe61df5db6d",
         "name": "Parent-Child",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2744,7 +2766,7 @@
     {
         "id": "181f1d39-4552-41c0-b5d3-ee9f670422ea",
         "name": "AS-REP Roasting",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1558.004",
         "external": false,
         "description": "NoDescription",
@@ -2766,7 +2788,7 @@
     {
         "id": "f9407c6e-dadb-4405-8565-b4111a0f2f34",
         "name": "Constrained Delegation",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2791,7 +2813,7 @@
     {
         "id": "a762e69a-6039-4b4c-a9c2-d7f7e9fca287",
         "name": "Kerberoasting",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1558.003",
         "external": false,
         "description": "NoDescription",
@@ -2813,7 +2835,7 @@
     {
         "id": "2f85eaf6-17a6-4f36-85ab-eb8fd0499fd1",
         "name": "Linux Credential Cache",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2827,7 +2849,7 @@
     {
         "id": "35bdc37e-81a4-4618-bcbb-ca785e8f91c8",
         "name": "Printer Bug",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2844,7 +2866,7 @@
     {
         "id": "5b0f70c8-a1b6-42db-b7da-6f034b2ba6a7",
         "name": "Resource Based Constrained Delegation (RBCD)",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2862,7 +2884,7 @@
     {
         "id": "d136c430-5fff-4bc7-805a-9ae66f5a1078",
         "name": "S4U2self Abuse",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2880,7 +2902,7 @@
     {
         "id": "c96fafcf-6b76-462a-829e-87d48ab46611",
         "name": "Unconstrained Delegation",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2904,7 +2926,7 @@
     {
         "id": "877abf27-ca85-434c-8e90-739356c8aaff",
         "name": "LAPS Backdoor",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2918,7 +2940,7 @@
     {
         "id": "d57dbcf9-32b8-4a55-910e-20dda01e1616",
         "name": "LAPS Persistence",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2932,7 +2954,7 @@
     {
         "id": "2a551522-a596-4694-acc4-4eef07127e67",
         "name": "Local Administrator Password Solution (LAPS)",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2952,7 +2974,7 @@
     {
         "id": "2a227f4e-cd88-4b51-a66c-8f863d84266e",
         "name": "MS SQL Servers",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2972,7 +2994,7 @@
     {
         "id": "e6614181-d170-4176-97e2-2444672d25c0",
         "name": "SQL Command Execution",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -2990,7 +3012,7 @@
     {
         "id": "73975cbe-92d1-439d-bee7-6d7d22109679",
         "name": "SQL Lateral Movement",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3008,7 +3030,7 @@
     {
         "id": "236428c7-ee37-4dd5-bea9-9a44ad665180",
         "name": "SQL NetNTLM Capture",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3028,7 +3050,7 @@
     {
         "id": "c94ea799-0a92-40e7-9642-0e4bb78dce49",
         "name": "SQL Privilege Escalation",
-        "phase": "09.AD Misconfigurations",
+        "phase": "09. AD Misconfigurations",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3047,7 +3069,7 @@
     {
         "id": "85b22029-a8df-4e26-a6c2-89813cccfb3a",
         "name": "AMSI",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3065,7 +3087,7 @@
     {
         "id": "19400de8-78eb-4982-b9b8-71b6d881f254",
         "name": "AppLocker",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3081,7 +3103,7 @@
     {
         "id": "805e23f2-3c53-4916-8d67-b8242435cf42",
         "name": "Bypassing Antivirus (AV)",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "TA0005",
         "external": false,
         "description": "NoDescription",
@@ -3095,7 +3117,7 @@
     {
         "id": "1cf73837-ecfa-4e7d-b73a-a690f195b196",
         "name": "Command Line Logging",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3109,7 +3131,7 @@
     {
         "id": "cafa8086-4901-44a0-b52e-5cc85c75be83",
         "name": "ETW",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3123,7 +3145,7 @@
     {
         "id": "74a7fc8a-c51c-4a52-8710-bfefc7641c7d",
         "name": "Obfuscation",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3143,7 +3165,7 @@
     {
         "id": "bf4060e9-d50b-455f-86a1-c502ba175b7a",
         "name": "PowerShell Constrained Language Mode",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
@@ -3157,7 +3179,7 @@
     {
         "id": "0180435c-e951-4e0a-aa02-38421e2e25dd",
         "name": "Signed drivers",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "T1000",
         "external": false,
         "description": "Using signed drivers to kill AV / EDR tools",
@@ -3175,7 +3197,7 @@
     {
         "id": "eb4e2529-ad89-4120-84e2-251718212c1b",
         "name": "Token Sandboxing",
-        "phase": "10.Bypassing Defenses",
+        "phase": "10. Bypassing Defenses",
         "ttp": "T1000",
         "external": false,
         "description": "Removes the privileges of the process token to isolate the process",

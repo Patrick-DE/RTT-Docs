@@ -36,6 +36,9 @@ for issue in issues:
         base = techniqueBase
         print("[+] Loading technique json for " + issue["title"])
 
+    else:
+        continue
+
     # Validation of JSON
     body = json.loads(issue["body"][1:-1])
     print("  [+] Validating json...")

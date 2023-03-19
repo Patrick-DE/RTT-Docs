@@ -2,7 +2,7 @@
     {
         "name": "Add-RemoteRegBackdoor",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -21,28 +21,15 @@
                 "description": "Implements a new remote registry backdoor that allows for the remote retrieval of a system's machine account hash.",
                 "cmd": "powershell Add-RemoteRegBackdoor -Trustee EDU\\john",
                 "tag": "GatherAccountHashBackdoor",
-                "requirements": [
-                    {
-                        "name": "Admin",
-                        "category": "Credentials",
-                        "exists": true
-                    }
-                ],
-                "results": [
-                    {
-                        "name": "MachineAccountHash",
-                        "category": "Credentials",
-                        "exists": true
-                    }
-                ]
+                "results": []
             }
         ]
     },
     {
         "name": "ADReaper",
         "phases": [
-            "06.Domain Enumeration",
-            "09.AD Misconfigurations"
+            "06. Domain Enumeration",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": true,
@@ -60,7 +47,7 @@
     {
         "name": "ADSearch",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "Enumeration",
         "stealthy": true,
@@ -77,7 +64,7 @@
     {
         "name": "aircrack-ng",
         "phases": [
-            "01.Initial Access"
+            "01. Initial Access"
         ],
         "category": "",
         "stealthy": false,
@@ -94,7 +81,7 @@
     {
         "name": "Amass",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -111,7 +98,7 @@
     {
         "name": "API Monitor",
         "phases": [
-            "04.Persistence"
+            "04. Persistence"
         ],
         "category": "",
         "stealthy": false,
@@ -128,7 +115,7 @@
     {
         "name": "ASN Editor",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -145,7 +132,7 @@
     {
         "name": "AzureC2Relay",
         "phases": [
-            "00.Infrastructure"
+            "00. Infrastructure"
         ],
         "category": "",
         "stealthy": false,
@@ -162,7 +149,7 @@
     {
         "name": "Backstab",
         "phases": [
-            "10.Bypassing Defenses"
+            "10. Bypassing Defenses"
         ],
         "category": "",
         "stealthy": false,
@@ -179,8 +166,8 @@
     {
         "name": "Bettercap",
         "phases": [
-            "02.Reconnaissance",
-            "08.Credentials & User Impersonation"
+            "02. Reconnaissance",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -197,8 +184,8 @@
     {
         "name": "BloodHound",
         "phases": [
-            "06.Domain Enumeration",
-            "09.AD Misconfigurations"
+            "06. Domain Enumeration",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -215,7 +202,7 @@
     {
         "name": "C2concealer",
         "phases": [
-            "00.Infrastructure"
+            "00. Infrastructure"
         ],
         "category": "",
         "stealthy": false,
@@ -232,7 +219,7 @@
     {
         "name": "Certify",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -249,7 +236,7 @@
     {
         "name": "Cewl",
         "phases": [
-            "01.Initial Access"
+            "01. Initial Access"
         ],
         "category": "",
         "stealthy": false,
@@ -266,8 +253,8 @@
     {
         "name": "Chameleon",
         "phases": [
-            "00.Infrastructure",
-            "06.Domain Enumeration"
+            "00. Infrastructure",
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -299,7 +286,7 @@
     {
         "name": "Collector",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -316,9 +303,9 @@
     {
         "name": "crackmapexec",
         "phases": [
-            "07.Lateral Movement",
-            "08.Credentials & User Impersonation",
-            "02.Reconnaissance"
+            "07. Lateral Movement",
+            "08. Credentials & User Impersonation",
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -335,7 +322,7 @@
     {
         "name": "cs2modrewrite",
         "phases": [
-            "00.Infrastructure"
+            "00. Infrastructure"
         ],
         "category": "",
         "stealthy": false,
@@ -352,7 +339,7 @@
     {
         "name": "cs2webconfig",
         "phases": [
-            "00.Infrastructure"
+            "00. Infrastructure"
         ],
         "category": "",
         "stealthy": false,
@@ -369,7 +356,7 @@
     {
         "name": "dnsrecon",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -386,7 +373,7 @@
     {
         "name": "Dumpert",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -405,7 +392,7 @@
     {
         "name": "enum4linux",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -422,8 +409,8 @@
     {
         "name": "Espoofer",
         "phases": [
-            "01.Initial Access",
-            "08.Credentials & User Impersonation"
+            "01. Initial Access",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -438,8 +425,8 @@
     {
         "name": "Ettercap",
         "phases": [
-            "02.Reconnaissance",
-            "08.Credentials & User Impersonation"
+            "02. Reconnaissance",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -456,7 +443,7 @@
     {
         "name": "EyeWitness",
         "phases": [
-            "02.Reconnaissance",
+            "02. Reconnaissance",
             "06.Domain Enumeration"
         ],
         "category": "",
@@ -475,7 +462,7 @@
     {
         "name": "FinalRecon",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -492,7 +479,7 @@
     {
         "name": "FOCA",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -509,8 +496,8 @@
     {
         "name": "ForgeCert",
         "phases": [
-            "02.Reconnaissance",
-            "08.Credentials & User Impersonation"
+            "02. Reconnaissance",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -527,7 +514,7 @@
     {
         "name": "FreeRDP",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -544,7 +531,7 @@
     {
         "name": "Get-BrowserData",
         "phases": [
-            "03.Host Enumeration"
+            "03. Host Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -561,8 +548,8 @@
     {
         "name": "GoWitness",
         "phases": [
-            "02.Reconnaissance",
-            "06.Domain Enumeration"
+            "02. Reconnaissance",
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": true,
@@ -579,7 +566,7 @@
     {
         "name": "GPRegistryPolicyParser",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -596,7 +583,7 @@
     {
         "name": "Handlekatz-BOF",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -619,7 +606,7 @@
     {
         "name": "Handlekatz",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -640,8 +627,8 @@
     {
         "name": "Hashcat",
         "phases": [
-            "02.Reconnaissance",
-            "08.Credentials & User Impersonation"
+            "02. Reconnaissance",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -658,7 +645,7 @@
     {
         "name": "HeidiSQL",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -675,8 +662,8 @@
     {
         "name": "InveighZero",
         "phases": [
-            "07.Lateral Movement",
-            "09.AD Misconfigurations"
+            "07. Lateral Movement",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -693,8 +680,8 @@
     {
         "name": "Invoke-DCOM",
         "phases": [
-            "01.Initial Access",
-            "07.Lateral Movement"
+            "01. Initial Access",
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -711,7 +698,7 @@
     {
         "name": "Invoke-Obfuscation",
         "phases": [
-            "10.Bypassing Defenses"
+            "10. Bypassing Defenses"
         ],
         "category": "",
         "stealthy": false,
@@ -728,8 +715,8 @@
     {
         "name": "John the Ripper",
         "phases": [
-            "02.Reconnaissance",
-            "08.Credentials & User Impersonation"
+            "02. Reconnaissance",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -746,7 +733,7 @@
     {
         "name": "Kill Defender",
         "phases": [
-            "10.Bypassing Defenses"
+            "10. Bypassing Defenses"
         ],
         "category": "",
         "stealthy": false,
@@ -763,9 +750,9 @@
     {
         "name": "ldapmodify",
         "phases": [
-            "05.Privilege Escalation",
-            "07.Lateral Movement",
-            "04.Persistence"
+            "05. Privilege Escalation",
+            "07. Lateral Movement",
+            "04. Persistence"
         ],
         "category": "",
         "stealthy": false,
@@ -783,8 +770,8 @@
     {
         "name": "ldapsearch",
         "phases": [
-            "02.Reconnaissance",
-            "08.Credentials & User Impersonation"
+            "02. Reconnaissance",
+            "08. Credentials & User Impersonation"
         ],
         "category": "Enumeration",
         "stealthy": true,
@@ -801,7 +788,7 @@
     {
         "name": "linedInt",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -818,7 +805,7 @@
     {
         "name": "LyncSniper",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -835,8 +822,8 @@
     {
         "name": "MailSniper",
         "phases": [
-            "01.Initial Access",
-            "08.Credentials & User Impersonation"
+            "01. Initial Access",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -853,7 +840,7 @@
     {
         "name": "MANSPIDER",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -870,7 +857,7 @@
     {
         "name": "MASSCAN",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -889,7 +876,7 @@
     {
         "name": "Metagoofil",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -906,7 +893,7 @@
     {
         "name": "MFAsweep",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -923,11 +910,11 @@
     {
         "name": "Mimikatz",
         "phases": [
-            "02.Reconnaissance",
-            "04.Persistence",
-            "06.Domain Enumeration",
-            "08.Credentials & User Impersonation",
-            "09.AD Misconfigurations"
+            "02. Reconnaissance",
+            "04. Persistence",
+            "06. Domain Enumeration",
+            "08. Credentials & User Impersonation",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -944,7 +931,7 @@
     {
         "name": "MiniDump",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -961,7 +948,7 @@
     {
         "name": "mip22",
         "phases": [
-            "01.Initial Access"
+            "01. Initial Access"
         ],
         "category": "",
         "stealthy": false,
@@ -978,9 +965,9 @@
     {
         "name": "mmc",
         "phases": [
-            "02.Reconnaissance",
-            "03.Host Enumeration",
-            "04.Persistence"
+            "02. Reconnaissance",
+            "03. Host Enumeration",
+            "04. Persistence"
         ],
         "category": "",
         "stealthy": false,
@@ -997,7 +984,7 @@
     {
         "name": "mssqlclient",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1014,8 +1001,8 @@
     {
         "name": "MultiRelay",
         "phases": [
-            "07.Lateral Movement",
-            "09.AD Misconfigurations"
+            "07. Lateral Movement",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1032,7 +1019,7 @@
     {
         "name": "nbtscan",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1049,7 +1036,7 @@
     {
         "name": "Ncrack",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -1066,8 +1053,8 @@
     {
         "name": "Net",
         "phases": [
-            "03.Host Enumeration",
-            "06.Domain Enumeration"
+            "03. Host Enumeration",
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -1084,7 +1071,7 @@
     {
         "name": "netcat",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": true,
@@ -1101,7 +1088,7 @@
     {
         "name": "netsh",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": true,
@@ -1118,7 +1105,7 @@
     {
         "name": "NexPhisher",
         "phases": [
-            "01.Initial Access"
+            "01. Initial Access"
         ],
         "category": "",
         "stealthy": false,
@@ -1135,7 +1122,7 @@
     {
         "name": "Nimcrypt2",
         "phases": [
-            "10.Bypassing Defenses"
+            "10. Bypassing Defenses"
         ],
         "category": "",
         "stealthy": false,
@@ -1152,9 +1139,9 @@
     {
         "name": "NMAP",
         "phases": [
-            "02.Reconnaissance",
-            "06.Domain Enumeration",
-            "07.Lateral Movement"
+            "02. Reconnaissance",
+            "06. Domain Enumeration",
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1172,7 +1159,7 @@
     {
         "name": "nmcli",
         "phases": [
-            "06.Domain Enumeration"
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -1189,8 +1176,8 @@
     {
         "name": "Nslookup",
         "phases": [
-            "02.Reconnaissance",
-            "06.Domain Enumeration"
+            "02. Reconnaissance",
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -1207,7 +1194,7 @@
     {
         "name": "ntlmrelayx",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1224,7 +1211,7 @@
     {
         "name": "physmem2profit",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -1241,7 +1228,7 @@
     {
         "name": "PortBender",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1258,7 +1245,7 @@
     {
         "name": "Powermad",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1275,11 +1262,11 @@
     {
         "name": "PowerShell",
         "phases": [
-            "01.Initial Access",
-            "03.Host Enumeration",
-            "04.Persistence",
-            "05.Privilege Escalation",
-            "07.Lateral Movement"
+            "01. Initial Access",
+            "03. Host Enumeration",
+            "04. Persistence",
+            "05. Privilege Escalation",
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1296,8 +1283,8 @@
     {
         "name": "PowerUp",
         "phases": [
-            "05.Privilege Escalation",
-            "09.AD Misconfigurations"
+            "05. Privilege Escalation",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1314,8 +1301,8 @@
     {
         "name": "PowerUpSQL",
         "phases": [
-            "02.Reconnaissance",
-            "09.AD Misconfigurations"
+            "02. Reconnaissance",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1332,11 +1319,11 @@
     {
         "name": "PowerView",
         "phases": [
-            "02.Reconnaissance",
-            "03.Host Enumeration",
-            "05.Privilege Escalation",
-            "06.Domain Enumeration",
-            "09.AD Misconfigurations"
+            "02. Reconnaissance",
+            "03. Host Enumeration",
+            "05. Privilege Escalation",
+            "06. Domain Enumeration",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1353,8 +1340,8 @@
     {
         "name": "PrintSpooler",
         "phases": [
-            "07.Lateral Movement",
-            "09.AD Misconfigurations"
+            "07. Lateral Movement",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1371,8 +1358,8 @@
     {
         "name": "Process Hacker",
         "phases": [
-            "01.Initial Access",
-            "04.Persistence"
+            "01. Initial Access",
+            "04. Persistence"
         ],
         "category": "",
         "stealthy": false,
@@ -1389,8 +1376,8 @@
     {
         "name": "Process Monitor",
         "phases": [
-            "01.Initial Access",
-            "04.Persistence"
+            "01. Initial Access",
+            "04. Persistence"
         ],
         "category": "",
         "stealthy": false,
@@ -1408,7 +1395,7 @@
     {
         "name": "Prowl",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1425,7 +1412,7 @@
     {
         "name": "Proxifier",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1442,7 +1429,7 @@
     {
         "name": "Proxychains",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1459,7 +1446,7 @@
     {
         "name": "Raven",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1476,7 +1463,7 @@
     {
         "name": "RDPThief",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1493,7 +1480,7 @@
     {
         "name": "recon-ng",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1510,7 +1497,7 @@
     {
         "name": "reg",
         "phases": [
-            "03.Host Enumeration"
+            "03. Host Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -1527,7 +1514,7 @@
     {
         "name": "Remote Server Administration Tools (RSAT)",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1544,7 +1531,7 @@
     {
         "name": "Responder",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1561,7 +1548,7 @@
     {
         "name": "rpcclient",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1578,9 +1565,9 @@
     {
         "name": "Rubeus",
         "phases": [
-            "08.Credentials & User Impersonation",
-            "09.AD Misconfigurations",
-            "10.Bypassing Defenses"
+            "08. Credentials & User Impersonation",
+            "09. AD Misconfigurations",
+            "10. Bypassing Defenses"
         ],
         "category": "",
         "stealthy": false,
@@ -1597,9 +1584,9 @@
     {
         "name": "ruler",
         "phases": [
-            "01.Initial Access",
-            "02.Reconnaissance",
-            "08.Credentials & User Impersonation"
+            "01. Initial Access",
+            "02. Reconnaissance",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -1618,7 +1605,7 @@
     {
         "name": "Sandman",
         "phases": [
-            "01.Initial Access"
+            "01. Initial Access"
         ],
         "category": "",
         "stealthy": true,
@@ -1635,7 +1622,7 @@
     {
         "name": "sc",
         "phases": [
-            "03.Host Enumeration"
+            "03. Host Enumeration"
         ],
         "category": "",
         "stealthy": true,
@@ -1652,9 +1639,9 @@
     {
         "name": "Seatbelt",
         "phases": [
-            "03.Host Enumeration",
-            "09.AD Misconfigurations",
-            "10.Bypassing Defenses"
+            "03. Host Enumeration",
+            "09. AD Misconfigurations",
+            "10. Bypassing Defenses"
         ],
         "category": "",
         "stealthy": false,
@@ -1671,7 +1658,7 @@
     {
         "name": "Secretsdump",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -1688,7 +1675,7 @@
     {
         "name": "SessionGopher",
         "phases": [
-            "03.Host Enumeration"
+            "03. Host Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -1705,7 +1692,7 @@
     {
         "name": "SharpChromium",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -1722,7 +1709,7 @@
     {
         "name": "SharpDPAPI",
         "phases": [
-            "08.Credentials & User Impersonation"
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -1739,8 +1726,8 @@
     {
         "name": "SharPersist",
         "phases": [
-            "03.Host Enumeration",
-            "04.Persistence"
+            "03. Host Enumeration",
+            "04. Persistence"
         ],
         "category": "",
         "stealthy": false,
@@ -1757,7 +1744,7 @@
     {
         "name": "SharpGPOAbuse",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1772,8 +1759,8 @@
     {
         "name": "SharpHound",
         "phases": [
-            "06.Domain Enumeration",
-            "09.AD Misconfigurations"
+            "06. Domain Enumeration",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1790,8 +1777,8 @@
     {
         "name": "SharpSystemTriggers",
         "phases": [
-            "07.Lateral Movement",
-            "09.AD Misconfigurations"
+            "07. Lateral Movement",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1808,7 +1795,7 @@
     {
         "name": "SharpView",
         "phases": [
-            "06.Domain Enumeration"
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -1825,7 +1812,7 @@
     {
         "name": "smbclient",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1842,7 +1829,7 @@
     {
         "name": "smbmap",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1859,7 +1846,7 @@
     {
         "name": "smbrelayx",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -1876,7 +1863,7 @@
     {
         "name": "smbserver",
         "phases": [
-            "09.AD Misconfigurations"
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1893,7 +1880,7 @@
     {
         "name": "snmpwalk",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1911,7 +1898,7 @@
     {
         "name": "socat",
         "phases": [
-            "00.Infrastructure"
+            "00. Infrastructure"
         ],
         "category": "",
         "stealthy": false,
@@ -1929,7 +1916,7 @@
     {
         "name": "Spiderfoot",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "category": "",
         "stealthy": false,
@@ -1946,8 +1933,8 @@
     {
         "name": "spoofcheck",
         "phases": [
-            "01.Initial Access",
-            "08.Credentials & User Impersonation"
+            "01. Initial Access",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -1962,8 +1949,8 @@
     {
         "name": "SpoolSample",
         "phases": [
-            "05.Privilege Escalation",
-            "09.AD Misconfigurations"
+            "05. Privilege Escalation",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -1980,7 +1967,7 @@
     {
         "name": "SprayingToolkit",
         "phases": [
-            "01.Initial Access"
+            "01. Initial Access"
         ],
         "category": "",
         "stealthy": false,
@@ -1997,7 +1984,7 @@
     {
         "name": "ssh",
         "phases": [
-            "00.Infrastructure"
+            "00. Infrastructure"
         ],
         "category": "",
         "stealthy": false,
@@ -2015,8 +2002,8 @@
     {
         "name": "sslstrip",
         "phases": [
-            "02.Reconnaissance",
-            "08.Credentials & User Impersonation"
+            "02. Reconnaissance",
+            "08. Credentials & User Impersonation"
         ],
         "category": "",
         "stealthy": false,
@@ -2033,8 +2020,8 @@
     {
         "name": "sublist3r",
         "phases": [
-            "02.Reconnaissance",
-            "06.Domain Enumeration"
+            "02. Reconnaissance",
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -2051,8 +2038,8 @@
     {
         "name": "SweetPotato",
         "phases": [
-            "05.Privilege Escalation",
-            "09.AD Misconfigurations"
+            "05. Privilege Escalation",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -2069,8 +2056,8 @@
     {
         "name": "theHarvester",
         "phases": [
-            "02.Reconnaissance",
-            "06.Domain Enumeration"
+            "02. Reconnaissance",
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -2087,7 +2074,7 @@
     {
         "name": "ThreadCheck",
         "phases": [
-            "10.Bypassing Defenses"
+            "10. Bypassing Defenses"
         ],
         "category": "",
         "stealthy": false,
@@ -2134,7 +2121,7 @@
     {
         "name": "VBad",
         "phases": [
-            "01.Initial Access"
+            "01. Initial Access"
         ],
         "category": "",
         "stealthy": false,
@@ -2152,9 +2139,9 @@
     {
         "name": "wmic",
         "phases": [
-            "03.Host Enumeration",
-            "05.Privilege Escalation",
-            "06.Domain Enumeration"
+            "03. Host Enumeration",
+            "05. Privilege Escalation",
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": true,
@@ -2171,7 +2158,7 @@
     {
         "name": "WMIexec",
         "phases": [
-            "07.Lateral Movement"
+            "07. Lateral Movement"
         ],
         "category": "",
         "stealthy": false,
@@ -2188,8 +2175,8 @@
     {
         "name": "WSuspicious",
         "phases": [
-            "03.Host Enumeration",
-            "09.AD Misconfigurations"
+            "03. Host Enumeration",
+            "09. AD Misconfigurations"
         ],
         "category": "",
         "stealthy": false,
@@ -2206,11 +2193,12 @@
     {
         "name": "qwinsta/quser",
         "phases": [
-            "03.Host Enumeration"
+            "03. Host Enumeration"
         ],
         "requirements": [],
         "results": [],
         "category": "",
+        "stealthy": false,
         "opsec": false,
         "oss": [
             "Windows"
@@ -2218,16 +2206,19 @@
         "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/qwinsta",
         "description": "Available on Windows servers; requires local admin on target machines.\n\nList logged in users\nqwinsta/quser /server:myremote.server",
         "undetected": [],
-        "detected": []
+        "detected": [],
+        "content": "",
+        "commands": []
     },
     {
         "name": "dig",
         "phases": [
-            "02.Reconnaissance"
+            "02. Reconnaissance"
         ],
         "requirements": [],
         "results": [],
         "category": "",
+        "stealthy": false,
         "opsec": false,
         "oss": [
             "Linux"
@@ -2235,6 +2226,53 @@
         "source": "https://linux.die.net/man/1/dig",
         "description": "DNS lookup utility\n\ndig @nameserver name recordtype\n\ne.g.\n\ndig @1.1.1.1 myevildoma.in A\n\nVia SOCKS proxy:\nUse +tcp and +vc options to perform DNS requests via TCP.\n",
         "undetected": [],
-        "detected": []
+        "detected": [],
+        "content": "",
+        "commands": []
+    },
+    {
+        "name": "SauronEye",
+        "phases": [
+            "03. Host Enumeration",
+            "06. Domain Enumeration",
+            "02. Reconnaissance"
+        ],
+        "category": "",
+        "stealthy": false,
+        "oss": [
+            "Windows"
+        ],
+        "source": "https://github.com/vivami/SauronEye",
+        "description": "Search tool to find specific files containing specific words, i.e. files containing passwords..",
+        "undetected": [
+            "Windows Defender (AV)",
+            "MDE"
+        ],
+        "detected": [],
+        "commands": [
+            {
+                "id": "79bf0a10-5f2b-4194-b826-f79599092a9c",
+                "name": "Find passwords in files",
+                "description": "Find passwords in files",
+                "tag": "",
+                "results": [
+                    "CRED:PASS",
+                    "CRED:USERNAME"
+                ],
+                "cmd": "SauronEye.exe -d C:\\ --filetypes .txt .ps1 .vba .conf .ini --contents --keywords password pass* -v"
+            },
+            {
+                "id": "157a585d-9c1e-46ac-a530-e5dc70f4e7ab",
+                "name": "Find filesnames containing keywords",
+                "description": "Find filesnames containing keywords",
+                "tag": "",
+                "results": [
+                    "CRED:PASS",
+                    "CRED:USERNAME"
+                ],
+                "cmd": "SauronEye.exe -d C:\\ --filetypes .txt .ps1 .vba .conf .ini --keywords password pass* -v"
+            }
+        ],
+        "content": ""
     }
 ]

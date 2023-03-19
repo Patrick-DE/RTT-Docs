@@ -73,85 +73,40 @@ TechniqueSchema = {
             "title": "Technique",
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "format": "uuid"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "phase": {
-                    "type": "string"
-                },
-                "ttp": {
-                    "type": "string"
-                },
-                "external": {
-                    "type": "boolean"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "content": {
-                    "type": "string"
-                },
-                "category": {
-                    "type": "string"
-                },
-                "stealthy": {
-                    "type": "boolean"
-                },
+                "id": {"type": "string","format": "uuid"},
+                "name": {"type": "string"},
+                "phase": {"type": "string"},
+                "ttp": {"type": "string"},
+                "external": {"type": "boolean"},
+                "description": {"type": "string"},
+                "content": {"type": "string"},
+                "category": {"type": "string"},
+                "stealthy": {"type": "boolean"},
                 "changes": {
                     "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "items": {"type": "string"}
                 },
                 "tools": {
                     "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "items": {"type": "string"}
                 },
                 "steps": {
                     "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Step"
-                    }
+                    "items": {"$ref": "#/definitions/Step"}
                 }
             },
-            "required": [
-                "id",
-                "name",
-                "phase",
-                "ttp",
-                "description",
-            ],
+            "required": ["id","name","phase","ttp","description",],
         },
         "Step": {
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string",
-                    "format": "uuid"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "requirements": {
-                    "type": "string"
-                },
-                "results": {
-                    "type": "string"
-                }
+                "id": {"type": "string","format": "uuid"},
+                "name": {"type": "string"},
+                "description": {"type": "string"},
+                "requirements": {"type": "string"},
+                "results": {"type": "string"}
             },
-            "required": [
-                "id",
-                "name",
-            ],
+            "required": ["id","name",],
         }
     }
 }

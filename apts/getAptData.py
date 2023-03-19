@@ -66,7 +66,7 @@ for g in groups:
 
 
 with open("apts.json", "w") as f:
-  json.dump([apt.__dict__ for apt in apt_list], f)
+  json.dump([apt.__dict__ for apt in apt_list], f, indent=2)
 
 with open("apts_min.json", "w") as f:
-  json.dump([apt.__dict__ for apt in apt_list_min], f)
+  json.dump([apt.__dict__ for apt in apt_list_min], f, indent=2)
