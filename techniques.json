@@ -762,40 +762,40 @@
         ],
         "steps": [
             {
-              "id": "ebdbadf0-e284-4e4b-8a66-59f3847f231e",
-              "name": "Find files containing credentials",
-              "description": "",
-              "requirements": {
-                "and": [
-                  {
-                    "or": [
-                      {
-                        "tag": "CRED:TICKET"
-                      },
-                      {
-                        "and": [
-                          {
-                            "tag": "CRED:USERNAME:NAME"
-                          },
-                          {
-                            "tag": "CRED:PASS:PLAIN"
-                          },
-                          {
-                            "tag": "AUTHN:DOMAIN"
-                          }
-                        ]
-                      }
+                "id": "ebdbadf0-e284-4e4b-8a66-59f3847f231e",
+                "name": "Find files containing credentials",
+                "description": "",
+                "requirements": {
+                    "and": [
+                        {
+                            "or": [
+                                {
+                                    "tag": "CRED:TICKET"
+                                },
+                                {
+                                    "and": [
+                                        {
+                                            "tag": "CRED:USERNAME:NAME"
+                                        },
+                                        {
+                                            "tag": "CRED:PASS:PLAIN"
+                                        },
+                                        {
+                                            "tag": "AUTHN:DOMAIN"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "tag": "SERVICE:LDAP"
+                        }
                     ]
-                  },
-                  {
-                    "tag": "SERVICE:LDAP"
-                  }
+                },
+                "results": [
+                    "CRED:PASS",
+                    "CRED:USERNAME"
                 ]
-              },
-              "results": [
-                "CRED:PASS",
-                "CRED:USERNAME"
-              ]
             }
         ]
     },
@@ -3211,5 +3211,68 @@
             "Kill Defender"
         ],
         "steps": []
+    },
+    {
+        "id": "385824c8-406e-47c8-a45c-8c5136415294",
+        "phase": "08. Credentials & User Impersonation",
+        "ttp": "T1558",
+        "external": false,
+        "description": "Diamond PACs are attackers\u2019 crafted PAC, signed with a stolen KRBTGT key. The Diamond PAC can be\nused by attackers to assign high privileges to a user\u2019s access request, regardless of the user\u2019s original\npermissions.\nIn contrast to the Golden Ticket attack, which also uses a stolen KRBTGT key and can be used to provide\nhigh privileges to the attacker, the Diamond PAC attack does not craft a full Kerberos ticket, but uses the\nstandard Kerberos flow (in the same manner of the MS14-068 exploit) to inject the crafted Diamond\nPAC.\nBy doing so, the Diamond PAC attack represents a more subtle version of the Golden Ticket attack and\nthus harder to detect. Detection rules designed to catch Golden Ticket attack based on the Kerberos\ntraffic anomaly it creates of a user sending a valid TGS with no prior AS requests to obtain a TGT will not\nalert on the Diamond PAC attack",
+        "category": "",
+        "stealthy": false,
+        "tools": [],
+        "changes": [],
+        "name": "Diamond Ticket",
+        "content": "",
+        "steps": [
+            {
+                "id": "aee6a7d0-a9f3-476d-8965-baa349b6c78d",
+                "name": "Get the KRBTGT",
+                "description": "",
+                "requirements": {},
+                "results": [
+                    "CRED:HASH:KRBTGT"
+                ]
+            },
+            {
+                "id": "fcc5d1d5-1d28-4993-90c6-65e083f75ef1",
+                "name": "Get the TGTs authentication time",
+                "description": "",
+                "requirements": {},
+                "results": [
+                    "CRED:TICKET:TGT"
+                ]
+            },
+            {
+                "id": "90ec2fb0-6626-4ff8-9e65-de3ceb4f5db8",
+                "name": "Get the SID of current domain",
+                "description": "",
+                "requirements": {},
+                "results": [
+                    "INTEL:DOMAIN:SID"
+                ]
+            },
+            {
+                "id": "37bd25df-c486-44ed-b6a1-cc8928e598ed",
+                "name": "Generate diamond ticket",
+                "description": "",
+                "requirements": {
+                    "and": [
+                        {
+                            "tag": "CRED:HASH:KRBTGT"
+                        },
+                        {
+                            "tag": "CRED:TICKET:TGT"
+                        },
+                        {
+                            "tag": "INTEL:DOMAIN:SID"
+                        }
+                    ]
+                },
+                "results": [
+                    "CRED:TICKET:TGT:DIAMOND"
+                ]
+            }
+        ]
     }
 ]

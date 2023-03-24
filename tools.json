@@ -2274,5 +2274,72 @@
             }
         ],
         "content": ""
+    },
+    {
+        "name": "ADExplorer",
+        "phases": [
+            "06. Domain Enumeration"
+        ],
+        "category": "",
+        "stealthy": false,
+        "oss": [
+            "Windows"
+        ],
+        "source": "https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer",
+        "description": "Active Directory Explorer (AD Explorer) is an advanced Active Directory (AD) viewer and editor. You can use AD Explorer to easily navigate an AD database, define favorite locations, view object properties and attributes without having to open dialog boxes, edit permissions, view an object's schema, and execute sophisticated searches that you can save and re-execute.",
+        "undetected": [
+            "Windows Defender (AV)",
+            "MDE",
+            "Symantec"
+        ],
+        "detected": [],
+        "commands": [
+            {
+                "id": "5c9c5c1b-543f-4a9e-84d3-dd7b75089cb2",
+                "name": "Snapshot of full domain ",
+                "description": "Snapshot of full domain, between the \" \" you can specify a target domain",
+                "tag": "",
+                "results": [],
+                "cmd": "ADExplorer.exe -snapshot \"\" outfile.dat"
+            },
+            {
+                "id": "2054d057-9098-4d0c-86c6-97b6fa0d6fb3",
+                "name": "Snapshot of full domain from external SMB share",
+                "description": "Snapshot of full domain from external SMB share, between the \" \" you can specify a target domain",
+                "tag": "",
+                "results": [],
+                "cmd": "\\\\live.sysinternals.com\\Tools\\ADExplorer.exe -snapshot \"\" <domain_snapshot.dat>\n"
+            }
+        ],
+        "content": ""
+    },
+    {
+        "name": "PsSuspend",
+        "phases": [
+            "10. Bypassing Defenses"
+        ],
+        "category": "",
+        "stealthy": false,
+        "oss": [
+            "Windows"
+        ],
+        "source": "https://learn.microsoft.com/en-us/sysinternals/downloads/pssuspend",
+        "description": "PsSuspend lets you suspend processes on the local or a remote system, which is desirable in cases where a process is consuming a resource (e.g. network, CPU or disk) that you want to allow different processes to use. Rather than kill the process that's consuming the resource, suspending permits you to let it continue operation at some later point in time.",
+        "undetected": [
+            "MDE",
+            "Windows Defender (AV)"
+        ],
+        "detected": [],
+        "commands": [
+            {
+                "id": "92efd3ca-227b-4f76-927a-e3a6d0cdd04b",
+                "name": "Suspend process",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "pssuspend.exe msmpeng.exe"
+            }
+        ],
+        "content": ""
     }
 ]

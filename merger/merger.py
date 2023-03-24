@@ -10,6 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 GITHUB_API_KEY = os.getenv('GITHUB_API_KEY')
 
+merged_issues = []
+
 headers = {"Accept": "application/vnd.github+json", "Authorization": "Bearer "+GITHUB_API_KEY, "X-GitHub-Api-Version": "2022-11-28"}
 r = requests.get('https://api.github.com/repos/Patrick-DE/RTT-Docs/issues', headers=headers)
 issues = r.json()
@@ -26,6 +28,9 @@ with open('techniques.json', 'r') as f:
     techniqueBase = json.load(f)
 
 for issue in issues:
+    if not any(label["name"] == 'reviewed' for label in issue["labels"]) and issue['author_association'] != 'OWNER':
+        continue
+
     if "New tool:" in issue["title"]:
         typ = ToolSchema
         base = toolBase
@@ -34,13 +39,13 @@ for issue in issues:
     elif "New technique:" in issue["title"]:
         typ = TechniqueSchema
         base = techniqueBase
-        print("[+] Loading technique json for " + issue["title"])
+        print("[+] Loading technique json for \"" + issue["title"] + "\"")
 
     else:
         continue
 
     # Validation of JSON
-    body = json.loads(issue["body"][1:-1])
+    body = json.loads(issue["body"][3:-3])
     print("  [+] Validating json...")
     try:
         validate(body, schema=typ)
@@ -72,3 +77,9 @@ for issue in issues:
 
     f.write(json.dumps(base, indent=4))
     f.close
+
+    merged_issues.append(issue)
+
+print ("Commit message:")
+for iss in merged_issues:
+    print ("close #" + str(iss["number"]),end=', ')
