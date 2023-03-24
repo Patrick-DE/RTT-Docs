@@ -2341,5 +2341,32 @@
             }
         ],
         "content": ""
+    },
+    {
+        "name": "donut",
+        "phases": [
+            "10. Bypassing Defenses"
+        ],
+        "category": "",
+        "stealthy": false,
+        "oss": [
+            "Windows",
+            "Linux"
+        ],
+        "source": "https://github.com/TheWover/donut",
+        "description": "Generates x86, x64, or AMD64+x86 position-independent shellcode that loads .NET Assemblies, PE files, and other Windows payloads from memory and runs them with parameters",
+        "undetected": [],
+        "detected": [],
+        "commands": [
+            {
+                "id": "ab7ad162-8447-47b9-94ea-2f4d7273afef",
+                "name": "Create shellcode of .NET assembly",
+                "description": "Create shellcode of .NET assembly",
+                "tag": "",
+                "results": [],
+                "cmd": "donut.exe -i MyAssembly.exe -c MyAssembly.Program"
+            }
+        ],
+        "content": ""
     }
 ]
