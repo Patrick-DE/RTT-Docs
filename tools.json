@@ -144,7 +144,16 @@
         "undetected": [],
         "detected": [],
         "content": "\n## [[00.Infrastructure/Redirector]]\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "7ea9d673-38f7-4dcf-9edb-ce11f6ec69b2",
+                "name": "Deploy Azure function",
+                "description": "Spawn an redirector via Azure functions",
+                "tag": "",
+                "results": [],
+                "cmd": "&([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://dot.net/v1/dotnet-install.ps1'))) -runtime dotnet -version 3.1.0\nInvoke-WebRequest 'https://releases.hashicorp.com/terraform/0.14.6/terraform_0.14.6_windows_amd64.zip'  -OutFile 'terraform.zip'\nExpand-Archive -Path terraform.zip -DestinationPath \"$([Environment]::GetFolderPath('ApplicationData'))\\TerraForm\\\"\nsetx PATH \"%PATH%;$([Environment]::GetFolderPath('ApplicationData'))\\TerraForm\\\"\nInvoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\\AzureCLI.msi"
+            }
+        ]
     },
     {
         "name": "Backstab",
@@ -214,7 +223,24 @@
         "undetected": [],
         "detected": [],
         "content": "\n\n## [[Cobalt Strike]]\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "8e0dc6a7-a1fc-4a1e-ac0f-0dfe239cd961",
+                "name": "Install",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "chmod u+x install.sh\n./install.sh"
+            },
+            {
+                "id": "faac6737-b5fa-419c-b71a-2be384f8743f",
+                "name": "Generate malleable profile",
+                "description": "Generate malleable profile with 3 HTTP client/server variants",
+                "tag": "",
+                "results": [],
+                "cmd": "C2concealer --hostname google.com --variant 3"
+            }
+        ]
     },
     {
         "name": "Certify",
@@ -265,8 +291,25 @@
         "description": "A tool for domain categorisation",
         "undetected": [],
         "detected": [],
-        "content": "\n## [[Categorize Domain]]\n\n\u26a0\ufe0f When attempting to categorise a site in Bluecoat, do not check the category first otherwise it will end up uncategorised! Individual hosts can however be categorised differently.\n\n```\nusage: chameleon.py [-h] [--proxy <proxy>] [--check] [--submit]\n                    [--domain <domain>]\n\noptional arguments:\n  -h, --help         show this help message and exit\n  --proxy <proxy>    Proxy type: a = all, b = bluecoat, m = mcafee, i = IBM\n                     Xforce\n  --check            Perform check on current category\n  --submit           Submit new category\n  --domain <domain>  Domain to validate\n```\n\n\n",
-        "commands": []
+        "content": "\n## [[Categorize Domain]]\n\n\u26a0\ufe0f When attempting to categorise a site in Bluecoat, do not check the category first otherwise it will end up uncategorised! Individual hosts can however be categorised differently.\n\n'''\nusage: chameleon.py [-h] [--proxy <proxy>] [--check] [--submit]\n                    [--domain <domain>]\n\noptional arguments:\n  -h, --help         show this help message and exit\n  --proxy <proxy>    Proxy type: a = all, b = bluecoat, m = mcafee, i = IBM\n                     Xforce\n  --check            Perform check on current category\n  --submit           Submit new category\n  --domain <domain>  Domain to validate\n'''\n\n\n",
+        "commands": [
+            {
+                "id": "3a3033f5-5477-4e80-b39c-242e4c529e4b",
+                "name": "Check categorization",
+                "description": "Check categorization for Bluecoat, McAfee Trustedsource and IBM X-Force",
+                "tag": "",
+                "results": [],
+                "cmd": "python chameleon.py --proxy a --check --domain google.com"
+            },
+            {
+                "id": "db1ceb93-65c0-4b1e-80d3-c0ae724e4914",
+                "name": "Submit categorization",
+                "description": "Submit categorization to Bluecoat, McAfee Trustedsource and IBM X-Force",
+                "tag": "",
+                "results": [],
+                "cmd": "python chameleon.py --proxy a --submit --domain google.com"
+            }
+        ]
     },
     {
         "name": "CoffeeLdr",
@@ -1906,12 +1949,21 @@
             "Linux",
             "Windows"
         ],
-        "source": "http//www.dest-unreach.org/socat/",
-        "description": "",
+        "source": "http://www.dest-unreach.org/socat/",
+        "description": "socat is a relay for bidirectional data transfer between two independent data channels. Each of these data channels may be a file, pipe, device (serial line etc. or a pseudo terminal), a socket (UNIX, IP4, IP6 - raw, UDP, TCP), an SSL socket, proxy CONNECT connection, a file descriptor (stdin etc.), the GNU line editor (readline), a program, or a combination of two of these. \nThese modes include generation of \"listening\" sockets, named pipes, and pseudo terminals.",
         "undetected": [],
         "detected": [],
-        "content": "## Redirect TCP traffic\n```\nsocat TCP4-LISTEN:80,fork TCP4:<REMOTE>:80\n```\n\n\n",
-        "commands": []
+        "content": "## Redirect TCP traffic\n'''\nsocat TCP4-LISTEN:80,fork TCP4:<REMOTE>:80\n'''\n\n\n",
+        "commands": [
+            {
+                "id": "2eb8949c-105e-424b-aa63-e93072a9d653",
+                "name": "Forward TCP4 traffic",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "socat TCP4-LISTEN:80,fork TCP4:<REMOTE>:80"
+            }
+        ]
     },
     {
         "name": "Spiderfoot",
@@ -1992,12 +2044,21 @@
             "Linux",
             "Windows"
         ],
-        "source": "",
-        "description": "",
+        "source": "n/a",
+        "description": "SSH or Secure Shell is a network communication protocol that enables two computers to communicate (c.f http or hypertext transfer protocol, which is the protocol used to transfer hypertext such as web pages) and share data.",
         "undetected": [],
         "detected": [],
-        "content": "# SSH\n\n## Pivoting\n\n### Portforwarding\nConnect to root@remote with the certificate foo.pem\nRedirect local port 80 on the target to attacker machine 81\n-f: will background the SSH connection\n-N do not execute a command\n```\nssh -i foo.pem root@<REMOTE> -R 81:localhost:80 -f -N\n```\n\n",
-        "commands": []
+        "content": "# SSH\n\n## Pivoting\n\n### Portforwarding\nConnect to root@remote with the certificate foo.pem\nRedirect local port 80 on the target to attacker machine 81\n-f: will background the SSH connection\n-N do not execute a command\n'''\nssh -i foo.pem root@<REMOTE> -R 81:localhost:80 -f -N\n'''\n\n",
+        "commands": [
+            {
+                "id": "dcf7b938-00ef-4494-a659-876b100e9b25",
+                "name": "Portforwarding",
+                "description": "Redirect local port 80 on the target to attacker machine 81\n-f: will background the SSH connection\n-N do not execute a command",
+                "tag": "",
+                "results": [],
+                "cmd": "ssh -i foo.pem root@<REMOTE> -R 81:localhost:80 -f -N"
+            }
+        ]
     },
     {
         "name": "sslstrip",

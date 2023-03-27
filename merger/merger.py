@@ -15,7 +15,7 @@ merged_issues = []
 headers = {"Accept": "application/vnd.github+json", "Authorization": "Bearer "+GITHUB_API_KEY, "X-GitHub-Api-Version": "2022-11-28"}
 r = requests.get('https://api.github.com/repos/Patrick-DE/RTT-Docs/issues', headers=headers)
 issues = r.json()
-if hasattr(issues, "message"):
+if "message" in issues:
     print("[-] Error: " + issues["message"])
     sys.exit(-1)
 
