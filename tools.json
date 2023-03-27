@@ -37,7 +37,7 @@
             "Windows",
             "Linux"
         ],
-        "source": "https//github.com/AidenPearce369/ADReaper",
+        "source": "https://github.com/AidenPearce369/ADReaper",
         "description": "ADReaper is a tool written in Golang which enumerates an Active Directory environment with LDAP queries within few seconds",
         "undetected": [],
         "detected": [],
@@ -54,7 +54,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/tomcarver16/ADSearch",
+        "source": "https://github.com/tomcarver16/ADSearch",
         "description": "Has fewer built-in searches compared to PowerView and SharpView, but it does allow you to specify custom LDAP queries which can be powerful",
         "undetected": [],
         "detected": [],
@@ -88,7 +88,7 @@
         "oss": [
             "Cross Platform (GO)"
         ],
-        "source": "https//github.com/OWASP/Amass",
+        "source": "https://github.com/OWASP/Amass",
         "description": "The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques.",
         "undetected": [],
         "detected": [],
@@ -122,7 +122,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/PKISolutions/Asn1Editor.WPF",
+        "source": "https://github.com/PKISolutions/Asn1Editor.WPF",
         "description": "Change a bit in the ticket in order to change the service",
         "undetected": [],
         "detected": [],
@@ -139,7 +139,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/Flangvik/AzureC2Relay",
+        "source": "https://github.com/Flangvik/AzureC2Relay",
         "description": "AzureC2Relay is an Azure Function that validates and relays Cobalt Strike beacon traffic by verifying the incoming requests based on a Cobalt Strike Malleable C2 profile.",
         "undetected": [],
         "detected": [],
@@ -156,7 +156,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/Yaxser/Backstab",
+        "source": "https://github.com/Yaxser/Backstab",
         "description": "A tool to kill antimalware protected processes",
         "undetected": [],
         "detected": [],
@@ -174,7 +174,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/bettercap/bettercap",
+        "source": "https://github.com/bettercap/bettercap",
         "description": "A suite for man in the middle attacks",
         "undetected": [],
         "detected": [],
@@ -192,7 +192,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/BloodHoundAD/BloodHound",
+        "source": "https://github.com/BloodHoundAD/BloodHound",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -209,7 +209,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/FortyNorthSecurity/C2concealer",
+        "source": "https://github.com/FortyNorthSecurity/C2concealer",
         "description": "C2concealer is a command line tool that generates randomized C2 malleable profiles for use in Cobalt Strike.",
         "undetected": [],
         "detected": [],
@@ -226,7 +226,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/GhostPack/Certify",
+        "source": "https://github.com/GhostPack/Certify",
         "description": "Used to query certificate information for [[Misconfigured Certificate Templates]]",
         "undetected": [],
         "detected": [],
@@ -243,7 +243,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/digininja/CeWL",
+        "source": "https://github.com/digininja/CeWL",
         "description": "Password list generator",
         "undetected": [],
         "detected": [],
@@ -261,7 +261,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/mdsecactivebreach/Chameleon",
+        "source": "https://github.com/mdsecactivebreach/Chameleon",
         "description": "A tool for domain categorisation",
         "undetected": [],
         "detected": [],
@@ -276,7 +276,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/Cracked5pider/CoffeeLdr",
+        "source": "https://github.com/Cracked5pider/CoffeeLdr",
         "description": "Running Cobalt Strike bofs without CS",
         "undetected": [],
         "detected": [],
@@ -293,7 +293,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/galihap76/collector",
+        "source": "https://github.com/galihap76/collector",
         "description": "Collector is a OSINT tool and information gathering. This tool can do information gathering phone numbers, github account, ip address and instagram account.",
         "undetected": [],
         "detected": [],
@@ -312,7 +312,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/byt3bl33d3r/CrackMapExec",
+        "source": "https://github.com/byt3bl33d3r/CrackMapExec",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -329,7 +329,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/threatexpress/cs2modrewrite",
+        "source": "https://github.com/threatexpress/cs2modrewrite",
         "description": "Convert Cobalt Strike profiles to modrewrite",
         "undetected": [],
         "detected": [],
@@ -346,7 +346,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/bashexplode/cs2webconfig",
+        "source": "https://github.com/bashexplode/cs2webconfig",
         "description": "Convert Cobalt Strike profiles to IIS web.config files",
         "undetected": [],
         "detected": [],
@@ -363,7 +363,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/darkoperator/dnsrecon",
+        "source": "https://github.com/darkoperator/dnsrecon",
         "description": "DNSRecon is a Python port of a Ruby script that I wrote to learn the language and about DNS in early 2007. This time I wanted to learn about Python and extend the functionality of the original tool and in the process re-learn how DNS works and how could it be used in the process of a security assessment and network troubleshooting.",
         "undetected": [],
         "detected": [],
@@ -380,7 +380,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/outflanknl/Dumpert",
+        "source": "https://github.com/outflanknl/Dumpert",
         "description": "LSASS memory dumper using direct system calls and API unhooking.",
         "undetected": [],
         "detected": [
@@ -415,7 +415,7 @@
         "category": "",
         "stealthy": false,
         "oss": [],
-        "source": "https//github.com/chenjj/espoofer",
+        "source": "https://github.com/chenjj/espoofer",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -433,7 +433,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/Ettercap/ettercap",
+        "source": "https://github.com/Ettercap/ettercap",
         "description": "A suite for man in the middle attacks",
         "undetected": [],
         "detected": [],
@@ -452,7 +452,7 @@
             "Python",
             "Windows"
         ],
-        "source": "https//github.com/FortyNorthSecurity/EyeWitness",
+        "source": "https://github.com/FortyNorthSecurity/EyeWitness",
         "description": "EyeWitness is designed to take screenshots of websites provide some server header info, and identify default credentials if known.",
         "undetected": [],
         "detected": [],
@@ -469,7 +469,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/thewhiteh4t/FinalRecon",
+        "source": "https://github.com/thewhiteh4t/FinalRecon",
         "description": "FinalRecon is an automatic web reconnaissance tool written in python. Goal of FinalRecon is to provide an overview of the target in a short amount of time while maintaining the accuracy of results. Instead of executing several tools one after another it can provide similar results keeping dependencies small and simple.",
         "undetected": [],
         "detected": [],
@@ -486,7 +486,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/ElevenPaths/FOCA",
+        "source": "https://github.com/ElevenPaths/FOCA",
         "description": "Tool to find metadata and hidden information in the documents.",
         "undetected": [],
         "detected": [],
@@ -504,7 +504,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/GhostPack/ForgeCert",
+        "source": "https://github.com/GhostPack/ForgeCert",
         "description": "Generate certs",
         "undetected": [],
         "detected": [],
@@ -521,7 +521,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/FreeRDP/FreeRDP",
+        "source": "https://github.com/FreeRDP/FreeRDP",
         "description": "RDP client which can be used with hashes",
         "undetected": [],
         "detected": [],
@@ -538,7 +538,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Get-BrowserData.ps1",
+        "source": "https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Get-BrowserData.ps1",
         "description": "Enumerates browser history or bookmarks for a Chrome, Internet Explorer, and/or Firefox browsers on Windows machines.",
         "undetected": [],
         "detected": [],
@@ -556,7 +556,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/sensepost/gowitness",
+        "source": "https://github.com/sensepost/gowitness",
         "description": "Pictures of webservers",
         "undetected": [],
         "detected": [],
@@ -573,7 +573,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/PowerShell/GPRegistryPolicyParser",
+        "source": "https://github.com/PowerShell/GPRegistryPolicyParser",
         "description": "These cmdlets will allow you to work with .POL files, which contain the registry keys enacted by Group Policy.",
         "undetected": [],
         "detected": [],
@@ -590,7 +590,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/EspressoCake/HandleKatz_BOF",
+        "source": "https://github.com/EspressoCake/HandleKatz_BOF",
         "description": "This tool was implemented as part of our Brucon2021 conference talk and demonstrates the usage of cloned handles to Lsass in order to create an obfuscated memory dump of the same.",
         "undetected": [
             "MDE",
@@ -613,7 +613,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/codewhitesec/HandleKatz",
+        "source": "https://github.com/codewhitesec/HandleKatz",
         "description": "This tool was implemented as part of our Brucon2021 conference talk and demonstrates the usage of cloned handles to Lsass in order to create an obfuscated memory dump of the same.",
         "undetected": [
             "MDE",
@@ -635,7 +635,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//hashcat.net/hashcat/",
+        "source": "https://hashcat.net/hashcat/",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -652,7 +652,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//www.heidisql.com/",
+        "source": "https://www.heidisql.com/",
         "description": "SQL client to work with [[MS SQL Servers]]",
         "undetected": [],
         "detected": [],
@@ -670,7 +670,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/Kevin-Robertson/InveighZero",
+        "source": "https://github.com/Kevin-Robertson/InveighZero",
         "description": "Inveigh is a cross-platform .NET IPv4/IPv6 machine-in-the-middle tool.",
         "undetected": [],
         "detected": [],
@@ -688,7 +688,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/EmpireProject/Empire/blob/master/data/module_source/lateral_movement/Invoke-DCOM.ps1",
+        "source": "https://github.com/EmpireProject/Empire/blob/master/data/module_source/lateral_movement/Invoke-DCOM.ps1",
         "description": "Lateral Move via DCOM",
         "undetected": [],
         "detected": [],
@@ -705,7 +705,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/danielbohannon/Invoke-Obfuscation",
+        "source": "https://github.com/danielbohannon/Invoke-Obfuscation",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -723,7 +723,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//www.openwall.com/john/",
+        "source": "https://www.openwall.com/john/",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -740,7 +740,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/pwn1sher/KillDefender",
+        "source": "https://github.com/pwn1sher/KillDefender",
         "description": "Removing its token privileges and lowering the token integrity to untrusted",
         "undetected": [],
         "detected": [],
@@ -760,7 +760,7 @@
             "Windows",
             "Linux"
         ],
-        "source": "https//www.thegeekstuff.com/2015/02/openldap-add-users-groups/",
+        "source": "https://www.thegeekstuff.com/2015/02/openldap-add-users-groups/",
         "description": "Add user to OU",
         "undetected": [],
         "detected": [],
@@ -778,7 +778,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//linux.die.net/man/1/ldapsearch",
+        "source": "https://linux.die.net/man/1/ldapsearch",
         "description": "Allows you to specify custom LDAP queries",
         "undetected": [],
         "detected": [],
@@ -795,7 +795,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/vysecurity/LinkedInt",
+        "source": "https://github.com/vysecurity/LinkedInt",
         "description": "LinkedIn Recon Tool",
         "undetected": [],
         "detected": [],
@@ -812,7 +812,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/0x802/LinkSniper",
+        "source": "https://github.com/0x802/LinkSniper",
         "description": "It takes all links from target, if the link belongs to a target like subdomain, then it will work on it. If there was another field, it wouldn't add it to the output, and this process continues until the links map is complete",
         "undetected": [],
         "detected": [],
@@ -830,7 +830,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/dafthack/MailSniper",
+        "source": "https://github.com/dafthack/MailSniper",
         "description": "MailSniper is a penetration testing tool for searching through email in a Microsoft Exchange environment for specific terms (passwords, insider intel, network architecture information, etc.). It can be used as a non-administrative user to search their own email or by an Exchange administrator to search the mailboxes of every user in a domain.",
         "undetected": [],
         "detected": [],
@@ -847,7 +847,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/blacklanternsecurity/MANSPIDER",
+        "source": "https://github.com/blacklanternsecurity/MANSPIDER",
         "description": "Spider entire networks for juicy files sitting on SMB shares. Search filenames or file content - regex supported!",
         "undetected": [],
         "detected": [],
@@ -866,7 +866,7 @@
             "Windows",
             "#mac"
         ],
-        "source": "https//github.com/robertdavidgraham/masscan",
+        "source": "https://github.com/robertdavidgraham/masscan",
         "description": "This is an Internet-scale port scanner. It can scan the entire Internet in under 5 minutes, transmitting 10 million packets per second, from a single machine.",
         "undetected": [],
         "detected": [],
@@ -883,7 +883,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/opsdisk/metagoofil",
+        "source": "https://github.com/opsdisk/metagoofil",
         "description": "metagoofil searches Google for specific types of files being publicly hosted on a web site and optionally downloads them to your local box. This is useful for Open Source Intelligence gathering, penetration tests, or determining what files your organization is leaking to search indexers like Google.",
         "undetected": [],
         "detected": [],
@@ -900,7 +900,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/dafthack/MFASweep",
+        "source": "https://github.com/dafthack/MFASweep",
         "description": "MFASweep is a PowerShell script that attempts to log in to various Microsoft services using a provided set of credentials and will attempt to identify if MFA is enabled. Depending on how conditional access policies and other multi-factor authentication settings are configured some protocols may end up being left single factor. It also has an additional check for ADFS configurations and can attempt to log in to the on-prem ADFS server if detected.",
         "undetected": [],
         "detected": [],
@@ -921,7 +921,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/gentilkiwi/mimikatz",
+        "source": "https://github.com/gentilkiwi/mimikatz",
         "description": "It's now well known to extract plaintexts passwords, hash, PIN code and kerberos tickets from memory. mimikatz can also perform pass-the-hash, pass-the-ticket or build Golden tickets.",
         "undetected": [],
         "detected": [],
@@ -938,7 +938,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/cube0x0/MiniDump",
+        "source": "https://github.com/cube0x0/MiniDump",
         "description": "C# implementation of mimikatz/pypykatz minidump functionality to get credentials from LSASS dumps.",
         "undetected": [],
         "detected": [],
@@ -955,7 +955,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/makdosx/mip22",
+        "source": "https://github.com/makdosx/mip22",
         "description": "83 default websites, clone any site with manual method, add any site with customize method, mask link with subdomains, url shortener, audio notice for view the credentials live, music in background etc...",
         "undetected": [],
         "detected": [],
@@ -1026,7 +1026,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/charlesroelli/nbtscan",
+        "source": "https://github.com/charlesroelli/nbtscan",
         "description": "NBTscan is a program for scanning IP networks for NetBIOS name information. It sends NetBIOS status query to each address in supplied range and lists received information in human readable form.",
         "undetected": [],
         "detected": [],
@@ -1043,7 +1043,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/nmap/ncrack",
+        "source": "https://github.com/nmap/ncrack",
         "description": "Password spray against a lot of services",
         "undetected": [],
         "detected": [],
@@ -1112,7 +1112,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/htr-tech/nexphisher",
+        "source": "https://github.com/htr-tech/nexphisher",
         "description": "Advanced Phishing tool for Linux & Termux",
         "undetected": [],
         "detected": [],
@@ -1129,7 +1129,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/icyguider/Nimcrypt2",
+        "source": "https://github.com/icyguider/Nimcrypt2",
         "description": ".NET, PE, & Raw Shellcode Packer/Loader written in Nim",
         "undetected": [],
         "detected": [],
@@ -1149,7 +1149,7 @@
             "Linux",
             "Windows"
         ],
-        "source": "https//nmap.org/",
+        "source": "https://nmap.org/",
         "description": "Nmap Free Security Scanner, Port Scanner, & Network Exploration Tool",
         "undetected": [],
         "detected": [],
@@ -1201,7 +1201,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/SecureAuthCorp/impacket/tree/master/impacket/examples/ntlmrelayx",
+        "source": "https://github.com/SecureAuthCorp/impacket/tree/master/impacket/examples/ntlmrelayx",
         "description": "NTLM relay tool",
         "undetected": [],
         "detected": [],
@@ -1218,7 +1218,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/FSecureLABS/physmem2profit",
+        "source": "https://github.com/FSecureLABS/physmem2profit",
         "description": "Used to create a minidump of a target hosts' LSASS process by analysing physical memory remotely",
         "undetected": [],
         "detected": [],
@@ -1235,7 +1235,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/praetorian-inc/PortBender",
+        "source": "https://github.com/praetorian-inc/PortBender",
         "description": "TCP Port Redirection Utility for Cobalt Strike",
         "undetected": [],
         "detected": [],
@@ -1252,7 +1252,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/Kevin-Robertson/Powermad",
+        "source": "https://github.com/Kevin-Robertson/Powermad",
         "description": "PowerShell MachineAccountQuota and DNS exploit tools",
         "undetected": [],
         "detected": [],
@@ -1291,7 +1291,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/NetSPI/PowerUp",
+        "source": "https://github.com/NetSPI/PowerUp",
         "description": "Exploitation Tools",
         "undetected": [],
         "detected": [],
@@ -1309,7 +1309,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/NetSPI/PowerUpSQL",
+        "source": "https://github.com/NetSPI/PowerUpSQL",
         "description": "SQL Exploitation Tools",
         "undetected": [],
         "detected": [],
@@ -1330,7 +1330,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1",
+        "source": "https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1",
         "description": "PowerView is a PowerShell tool to gain network situational awareness on Windows domains.",
         "undetected": [],
         "detected": [],
@@ -1348,7 +1348,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/leechristensen/SpoolSample",
+        "source": "https://github.com/leechristensen/SpoolSample",
         "description": "PoC tool to coerce Windows hosts authenticate to other machines via the MS-RPRN RPC interface.",
         "undetected": [],
         "detected": [],
@@ -1366,7 +1366,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/winsiderss/systeminformer",
+        "source": "https://github.com/winsiderss/systeminformer",
         "description": "A free, powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
         "undetected": [],
         "detected": [],
@@ -1385,7 +1385,7 @@
             "Windows",
             "Linux"
         ],
-        "source": "https//docs.microsoft.com/en-us/sysinternals/downloads/procmon",
+        "source": "https://docs.microsoft.com/en-us/sysinternals/downloads/procmon",
         "description": "Process Monitor is an advanced monitoring tool for Windows that shows real-time file system, Registry and process/thread activity.",
         "undetected": [],
         "detected": [],
@@ -1402,7 +1402,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/nettitude/Prowl",
+        "source": "https://github.com/nettitude/Prowl",
         "description": "Prowl is an email harvesting tool that scrapes Yahoo for Linkedin profiles associated to the users search terms and identifies job titles. It also identifies current job listings for the specififed organisation.",
         "undetected": [],
         "detected": [],
@@ -1419,7 +1419,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//www.proxifier.com/",
+        "source": "https://www.proxifier.com/",
         "description": "Tunnel (GUI) apps that run on Windows via SOCKS",
         "undetected": [],
         "detected": [],
@@ -1436,7 +1436,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/haad/proxychains",
+        "source": "https://github.com/haad/proxychains",
         "description": "Proxies traffix through the netter",
         "undetected": [],
         "detected": [],
@@ -1453,7 +1453,7 @@
         "oss": [
             "Cross Platform (GO)"
         ],
-        "source": "https//github.com/0x09AL/raven",
+        "source": "https://github.com/0x09AL/raven",
         "description": "raven is a Linkedin information gathering tool that can be used by pentesters to gather information about an organization employees using Linkedin.",
         "undetected": [],
         "detected": [],
@@ -1470,7 +1470,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/0x09AL/RdpThief",
+        "source": "https://github.com/0x09AL/RdpThief",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -1487,7 +1487,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/lanmaster53/recon-ng",
+        "source": "https://github.com/lanmaster53/recon-ng",
         "description": "Open Source Intelligence gathering tool aimed at reducing the time spent harvesting information from open sources. Recon-ng is a full-featured reconnaissance framework designed with the goal of providing a powerful environment to conduct open source web-based reconnaissance quickly and thoroughly.",
         "undetected": [],
         "detected": [],
@@ -1538,7 +1538,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/lgandx/Responder",
+        "source": "https://github.com/lgandx/Responder",
         "description": "Responder is an LLMNR, NBT-NS and MDNS poisoner.",
         "undetected": [],
         "detected": [],
@@ -1555,7 +1555,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//www.mankier.com/1/rpcclient",
+        "source": "https://www.mankier.com/1/rpcclient",
         "description": "tool for executing client side MS-RPC functions",
         "undetected": [],
         "detected": [],
@@ -1574,7 +1574,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/GhostPack/Rubeus",
+        "source": "https://github.com/GhostPack/Rubeus",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -1595,7 +1595,7 @@
             "Windows",
             "#mac"
         ],
-        "source": "https//github.com/sensepost/ruler",
+        "source": "https://github.com/sensepost/ruler",
         "description": "Ruler is a tool that allows you to interact with Exchange servers remotely, through either the MAPI/HTTP or RPC/HTTP protocol. The main aim is abuse the client-side Outlook features and gain a shell remotely.",
         "undetected": [],
         "detected": [],
@@ -1612,7 +1612,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/Idov31/Sandman",
+        "source": "https://github.com/Idov31/Sandman",
         "description": "Sandman is a NTP based backdoor for red team engagements in hardened networks.",
         "undetected": [],
         "detected": [],
@@ -1648,7 +1648,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/GhostPack/Seatbelt",
+        "source": "https://github.com/GhostPack/Seatbelt",
         "description": "Seatbelt is a .NET application written in C# that has various \"host safety-checks\". The information it gathers includes general OS info, installed antivirus, AppLocker, audit policies, local users and groups, logon sessions, UAC, Windows Firewall and more.",
         "undetected": [],
         "detected": [],
@@ -1665,7 +1665,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/SecureAuthCorp/impacket/blob/master/examples/secretsdump.py",
+        "source": "https://github.com/SecureAuthCorp/impacket/blob/master/examples/secretsdump.py",
         "description": "Dump credentials remote and local via sam",
         "undetected": [],
         "detected": [],
@@ -1682,7 +1682,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/Arvanaghi/SessionGopher",
+        "source": "https://github.com/Arvanaghi/SessionGopher",
         "description": "SessionGopher is a PowerShell tool that uses WMI to extract saved session information for remote access tools such as WinSCP, PuTTY, SuperPuTTY, FileZilla, and Microsoft Remote Desktop. It can be run remotely or locally.",
         "undetected": [],
         "detected": [],
@@ -1699,7 +1699,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/djhohnstein/SharpChromium",
+        "source": "https://github.com/djhohnstein/SharpChromium",
         "description": "Dump cookies, history, saved logins from chrome",
         "undetected": [],
         "detected": [],
@@ -1716,7 +1716,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/GhostPack/SharpDPAPI",
+        "source": "https://github.com/GhostPack/SharpDPAPI",
         "description": "Dump the private key from a AD CS server",
         "undetected": [],
         "detected": [],
@@ -1734,7 +1734,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/mandiant/SharPersist",
+        "source": "https://github.com/mandiant/SharPersist",
         "description": "Windows persistence toolkit written in C#",
         "undetected": [],
         "detected": [],
@@ -1749,7 +1749,7 @@
         "category": "",
         "stealthy": false,
         "oss": [],
-        "source": "https//github.com/FSecureLABS/SharpGPOAbuse",
+        "source": "https://github.com/FSecureLABS/SharpGPOAbuse",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -1767,7 +1767,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/BloodHoundAD/SharpHound",
+        "source": "https://github.com/BloodHoundAD/SharpHound",
         "description": "Ingestor for Bloodhound",
         "undetected": [],
         "detected": [],
@@ -1785,7 +1785,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/cube0x0/SharpSystemTriggers",
+        "source": "https://github.com/cube0x0/SharpSystemTriggers",
         "description": "Collection of remote authentication triggers in C#",
         "undetected": [],
         "detected": [],
@@ -1802,7 +1802,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/tevora-threat/SharpView",
+        "source": "https://github.com/tevora-threat/SharpView",
         "description": "PowerView is the original of SharpView and has most of those queries also implemented",
         "undetected": [],
         "detected": [],
@@ -1853,7 +1853,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/SecureAuthCorp/impacket/blob/master/examples/smbrelayx.py",
+        "source": "https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbrelayx.py",
         "description": "Relax SMB requests to target",
         "undetected": [],
         "detected": [],
@@ -1870,7 +1870,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/SecureAuthCorp/impacket/blob/master/examples/smbserver.py",
+        "source": "https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbserver.py",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -1888,7 +1888,7 @@
             "Linux",
             "Windows"
         ],
-        "source": "https//linux.die.net/man/1/snmpwalk",
+        "source": "https://linux.die.net/man/1/snmpwalk",
         "description": "snmpwalk is an SNMP application that uses SNMP GETNEXT requests to query a network entity for a tree of information.",
         "undetected": [],
         "detected": [],
@@ -1923,7 +1923,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/smicallef/spiderfoot",
+        "source": "https://github.com/smicallef/spiderfoot",
         "description": "SpiderFoot is an open source intelligence (OSINT) automation tool. It integrates with just about every data source available and utilises a range of methods for data analysis, making that data easy to navigate.",
         "undetected": [],
         "detected": [],
@@ -1939,7 +1939,7 @@
         "category": "",
         "stealthy": false,
         "oss": [],
-        "source": "https//github.com/BishopFox/spoofcheck",
+        "source": "https://github.com/BishopFox/spoofcheck",
         "description": "Simple script that checks a domain for email protections",
         "undetected": [],
         "detected": [],
@@ -1957,7 +1957,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/leechristensen/SpoolSample",
+        "source": "https://github.com/leechristensen/SpoolSample",
         "description": "",
         "undetected": [],
         "detected": [],
@@ -1974,7 +1974,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/byt3bl33d3r/SprayingToolkit",
+        "source": "https://github.com/byt3bl33d3r/SprayingToolkit",
         "description": "A set of Python scripts/utilities that _tries_ to make password spraying attacks against Lync/S4B & OWA a lot quicker, less painful and more efficient.",
         "undetected": [],
         "detected": [],
@@ -2010,7 +2010,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/moxie0/sslstrip",
+        "source": "https://github.com/moxie0/sslstrip",
         "description": "sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping attacks.",
         "undetected": [],
         "detected": [],
@@ -2028,7 +2028,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/aboul3la/Sublist3r",
+        "source": "https://github.com/aboul3la/Sublist3r",
         "description": "Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT. It helps penetration testers and bug hunters collect and gather subdomains for the domain they are targeting. Sublist3r enumerates subdomains using many search engines such as Google, Yahoo, Bing, Baidu and Ask. Sublist3r also enumerates subdomains using Netcraft, Virustotal, ThreatCrowd, DNSdumpster and ReverseDNS.",
         "undetected": [],
         "detected": [],
@@ -2046,7 +2046,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/CCob/SweetPotato",
+        "source": "https://github.com/CCob/SweetPotato",
         "description": "Force a SYSTEM service to authenticate to a rogue or man-in-the-middle service that the attacker creates. This rogue service is then able to impersonate the SYSTEM service whilst it's trying to authenticate.",
         "undetected": [],
         "detected": [],
@@ -2064,7 +2064,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/laramies/theHarvester",
+        "source": "https://github.com/laramies/theHarvester",
         "description": "theHarvester is a very simple to use, yet powerful and effective tool designed to be used in the early stages of a penetration test or red team engagement. Use it for open source intelligence (OSINT) gathering to help determine a company's external threat landscape on the internet. The tool gathers emails, names, subdomains, IPs and URLs using multiple public data sources",
         "undetected": [],
         "detected": [],
@@ -2081,7 +2081,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/rasta-mouse/ThreatCheck",
+        "source": "https://github.com/rasta-mouse/ThreatCheck",
         "description": "Identifies the bytes that Microsoft Defender / AMSI Consumer flags on.",
         "undetected": [],
         "detected": [],
@@ -2096,7 +2096,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/telekom-security/tpotce",
+        "source": "https://github.com/telekom-security/tpotce",
         "description": "\ud83c\udf6f T-Pot - The All In One Honeypot Platform \ud83d\udc1d",
         "undetected": [],
         "detected": [],
@@ -2111,7 +2111,7 @@
         "oss": [
             "Linux"
         ],
-        "source": "https//github.com/trufflesecurity/trufflehog",
+        "source": "https://github.com/trufflesecurity/trufflehog",
         "description": "\ud83c\udf6f T-Pot - The All In One Honeypot Platform \ud83d\udc1d",
         "undetected": [],
         "detected": [],
@@ -2129,7 +2129,7 @@
             "Windows",
             "Linux"
         ],
-        "source": "https//github.com/Pepitoh/Vbad",
+        "source": "https://github.com/Pepitoh/Vbad",
         "description": "VBA Obfuscation Tools combined with an MS office document generator",
         "undetected": [],
         "detected": [],
@@ -2165,7 +2165,7 @@
         "oss": [
             "Python"
         ],
-        "source": "https//github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py",
+        "source": "https://github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py",
         "description": "A similar approach to smbexec but executing commands through WMI. Main advantage here is it runs under the user (has to be Admin) account, not SYSTEM, plus, it doesn't generate noisy messages in the event log that smbexec.py does when creating a service. Drawback is it needs DCOM, hence, I have to be able to access DCOM ports at the target machine.",
         "undetected": [],
         "detected": [],
@@ -2183,7 +2183,7 @@
         "oss": [
             "Windows"
         ],
-        "source": "https//github.com/GoSecure/WSuspicious",
+        "source": "https://github.com/GoSecure/WSuspicious",
         "description": "WSUS exploitation tool",
         "undetected": [],
         "detected": [],
