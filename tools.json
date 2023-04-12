@@ -3163,5 +3163,32 @@
             }
         ],
         "content": ""
+    },
+    {
+        "name": "MSBuild",
+        "phases": [
+            "03. Host Enumeration",
+            "04. Persistence"
+        ],
+        "category": "",
+        "stealthy": false,
+        "platforms": [
+            "Windows"
+        ],
+        "source": "lolbas",
+        "description": "MSBuild.exe is preinstalled on various version of the Windows operating system and can be found in \"%WINDIR%\\Framework\\<NET-Version>\\MSBuild.exe\" (and Framework64 for x64 operating systems). It can be abused to execute arbitrary C# code using BuildTasks. ",
+        "undetected": [],
+        "detected": [],
+        "commands": [
+            {
+                "id": "2e0f58d8-11cb-43db-a8ba-e797def0a915",
+                "name": "Execute arbitrary build script",
+                "description": "Executes an arbitrary build script",
+                "tag": "",
+                "results": [],
+                "cmd": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\MSBuild.exe \"C:\\Users\\ev1l\\Desktop\\my-project.xml\""
+            }
+        ],
+        "content": ""
     }
 ]
