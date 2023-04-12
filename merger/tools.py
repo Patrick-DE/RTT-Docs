@@ -55,19 +55,161 @@ def replace_oss(arr):
     return res
 
 ToolSchema = {
+    "$comment": "https://www.jsonschemavalidator.net/, https://jsonformatter.org/json-to-jsonschema",
+    "$schema": "http://json-schema.org/draft-06/schema#",
     "type": "object",
-    "properties": {
-        "name": {"type": "string"},
-        "phases": {"type": "array","items": {"type": "string"}, "minItems": 1},
-        "category": {"type": "string"},
-        "stealthy": {"type": "boolean"},
-        "oss" : {"type": "array","items": {"type": "string"}, "minItems": 1},
-        "source": {"type": "string"},
-        "description": {"type": "string"},
-        "undetected": {"type": "array","items": {"type": "string"}},
-        "detected": {"type": "array","items": {"type": "string"}},
-        "content": {"type": "string"},
-        "commands": {"type": "array","items": {"type": "object"}}
+    "items": {
+        "$ref": "#/definitions/Tool"
     },
-    "required": ["name", "phases", "category", "oss", "source", "description"],
+    "definitions": {
+        "Tool": {
+            "type": "object",
+            "additionalProperties": False,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "phases": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Phase"
+                    }
+                },
+                "category": {
+                    "type": "string"
+                },
+                "stealthy": {
+                    "type": "boolean"
+                },
+                "platforms": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Platform"
+                    }
+                },
+                "source": {
+                    "type": "string",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "undetected": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "detected": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "content": {
+                    "type": "string"
+                },
+                "commands": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Command"
+                    }
+                },
+                "references": {
+                    "type": "array",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http",
+                        "https"
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "phases",
+                "category",
+                "stealthy",
+                "platforms",
+                "source",
+                "description",
+                "undetected",
+                "detected",
+                "content",
+                "commands"
+            ],
+            "title": "Tool"
+        },
+        "Command": {
+            "type": "object",
+            "additionalProperties": False,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "cmd": {
+                    "type": "string"
+                },
+                "tag": {
+                    "type": "string"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "requirements": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "description",
+                "cmd",
+                "tag",
+                "results"
+            ],
+            "title": "Command"
+        },
+        "Phase": {
+            "type": "string",
+            "enum": [
+                "00. Infrastructure",
+                "01. Initial Access",
+                "02. Reconnaissance",
+                "03. Host Enumeration",
+                "04. Persistence",
+                "05. Privilege Escalation",
+                "06. Domain Enumeration",
+                "07. Lateral Movement",
+                "08. Credentials & User Impersonation",
+                "09. AD Misconfigurations",
+                "10. Bypassing Defenses"
+            ],
+            "title": "Phase"
+        },
+        "Platform": {
+            "type": "string",
+            "enum": [
+                "Windows",
+                "Linux",
+                "Python",
+                "Java",
+                "Cross Platform (GO)",
+                "BOF"
+            ],
+            "title": "Platform"
+        }
+    }
 }
