@@ -1104,6 +1104,22 @@
         "steps": []
     },
     {
+        "id": "248fe325-396d-4c4e-9243-323f435e5ca9",
+        "name": "Remote Users",
+        "phase": "03. Host Enumeration",
+        "ttp": "T1000",
+        "external": false,
+        "description": "Identify Users Remotely",
+        "content": "",
+        "category": "",
+        "stealthy": false,
+        "changes": [
+            ""
+        ],
+        "tools": [],
+        "steps": []
+    },
+    {
         "id": "248fe325-396d-4c4e-9243-323fb35e5ca9",
         "name": "PowerShell Logging",
         "phase": "03. Host Enumeration",
@@ -1114,7 +1130,7 @@
         "category": "Auditing",
         "stealthy": false,
         "changes": [
-            "\n## [[reg]]\n#get_powershell_logging\n```ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n \nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\n```"
+            "\n## Script Block Logging\nIf the environment has script block logging enabled, even if we are obfuscating our PowerShell code, before it’s executed by the PowerShell engine, it’s going to be de- obfuscated and logged to the event log in 4104.\n\n## System-wide transcript file\nIf the environment has "system-wide transcript file"”" enabled, a share on the network will exist where everything typed in PowerShell (transcript file) will be sent to that network share.\n\n#get_powershell_logging\n```ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n \nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\n```"
         ],
         "tools": [
             "reg",
