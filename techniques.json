@@ -3254,7 +3254,7 @@
         "external": false,
         "description": "NoDescription",
         "content": "# Windows Defender Application Control and virtualization-based protection of code integrity \n## Windows Defender Application Control\n## Microsoft Defender Application Guard",
-        "category": "Protection",
+        "category": "Protections",
         "stealthy": false,
         "changes": [],
         "tools": [],
