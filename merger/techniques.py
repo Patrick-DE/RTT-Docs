@@ -79,52 +79,18 @@ TechniqueSchema = {
             "type": "object",
             "additionalProperties": False,
             "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string",
-                    "format": "uuid"
-                },
-                "phase": {
-                    "$ref": "#/definitions/Phase"
-                },
-                "ttp": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "external": {
-                    "type": "boolean"
-                },
-                "stealthy": {
-                    "type": "boolean"
-                },
-                "content": {
-                    "type": "string"
-                },
-                "category": {
-                    "type": "string"
-                },
-                "changes": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "tools": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "steps": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Step"
-                    }
-                },
+                "name": {"type": "string"},
+                "id": {"type": "string","format": "uuid"},
+                "phase": {"$ref": "#/definitions/Phase"},
+                "ttp": {"type": "string"},
+                "description": {"type": "string"},
+                "external": {"type": "boolean"},
+                "stealthy": {"type": "boolean"},
+                "content": {"type": "string"},
+                "category": {"type": "string"},
+                "changes": {"type": "array","items": {"type": "string"}},
+                "tools": {"type": "array","items": {"type": "string"}},
+                "steps": {"type": "array","items": {"$ref": "#/definitions/Step"}},
                 "references": {
                     "type": "array",
                     "items": {
@@ -157,25 +123,11 @@ TechniqueSchema = {
             "type": "object",
             "additionalProperties": False,
             "properties": {
-                "id": {
-                    "type": "string",
-                    "format": "uuid"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "requirements": {
-                    "type": "object"
-                },
-                "results": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
+                "id": {"type": "string","format": "uuid"},
+                "name": {"type": "string"},
+                "description": {"type": "string"},
+                "requirements": {"type": "object"},
+                "results": {"type": "array","items": {"type": "string"}}
             },
             "required": [
                 "description",
