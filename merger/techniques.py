@@ -68,51 +68,140 @@ class Methodology(object):
 
 #https://codebeautify.org/json-to-json-schema-generator
 TechniqueSchema = {
+    "$comment": "https://www.jsonschemavalidator.net/, https://jsonformatter.org/json-to-jsonschema",
     "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "items": {
+        "$ref": "#/definitions/Technique"
+    },
     "definitions": {
         "Technique": {
-            "title": "Technique",
             "type": "object",
             "additionalProperties": False,
             "properties": {
-                "id": {"type": "string","format": "uuid"},
-                "name": {"type": "string"},
-                "phase": {"type": "string"},
-                "ttp": {"type": "string"},
-                "external": {"type": "boolean"},
-                "description": {"type": "string"},
-                "content": {"type": "string"},
-                "category": {"type": "string"},
-                "stealthy": {"type": "boolean"},
+                "name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "phase": {
+                    "$ref": "#/definitions/Phase"
+                },
+                "ttp": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "external": {
+                    "type": "boolean"
+                },
+                "stealthy": {
+                    "type": "boolean"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
                 "changes": {
                     "type": "array",
-                    "items": {"type": "string"}
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "tools": {
                     "type": "array",
-                    "items": {"type": "string"}
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "steps": {
                     "type": "array",
-                    "items": {"$ref": "#/definitions/Step"}
+                    "items": {
+                        "$ref": "#/definitions/Step"
+                    }
                 },
                 "references": {
                     "type": "array",
-                    "items": {"type": "string"}
-                },
+                    "items": {
+                        "type": "string",
+                        "format": "uri",
+                        "qt-uri-protocols": [
+                            "http",
+                            "https"
+                        ]
+                    }
+                }
             },
-            "required": ["id","name","phase","ttp","description",],
+            "required": [
+                "name",
+                "id",
+                "category",
+                "changes",
+                "content",
+                "description",
+                "external",
+                "phase",
+                "stealthy",
+                "steps",
+                "tools",
+                "ttp"
+            ],
+            "title": "Technique"
         },
         "Step": {
             "type": "object",
+            "additionalProperties": False,
             "properties": {
-                "id": {"type": "string","format": "uuid"},
-                "name": {"type": "string"},
-                "description": {"type": "string"},
-                "requirements": {"type": "string"},
-                "results": {"type": "string"}
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "requirements": {
+                    "type": "object"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             },
-            "required": ["id","name",],
+            "required": [
+                "description",
+                "id",
+                "name",
+                "requirements",
+                "results"
+            ],
+            "title": "Step"
+        },
+        "Phase": {
+            "type": "string",
+            "enum": [
+                "00. Infrastructure",
+                "01. Initial Access",
+                "02. Reconnaissance",
+                "03. Host Enumeration",
+                "04. Persistence",
+                "05. Privilege Escalation",
+                "06. Domain Enumeration",
+                "07. Lateral Movement",
+                "08. Credentials & User Impersonation",
+                "09. AD Misconfigurations",
+                "10. Bypassing Defenses"
+            ],
+            "title": "Phase"
         }
     }
 }

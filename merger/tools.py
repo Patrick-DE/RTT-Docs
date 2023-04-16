@@ -56,6 +56,8 @@ def replace_oss(arr):
     return res
 
 ToolSchema = {
+    "$comment": "https://www.jsonschemavalidator.net/, https://jsonformatter.org/json-to-jsonschema",
+    "$schema": "http://json-schema.org/draft-06/schema#",
     "type": "object",
     "additionalProperties": False,
     "properties": {
