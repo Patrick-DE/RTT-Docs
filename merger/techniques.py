@@ -28,6 +28,7 @@ class Technique(object):
         self.changes: List[str] = []
         self.tools: List[str] = []
         self.steps: List[Step] = []
+        self.references: str = []
         
     def to_json(self):
         delattr(self, "changes")
@@ -72,6 +73,7 @@ TechniqueSchema = {
         "Technique": {
             "title": "Technique",
             "type": "object",
+            "additionalProperties": False,
             "properties": {
                 "id": {"type": "string","format": "uuid"},
                 "name": {"type": "string"},
@@ -93,7 +95,11 @@ TechniqueSchema = {
                 "steps": {
                     "type": "array",
                     "items": {"$ref": "#/definitions/Step"}
-                }
+                },
+                "references": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
             },
             "required": ["id","name","phase","ttp","description",],
         },

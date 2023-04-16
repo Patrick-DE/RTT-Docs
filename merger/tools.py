@@ -20,13 +20,14 @@ class Tool:
         self.phases : List[str] = []
         self.category: str = ""
         self.stealthy: bool = False #now called stealth
-        self.oss : List[str] = []
+        self.platforms : List[str] = []
         self.source: str = ""
         self.description: str = ""
         self.undetected: List[str] = []
         self.detected: List[str] = []
         self.content: str = ""
         self.commands: Command = []
+        self.references: str = []
 
     def expand_phases(self, dirs):
         exp_phases = []
@@ -56,18 +57,20 @@ def replace_oss(arr):
 
 ToolSchema = {
     "type": "object",
+    "additionalProperties": False,
     "properties": {
         "name": {"type": "string"},
         "phases": {"type": "array","items": {"type": "string"}, "minItems": 1},
         "category": {"type": "string"},
         "stealthy": {"type": "boolean"},
-        "oss" : {"type": "array","items": {"type": "string"}, "minItems": 1},
+        "platforms" : {"type": "array","items": {"type": "string"}, "minItems": 1},
         "source": {"type": "string"},
         "description": {"type": "string"},
         "undetected": {"type": "array","items": {"type": "string"}},
         "detected": {"type": "array","items": {"type": "string"}},
         "content": {"type": "string"},
-        "commands": {"type": "array","items": {"type": "object"}}
+        "commands": {"type": "array","items": {"type": "object"}},
+        "references": {"type": "array","items": {"type": "string"}}
     },
-    "required": ["name", "phases", "category", "oss", "source", "description"],
+    "required": ["name", "phases", "category", "platforms", "source", "description"],
 }
