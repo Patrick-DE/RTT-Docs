@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Merger",
             "type": "python",
@@ -14,11 +15,38 @@
             "justMyCode": true
         },
         {
+            "name": "Sync-arttoolkit",
+            "type": "python",
+            "request": "launch",
+            //"cwd": "/home/patrick",
+            "program": "${workspaceFolder}/sync/arttoolkit.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "name": "GetAPTData",
             "type": "python",
             "request": "launch",
             //"cwd": "/home/patrick",
             "program": "${workspaceFolder}/apts/getAptData.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "GetDateForRefs",
+            "type": "python",
+            "request": "launch",
+            //"cwd": "/home/patrick",
+            "program": "${workspaceFolder}/apts/getReleaseDate.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "fetchAllGitCommits",
+            "type": "python",
+            "request": "launch",
+            //"cwd": "/home/patrick",
+            "program": "${workspaceFolder}/merger/fetchAllGitCommits.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },
