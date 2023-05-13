@@ -72,7 +72,8 @@ ToolSchema = {
         "detected": {"type": "array","items": {"type": "string"}},
         "content": {"type": "string"},
         "commands": {"type": "array","items": {"type": "object"}},
-        "references": {"type": "array","items": {"type": "string"}}
+        "references": {"type": "array","items": {"type": "object"}},
+        "latest_commit": {"type": "string"}
     },
     "required": ["name", "phases", "category", "platforms", "source", "description"],
 }

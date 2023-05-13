@@ -2,12 +2,13 @@ import requests
 import sys
 import json
 import os
+from fetchAllLatestGitCommits import fetchAllLatestGitCommits
 from tools import ToolSchema
 from techniques import TechniqueSchema
 from jsonschema import validate
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv("..\.env")
 GITHUB_API_KEY = os.getenv('GITHUB_API_KEY')
 
 merged_issues = []
@@ -83,3 +84,6 @@ for issue in issues:
 print ("Commit message:")
 for iss in merged_issues:
     print ("close #" + str(iss["number"]),end=', ')
+
+print("\n\nFetching latest commits for git sources...")
+fetchAllLatestGitCommits()
