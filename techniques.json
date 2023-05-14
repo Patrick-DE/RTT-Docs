@@ -1,20 +1,15 @@
 [
     {
         "id": "52259804-a1fb-4a97-be85-3544e4612ff9",
-        "name": "Cobalt Strike",
+        "name": "Command and Control",
         "phase": "00. Infrastructure",
-        "ttp": "S0154",
+        "ttp": "TA0011",
         "external": true,
-        "description": "Setup and configuring Cobalt Strike server",
-        "content": "# Cobalt Strike\n\n## Tools\n########\n########",
+        "description": "Setup command and control infrastructure to remotely control software agents on target machines.",
+        "content": "",
         "category": "",
         "stealthy": false,
-        "changes": [
-            "\n## [[C2concealer]]\n"
-        ],
-        "tools": [
-            "C2concealer"
-        ],
+        "tools": [],
         "steps": []
     },
     {
@@ -1130,7 +1125,7 @@
         "category": "Auditing",
         "stealthy": false,
         "changes": [
-            "\n## Script Block Logging\nIf the environment has script block logging enabled, even if we are obfuscating our PowerShell code, before it’s executed by the PowerShell engine, it’s going to be de- obfuscated and logged to the event log in 4104.\n\n## System-wide transcript file\nIf the environment has 'system-wide transcript file' enabled, a share on the network will exist where everything typed in PowerShell (transcript file) will be sent to that network share.\n\n#get_powershell_logging\n```ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n \nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\n```"
+            "\n## Script Block Logging\nIf the environment has script block logging enabled, even if we are obfuscating our PowerShell code, before it\u00e2\u20ac\u2122s executed by the PowerShell engine, it\u00e2\u20ac\u2122s going to be de- obfuscated and logged to the event log in 4104.\n\n## System-wide transcript file\nIf the environment has 'system-wide transcript file' enabled, a share on the network will exist where everything typed in PowerShell (transcript file) will be sent to that network share.\n\n#get_powershell_logging\n```ps\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\Transcription\n \nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ModuleLogging\n\nreg query HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\n```"
         ],
         "tools": [
             "reg",
@@ -2506,7 +2501,7 @@
         "ttp": "T1003.003",
         "external": false,
         "description": "NoDescription",
-        "content": "1. Get inter-realm key which is responsible for cross forest TGT signing\n2. Forge a Trust Ticket for another domain\n3. Get TGS\n> .\\asktgs path_trust_ticket cifs/dc_of_ext_domain\n\nℹ It should be noted that the targeted domain must have explicit permissions set for groups or users in the trusted domain, something which is not uncommon.\n",
+        "content": "1. Get inter-realm key which is responsible for cross forest TGT signing\n2. Forge a Trust Ticket for another domain\n3. Get TGS\n> .\\asktgs path_trust_ticket cifs/dc_of_ext_domain\n\n\u00e2\u201e\u00b9 It should be noted that the targeted domain must have explicit permissions set for groups or users in the trusted domain, something which is not uncommon.\n",
         "category": "",
         "stealthy": false,
         "changes": [],

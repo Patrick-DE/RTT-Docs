@@ -282,7 +282,7 @@
     "detected": [],
     "content": "# BloodHound\n\nBloodHound is an application that uses graph theory to display the relationships between different Active Directory components, specifically for the use case of finding attack paths. BloodHound requires the use of two additional components: a [neo4j](https://neo4j.com/) database and the [[SharpHound]] data collector.\n\n#OPSEC Running collection methods such as **LocalAdmin**, **RDP**, **DCOM**, **PSRemote** and **LoggedOn** will allow SharpHound to enumerate every single computer in the domain. Collecting this information is useful to BloodHound and without it you may see fewer paths, at the obvious expensive of being loud on the wire.\n\n## Custom Queries\n### [[Kerberoasting]]\n- Kerberoastable users\n>MATCH (u:User {hasspn:true}) RETURN u\n- With paths to computers\n>MATCH (u:User {hasspn:true}), (c:Computer), p=shortestPath((u)-[*1..]->(c)) RETURN p\n- List of kerberoastable users with groups\n> MATCH (m:User {hasspn:true}), (n:Group), p=(m)-[:MemberOf]->(n) RETURN m.name as Account, n.name as Group, m.hasspn as Kerberoastable\n### [[AS-REP Roasting]]\n- AS-REP roastable users\n>MATCH (u:User {dontreqpreauth:true}) RETURN u\n\n### [[Unconstrained Delegation]]\n>MATCH (c:Computer {unconstraineddelegation:true}) RETURN c\n\n## [[Constrained Delegation]]\n\u2139\ufe0f Constrained delegation can be configured on user accounts as well as computer accounts.  Make sure you search for both.\n>MATCH (c:Computer), (t:Computer), p=((c)-[:AllowedToDelegate]->(t)) RETURN p\n\n### [[Group Policy (GPO)]]\nGeneric Write on GPOs\n>MATCH (gr:Group), (gp:GPO), p=((gr)-[:GenericWrite]->(gp)) RETURN p\n\n### WriteProperty, WriteDacl, WriteOwner affecting OU\n1st Line Support has **GenericAll** on multiple users and groups\n>MATCH (g1:Group {name:\"1ST LINE SUPPORT@edu.evil.corp\"}), (g2:Group), p=((g1)-[:GenericAll]->(g2)) RETURN p\n\n## [[Database Server]]\nFinding potential MS SQL Admins, based on the assumption that the account running the SQL Service is also a sysadmin (which is very common);\n>MATCH p=(u:User)-[:SQLAdmin]->(c:Computer) RETURN p\n\n## [[Local Administrator Password Solution (LAPS)]]\nFind computers that have LAPS applied to them:\n>MATCH (c:Computer {haslaps: true}) RETURN c\n\nAny groups that have an edge to machines via LAPS:\n>MATCH p=(g:Group)-[:ReadLAPSPassword]->(c:Computer) RETURN p\n\n",
     "commands": [],
-    "latest_commit": "2023-05-12T19:16:17Z"
+    "latest_commit": "2023-05-13T17:30:53Z"
   },
   {
     "name": "C2concealer",
@@ -539,7 +539,7 @@
     "references": [
       "https://wiki.porchetta.industries/"
     ],
-    "latest_commit": "2023-05-12T13:14:31Z"
+    "latest_commit": "2023-05-13T15:23:35Z"
   },
   {
     "name": "cs2modrewrite",
@@ -3886,5 +3886,24 @@
     ],
     "content": "",
     "references": []
+  },
+  {
+    "name": "c2profiler",
+    "phases": [
+      "00. Infrastructure"
+    ],
+    "category": "",
+    "stealthy": false,
+    "platforms": [
+      "Web"
+    ],
+    "source": "https://github.com/molatho/c2profiler",
+    "description": "Webapp that allows creating, importing, modifying and \"testing\" of Cobalt Strike malleable profiles in the browser.",
+    "undetected": [],
+    "detected": [],
+    "commands": [],
+    "content": "",
+    "references": [],
+    "latest_commit": "2023-01-24T19:59:08Z"
   }
 ]
