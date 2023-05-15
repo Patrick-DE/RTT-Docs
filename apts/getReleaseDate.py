@@ -148,13 +148,6 @@ class DateQuery:
         else:
             return None
 
-# def removeStatusCodes(apts: List[APT]):
-#     for apt in apts:
-#         for tech in apt.techniques:
-#             for ref in tech.group_ref:
-#                 isDate = parser.parse(ref.date).date()
-#                 if not isDate:
-#                     ref.date = None
 
 def getWebsiteDate(query):
         if query == "":
