@@ -2,7 +2,7 @@ import requests
 import sys
 import json
 import os
-from fetchAllLatestGitCommits import fetchAllLatestGitCommits
+from fetchAllGitData import fetchAllGitData
 from tools import ToolSchema
 from techniques import TechniqueSchema
 from jsonschema import validate
@@ -86,4 +86,4 @@ for iss in merged_issues:
     print ("close #" + str(iss["number"]),end=', ')
 
 print("\n\nFetching latest commits for git sources...")
-fetchAllLatestGitCommits()
+fetchAllGitData()

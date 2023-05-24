@@ -73,7 +73,8 @@ ToolSchema = {
         "content": {"type": "string"},
         "commands": {"type": "array","items": {"type": "object"}},
         "references": {"type": "array","items": {"type": "string"}},
-        "latest_commit": {"type": "string","format": "uri","qt-uri-protocols": ["http","https"]}
+        "latest_commit": {"type": "string","format": "uri","qt-uri-protocols": ["http","https"]},
+        "language": {"type": "string"}
     },
     "required": ["name", "phases", "category", "platforms", "source", "description"],
 }

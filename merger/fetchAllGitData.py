@@ -9,7 +9,7 @@ from tools import Tools, Tool
 load_dotenv("..\.env")
 GITHUB_API_KEY = os.getenv('GITHUB_API_KEY')
 
-def getLatestCommit(url):
+def getGitHubData(url):
     match = re.search(r"github\.com/([^/]+)/([^/]+)", url)
     if not match:
         return None
@@ -30,37 +30,29 @@ def getLatestCommit(url):
 
     # Extract the relevant information from the response
     data = json.loads(response.text)
-    pushed_at = data["pushed_at"]
-    archived = data["archived"]
-    disabled = data["disabled"]
+    return data
 
-    # Return the information as a dictionary
-    return pushed_at
-
-def fetchAllLatestGitCommits():
+def fetchAllGitData():
     with open('tools.json', 'r') as f:
         toolBase: Tools = json.load(f)
 
     for tool in toolBase:
         if "github.com" in tool["source"]:
-            if "latest_commit" not in tool:
-                tool["latest_commit"] = None
-
-            #if tool["latest_commit"] == None:
             try:
-                updated = getLatestCommit(tool["source"])
-                if updated == None:
-                    continue
-
-                tool["latest_commit"] = updated
+                data = getGitHubData(tool["source"])
             except Exception as ex:
-                #print(ex)
+                print(ex)
                 f = open("tools.json", "w")
                 json.dump(toolBase, f, indent=2)
                 f.close()
+
+            if data:
+                tool["latest_commit"] = data.get("pushed_at", None)
+                tool["language"] = data.get("language", None)
+
 
     f = open("tools.json", "w")
     json.dump(toolBase, f, indent=2)
     f.close()
 
-#fetchAllLatestGitCommits()
+#fetchAllGitData()
