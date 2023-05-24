@@ -2997,6 +2997,27 @@
     ]
   },
   {
+      "name": "PowerUp",
+      "phases": [
+          "05. Privilege Escalation",
+          "09. AD Misconfigurations"
+      ],
+      "category": "",
+      "stealthy": false,
+      "platforms": [
+          "Windows"
+      ],
+      "source": "https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1",
+      "description": "Exploitation Tools",
+      "undetected": [],
+      "detected": [],
+      "content": "",
+      "commands": [],
+      "latest_commit": null,
+      "references":["https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1"],
+      "language":"PowerShell"
+  },
+  {
     "name": "PowerUpSQL",
     "phases": [
       "02. Reconnaissance",
