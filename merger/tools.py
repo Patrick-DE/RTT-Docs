@@ -9,6 +9,8 @@ class Command(object):
         self.description: str= "NoDescription"
         self.requirements : List[Requirements] = []
         self.results : List[Results] = []
+        self.undetected: List[str] = []
+        self.detected: List[str] = []
         
 class Tools(object):
     def __init__(self):
@@ -59,22 +61,47 @@ ToolSchema = {
     "$comment": "https://www.jsonschemavalidator.net/, https://jsonformatter.org/json-to-jsonschema",
     "$schema": "http://json-schema.org/draft-06/schema#",
     "type": "object",
-    "additionalProperties": False,
-    "properties": {
-        "name": {"type": "string"},
-        "phases": {"type": "array","items": {"type": "string"}, "minItems": 1},
-        "category": {"type": "string"},
-        "stealthy": {"type": "boolean"},
-        "platforms" : {"type": "array","items": {"type": "string"}, "minItems": 1},
-        "source": {"type": "string"},
-        "description": {"type": "string"},
-        "undetected": {"type": "array","items": {"type": "string"}},
-        "detected": {"type": "array","items": {"type": "string"}},
-        "content": {"type": "string"},
-        "commands": {"type": "array","items": {"type": "object"}},
-        "references": {"type": "array","items": {"type": "string"}},
-        "latest_commit": {"type": "string","format": "uri","qt-uri-protocols": ["http","https"]},
-        "language": {"type": "string"}
+    "items": {
+        "$ref": "#/definitions/Welcome10Element"
     },
-    "required": ["name", "phases", "category", "platforms", "source", "description"],
+    "definitions": {
+        "Tool": {
+            "type": "object",
+            "additionalProperties": False,
+            "properties": {
+                "name": {"type": "string"},
+                "phases": {"type": "array","items": {"type": "string"}, "minItems": 1},
+                "category": {"type": "string"},
+                "stealthy": {"type": "boolean"},
+                "platforms" : {"type": "array","items": {"type": "string"}, "minItems": 1},
+                "source": {"type": "string"},
+                "description": {"type": "string"},
+                "undetected": {"type": "array","items": {"type": "string"}},
+                "detected": {"type": "array","items": {"type": "string"}},
+                "content": {"type": "string"},
+                "commands": {"type": "array","items": {"$ref": "#/definitions/Command"}},
+                "references": {"type": "array","items": {"type": "string"}},
+                "latest_commit": {"type": "string","format": "uri","qt-uri-protocols": ["http","https"]},
+                "language": {"type": "string"}
+            },
+            "required": ["name", "phases", "category", "platforms", "source", "description"]
+        },
+        "Command": {
+            "type": "object",
+            "additionalProperties": False,
+            "properties": {
+                "id": {"type": "string","format": "uuid"},
+                "name": {"type": "string"},
+                "description": {"type": "string"},
+                "cmd": {"type": "string"},
+                "tag": {"type": "string"},
+                "results": {"type": "array","items": {"type": "string"}},
+                "requirements": {"type": "object"},
+                "detected": {"type": "array","items": {"type": "string"}},
+                "undetected": {"type": "array","items": {"type": "string"}}
+            },
+            "required": ["cmd","description","id","name","results","tag"],
+            "title": "Command"
+        }
+    }
 }
