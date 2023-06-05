@@ -62,7 +62,7 @@ ToolSchema = {
     "$schema": "http://json-schema.org/draft-06/schema#",
     "type": "object",
     "items": {
-        "$ref": "#/definitions/Welcome10Element"
+        "$ref": "#/definitions/Tool"
     },
     "definitions": {
         "Tool": {
@@ -84,10 +84,11 @@ ToolSchema = {
                 "latest_commit": {"type": "string","format": "uri","qt-uri-protocols": ["http","https"]},
                 "language": {"type": "string"}
             },
-            "required": ["name", "phases", "category", "platforms", "source", "description"]
+            "required": ["name", "phases", "category", "platforms", "source", "description"],
         },
         "Command": {
             "type": "object",
+            "not": {"type": None},
             "additionalProperties": False,
             "properties": {
                 "id": {"type": "string","format": "uuid"},
