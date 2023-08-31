@@ -67,7 +67,7 @@ ToolSchema = {
     "definitions": {
         "Tool": {
             "type": "object",
-            "additionalProperties": False,
+            "additionalProperties": false,
             "properties": {
                 "name": {"type": "string"},
                 "phases": {"type": "array","items": {"type": "string"}, "minItems": 1},
@@ -79,7 +79,7 @@ ToolSchema = {
                 "undetected": {"type": "array","items": {"type": "string"}},
                 "detected": {"type": "array","items": {"type": "string"}},
                 "content": {"type": "string"},
-                "commands": {"type": "array","items": {"$ref": "#/definitions/Command"}},
+                "commands": {"type": "array","items": {"type": "object", "$ref": "#/definitions/Command"}},
                 "references": {"type": "array","items": {"type": "string"}},
                 "latest_commit": {"type": "string","format": "uri","qt-uri-protocols": ["http","https"]},
                 "language": {"type": "string"}
@@ -88,7 +88,7 @@ ToolSchema = {
         },
         "Command": {
             "type": "object",
-            "additionalProperties": False,
+            "additionalProperties": false,
             "properties": {
                 "id": {"type": "string","format": "uuid"},
                 "name": {"type": "string"},
