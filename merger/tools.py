@@ -88,7 +88,6 @@ ToolSchema = {
         },
         "Command": {
             "type": "object",
-            "not": {"type": None},
             "additionalProperties": False,
             "properties": {
                 "id": {"type": "string","format": "uuid"},

@@ -15,11 +15,11 @@
             "justMyCode": true
         },
         {
-            "name": "Sync-arttoolkit",
+            "name": "-fetchAllGitCommits",
             "type": "python",
             "request": "launch",
             //"cwd": "/home/patrick",
-            "program": "${workspaceFolder}/sync/arttoolkit.py",
+            "program": "${workspaceFolder}/merger/fetchAllGitCommits.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },
@@ -33,20 +33,20 @@
             "justMyCode": true
         },
         {
-            "name": "GetDateForRefs",
+            "name": "-Sync-arttoolkit",
             "type": "python",
             "request": "launch",
             //"cwd": "/home/patrick",
-            "program": "${workspaceFolder}/apts/getReleaseDate.py",
+            "program": "${workspaceFolder}/sync/arttoolkit.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },
         {
-            "name": "fetchAllGitCommits",
+            "name": "deprecated-GetDateForRefs",
             "type": "python",
             "request": "launch",
             //"cwd": "/home/patrick",
-            "program": "${workspaceFolder}/merger/fetchAllGitCommits.py",
+            "program": "${workspaceFolder}/apts/getReleaseDate.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },

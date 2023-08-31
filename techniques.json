@@ -3353,5 +3353,53 @@
                 ]
             }
         ]
+    },
+    {
+        "id": "2400012b-2e82-47b6-8038-23d8a5a5af3f",
+        "phase": "02. Reconnaissance",
+        "ttp": "T1563",
+        "external": false,
+        "description": "Browser pivot through chrome (chromium) remote debugging.\nIncludes MsEdge.",
+        "category": "",
+        "stealthy": true,
+        "tools": [],
+        "changes": [],
+        "name": "Browser Remote Debugging",
+        "content": "",
+        "steps": [
+            {
+                "id": "f5a21131-58b0-401f-8e55-b91ce9ecde73",
+                "name": "Setup remote debugging",
+                "description": "",
+                "requirements": {
+                    "tag": "Tool:Chromium"
+                },
+                "results": [
+                    "INTEL:DOMAIN"
+                ]
+            },
+            {
+                "id": "3d6bbf72-2a5a-4bf8-90bb-967edfb22af3",
+                "name": "Attach to remote session",
+                "description": "",
+                "requirements": {
+                    "and": [
+                        {
+                            "tag": "Tool:Chromium"
+                        },
+                        {
+                            "tag": "EXECUTION:REMOTE"
+                        }
+                    ]
+                },
+                "results": [
+                    "INTEL:DOMAIN"
+                ]
+            }
+        ],
+        "references": [
+            "https://twitter.com/an0n_r0/status/1670007830072500225",
+            "https://gist.github.com/NotMedic/b1ab7809eea94cc05513905b26964663"
+        ]
     }
 ]

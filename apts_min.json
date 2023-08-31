@@ -4000,13 +4000,13 @@
         "techniqueId": "T0886"
       },
       {
-        "techniqueId": "T0817"
+        "techniqueId": "T0859"
       },
       {
         "techniqueId": "T0862"
       },
       {
-        "techniqueId": "T0859"
+        "techniqueId": "T0817"
       }
     ]
   },
@@ -4506,160 +4506,6 @@
     ]
   },
   {
-    "name": "Dark Caracal",
-    "techniques": [
-      {
-        "techniqueId": "T1071.001"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1027.002"
-      },
-      {
-        "techniqueId": "T1113"
-      },
-      {
-        "techniqueId": "T1189"
-      },
-      {
-        "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1005"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1218.001"
-      },
-      {
-        "techniqueId": "T1566.003"
-      },
-      {
-        "techniqueId": "T1083"
-      },
-      {
-        "techniqueId": "T1437.001"
-      }
-    ]
-  },
-  {
-    "name": "Gorgon Group",
-    "techniques": [
-      {
-        "techniqueId": "T1588.002"
-      },
-      {
-        "techniqueId": "T1564.003"
-      },
-      {
-        "techniqueId": "T1140"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1055.002"
-      },
-      {
-        "techniqueId": "T1055.012"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1059.005"
-      },
-      {
-        "techniqueId": "T1562.001"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1547.009"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1106"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1112"
-      }
-    ]
-  },
-  {
-    "name": "Rancor",
-    "techniques": [
-      {
-        "techniqueId": "T1059.005"
-      },
-      {
-        "techniqueId": "T1218.007"
-      },
-      {
-        "techniqueId": "T1071.001"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1053.005"
-      }
-    ]
-  },
-  {
-    "name": "Thrip",
-    "techniques": [
-      {
-        "techniqueId": "T1588.002"
-      },
-      {
-        "techniqueId": "T1048.003"
-      },
-      {
-        "techniqueId": "T1219"
-      },
-      {
-        "techniqueId": "T1059.001"
-      }
-    ]
-  },
-  {
-    "name": "Orangeworm",
-    "techniques": [
-      {
-        "techniqueId": "T1021.002"
-      },
-      {
-        "techniqueId": "T1071.001"
-      }
-    ]
-  },
-  {
     "name": "HEXANE",
     "techniques": [
       {
@@ -4779,9 +4625,6 @@
         "techniqueId": "T1564.003"
       },
       {
-        "techniqueId": "T1059.001"
-      },
-      {
         "techniqueId": "T1187"
       },
       {
@@ -4791,63 +4634,78 @@
         "techniqueId": "T1204.002"
       },
       {
+        "techniqueId": "T1059.001"
+      },
+      {
         "techniqueId": "T1566.001"
       }
     ]
   },
   {
-    "name": "Leafminer",
+    "name": "APT19",
     "techniques": [
+      {
+        "techniqueId": "T1027.010"
+      },
       {
         "techniqueId": "T1588.002"
       },
       {
-        "techniqueId": "T1555.003"
+        "techniqueId": "T1564.003"
       },
       {
-        "techniqueId": "T1555"
+        "techniqueId": "T1218.011"
       },
       {
-        "techniqueId": "T1003.005"
+        "techniqueId": "T1543.003"
       },
       {
-        "techniqueId": "T1003.004"
+        "techniqueId": "T1574.002"
       },
       {
-        "techniqueId": "T1552.001"
+        "techniqueId": "T1204.002"
       },
       {
-        "techniqueId": "T1055.013"
+        "techniqueId": "T1027"
       },
       {
-        "techniqueId": "T1059.007"
+        "techniqueId": "T1033"
       },
       {
-        "techniqueId": "T1136.001"
+        "techniqueId": "T1059.001"
       },
       {
-        "techniqueId": "T1114.002"
+        "techniqueId": "T1059"
       },
       {
-        "techniqueId": "T1083"
+        "techniqueId": "T1566.001"
       },
       {
-        "techniqueId": "T1027.010"
+        "techniqueId": "T1132.001"
+      },
+      {
+        "techniqueId": "T1071.001"
+      },
+      {
+        "techniqueId": "T1140"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1218.010"
+      },
+      {
+        "techniqueId": "T1016"
+      },
+      {
+        "techniqueId": "T1112"
       },
       {
         "techniqueId": "T1189"
       },
       {
-        "techniqueId": "T1110.003"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1018"
-      },
-      {
-        "techniqueId": "T1046"
+        "techniqueId": "T1082"
       }
     ]
   },
@@ -4885,85 +4743,110 @@
         "techniqueId": "T1037.001"
       },
       {
-        "techniqueId": "T1027.010"
-      },
-      {
-        "techniqueId": "T1573.002"
-      },
-      {
-        "techniqueId": "T1548.002"
-      },
-      {
-        "techniqueId": "T1566.002"
-      },
-      {
-        "techniqueId": "T1219"
-      },
-      {
-        "techniqueId": "T1547.001"
+        "techniqueId": "T1021.001"
       },
       {
         "techniqueId": "T1218.003"
       },
       {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1021.001"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
         "techniqueId": "T1046"
       },
       {
-        "techniqueId": "T1543.003"
-      },
-      {
-        "techniqueId": "T1559.002"
-      },
-      {
-        "techniqueId": "T1220"
-      },
-      {
-        "techniqueId": "T1059.005"
+        "techniqueId": "T1105"
       },
       {
         "techniqueId": "T1053.005"
       },
       {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1573.002"
+      },
+      {
         "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1220"
+      },
+      {
+        "techniqueId": "T1566.002"
+      },
+      {
+        "techniqueId": "T1027.010"
+      },
+      {
+        "techniqueId": "T1548.002"
       },
       {
         "techniqueId": "T1071.001"
       },
       {
-        "techniqueId": "T1055"
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1559.002"
+      },
+      {
+        "techniqueId": "T1203"
       },
       {
         "techniqueId": "T1070.004"
       },
       {
-        "techniqueId": "T1068"
+        "techniqueId": "T1219"
+      },
+      {
+        "techniqueId": "T1059.001"
       },
       {
         "techniqueId": "T1218.010"
       },
       {
-        "techniqueId": "T1203"
+        "techniqueId": "T1059.005"
+      },
+      {
+        "techniqueId": "T1055"
+      },
+      {
+        "techniqueId": "T1068"
+      },
+      {
+        "techniqueId": "T1543.003"
       }
     ]
   },
   {
-    "name": "APT19",
+    "name": "Orangeworm",
     "techniques": [
       {
-        "techniqueId": "T1027.010"
+        "techniqueId": "T1021.002"
       },
+      {
+        "techniqueId": "T1071.001"
+      }
+    ]
+  },
+  {
+    "name": "Thrip",
+    "techniques": [
+      {
+        "techniqueId": "T1588.002"
+      },
+      {
+        "techniqueId": "T1219"
+      },
+      {
+        "techniqueId": "T1048.003"
+      },
+      {
+        "techniqueId": "T1059.001"
+      }
+    ]
+  },
+  {
+    "name": "Gorgon Group",
+    "techniques": [
       {
         "techniqueId": "T1588.002"
       },
@@ -4971,58 +4854,352 @@
         "techniqueId": "T1564.003"
       },
       {
-        "techniqueId": "T1204.002"
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1059.005"
       },
       {
         "techniqueId": "T1059.001"
       },
       {
-        "techniqueId": "T1033"
+        "techniqueId": "T1566.001"
       },
       {
-        "techniqueId": "T1574.002"
+        "techniqueId": "T1562.001"
       },
       {
-        "techniqueId": "T1071.001"
+        "techniqueId": "T1055.012"
       },
       {
-        "techniqueId": "T1543.003"
-      },
-      {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1082"
-      },
-      {
-        "techniqueId": "T1016"
-      },
-      {
-        "techniqueId": "T1059"
-      },
-      {
-        "techniqueId": "T1218.010"
-      },
-      {
-        "techniqueId": "T1132.001"
-      },
-      {
-        "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1189"
-      },
-      {
-        "techniqueId": "T1218.011"
-      },
-      {
-        "techniqueId": "T1112"
+        "techniqueId": "T1105"
       },
       {
         "techniqueId": "T1140"
       },
       {
+        "techniqueId": "T1112"
+      },
+      {
+        "techniqueId": "T1055.002"
+      },
+      {
+        "techniqueId": "T1106"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1547.009"
+      }
+    ]
+  },
+  {
+    "name": "Rancor",
+    "techniques": [
+      {
+        "techniqueId": "T1059.005"
+      },
+      {
+        "techniqueId": "T1218.007"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1071.001"
+      },
+      {
         "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1053.005"
+      }
+    ]
+  },
+  {
+    "name": "Dark Caracal",
+    "techniques": [
+      {
+        "techniqueId": "T1071.001"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1027.002"
+      },
+      {
+        "techniqueId": "T1189"
+      },
+      {
+        "techniqueId": "T1113"
+      },
+      {
+        "techniqueId": "T1566.003"
+      },
+      {
+        "techniqueId": "T1083"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1005"
+      },
+      {
+        "techniqueId": "T1218.001"
+      },
+      {
+        "techniqueId": "T1437.001"
+      }
+    ]
+  },
+  {
+    "name": "Leafminer",
+    "techniques": [
+      {
+        "techniqueId": "T1588.002"
+      },
+      {
+        "techniqueId": "T1555.003"
+      },
+      {
+        "techniqueId": "T1555"
+      },
+      {
+        "techniqueId": "T1003.005"
+      },
+      {
+        "techniqueId": "T1003.004"
+      },
+      {
+        "techniqueId": "T1552.001"
+      },
+      {
+        "techniqueId": "T1055.013"
+      },
+      {
+        "techniqueId": "T1189"
+      },
+      {
+        "techniqueId": "T1018"
+      },
+      {
+        "techniqueId": "T1027.010"
+      },
+      {
+        "techniqueId": "T1059.007"
+      },
+      {
+        "techniqueId": "T1083"
+      },
+      {
+        "techniqueId": "T1110.003"
+      },
+      {
+        "techniqueId": "T1114.002"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1136.001"
+      },
+      {
+        "techniqueId": "T1046"
+      }
+    ]
+  },
+  {
+    "name": "Leviathan",
+    "techniques": [
+      {
+        "techniqueId": "T1055.001"
+      },
+      {
+        "techniqueId": "T1559.002"
+      },
+      {
+        "techniqueId": "T1041"
+      },
+      {
+        "techniqueId": "T1189"
+      },
+      {
+        "techniqueId": "T1572"
+      },
+      {
+        "techniqueId": "T1090.003"
+      },
+      {
+        "techniqueId": "T1560"
+      },
+      {
+        "techniqueId": "T1074.002"
+      },
+      {
+        "techniqueId": "T1586.001"
+      },
+      {
+        "techniqueId": "T1133"
+      },
+      {
+        "techniqueId": "T1078"
+      },
+      {
+        "techniqueId": "T1534"
+      },
+      {
+        "techniqueId": "T1586.002"
+      },
+      {
+        "techniqueId": "T1027.003"
+      },
+      {
+        "techniqueId": "T1583.001"
+      },
+      {
+        "techniqueId": "T1589.001"
+      },
+      {
+        "techniqueId": "T1585.001"
+      },
+      {
+        "techniqueId": "T1585.002"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1204.001"
+      },
+      {
+        "techniqueId": "T1567.002"
+      },
+      {
+        "techniqueId": "T1505.003"
+      },
+      {
+        "techniqueId": "T1021.001"
+      },
+      {
+        "techniqueId": "T1003"
+      },
+      {
+        "techniqueId": "T1021.004"
+      },
+      {
+        "techniqueId": "T1218.010"
+      },
+      {
+        "techniqueId": "T1197"
+      },
+      {
+        "techniqueId": "T1102.003"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1203"
+      },
+      {
+        "techniqueId": "T1553.002"
+      },
+      {
+        "techniqueId": "T1047"
+      },
+      {
+        "techniqueId": "T1566.002"
+      },
+      {
+        "techniqueId": "T1140"
+      },
+      {
+        "techniqueId": "T1059.005"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1074.001"
+      },
+      {
+        "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1547.009"
+      },
+      {
+        "techniqueId": "T1027.001"
+      },
+      {
+        "techniqueId": "T1546.003"
+      }
+    ]
+  },
+  {
+    "name": "Elderwood",
+    "techniques": [
+      {
+        "techniqueId": "T1204.001"
+      },
+      {
+        "techniqueId": "T1027.002"
+      },
+      {
+        "techniqueId": "T1189"
+      },
+      {
+        "techniqueId": "T1203"
+      },
+      {
+        "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1566.002"
+      },
+      {
+        "techniqueId": "T1566.001"
+      }
+    ]
+  },
+  {
+    "name": "BlackOasis",
+    "techniques": [
+      {
+        "techniqueId": "T1027"
       }
     ]
   },
@@ -5051,113 +5228,330 @@
         "techniqueId": "T1204.001"
       },
       {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1068"
-      },
-      {
-        "techniqueId": "T1047"
-      },
-      {
-        "techniqueId": "T1053.005"
-      },
-      {
-        "techniqueId": "T1560.001"
-      },
-      {
-        "techniqueId": "T1573.002"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
         "techniqueId": "T1021.001"
-      },
-      {
-        "techniqueId": "T1112"
-      },
-      {
-        "techniqueId": "T1074.002"
-      },
-      {
-        "techniqueId": "T1027.010"
       },
       {
         "techniqueId": "T1021.002"
       },
       {
-        "techniqueId": "T1018"
-      },
-      {
-        "techniqueId": "T1518.001"
-      },
-      {
         "techniqueId": "T1070.001"
+      },
+      {
+        "techniqueId": "T1112"
+      },
+      {
+        "techniqueId": "T1573.002"
       },
       {
         "techniqueId": "T1048.003"
       },
       {
+        "techniqueId": "T1053.005"
+      },
+      {
+        "techniqueId": "T1047"
+      },
+      {
         "techniqueId": "T1070.004"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1566.002"
-      },
-      {
-        "techniqueId": "T1078"
       },
       {
         "techniqueId": "T1566.001"
       },
       {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1059.003"
-      }
-    ]
-  },
-  {
-    "name": "Elderwood",
-    "techniques": [
-      {
-        "techniqueId": "T1204.001"
-      },
-      {
-        "techniqueId": "T1203"
+        "techniqueId": "T1560.001"
       },
       {
         "techniqueId": "T1105"
       },
       {
-        "techniqueId": "T1027.002"
+        "techniqueId": "T1027.010"
       },
       {
-        "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1204.002"
+        "techniqueId": "T1059.001"
       },
       {
         "techniqueId": "T1566.002"
       },
       {
-        "techniqueId": "T1189"
+        "techniqueId": "T1204.002"
       },
       {
-        "techniqueId": "T1566.001"
+        "techniqueId": "T1018"
+      },
+      {
+        "techniqueId": "T1074.002"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1068"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1518.001"
+      },
+      {
+        "techniqueId": "T1078"
       }
     ]
   },
   {
-    "name": "BlackOasis",
+    "name": "APT33",
     "techniques": [
       {
+        "techniqueId": "T1588.002"
+      },
+      {
+        "techniqueId": "T1546.003"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1059.005"
+      },
+      {
+        "techniqueId": "T1078.004"
+      },
+      {
+        "techniqueId": "T1571"
+      },
+      {
+        "techniqueId": "T1552.006"
+      },
+      {
+        "techniqueId": "T1555"
+      },
+      {
+        "techniqueId": "T1555.003"
+      },
+      {
+        "techniqueId": "T1003.005"
+      },
+      {
+        "techniqueId": "T1003.004"
+      },
+      {
+        "techniqueId": "T1552.001"
+      },
+      {
+        "techniqueId": "T1110.003"
+      },
+      {
+        "techniqueId": "T1068"
+      },
+      {
+        "techniqueId": "T1573.001"
+      },
+      {
         "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1132.001"
+      },
+      {
+        "techniqueId": "T1053.005"
+      },
+      {
+        "techniqueId": "T1048.003"
+      },
+      {
+        "techniqueId": "T1071.001"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1560.001"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1040"
+      },
+      {
+        "techniqueId": "T1203"
+      },
+      {
+        "techniqueId": "T1204.001"
+      },
+      {
+        "techniqueId": "T1078"
+      },
+      {
+        "techniqueId": "T1566.002"
+      },
+      {
+        "techniqueId": "T0852"
+      },
+      {
+        "techniqueId": "T0853"
+      },
+      {
+        "techniqueId": "T0865"
+      }
+    ]
+  },
+  {
+    "name": "PLATINUM",
+    "techniques": [
+      {
+        "techniqueId": "T1036"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1056.004"
+      },
+      {
+        "techniqueId": "T1056.001"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1068"
+      },
+      {
+        "techniqueId": "T1095"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1055"
+      },
+      {
+        "techniqueId": "T1189"
+      }
+    ]
+  },
+  {
+    "name": "TA459",
+    "techniques": [
+      {
+        "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1059.005"
+      },
+      {
+        "techniqueId": "T1203"
+      }
+    ]
+  },
+  {
+    "name": "APT37",
+    "techniques": [
+      {
+        "techniqueId": "T1059"
+      },
+      {
+        "techniqueId": "T1059.006"
+      },
+      {
+        "techniqueId": "T1053.005"
+      },
+      {
+        "techniqueId": "T1059.005"
+      },
+      {
+        "techniqueId": "T1027.003"
+      },
+      {
+        "techniqueId": "T1529"
+      },
+      {
+        "techniqueId": "T1548.002"
+      },
+      {
+        "techniqueId": "T1120"
+      },
+      {
+        "techniqueId": "T1082"
+      },
+      {
+        "techniqueId": "T1033"
+      },
+      {
+        "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1106"
+      },
+      {
+        "techniqueId": "T1057"
+      },
+      {
+        "techniqueId": "T1055"
+      },
+      {
+        "techniqueId": "T1071.001"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1189"
+      },
+      {
+        "techniqueId": "T1203"
+      },
+      {
+        "techniqueId": "T1559.002"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1123"
+      },
+      {
+        "techniqueId": "T1555.003"
+      },
+      {
+        "techniqueId": "T1036.001"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1102.002"
+      },
+      {
+        "techniqueId": "T1005"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1561.002"
+      },
+      {
+        "techniqueId": "T1105"
       }
     ]
   },
@@ -5315,19 +5709,7 @@
         "techniqueId": "T1204.002"
       },
       {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1036.005"
-      },
-      {
-        "techniqueId": "T1140"
-      },
-      {
         "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1218.003"
       },
       {
         "techniqueId": "T1218.005"
@@ -5336,561 +5718,22 @@
         "techniqueId": "T1566.001"
       },
       {
+        "techniqueId": "T1036.005"
+      },
+      {
+        "techniqueId": "T1140"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1218.003"
+      },
+      {
         "techniqueId": "T1547.001"
       },
       {
         "techniqueId": "T1027.010"
-      }
-    ]
-  },
-  {
-    "name": "Leviathan",
-    "techniques": [
-      {
-        "techniqueId": "T1055.001"
-      },
-      {
-        "techniqueId": "T1559.002"
-      },
-      {
-        "techniqueId": "T1041"
-      },
-      {
-        "techniqueId": "T1189"
-      },
-      {
-        "techniqueId": "T1572"
-      },
-      {
-        "techniqueId": "T1090.003"
-      },
-      {
-        "techniqueId": "T1560"
-      },
-      {
-        "techniqueId": "T1074.002"
-      },
-      {
-        "techniqueId": "T1586.001"
-      },
-      {
-        "techniqueId": "T1133"
-      },
-      {
-        "techniqueId": "T1078"
-      },
-      {
-        "techniqueId": "T1534"
-      },
-      {
-        "techniqueId": "T1586.002"
-      },
-      {
-        "techniqueId": "T1027.003"
-      },
-      {
-        "techniqueId": "T1583.001"
-      },
-      {
-        "techniqueId": "T1589.001"
-      },
-      {
-        "techniqueId": "T1585.001"
-      },
-      {
-        "techniqueId": "T1585.002"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1204.001"
-      },
-      {
-        "techniqueId": "T1567.002"
-      },
-      {
-        "techniqueId": "T1505.003"
-      },
-      {
-        "techniqueId": "T1021.001"
-      },
-      {
-        "techniqueId": "T1003"
-      },
-      {
-        "techniqueId": "T1021.004"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1047"
-      },
-      {
-        "techniqueId": "T1102.003"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1074.001"
-      },
-      {
-        "techniqueId": "T1203"
-      },
-      {
-        "techniqueId": "T1197"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1027.001"
-      },
-      {
-        "techniqueId": "T1546.003"
-      },
-      {
-        "techniqueId": "T1140"
-      },
-      {
-        "techniqueId": "T1059.005"
-      },
-      {
-        "techniqueId": "T1218.010"
-      },
-      {
-        "techniqueId": "T1566.002"
-      },
-      {
-        "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1553.002"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1547.009"
-      }
-    ]
-  },
-  {
-    "name": "APT33",
-    "techniques": [
-      {
-        "techniqueId": "T1588.002"
-      },
-      {
-        "techniqueId": "T1546.003"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1059.005"
-      },
-      {
-        "techniqueId": "T1078.004"
-      },
-      {
-        "techniqueId": "T1571"
-      },
-      {
-        "techniqueId": "T1552.006"
-      },
-      {
-        "techniqueId": "T1555"
-      },
-      {
-        "techniqueId": "T1555.003"
-      },
-      {
-        "techniqueId": "T1003.005"
-      },
-      {
-        "techniqueId": "T1003.004"
-      },
-      {
-        "techniqueId": "T1552.001"
-      },
-      {
-        "techniqueId": "T1110.003"
-      },
-      {
-        "techniqueId": "T1068"
-      },
-      {
-        "techniqueId": "T1573.001"
-      },
-      {
-        "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1132.001"
-      },
-      {
-        "techniqueId": "T1053.005"
-      },
-      {
-        "techniqueId": "T1048.003"
-      },
-      {
-        "techniqueId": "T1071.001"
-      },
-      {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1560.001"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1040"
-      },
-      {
-        "techniqueId": "T1203"
-      },
-      {
-        "techniqueId": "T1204.001"
-      },
-      {
-        "techniqueId": "T1078"
-      },
-      {
-        "techniqueId": "T1566.002"
-      },
-      {
-        "techniqueId": "T0853"
-      },
-      {
-        "techniqueId": "T0852"
-      },
-      {
-        "techniqueId": "T0865"
-      }
-    ]
-  },
-  {
-    "name": "APT37",
-    "techniques": [
-      {
-        "techniqueId": "T1059"
-      },
-      {
-        "techniqueId": "T1059.006"
-      },
-      {
-        "techniqueId": "T1053.005"
-      },
-      {
-        "techniqueId": "T1059.005"
-      },
-      {
-        "techniqueId": "T1027.003"
-      },
-      {
-        "techniqueId": "T1529"
-      },
-      {
-        "techniqueId": "T1548.002"
-      },
-      {
-        "techniqueId": "T1120"
-      },
-      {
-        "techniqueId": "T1106"
-      },
-      {
-        "techniqueId": "T1055"
-      },
-      {
-        "techniqueId": "T1033"
-      },
-      {
-        "techniqueId": "T1071.001"
-      },
-      {
-        "techniqueId": "T1082"
-      },
-      {
-        "techniqueId": "T1057"
-      },
-      {
-        "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1102.002"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1559.002"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1203"
-      },
-      {
-        "techniqueId": "T1555.003"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1561.002"
-      },
-      {
-        "techniqueId": "T1189"
-      },
-      {
-        "techniqueId": "T1036.001"
-      },
-      {
-        "techniqueId": "T1005"
-      },
-      {
-        "techniqueId": "T1123"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1547.001"
-      }
-    ]
-  },
-  {
-    "name": "TA459",
-    "techniques": [
-      {
-        "techniqueId": "T1203"
-      },
-      {
-        "techniqueId": "T1059.005"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1204.002"
-      }
-    ]
-  },
-  {
-    "name": "PLATINUM",
-    "techniques": [
-      {
-        "techniqueId": "T1036"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1056.001"
-      },
-      {
-        "techniqueId": "T1189"
-      },
-      {
-        "techniqueId": "T1055"
-      },
-      {
-        "techniqueId": "T1068"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1056.004"
-      },
-      {
-        "techniqueId": "T1095"
-      },
-      {
-        "techniqueId": "T1204.002"
-      }
-    ]
-  },
-  {
-    "name": "Sowbug",
-    "techniques": [
-      {
-        "techniqueId": "T1036.005"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1039"
-      },
-      {
-        "techniqueId": "T1135"
-      },
-      {
-        "techniqueId": "T1003"
-      },
-      {
-        "techniqueId": "T1560.001"
-      },
-      {
-        "techniqueId": "T1056.001"
-      },
-      {
-        "techniqueId": "T1083"
-      },
-      {
-        "techniqueId": "T1082"
-      }
-    ]
-  },
-  {
-    "name": "BRONZE BUTLER",
-    "techniques": [
-      {
-        "techniqueId": "T1588.002"
-      },
-      {
-        "techniqueId": "T1574.002"
-      },
-      {
-        "techniqueId": "T1007"
-      },
-      {
-        "techniqueId": "T1562.001"
-      },
-      {
-        "techniqueId": "T1027.003"
-      },
-      {
-        "techniqueId": "T1518"
-      },
-      {
-        "techniqueId": "T1036"
-      },
-      {
-        "techniqueId": "T1059.006"
-      },
-      {
-        "techniqueId": "T1036.002"
-      },
-      {
-        "techniqueId": "T1080"
-      },
-      {
-        "techniqueId": "T1059.005"
-      },
-      {
-        "techniqueId": "T1053.005"
-      },
-      {
-        "techniqueId": "T1189"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1203"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1102.001"
-      },
-      {
-        "techniqueId": "T1070.004"
-      },
-      {
-        "techniqueId": "T1132.001"
-      },
-      {
-        "techniqueId": "T1550.003"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1036.005"
-      },
-      {
-        "techniqueId": "T1053.002"
-      },
-      {
-        "techniqueId": "T1560.001"
-      },
-      {
-        "techniqueId": "T1124"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1548.002"
-      },
-      {
-        "techniqueId": "T1071.001"
-      },
-      {
-        "techniqueId": "T1005"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1573.001"
-      },
-      {
-        "techniqueId": "T1027.001"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1087.002"
-      },
-      {
-        "techniqueId": "T1018"
-      },
-      {
-        "techniqueId": "T1113"
-      },
-      {
-        "techniqueId": "T1083"
-      },
-      {
-        "techniqueId": "T1140"
-      },
-      {
-        "techniqueId": "T1039"
-      },
-      {
-        "techniqueId": "T1547.001"
       }
     ]
   },
@@ -6069,10 +5912,10 @@
         "techniqueId": "T1564.003"
       },
       {
-        "techniqueId": "T1114.001"
+        "techniqueId": "T1560.001"
       },
       {
-        "techniqueId": "T1560.001"
+        "techniqueId": "T1114.001"
       },
       {
         "techniqueId": "T1003.001"
@@ -6081,40 +5924,34 @@
         "techniqueId": "T1566.002"
       },
       {
-        "techniqueId": "T1070.004"
-      },
-      {
-        "techniqueId": "T1082"
-      },
-      {
-        "techniqueId": "T1016"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
         "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1057"
-      },
-      {
-        "techniqueId": "T1071.001"
-      },
-      {
-        "techniqueId": "T1113"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1056.001"
       },
       {
         "techniqueId": "T1083"
       },
       {
+        "techniqueId": "T1059.001"
+      },
+      {
         "techniqueId": "T1102.002"
+      },
+      {
+        "techniqueId": "T1082"
+      },
+      {
+        "techniqueId": "T1056.001"
+      },
+      {
+        "techniqueId": "T1113"
+      },
+      {
+        "techniqueId": "T1070.004"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1059.003"
       },
       {
         "techniqueId": "T1547.001"
@@ -6126,42 +5963,57 @@
         "techniqueId": "T1033"
       },
       {
-        "techniqueId": "T1105"
+        "techniqueId": "T1016"
+      },
+      {
+        "techniqueId": "T1071.001"
+      },
+      {
+        "techniqueId": "T1057"
+      }
+    ]
+  },
+  {
+    "name": "FIN5",
+    "techniques": [
+      {
+        "techniqueId": "T1588.002"
+      },
+      {
+        "techniqueId": "T1018"
+      },
+      {
+        "techniqueId": "T1133"
+      },
+      {
+        "techniqueId": "T1070.001"
+      },
+      {
+        "techniqueId": "T1090.002"
+      },
+      {
+        "techniqueId": "T1070.004"
+      },
+      {
+        "techniqueId": "T1078"
+      },
+      {
+        "techniqueId": "T1074.001"
+      },
+      {
+        "techniqueId": "T1110"
+      },
+      {
+        "techniqueId": "T1119"
+      },
+      {
+        "techniqueId": "T1059"
       }
     ]
   },
   {
     "name": "NEODYMIUM",
     "techniques": []
-  },
-  {
-    "name": "CopyKittens",
-    "techniques": [
-      {
-        "techniqueId": "T1090"
-      },
-      {
-        "techniqueId": "T1588.002"
-      },
-      {
-        "techniqueId": "T1564.003"
-      },
-      {
-        "techniqueId": "T1218.011"
-      },
-      {
-        "techniqueId": "T1560.001"
-      },
-      {
-        "techniqueId": "T1560.003"
-      },
-      {
-        "techniqueId": "T1553.002"
-      },
-      {
-        "techniqueId": "T1059.001"
-      }
-    ]
   },
   {
     "name": "PROMETHIUM",
@@ -6202,266 +6054,188 @@
     ]
   },
   {
-    "name": "FIN5",
+    "name": "CopyKittens",
     "techniques": [
+      {
+        "techniqueId": "T1090"
+      },
       {
         "techniqueId": "T1588.002"
       },
       {
-        "techniqueId": "T1074.001"
+        "techniqueId": "T1564.003"
       },
       {
-        "techniqueId": "T1070.004"
+        "techniqueId": "T1560.003"
       },
       {
-        "techniqueId": "T1133"
+        "techniqueId": "T1218.011"
       },
       {
-        "techniqueId": "T1059"
-      },
-      {
-        "techniqueId": "T1018"
-      },
-      {
-        "techniqueId": "T1078"
-      },
-      {
-        "techniqueId": "T1119"
-      },
-      {
-        "techniqueId": "T1090.002"
-      },
-      {
-        "techniqueId": "T1110"
-      },
-      {
-        "techniqueId": "T1070.001"
-      }
-    ]
-  },
-  {
-    "name": "FIN10",
-    "techniques": [
-      {
-        "techniqueId": "T1588.002"
-      },
-      {
-        "techniqueId": "T1078.003"
-      },
-      {
-        "techniqueId": "T1053.005"
+        "techniqueId": "T1560.001"
       },
       {
         "techniqueId": "T1059.001"
       },
       {
-        "techniqueId": "T1070.004"
-      },
-      {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1078"
-      },
-      {
-        "techniqueId": "T1570"
-      },
-      {
-        "techniqueId": "T1021.001"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1033"
+        "techniqueId": "T1553.002"
       }
     ]
   },
   {
-    "name": "OilRig",
+    "name": "BRONZE BUTLER",
     "techniques": [
       {
-        "techniqueId": "T1120"
+        "techniqueId": "T1588.002"
       },
       {
-        "techniqueId": "T1059.005"
-      },
-      {
-        "techniqueId": "T1497.001"
-      },
-      {
-        "techniqueId": "T1036"
-      },
-      {
-        "techniqueId": "T1555.004"
-      },
-      {
-        "techniqueId": "T1137.004"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1555.003"
-      },
-      {
-        "techniqueId": "T1555"
-      },
-      {
-        "techniqueId": "T1003.005"
-      },
-      {
-        "techniqueId": "T1003.004"
-      },
-      {
-        "techniqueId": "T1069.002"
-      },
-      {
-        "techniqueId": "T1087.001"
-      },
-      {
-        "techniqueId": "T1204.001"
-      },
-      {
-        "techniqueId": "T1071.004"
-      },
-      {
-        "techniqueId": "T1572"
-      },
-      {
-        "techniqueId": "T1566.003"
-      },
-      {
-        "techniqueId": "T1552.001"
-      },
-      {
-        "techniqueId": "T1566.002"
-      },
-      {
-        "techniqueId": "T1053.005"
-      },
-      {
-        "techniqueId": "T1046"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1047"
-      },
-      {
-        "techniqueId": "T1218.001"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1056.001"
-      },
-      {
-        "techniqueId": "T1110"
-      },
-      {
-        "techniqueId": "T1573.002"
-      },
-      {
-        "techniqueId": "T1133"
-      },
-      {
-        "techniqueId": "T1201"
-      },
-      {
-        "techniqueId": "T1113"
-      },
-      {
-        "techniqueId": "T1016"
-      },
-      {
-        "techniqueId": "T1048.003"
-      },
-      {
-        "techniqueId": "T1012"
-      },
-      {
-        "techniqueId": "T1021.001"
-      },
-      {
-        "techniqueId": "T1033"
-      },
-      {
-        "techniqueId": "T1505.003"
-      },
-      {
-        "techniqueId": "T1119"
-      },
-      {
-        "techniqueId": "T1069.001"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1078"
-      },
-      {
-        "techniqueId": "T1059"
-      },
-      {
-        "techniqueId": "T1021.004"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1082"
-      },
-      {
-        "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1057"
-      },
-      {
-        "techniqueId": "T1070.004"
+        "techniqueId": "T1574.002"
       },
       {
         "techniqueId": "T1007"
       },
       {
-        "techniqueId": "T1071.001"
+        "techniqueId": "T1562.001"
       },
       {
-        "techniqueId": "T1008"
+        "techniqueId": "T1027.003"
       },
       {
-        "techniqueId": "T1140"
+        "techniqueId": "T1518"
+      },
+      {
+        "techniqueId": "T1036"
+      },
+      {
+        "techniqueId": "T1059.006"
+      },
+      {
+        "techniqueId": "T1036.002"
+      },
+      {
+        "techniqueId": "T1080"
+      },
+      {
+        "techniqueId": "T1059.005"
+      },
+      {
+        "techniqueId": "T1053.005"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1189"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1203"
+      },
+      {
+        "techniqueId": "T1102.001"
+      },
+      {
+        "techniqueId": "T1560.001"
+      },
+      {
+        "techniqueId": "T1124"
+      },
+      {
+        "techniqueId": "T1132.001"
       },
       {
         "techniqueId": "T1087.002"
       },
       {
-        "techniqueId": "T1049"
+        "techniqueId": "T1573.001"
       },
       {
-        "techniqueId": "T1027.005"
+        "techniqueId": "T1071.001"
       },
       {
-        "techniqueId": "T0853"
+        "techniqueId": "T1053.002"
       },
       {
-        "techniqueId": "T0859"
+        "techniqueId": "T1036.005"
       },
       {
-        "techniqueId": "T0865"
+        "techniqueId": "T1548.002"
       },
       {
-        "techniqueId": "T0817"
+        "techniqueId": "T1018"
       },
       {
-        "techniqueId": "T0869"
+        "techniqueId": "T1550.003"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1070.004"
+      },
+      {
+        "techniqueId": "T1083"
+      },
+      {
+        "techniqueId": "T1039"
+      },
+      {
+        "techniqueId": "T1027.001"
+      },
+      {
+        "techniqueId": "T1140"
+      },
+      {
+        "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1005"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1113"
+      }
+    ]
+  },
+  {
+    "name": "Sowbug",
+    "techniques": [
+      {
+        "techniqueId": "T1056.001"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1039"
+      },
+      {
+        "techniqueId": "T1560.001"
+      },
+      {
+        "techniqueId": "T1036.005"
+      },
+      {
+        "techniqueId": "T1082"
+      },
+      {
+        "techniqueId": "T1083"
+      },
+      {
+        "techniqueId": "T1135"
+      },
+      {
+        "techniqueId": "T1003"
       }
     ]
   },
@@ -6643,25 +6417,25 @@
         "techniqueId": "T1082"
       },
       {
+        "techniqueId": "T1070.001"
+      },
+      {
         "techniqueId": "T1566.001"
       },
       {
-        "techniqueId": "T1070.001"
+        "techniqueId": "T1189"
       },
       {
         "techniqueId": "T1204.002"
       },
       {
-        "techniqueId": "T1033"
+        "techniqueId": "T1574.002"
       },
       {
         "techniqueId": "T1027.001"
       },
       {
-        "techniqueId": "T1574.002"
-      },
-      {
-        "techniqueId": "T1189"
+        "techniqueId": "T1033"
       },
       {
         "techniqueId": "T1216.001"
@@ -6676,31 +6450,257 @@
         "techniqueId": "T1071.001"
       },
       {
-        "techniqueId": "T1027"
-      },
-      {
-        "techniqueId": "T1053.005"
-      },
-      {
         "techniqueId": "T1072"
       },
       {
         "techniqueId": "T1218.010"
       },
       {
-        "techniqueId": "T1036.005"
+        "techniqueId": "T1053.005"
       },
       {
-        "techniqueId": "T1068"
+        "techniqueId": "T1036.005"
       },
       {
         "techniqueId": "T1070.006"
       },
       {
+        "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1068"
+      },
+      {
+        "techniqueId": "T1078.003"
+      }
+    ]
+  },
+  {
+    "name": "FIN10",
+    "techniques": [
+      {
+        "techniqueId": "T1588.002"
+      },
+      {
         "techniqueId": "T1078.003"
       },
       {
+        "techniqueId": "T1078"
+      },
+      {
+        "techniqueId": "T1070.004"
+      },
+      {
+        "techniqueId": "T1021.001"
+      },
+      {
         "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1570"
+      },
+      {
+        "techniqueId": "T1053.005"
+      },
+      {
+        "techniqueId": "T1033"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1059.003"
+      }
+    ]
+  },
+  {
+    "name": "OilRig",
+    "techniques": [
+      {
+        "techniqueId": "T1120"
+      },
+      {
+        "techniqueId": "T1059.005"
+      },
+      {
+        "techniqueId": "T1497.001"
+      },
+      {
+        "techniqueId": "T1036"
+      },
+      {
+        "techniqueId": "T1555.004"
+      },
+      {
+        "techniqueId": "T1137.004"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1555.003"
+      },
+      {
+        "techniqueId": "T1555"
+      },
+      {
+        "techniqueId": "T1003.005"
+      },
+      {
+        "techniqueId": "T1003.004"
+      },
+      {
+        "techniqueId": "T1069.002"
+      },
+      {
+        "techniqueId": "T1087.001"
+      },
+      {
+        "techniqueId": "T1204.001"
+      },
+      {
+        "techniqueId": "T1071.004"
+      },
+      {
+        "techniqueId": "T1572"
+      },
+      {
+        "techniqueId": "T1566.003"
+      },
+      {
+        "techniqueId": "T1552.001"
+      },
+      {
+        "techniqueId": "T1201"
+      },
+      {
+        "techniqueId": "T1133"
+      },
+      {
+        "techniqueId": "T1113"
+      },
+      {
+        "techniqueId": "T1566.002"
+      },
+      {
+        "techniqueId": "T1056.001"
+      },
+      {
+        "techniqueId": "T1046"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1053.005"
+      },
+      {
+        "techniqueId": "T1110"
+      },
+      {
+        "techniqueId": "T1573.002"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1218.001"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1047"
+      },
+      {
+        "techniqueId": "T1021.004"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1059"
+      },
+      {
+        "techniqueId": "T1049"
+      },
+      {
+        "techniqueId": "T1016"
+      },
+      {
+        "techniqueId": "T1033"
+      },
+      {
+        "techniqueId": "T1069.001"
+      },
+      {
+        "techniqueId": "T1048.003"
+      },
+      {
+        "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1078"
+      },
+      {
+        "techniqueId": "T1007"
+      },
+      {
+        "techniqueId": "T1008"
+      },
+      {
+        "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1087.002"
+      },
+      {
+        "techniqueId": "T1140"
+      },
+      {
+        "techniqueId": "T1071.001"
+      },
+      {
+        "techniqueId": "T1082"
+      },
+      {
+        "techniqueId": "T1119"
+      },
+      {
+        "techniqueId": "T1070.004"
+      },
+      {
+        "techniqueId": "T1057"
+      },
+      {
+        "techniqueId": "T1505.003"
+      },
+      {
+        "techniqueId": "T1012"
+      },
+      {
+        "techniqueId": "T1021.001"
+      },
+      {
+        "techniqueId": "T1027.005"
+      },
+      {
+        "techniqueId": "T0865"
+      },
+      {
+        "techniqueId": "T0853"
+      },
+      {
+        "techniqueId": "T0859"
+      },
+      {
+        "techniqueId": "T0817"
+      },
+      {
+        "techniqueId": "T0869"
       }
     ]
   },
@@ -6854,28 +6854,28 @@
         "techniqueId": "T1070.004"
       },
       {
-        "techniqueId": "T1120"
-      },
-      {
-        "techniqueId": "T1041"
-      },
-      {
-        "techniqueId": "T1025"
-      },
-      {
         "techniqueId": "T1071.001"
       },
       {
         "techniqueId": "T1059.003"
       },
       {
-        "techniqueId": "T1033"
-      },
-      {
         "techniqueId": "T1105"
       },
       {
+        "techniqueId": "T1120"
+      },
+      {
         "techniqueId": "T1082"
+      },
+      {
+        "techniqueId": "T1033"
+      },
+      {
+        "techniqueId": "T1041"
+      },
+      {
+        "techniqueId": "T1025"
       }
     ]
   },
@@ -6949,13 +6949,7 @@
         "techniqueId": "T1497.002"
       },
       {
-        "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1125"
-      },
-      {
-        "techniqueId": "T1543.003"
+        "techniqueId": "T1204.002"
       },
       {
         "techniqueId": "T1553.002"
@@ -6964,10 +6958,16 @@
         "techniqueId": "T1059"
       },
       {
-        "techniqueId": "T1204.002"
+        "techniqueId": "T1543.003"
       },
       {
         "techniqueId": "T1102.002"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1125"
       },
       {
         "techniqueId": "T1071.004"
@@ -6979,25 +6979,25 @@
         "techniqueId": "T1027.010"
       },
       {
-        "techniqueId": "T1559.002"
-      },
-      {
         "techniqueId": "T1218.005"
       },
       {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1053.005"
+        "techniqueId": "T1559.002"
       },
       {
         "techniqueId": "T1105"
       },
       {
+        "techniqueId": "T1053.005"
+      },
+      {
         "techniqueId": "T1546.011"
+      },
+      {
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1059.001"
       },
       {
         "techniqueId": "T1036.004"
@@ -7068,13 +7068,13 @@
         "techniqueId": "T1036.005"
       },
       {
+        "techniqueId": "T1027"
+      },
+      {
         "techniqueId": "T1055.012"
       },
       {
         "techniqueId": "T1070.004"
-      },
-      {
-        "techniqueId": "T1027"
       },
       {
         "techniqueId": "T1140"
@@ -7083,70 +7083,70 @@
         "techniqueId": "T1204.002"
       },
       {
-        "techniqueId": "T1566.001"
-      },
-      {
         "techniqueId": "T1199"
       },
       {
-        "techniqueId": "T1049"
-      },
-      {
-        "techniqueId": "T1074.001"
-      },
-      {
-        "techniqueId": "T1078"
-      },
-      {
-        "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1046"
+        "techniqueId": "T1566.001"
       },
       {
         "techniqueId": "T1021.004"
       },
       {
-        "techniqueId": "T1047"
-      },
-      {
-        "techniqueId": "T1039"
-      },
-      {
-        "techniqueId": "T1018"
-      },
-      {
-        "techniqueId": "T1003.002"
-      },
-      {
-        "techniqueId": "T1016"
-      },
-      {
-        "techniqueId": "T1574.001"
-      },
-      {
-        "techniqueId": "T1059.003"
+        "techniqueId": "T1078"
       },
       {
         "techniqueId": "T1087.002"
       },
       {
+        "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1574.001"
+      },
+      {
+        "techniqueId": "T1016"
+      },
+      {
         "techniqueId": "T1560.001"
+      },
+      {
+        "techniqueId": "T1046"
+      },
+      {
+        "techniqueId": "T1105"
+      },
+      {
+        "techniqueId": "T1039"
+      },
+      {
+        "techniqueId": "T1074.001"
+      },
+      {
+        "techniqueId": "T1018"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1047"
+      },
+      {
+        "techniqueId": "T1049"
       },
       {
         "techniqueId": "T1574.002"
       },
       {
-        "techniqueId": "T1053.005"
-      },
-      {
-        "techniqueId": "T1021.001"
-      },
-      {
         "techniqueId": "T1090.002"
       },
       {
-        "techniqueId": "T1105"
+        "techniqueId": "T1053.005"
+      },
+      {
+        "techniqueId": "T1003.002"
+      },
+      {
+        "techniqueId": "T1021.001"
       }
     ]
   },
@@ -7163,10 +7163,10 @@
         "techniqueId": "T1583.001"
       },
       {
-        "techniqueId": "T1553.002"
+        "techniqueId": "T1014"
       },
       {
-        "techniqueId": "T1014"
+        "techniqueId": "T1553.002"
       },
       {
         "techniqueId": "T1057"
@@ -7180,13 +7180,13 @@
         "techniqueId": "T1027"
       },
       {
-        "techniqueId": "T1070.004"
-      },
-      {
         "techniqueId": "T1113"
       },
       {
         "techniqueId": "T1056.001"
+      },
+      {
+        "techniqueId": "T1070.004"
       }
     ]
   },
@@ -7197,10 +7197,10 @@
         "techniqueId": "T1564.005"
       },
       {
-        "techniqueId": "T1556.002"
+        "techniqueId": "T1090.001"
       },
       {
-        "techniqueId": "T1090.001"
+        "techniqueId": "T1556.002"
       }
     ]
   },
@@ -7229,79 +7229,73 @@
         "techniqueId": "T1059.005"
       },
       {
+        "techniqueId": "T1204.002"
+      },
+      {
         "techniqueId": "T1560"
       },
       {
         "techniqueId": "T1112"
       },
       {
-        "techniqueId": "T1574.002"
-      },
-      {
         "techniqueId": "T1559.002"
-      },
-      {
-        "techniqueId": "T1027.005"
       },
       {
         "techniqueId": "T1070.004"
       },
       {
-        "techniqueId": "T1027.010"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1074.001"
-      },
-      {
-        "techniqueId": "T1027.001"
+        "techniqueId": "T1574.002"
       },
       {
         "techniqueId": "T1053.005"
       },
       {
+        "techniqueId": "T1027.005"
+      },
+      {
         "techniqueId": "T1119"
       },
       {
-        "techniqueId": "T1189"
+        "techniqueId": "T1027.010"
       },
       {
-        "techniqueId": "T1566.002"
+        "techniqueId": "T1027.001"
       },
       {
-        "techniqueId": "T1566.001"
+        "techniqueId": "T1074.001"
       },
       {
         "techniqueId": "T1203"
       },
       {
-        "techniqueId": "T1102.001"
+        "techniqueId": "T1566.001"
       },
       {
-        "techniqueId": "T1055.012"
+        "techniqueId": "T1566.002"
+      },
+      {
+        "techniqueId": "T1189"
       },
       {
         "techniqueId": "T1083"
       },
       {
-        "techniqueId": "T1027.002"
+        "techniqueId": "T1055.012"
+      },
+      {
+        "techniqueId": "T1102.001"
       },
       {
         "techniqueId": "T1105"
       },
       {
-        "techniqueId": "T1033"
+        "techniqueId": "T1027.002"
       },
       {
         "techniqueId": "T1021.001"
       },
       {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1518.001"
+        "techniqueId": "T1033"
       },
       {
         "techniqueId": "T1082"
@@ -7310,16 +7304,22 @@
         "techniqueId": "T1036.005"
       },
       {
-        "techniqueId": "T1555.003"
+        "techniqueId": "T1518.001"
       },
       {
         "techniqueId": "T1132.001"
       },
       {
-        "techniqueId": "T1059.003"
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1555.003"
       },
       {
         "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1059.003"
       },
       {
         "techniqueId": "T1548.002"
@@ -7333,10 +7333,10 @@
     "name": "Suckfly",
     "techniques": [
       {
-        "techniqueId": "T1046"
+        "techniqueId": "T1059.003"
       },
       {
-        "techniqueId": "T1059.003"
+        "techniqueId": "T1046"
       },
       {
         "techniqueId": "T1003"
@@ -7365,28 +7365,25 @@
         "techniqueId": "T1005"
       },
       {
-        "techniqueId": "T1041"
+        "techniqueId": "T1059"
       },
       {
         "techniqueId": "T1555"
       },
       {
-        "techniqueId": "T1059"
-      },
-      {
-        "techniqueId": "T1573.001"
-      },
-      {
-        "techniqueId": "T1071.001"
+        "techniqueId": "T1041"
       },
       {
         "techniqueId": "T1059.001"
       },
       {
-        "techniqueId": "T1033"
+        "techniqueId": "T1573.001"
       },
       {
-        "techniqueId": "T1082"
+        "techniqueId": "T1016"
+      },
+      {
+        "techniqueId": "T1071.001"
       },
       {
         "techniqueId": "T1053.005"
@@ -7395,10 +7392,13 @@
         "techniqueId": "T1047"
       },
       {
-        "techniqueId": "T1016"
+        "techniqueId": "T1033"
       },
       {
         "techniqueId": "T1012"
+      },
+      {
+        "techniqueId": "T1082"
       }
     ]
   },
@@ -7478,7 +7478,7 @@
         "techniqueId": "T1036.004"
       },
       {
-        "techniqueId": "T1021.001"
+        "techniqueId": "T1078"
       },
       {
         "techniqueId": "T1572"
@@ -7487,7 +7487,7 @@
         "techniqueId": "T1119"
       },
       {
-        "techniqueId": "T1078"
+        "techniqueId": "T1021.001"
       },
       {
         "techniqueId": "T1560.003"
@@ -7499,28 +7499,28 @@
         "techniqueId": "T1573.002"
       },
       {
-        "techniqueId": "T1068"
-      },
-      {
-        "techniqueId": "T1003.001"
+        "techniqueId": "T1046"
       },
       {
         "techniqueId": "T1053.005"
       },
       {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1059"
-      },
-      {
-        "techniqueId": "T1087.002"
+        "techniqueId": "T1003.001"
       },
       {
         "techniqueId": "T1018"
       },
       {
-        "techniqueId": "T1046"
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1087.002"
+      },
+      {
+        "techniqueId": "T1059"
+      },
+      {
+        "techniqueId": "T1068"
       },
       {
         "techniqueId": "T1059.001"
@@ -7928,31 +7928,31 @@
         "techniqueId": "T0884"
       },
       {
-        "techniqueId": "T0819"
-      },
-      {
-        "techniqueId": "T0855"
+        "techniqueId": "T0865"
       },
       {
         "techniqueId": "T0857"
       },
       {
-        "techniqueId": "T0822"
+        "techniqueId": "T0803"
       },
       {
         "techniqueId": "T0816"
       },
       {
-        "techniqueId": "T0865"
+        "techniqueId": "T0823"
+      },
+      {
+        "techniqueId": "T0855"
+      },
+      {
+        "techniqueId": "T0822"
       },
       {
         "techniqueId": "T0804"
       },
       {
-        "techniqueId": "T0803"
-      },
-      {
-        "techniqueId": "T0823"
+        "techniqueId": "T0819"
       },
       {
         "techniqueId": "T0807"
@@ -7966,7 +7966,7 @@
         "techniqueId": "T1087.001"
       },
       {
-        "techniqueId": "T1003"
+        "techniqueId": "T1036.005"
       },
       {
         "techniqueId": "T1087.002"
@@ -7975,16 +7975,16 @@
         "techniqueId": "T1059.001"
       },
       {
-        "techniqueId": "T1036.005"
-      },
-      {
-        "techniqueId": "T1057"
+        "techniqueId": "T1007"
       },
       {
         "techniqueId": "T1049"
       },
       {
-        "techniqueId": "T1007"
+        "techniqueId": "T1003"
+      },
+      {
+        "techniqueId": "T1057"
       }
     ]
   },
@@ -8142,22 +8142,28 @@
         "techniqueId": "T1489"
       },
       {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1566.001"
-      },
-      {
         "techniqueId": "T1203"
       },
       {
         "techniqueId": "T1124"
       },
       {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
         "techniqueId": "T1189"
       },
       {
+        "techniqueId": "T1071.001"
+      },
+      {
         "techniqueId": "T1132.001"
+      },
+      {
+        "techniqueId": "T1564.001"
       },
       {
         "techniqueId": "T1547.009"
@@ -8166,19 +8172,10 @@
         "techniqueId": "T1055.001"
       },
       {
-        "techniqueId": "T1071.001"
-      },
-      {
-        "techniqueId": "T1564.001"
-      },
-      {
         "techniqueId": "T1090.002"
       },
       {
         "techniqueId": "T1134.002"
-      },
-      {
-        "techniqueId": "T1033"
       },
       {
         "techniqueId": "T1021.001"
@@ -8187,19 +8184,22 @@
         "techniqueId": "T1110.003"
       },
       {
-        "techniqueId": "T1047"
+        "techniqueId": "T1005"
       },
       {
-        "techniqueId": "T1008"
+        "techniqueId": "T1033"
+      },
+      {
+        "techniqueId": "T1542.003"
       },
       {
         "techniqueId": "T1048.003"
       },
       {
-        "techniqueId": "T1005"
+        "techniqueId": "T1008"
       },
       {
-        "techniqueId": "T1542.003"
+        "techniqueId": "T1047"
       },
       {
         "techniqueId": "T1056.001"
@@ -8220,46 +8220,46 @@
         "techniqueId": "T1074.001"
       },
       {
-        "techniqueId": "T1105"
-      },
-      {
-        "techniqueId": "T1012"
+        "techniqueId": "T1010"
       },
       {
         "techniqueId": "T1057"
       },
       {
-        "techniqueId": "T1010"
+        "techniqueId": "T1016"
       },
       {
         "techniqueId": "T1560.002"
       },
       {
+        "techniqueId": "T1105"
+      },
+      {
         "techniqueId": "T1562.001"
       },
       {
-        "techniqueId": "T1016"
-      },
-      {
-        "techniqueId": "T1543.003"
-      },
-      {
-        "techniqueId": "T1573.001"
-      },
-      {
-        "techniqueId": "T1082"
-      },
-      {
-        "techniqueId": "T1070.004"
+        "techniqueId": "T1012"
       },
       {
         "techniqueId": "T1070.006"
       },
       {
+        "techniqueId": "T1083"
+      },
+      {
+        "techniqueId": "T1573.001"
+      },
+      {
+        "techniqueId": "T1070.004"
+      },
+      {
+        "techniqueId": "T1543.003"
+      },
+      {
         "techniqueId": "T1098"
       },
       {
-        "techniqueId": "T1083"
+        "techniqueId": "T1082"
       },
       {
         "techniqueId": "T1027"
@@ -8365,7 +8365,16 @@
         "techniqueId": "T1505.003"
       },
       {
-        "techniqueId": "T1543.003"
+        "techniqueId": "T1548.002"
+      },
+      {
+        "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1055.012"
+      },
+      {
+        "techniqueId": "T1112"
       },
       {
         "techniqueId": "T1012"
@@ -8374,13 +8383,16 @@
         "techniqueId": "T1547.001"
       },
       {
-        "techniqueId": "T1548.002"
+        "techniqueId": "T1543.003"
       },
       {
-        "techniqueId": "T1027"
+        "techniqueId": "T1018"
       },
       {
-        "techniqueId": "T1112"
+        "techniqueId": "T1047"
+      },
+      {
+        "techniqueId": "T1574.001"
       },
       {
         "techniqueId": "T1140"
@@ -8389,40 +8401,10 @@
         "techniqueId": "T1189"
       },
       {
-        "techniqueId": "T1574.001"
-      },
-      {
-        "techniqueId": "T1055.012"
-      },
-      {
-        "techniqueId": "T1047"
-      },
-      {
-        "techniqueId": "T1018"
-      },
-      {
         "techniqueId": "T1071.001"
       },
       {
-        "techniqueId": "T1016"
-      },
-      {
-        "techniqueId": "T1119"
-      },
-      {
-        "techniqueId": "T1068"
-      },
-      {
         "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1562.002"
-      },
-      {
-        "techniqueId": "T1070.005"
-      },
-      {
-        "techniqueId": "T1059.001"
       },
       {
         "techniqueId": "T1049"
@@ -8431,13 +8413,31 @@
         "techniqueId": "T1087.001"
       },
       {
+        "techniqueId": "T1068"
+      },
+      {
+        "techniqueId": "T1119"
+      },
+      {
         "techniqueId": "T1070.004"
+      },
+      {
+        "techniqueId": "T1070.005"
+      },
+      {
+        "techniqueId": "T1016"
+      },
+      {
+        "techniqueId": "T1059.001"
       },
       {
         "techniqueId": "T1021.006"
       },
       {
-        "techniqueId": "T1133"
+        "techniqueId": "T1562.002"
+      },
+      {
+        "techniqueId": "T1005"
       },
       {
         "techniqueId": "T1560.002"
@@ -8446,13 +8446,13 @@
         "techniqueId": "T1030"
       },
       {
+        "techniqueId": "T1133"
+      },
+      {
         "techniqueId": "T1074.001"
       },
       {
         "techniqueId": "T1078"
-      },
-      {
-        "techniqueId": "T1005"
       },
       {
         "techniqueId": "T1105"
@@ -8461,16 +8461,16 @@
         "techniqueId": "T1046"
       },
       {
-        "techniqueId": "T1003.004"
-      },
-      {
-        "techniqueId": "T1056.001"
+        "techniqueId": "T1574.002"
       },
       {
         "techniqueId": "T1053.002"
       },
       {
-        "techniqueId": "T1574.002"
+        "techniqueId": "T1003.004"
+      },
+      {
+        "techniqueId": "T1056.001"
       }
     ]
   },
@@ -8502,10 +8502,10 @@
         "techniqueId": "T1082"
       },
       {
-        "techniqueId": "T1133"
+        "techniqueId": "T1053.002"
       },
       {
-        "techniqueId": "T1053.002"
+        "techniqueId": "T1133"
       },
       {
         "techniqueId": "T1078"
@@ -8536,10 +8536,10 @@
         "techniqueId": "T1055.001"
       },
       {
-        "techniqueId": "T1547.001"
+        "techniqueId": "T1027"
       },
       {
-        "techniqueId": "T1027"
+        "techniqueId": "T1547.001"
       }
     ]
   },
@@ -8579,73 +8579,49 @@
         "techniqueId": "T1110.002"
       },
       {
-        "techniqueId": "T1027.005"
+        "techniqueId": "T1027.002"
       },
       {
-        "techniqueId": "T1027.002"
+        "techniqueId": "T1027.005"
       },
       {
         "techniqueId": "T1218.011"
       },
       {
-        "techniqueId": "T1574.002"
-      },
-      {
-        "techniqueId": "T1082"
-      },
-      {
-        "techniqueId": "T1552.001"
-      },
-      {
-        "techniqueId": "T1005"
-      },
-      {
-        "techniqueId": "T1070.004"
-      },
-      {
-        "techniqueId": "T1041"
-      },
-      {
-        "techniqueId": "T1543.003"
-      },
-      {
-        "techniqueId": "T1057"
-      },
-      {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1136.001"
-      },
-      {
-        "techniqueId": "T1546.008"
-      },
-      {
-        "techniqueId": "T1560.001"
+        "techniqueId": "T1083"
       },
       {
         "techniqueId": "T1105"
       },
       {
-        "techniqueId": "T1021.002"
+        "techniqueId": "T1041"
       },
       {
-        "techniqueId": "T1083"
+        "techniqueId": "T1546.008"
       },
       {
-        "techniqueId": "T1018"
+        "techniqueId": "T1057"
       },
       {
-        "techniqueId": "T1021.001"
+        "techniqueId": "T1543.003"
       },
       {
-        "techniqueId": "T1069"
-      },
-      {
-        "techniqueId": "T1027"
+        "techniqueId": "T1070.004"
       },
       {
         "techniqueId": "T1049"
+      },
+      {
+        "techniqueId": "T1560.001"
+      },
+      {
+        "techniqueId": "T1136.001"
+      },
+      {
+        "techniqueId": "T1021.002"
+      },
+      {
+        "techniqueId": "T1021.001"
       },
       {
         "techniqueId": "T1078.002"
@@ -8654,34 +8630,58 @@
         "techniqueId": "T1074.001"
       },
       {
-        "techniqueId": "T1056.001"
+        "techniqueId": "T1005"
       },
       {
-        "techniqueId": "T1003.001"
+        "techniqueId": "T1082"
+      },
+      {
+        "techniqueId": "T1552.001"
+      },
+      {
+        "techniqueId": "T1574.002"
+      },
+      {
+        "techniqueId": "T1018"
+      },
+      {
+        "techniqueId": "T1069"
+      },
+      {
+        "techniqueId": "T1027"
+      },
+      {
+        "techniqueId": "T1547.001"
       },
       {
         "techniqueId": "T1087.001"
       },
       {
+        "techniqueId": "T1003.001"
+      },
+      {
+        "techniqueId": "T1056.001"
+      },
+      {
         "techniqueId": "T1016"
-      },
-      {
-        "techniqueId": "T1104"
-      },
-      {
-        "techniqueId": "T1053.005"
-      },
-      {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1095"
       },
       {
         "techniqueId": "T1033"
       },
       {
+        "techniqueId": "T1053.005"
+      },
+      {
         "techniqueId": "T1059.001"
+      },
+      {
+        "techniqueId": "T1059.003"
+      },
+      {
+        "techniqueId": "T1104"
+      },
+      {
+        "techniqueId": "T1095"
       }
     ]
   },
@@ -8728,10 +8728,10 @@
         "techniqueId": "T1547.001"
       },
       {
-        "techniqueId": "T1553.002"
+        "techniqueId": "T1555.003"
       },
       {
-        "techniqueId": "T1555.003"
+        "techniqueId": "T1553.002"
       },
       {
         "techniqueId": "T1057"
@@ -8815,28 +8815,28 @@
         "techniqueId": "T1203"
       },
       {
-        "techniqueId": "T1049"
-      },
-      {
-        "techniqueId": "T1083"
-      },
-      {
-        "techniqueId": "T1016"
-      },
-      {
-        "techniqueId": "T1082"
+        "techniqueId": "T1087.001"
       },
       {
         "techniqueId": "T1036.005"
       },
       {
+        "techniqueId": "T1069.001"
+      },
+      {
+        "techniqueId": "T1082"
+      },
+      {
+        "techniqueId": "T1016"
+      },
+      {
         "techniqueId": "T1007"
       },
       {
-        "techniqueId": "T1087.001"
+        "techniqueId": "T1049"
       },
       {
-        "techniqueId": "T1069.001"
+        "techniqueId": "T1083"
       },
       {
         "techniqueId": "T1059.003"
@@ -8965,40 +8965,34 @@
         "techniqueId": "T1059.006"
       },
       {
-        "techniqueId": "T1204.002"
-      },
-      {
         "techniqueId": "T1566.001"
-      },
-      {
-        "techniqueId": "T1566.002"
       },
       {
         "techniqueId": "T1203"
       },
       {
-        "techniqueId": "T1090.003"
+        "techniqueId": "T1566.002"
+      },
+      {
+        "techniqueId": "T1204.002"
       },
       {
         "techniqueId": "T1090.004"
       },
       {
-        "techniqueId": "T1027.002"
-      },
-      {
-        "techniqueId": "T1550.003"
-      },
-      {
-        "techniqueId": "T1047"
+        "techniqueId": "T1090.003"
       },
       {
         "techniqueId": "T1548.002"
       },
       {
-        "techniqueId": "T1546.003"
+        "techniqueId": "T1047"
       },
       {
-        "techniqueId": "T1547.001"
+        "techniqueId": "T1027.002"
+      },
+      {
+        "techniqueId": "T1546.003"
       },
       {
         "techniqueId": "T1053.005"
@@ -9007,10 +9001,16 @@
         "techniqueId": "T1546.008"
       },
       {
-        "techniqueId": "T1059.001"
+        "techniqueId": "T1547.001"
+      },
+      {
+        "techniqueId": "T1550.003"
       },
       {
         "techniqueId": "T1070.004"
+      },
+      {
+        "techniqueId": "T1059.001"
       }
     ]
   },
@@ -9086,19 +9086,19 @@
         "techniqueId": "T1059.003"
       },
       {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1091"
-      },
-      {
         "techniqueId": "T1080"
       },
       {
         "techniqueId": "T1553.002"
       },
       {
+        "techniqueId": "T1091"
+      },
+      {
         "techniqueId": "T1056.001"
+      },
+      {
+        "techniqueId": "T1547.001"
       }
     ]
   },
@@ -9252,7 +9252,10 @@
         "techniqueId": "T1546.013"
       },
       {
-        "techniqueId": "T1547.004"
+        "techniqueId": "T1566.002"
+      },
+      {
+        "techniqueId": "T1547.001"
       },
       {
         "techniqueId": "T1059.001"
@@ -9261,25 +9264,31 @@
         "techniqueId": "T1071.001"
       },
       {
-        "techniqueId": "T1204.001"
+        "techniqueId": "T1547.004"
       },
       {
         "techniqueId": "T1105"
       },
       {
-        "techniqueId": "T1566.002"
+        "techniqueId": "T1102.002"
       },
       {
         "techniqueId": "T1055"
       },
       {
-        "techniqueId": "T1547.001"
-      },
-      {
-        "techniqueId": "T1102.002"
+        "techniqueId": "T1204.001"
       },
       {
         "techniqueId": "T1027.005"
+      },
+      {
+        "techniqueId": "T1124"
+      },
+      {
+        "techniqueId": "T1021.002"
+      },
+      {
+        "techniqueId": "T1083"
       },
       {
         "techniqueId": "T1082"
@@ -9288,31 +9297,22 @@
         "techniqueId": "T1110"
       },
       {
-        "techniqueId": "T1124"
-      },
-      {
-        "techniqueId": "T1018"
-      },
-      {
         "techniqueId": "T1049"
       },
       {
         "techniqueId": "T1012"
       },
       {
-        "techniqueId": "T1083"
+        "techniqueId": "T1018"
       },
       {
-        "techniqueId": "T1021.002"
-      },
-      {
-        "techniqueId": "T1007"
+        "techniqueId": "T1016"
       },
       {
         "techniqueId": "T1057"
       },
       {
-        "techniqueId": "T1016"
+        "techniqueId": "T1007"
       }
     ]
   },
@@ -9332,22 +9332,22 @@
         "techniqueId": "T1059.001"
       },
       {
-        "techniqueId": "T1021.002"
-      },
-      {
         "techniqueId": "T1505.003"
       },
       {
-        "techniqueId": "T1057"
+        "techniqueId": "T1021.002"
       },
       {
         "techniqueId": "T1218.010"
       },
       {
-        "techniqueId": "T1047"
+        "techniqueId": "T1027.005"
       },
       {
-        "techniqueId": "T1027.005"
+        "techniqueId": "T1057"
+      },
+      {
+        "techniqueId": "T1047"
       }
     ]
   },
@@ -9367,10 +9367,10 @@
         "techniqueId": "T1218.011"
       },
       {
-        "techniqueId": "T1543.003"
+        "techniqueId": "T1562.004"
       },
       {
-        "techniqueId": "T1562.004"
+        "techniqueId": "T1543.003"
       },
       {
         "techniqueId": "T1102.002"
@@ -9513,40 +9513,43 @@
         "techniqueId": "T1014"
       },
       {
-        "techniqueId": "T1114.002"
-      },
-      {
         "techniqueId": "T1059.001"
-      },
-      {
-        "techniqueId": "T1119"
       },
       {
         "techniqueId": "T1560"
       },
       {
-        "techniqueId": "T1566.002"
+        "techniqueId": "T1114.002"
+      },
+      {
+        "techniqueId": "T1119"
       },
       {
         "techniqueId": "T1199"
       },
       {
-        "techniqueId": "T1211"
-      },
-      {
-        "techniqueId": "T1204.002"
-      },
-      {
-        "techniqueId": "T1213.002"
-      },
-      {
-        "techniqueId": "T1566.001"
+        "techniqueId": "T1566.002"
       },
       {
         "techniqueId": "T1564.001"
       },
       {
-        "techniqueId": "T1059.003"
+        "techniqueId": "T1213.002"
+      },
+      {
+        "techniqueId": "T1204.002"
+      },
+      {
+        "techniqueId": "T1037.001"
+      },
+      {
+        "techniqueId": "T1211"
+      },
+      {
+        "techniqueId": "T1566.001"
+      },
+      {
+        "techniqueId": "T1005"
       },
       {
         "techniqueId": "T1140"
@@ -9555,10 +9558,7 @@
         "techniqueId": "T1210"
       },
       {
-        "techniqueId": "T1037.001"
-      },
-      {
-        "techniqueId": "T1005"
+        "techniqueId": "T1059.003"
       },
       {
         "techniqueId": "T1040"
@@ -9567,13 +9567,13 @@
         "techniqueId": "T1559.002"
       },
       {
-        "techniqueId": "T1070.004"
-      },
-      {
         "techniqueId": "T1134.001"
       },
       {
         "techniqueId": "T1137.002"
+      },
+      {
+        "techniqueId": "T1070.004"
       },
       {
         "techniqueId": "T1083"
@@ -9585,61 +9585,61 @@
         "techniqueId": "T1057"
       },
       {
+        "techniqueId": "T1074.001"
+      },
+      {
         "techniqueId": "T1550.002"
       },
       {
         "techniqueId": "T1025"
       },
       {
-        "techniqueId": "T1120"
-      },
-      {
-        "techniqueId": "T1074.001"
-      },
-      {
         "techniqueId": "T1092"
       },
       {
-        "techniqueId": "T1546.015"
-      },
-      {
-        "techniqueId": "T1113"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1056.001"
+        "techniqueId": "T1120"
       },
       {
         "techniqueId": "T1027"
       },
       {
-        "techniqueId": "T1542.003"
+        "techniqueId": "T1113"
       },
       {
-        "techniqueId": "T1068"
+        "techniqueId": "T1542.003"
       },
       {
         "techniqueId": "T1091"
       },
       {
-        "techniqueId": "T1070.001"
+        "techniqueId": "T1068"
       },
       {
-        "techniqueId": "T1071.003"
+        "techniqueId": "T1546.015"
       },
       {
-        "techniqueId": "T1001.001"
+        "techniqueId": "T1056.001"
+      },
+      {
+        "techniqueId": "T1003.001"
       },
       {
         "techniqueId": "T1105"
       },
       {
+        "techniqueId": "T1070.001"
+      },
+      {
         "techniqueId": "T1070.006"
       },
       {
+        "techniqueId": "T1071.003"
+      },
+      {
         "techniqueId": "T1090.002"
+      },
+      {
+        "techniqueId": "T1001.001"
       },
       {
         "techniqueId": "T1218.011"
@@ -9701,22 +9701,22 @@
         "techniqueId": "T1560.001"
       },
       {
+        "techniqueId": "T1021.001"
+      },
+      {
         "techniqueId": "T1003.001"
       },
       {
         "techniqueId": "T1059.003"
       },
       {
+        "techniqueId": "T1550.002"
+      },
+      {
         "techniqueId": "T1036.005"
       },
       {
         "techniqueId": "T1114.001"
-      },
-      {
-        "techniqueId": "T1021.001"
-      },
-      {
-        "techniqueId": "T1550.002"
       }
     ]
   },
@@ -9801,10 +9801,7 @@
         "techniqueId": "T1036.002"
       },
       {
-        "techniqueId": "T1543.003"
-      },
-      {
-        "techniqueId": "T1018"
+        "techniqueId": "T1059.003"
       },
       {
         "techniqueId": "T1213.002"
@@ -9813,19 +9810,16 @@
         "techniqueId": "T1071.001"
       },
       {
-        "techniqueId": "T1056.001"
+        "techniqueId": "T1018"
       },
       {
-        "techniqueId": "T1558.001"
+        "techniqueId": "T1543.003"
       },
       {
         "techniqueId": "T1569.002"
       },
       {
-        "techniqueId": "T1059.003"
-      },
-      {
-        "techniqueId": "T1547.001"
+        "techniqueId": "T1558.001"
       },
       {
         "techniqueId": "T1114.002"
@@ -9834,46 +9828,52 @@
         "techniqueId": "T1133"
       },
       {
-        "techniqueId": "T1087.002"
+        "techniqueId": "T1056.001"
+      },
+      {
+        "techniqueId": "T1547.001"
       },
       {
         "techniqueId": "T1005"
       },
       {
+        "techniqueId": "T1087.002"
+      },
+      {
         "techniqueId": "T1021.002"
-      },
-      {
-        "techniqueId": "T1560"
-      },
-      {
-        "techniqueId": "T1007"
-      },
-      {
-        "techniqueId": "T1003.001"
-      },
-      {
-        "techniqueId": "T1082"
       },
       {
         "techniqueId": "T1069.002"
       },
       {
-        "techniqueId": "T1016"
+        "techniqueId": "T1082"
       },
       {
-        "techniqueId": "T1049"
-      },
-      {
-        "techniqueId": "T1057"
-      },
-      {
-        "techniqueId": "T1083"
+        "techniqueId": "T1560"
       },
       {
         "techniqueId": "T1560.001"
       },
       {
+        "techniqueId": "T1007"
+      },
+      {
+        "techniqueId": "T1016"
+      },
+      {
+        "techniqueId": "T1003.001"
+      },
+      {
         "techniqueId": "T1041"
+      },
+      {
+        "techniqueId": "T1057"
+      },
+      {
+        "techniqueId": "T1049"
+      },
+      {
+        "techniqueId": "T1083"
       },
       {
         "techniqueId": "T1059"
@@ -9951,13 +9951,13 @@
         "techniqueId": "T1190"
       },
       {
-        "techniqueId": "T1003"
-      },
-      {
         "techniqueId": "T1546.008"
       },
       {
         "techniqueId": "T1021.001"
+      },
+      {
+        "techniqueId": "T1003"
       }
     ]
   },
@@ -9969,16 +9969,16 @@
     "name": "ALLANITE",
     "techniques": [
       {
-        "techniqueId": "T0859"
+        "techniqueId": "T0852"
+      },
+      {
+        "techniqueId": "T0817"
       },
       {
         "techniqueId": "T0865"
       },
       {
-        "techniqueId": "T0852"
-      },
-      {
-        "techniqueId": "T0817"
+        "techniqueId": "T0859"
       }
     ]
   }
