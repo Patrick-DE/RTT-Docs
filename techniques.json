@@ -1283,7 +1283,52 @@
         "tools": [
             "Seatbelt"
         ],
-        "steps": []
+        "steps": [
+            {
+                "id": "f5111131-58b0-401f-8e55-b91ce9ecde73",
+                "name": "Trusted Folders",
+                "description": "Find a folder that is writable and executable",
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            },
+            {
+                "id": "f5199131-58b0-401f-8e55-b91ce9ecde73",
+                "name": "DLLs",
+                "description": "Run DLLs via rundll32 or sideloading",
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            },
+            {
+                "id": "f5229131-58b0-401f-8e55-b91ce9ecde73",
+                "name": "Alternate Data Stream",
+                "description": "Execute scripts through Alternate Data Streams",
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            },
+            {
+                "id": "f2229131-58b0-401f-8e55-b91ce9ecde73",
+                "name": "Third Party Execution",
+                "description": "Third-party scripting engine like Python or Perl can bypass it",
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            }
+        ]
     },
     {
         "id": "9c7427cc-879e-40e2-a2db-6803d8b6c07c",
