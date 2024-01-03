@@ -3284,7 +3284,68 @@
         "stealthy": false,
         "changes": [],
         "tools": [],
-        "steps": []
+        "steps": [
+            {
+                "id": "f5a21131-5220-401f-8e55-b91ce9ecde73",
+                "name": "Custom Runspaces",
+                "description": "Can bypass CLM but still needs an applocker bypass to run c# binaries",
+                "commands": [""],
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            },
+            {
+                "id": "f5a22131-5220-401f-8e55-b91ce9ecde73",
+                "name": "Encode payload",
+                "description": "",
+                "commands": ["b12e07f5-b1f6-4f14-8fa5-30d2e62a831f"],
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            },
+            {
+                "id": "f5a22131-5220-401f-8e55-b91ce9ecde73",
+                "name": "Download encoded payload",
+                "description": "",
+                "commands": ["b54896cb-57a8-42b3-bbcd-370e5cf77e7e"],
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            },
+            {
+                "id": "f5a22131-5220-401f-8e55-b91ce9ecde73",
+                "name": "Decode downloaded payload",
+                "description": "",
+                "commands": ["b12e07f5-b1f6-4f14-8fa5-30d2e52a831f"],
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            },
+            {
+                "id": "f5a21131-5220-401f-8e55-b91ce9ecde73",
+                "name": "Bypass Applocker",
+                "description": "Bypass C# Applocker via lolbin",
+                "commands": ["98b85a43-9b26-4ac5-8265-b89e47df7c16"],
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            }
+        ]
     },
     {
         "id": "bf4730e9-d50b-455f-86a1-c502ba175b7a",
