@@ -3286,6 +3286,18 @@
         "tools": [],
         "steps": [
             {
+                "id": "f5a55131-5220-401f-8e55-b91ce9ecde73",
+                "name": "Bypass",
+                "description": "All-in-one bypass of CLM via lolbins",
+                "commands": ["98c85a43-9b26-4ac5-8265-b89e47df7c16"],
+                "requirements": {
+                    "tag": "A"
+                },
+                "results": [
+                    "A"
+                ]
+            },
+            {
                 "id": "f5a21131-5220-401f-8e55-b91ce9ecde73",
                 "name": "Custom Runspaces",
                 "description": "Can bypass CLM but still needs an applocker bypass to run c# binaries",
