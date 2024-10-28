@@ -25,13 +25,6 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
 
-      - name: 🛸 Setup MITRE APT Data
-        uses: ./.github/actions/shared-job
-        with:
-          REQUIREMENTS_FILE: 'apts/requirements.txt'
-      - name: 👽 Get MITRE APT Data
-        run: python apts/getAptData.py
-
       - name: 🧩 Setup Merger
         uses: ./.github/actions/shared-job
         with:
@@ -40,7 +33,14 @@ jobs:
         env:
           GITHUB_API_KEY: ${{ secrets.GH_PAT }}
         run: python merger/merger.py
-
+            
+      - name: 🛸 Setup MITRE APT Data
+        uses: ./.github/actions/shared-job
+        with:
+          REQUIREMENTS_FILE: 'apts/requirements.txt'
+      - name: 👽 Get MITRE APT Data
+        run: python apts/getAptData.py
+              
       - name: 📦 Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
