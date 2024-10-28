@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   work:
-    if: github.event.pull_request.merged == true
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     name: 🚀 Work
     runs-on: ubuntu-latest
 
@@ -47,11 +47,7 @@ jobs:
             dist/techniques.json
             dist/tools.json
 
-  commit:
-    name: 📝 Commit
-    runs-on: ubuntu-latest
-    steps:
-      - name: Commit Version File
+      - name: 📝 Commit
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -59,12 +55,7 @@ jobs:
           git commit -m "Update artifacts with new version"
           git push
 
-  web-deploy:
-    name: 🎉 Deploying
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Repository Dispatch
+      - name: 🎉 Deploying
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GH_PAT }}
