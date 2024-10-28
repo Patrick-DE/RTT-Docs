@@ -15,7 +15,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  checkout:
+  execute-merger:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     name: 📥 Checkout
     runs-on: ubuntu-latest
     steps:
@@ -24,25 +25,13 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
 
-  mitre-apt:
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
-    needs: [checkout]
-    name: 🛸 MITRE APT
-    runs-on: ubuntu-latest
-    steps:
-      - name: 👽 Setup MITRE APT Data
+      - name: 🛸 Setup MITRE APT Data
         uses: ./.github/actions/shared-job
         with:
           REQUIREMENTS_FILE: 'apts/requirements.txt'
       - name: 👽 Get MITRE APT Data
         run: python apts/getAptData.py
 
-  merger:
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
-    needs: [checkout]
-    name: 🧩 Merger
-    runs-on: ubuntu-latest
-    steps:
       - name: 🧩 Setup Merger
         uses: ./.github/actions/shared-job
         with:
@@ -51,15 +40,9 @@ jobs:
         env:
           GITHUB_API_KEY: ${{ secrets.GH_PAT }}
         run: python merger/merger.py
-      
-  upload-artifacts:
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
-    needs: [mitre-apt, merger]
-    name: 📦 Upload Artifacts
-    runs-on: ubuntu-latest
-    steps:
+
       - name: 📦 Upload Artifacts
-        uses: actions/upload-artifacts@v3
+        uses: actions/upload-artifact@v4
         with:
           name: generated files
           path: |
@@ -68,13 +51,7 @@ jobs:
             dist/techniques.json
             dist/tools.json
 
-  commit:
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
-    needs: [upload-artifacts]
-    name: 📝 Commit
-    runs-on: ubuntu-latest
-    steps:
-      - name: Commit output files
+      - name: 📝 Commit output files
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -84,7 +61,7 @@ jobs:
 
   web-deploy:
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
-    needs: [upload-artifacts]
+    needs: [execute-merger]
     name: 🎉 Deploying
     runs-on: ubuntu-latest
     
