@@ -67,7 +67,7 @@ ToolSchema = {
     "definitions": {
         "Tool": {
             "type": "object",
-            "additionalProperties": false,
+            "additionalProperties": False,
             "properties": {
                 "name": {"type": "string"},
                 "phases": {"type": "array","items": {"type": "string"}, "minItems": 1},
@@ -88,7 +88,7 @@ ToolSchema = {
         },
         "Command": {
             "type": "object",
-            "additionalProperties": false,
+            "additionalProperties": False,
             "properties": {
                 "id": {"type": "string","format": "uuid"},
                 "name": {"type": "string"},
