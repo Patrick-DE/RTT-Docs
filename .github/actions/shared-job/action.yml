@@ -1,15 +1,13 @@
 name: Setup Environment
+description: "Installs Python and dependencies"
 
-on:
-  workflow_call:
-    inputs:
-      requirements_file:
-        required: true
-        type: string
+inputs:
+  requirements_file:
+    required: true
+    type: string
 
-jobs:
-  shared-job:
-    runs-on: ubuntu-latest
+runs:
+  using: "composite":
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2

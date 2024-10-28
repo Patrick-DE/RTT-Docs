@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 👽 Setup MITRE APT Data
-        uses: ./.github/workflows/shared-job.yml
+        uses: ./.github/actions/shared-job
         with:
           REQUIREMENTS_FILE: 'apts/requirements.txt'
       - name: 👽 Get MITRE APT Data
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🧩 Setup Merger
-        uses: ./.github/workflows/shared-job.yml
+        uses: ./.github/actions/shared-job
         with:
           REQUIREMENTS_FILE: 'merger/requirements.txt'
       - name: 🧩 Run Merger
