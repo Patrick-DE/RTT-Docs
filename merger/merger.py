@@ -1,3 +1,4 @@
+import traceback
 import requests
 import sys
 import json
@@ -47,8 +48,15 @@ for issue in issues:
     else:
         continue
 
+    # Load JSON from issue
+    try:
+        body = json.loads(issue["body"][3:-3])
+    except Exception as ex:
+        last_line = traceback.format_exc().strip().splitlines()[-1]
+        print(last_line)
+        continue
+    
     # Validation of JSON
-    body = json.loads(issue["body"][3:-3])
     print("  [+] Validating json...")
     try:
         validate(body, schema=typ)
