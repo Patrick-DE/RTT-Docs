@@ -27,10 +27,20 @@ jobs:
       - name: 🧩 Run Merger
         env:
           GITHUB_API_KEY: ${{ secrets.GH_PAT }}
-        run: python merger/merger.py | tee script_output.log
-          LAST_LINE=$(tail -n 1 script_output.log)
+        run: python merger/merger.py | tee script_output.log | tail -n 1 > last_line.txt
+          LAST_LINE=$(cat last_line.txt)
           echo "LAST_LINE=$LAST_LINE" >> $GITHUB_ENV
+          rm last_line.txt
         continue-on-error: true
+
+      - name: Check Last Line Output
+        run: |
+          if [[ "${{ env.LAST_LINE }}" == *"close #"* ]]; then
+            echo "Expected string found in LAST_LINE."
+          else
+            echo "Expected string not found in LAST_LINE."
+            exit 1
+          fi
             
       - name: 🛸 Setup MITRE APT Data
         uses: ./.github/actions/shared-job
