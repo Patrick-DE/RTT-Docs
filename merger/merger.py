@@ -12,6 +12,8 @@ load_dotenv("..\.env")
 GITHUB_API_KEY = os.getenv('GITHUB_API_KEY')
 
 merged_issues = []
+tools_file = "dist/tools.json"
+techniques_file = "dist/techniques.json"
 
 headers = {"Accept": "application/vnd.github+json", "Authorization": "Bearer "+GITHUB_API_KEY, "X-GitHub-Api-Version": "2022-11-28"}
 r = requests.get('https://api.github.com/repos/Patrick-DE/RTT-Docs/issues', headers=headers)
@@ -23,9 +25,9 @@ if "message" in issues:
 print("[+] Found " + str(len(issues)) + " issues.")
 
 # read base files
-with open('tools.json', 'r') as f:
+with open(tools_file, 'r') as f:
     toolBase = json.load(f)
-with open('techniques.json', 'r') as f:
+with open(techniques_file, 'r') as f:
     techniqueBase = json.load(f)
 
 for issue in issues:
@@ -72,9 +74,9 @@ for issue in issues:
         base.append(body)
 
     if typ == ToolSchema:
-        f = open('./tools.json', 'w')
+        f = open(tools_file, 'w')
     elif typ == TechniqueSchema:
-        f = open('./techniques.json', 'w')
+        f = open(techniques_file, 'w')
 
     f.write(json.dumps(base, indent=4))
     f.close

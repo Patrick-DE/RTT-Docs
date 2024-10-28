@@ -5,58 +5,60 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    types:
+      closed
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:   
-  # run the python script apts/getAptData.py
-  getAptData:
-    name: 👽 Get MITRE APT Data
+jobs:
+  work:
+    if: github.event.pull_request.merged == true
+    name: 🚀 Work
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: 👽 Setup MITRE APT Data
+        uses: ./.github/workflows/shared-job.yml
         with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r apts/requirements.txt
-
-      - name: Run getAptData.py
+          REQUIREMENTS_FILE: 'apts/requirements.txt'
+      - name: 👽 Get MITRE APT Data
         run: python apts/getAptData.py
-  # Run the python script merger/merge.py
-  merge:
-    name: 🧩 Merge
-    runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: 🧩 Setup Merger
+        uses: ./.github/workflows/shared-job.yml
         with:
-          python-version: '3.x'
+          REQUIREMENTS_FILE: 'merger/requirements.txt'
+      - name: 🧩 Run Merger
+        env:
+          GITHUB_API_KEY: ${{ secrets.GH_PAT }}
+        run: python merger/merger.py
+      
+      - name: 📦 Upload Artifacts
+        uses: actions/upload-artifacts@v3
+        with:
+          name: generated files
+          path: |
+            dist/apts.json
+            dist/apts_min.json
+            dist/techniques.json
+            dist/tools.json
 
-      - name: Install dependencies
+  commit:
+    name: 📝 Commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Commit Version File
         run: |
-          python -m pip install --upgrade pip
-          pip install -r merger/requirements.txt
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # add the changes 
+          git commit -m "Update artifacts with new version"
+          git push
 
-      - name: Run merge.py
-        run: python merger/merge.py
   web-deploy:
     name: 🎉 Deploying
     runs-on: ubuntu-latest
@@ -66,6 +68,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GH_PAT }}
-          repository: Patrick-DE/RTT-Website
+          repository: ${{ secrets.REPO }}
           event-type: web-deploy
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
