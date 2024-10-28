@@ -14,7 +14,49 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:    
+jobs:   
+  # run the python script apts/getAptData.py
+  getAptData:
+    name: 👽 Get MITRE APT Data
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r apts/requirements.txt
+
+      - name: Run getAptData.py
+        run: python apts/getAptData.py
+  # Run the python script merger/merge.py
+  merge:
+    name: 🧩 Merge
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r merger/requirements.txt
+
+      - name: Run merge.py
+        run: python merger/merge.py
   web-deploy:
     name: 🎉 Deploying
     runs-on: ubuntu-latest
