@@ -16,10 +16,14 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   checkout:
+    name: 📥 Checkout
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
   mitre-apt:
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     needs: [checkout]
