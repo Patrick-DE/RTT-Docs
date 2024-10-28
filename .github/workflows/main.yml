@@ -26,14 +26,14 @@ jobs:
           ref: ${{ github.ref_name }}
 
       - name: 🛸 Setup MITRE APT Data
-        uses: .github/actions/shared-job
+        uses: ./.github/actions/shared-job
         with:
           REQUIREMENTS_FILE: 'apts/requirements.txt'
       - name: 👽 Get MITRE APT Data
         run: python apts/getAptData.py
 
       - name: 🧩 Setup Merger
-        uses: .github/actions/shared-job
+        uses: ./.github/actions/shared-job
         with:
           REQUIREMENTS_FILE: 'merger/requirements.txt'
       - name: 🧩 Run Merger
