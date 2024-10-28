@@ -43,6 +43,7 @@ jobs:
       
   upload-artifacts:
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    needs: [mitre-apt, merger]
     name: 📦 Upload Artifacts
     runs-on: ubuntu-latest
     steps:
@@ -58,6 +59,7 @@ jobs:
 
   commit:
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    needs: [upload-artifacts]
     name: 📝 Commit
     runs-on: ubuntu-latest
     steps:
@@ -71,6 +73,7 @@ jobs:
 
   web-deploy:
     if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    needs: [upload-artifacts]
     name: 🎉 Deploying
     runs-on: ubuntu-latest
     

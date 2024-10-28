@@ -1,7 +1,11 @@
 name: Setup Environment
 
 on:
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      requirements_file:
+        required: true
+        type: string
 
 jobs:
   shared-job:
