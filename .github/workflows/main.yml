@@ -29,9 +29,9 @@ jobs:
       - name: 🧩 Run Merger
         env:
           GITHUB_API_KEY: ${{ secrets.GH_PAT }}
-        run: |
-          LAST_LINE=$(python merger/merger.py | tail -n 1)
-          echo "LAST_LINE=${LAST_LINE}" >> $GITHUB_ENV
+        run: python merger/merger.py | tee script_output.log
+          LAST_LINE=$(tail -n 1 script_output.log)
+          echo "LAST_LINE=$LAST_LINE" >> $GITHUB_ENV
         continue-on-error: true
             
       - name: 🛸 Setup MITRE APT Data
@@ -56,7 +56,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add dist/
-          git commit -m "${{ env.LAST_LINE }}"
+          git commit -m "$LAST_LINE"
           git push
 
   web-deploy:
