@@ -39,16 +39,16 @@ jobs:
       - name: 👽 Get MITRE APT Data
         run: python apts/getAptData.py
               
-      - name: 📦 Upload Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: generated files
-          path: |
-            dist/apts.json
-            dist/apts_min.json
-            dist/techniques.json
-            dist/tools.json
-          retention-days: 1
+      # - name: 📦 Upload Artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: generated files
+      #     path: |
+      #       dist/apts.json
+      #       dist/apts_min.json
+      #       dist/techniques.json
+      #       dist/tools.json
+      #     retention-days: 1
 
       - name: 📝 Commit output files
         run: |
