@@ -96,4 +96,4 @@ for iss in merged_issues:
     print ("close #" + str(iss["number"]),end=', ')
 
 print("\n\nFetching latest commits for git sources...")
-fetchAllGitData()
+fetchAllGitData(tools_file)
