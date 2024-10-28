@@ -30,6 +30,7 @@ jobs:
         env:
           GITHUB_API_KEY: ${{ secrets.GH_PAT }}
         run: python merger/merger.py
+        continue-on-error: true
             
       - name: 🛸 Setup MITRE APT Data
         uses: ./.github/actions/shared-job
