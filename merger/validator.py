@@ -107,7 +107,7 @@ ToolSchema = {
             "type": "object",
             "additionalProperties": False,
             "properties": {
-                "name": {"type": "string"},
+                "name": {"type": "string", "minLength": 2},
                 "phases": {"type": "array","items": {"$ref": "#/definitions/Phase"}, "minItems": 1},
                 "category": {"type": "string"},
                 "stealthy": {"type": "boolean"},
@@ -129,7 +129,7 @@ ToolSchema = {
             "additionalProperties": False,
             "properties": {
                 "id": {"type": "string","format": "uuid"},
-                "name": {"type": "string"},
+                "name": {"type": "string", "minLength": 2},
                 "description": {"type": "string"},
                 "cmd": {"type": "string"},
                 "tag": {"type": "string"},
@@ -137,7 +137,17 @@ ToolSchema = {
                 "requirements": {"type": "object"},
                 "detected": {"type": "array","items": {"type": "string"}},
                 "undetected": {"type": "array","items": {"type": "string"}},
-                "references": {"type": "array","items": {"type": "string"}}
+                "references": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "uri",
+                        "qt-uri-protocols": [
+                            "http",
+                            "https"
+                        ]
+                    }
+                }
             },
             "required": ["cmd","description","id","name","results","tag"],
             "title": "Command"
@@ -175,11 +185,11 @@ TechniqueSchema = {
             "type": "object",
             "additionalProperties": False,
             "properties": {
-                "name": {"type": "string"},
+                "name": {"type": "string", "minLength": 2},
                 "id": {"type": "string","format": "uuid"},
                 "phase": {"$ref": "#/definitions/Phase"},
-                "ttp": {"type": "string"},
-                "description": {"type": "string"},
+                "ttp": {"type": "string", "minLength": 2},
+                "description": {"type": "string", "minLength": 2},
                 "external": {"type": "boolean"},
                 "stealthy": {"type": "boolean"},
                 "content": {"type": "string"},
