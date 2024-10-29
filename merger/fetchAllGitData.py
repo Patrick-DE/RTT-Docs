@@ -32,8 +32,8 @@ def getGitHubData(url):
     data = json.loads(response.text)
     return data
 
-def fetchAllGitData():
-    with open('tools.json', 'r') as f:
+def fetchAllGitData(tools_file):
+    with open(tools_file, 'r') as f:
         toolBase: Tools = json.load(f)
 
     for tool in toolBase:
@@ -42,7 +42,7 @@ def fetchAllGitData():
                 data = getGitHubData(tool["source"])
             except Exception as ex:
                 print(ex)
-                f = open("tools.json", "w")
+                f = open(tools_file, "w")
                 json.dump(toolBase, f, indent=2)
                 f.close()
 
@@ -51,7 +51,7 @@ def fetchAllGitData():
                 tool["language"] = data.get("language", None)
 
 
-    f = open("tools.json", "w")
+    f = open(tools_file, "w")
     json.dump(toolBase, f, indent=2)
     f.close()
 

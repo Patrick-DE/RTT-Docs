@@ -5,8 +5,6 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -14,50 +12,66 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:   
-  # run the python script apts/getAptData.py
-  getAptData:
-    name: 👽 Get MITRE APT Data
+jobs:
+  execute-merger:
+    name: 🚀 Execute Merger
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: 🧩 Setup Merger
+        uses: ./.github/actions/shared-job
         with:
-          python-version: '3.x'
-
-      - name: Install dependencies
+          REQUIREMENTS_FILE: 'merger/requirements.txt'
+      - name: 🧩 Run Merger
+        id: run_merger
+        env:
+          GITHUB_API_KEY: ${{ secrets.GH_PAT }}
         run: |
-          python -m pip install --upgrade pip
-          pip install -r apts/requirements.txt
+          OUTPUT=$(python merger/merger.py)
+          LAST_LINE=$(echo "$OUTPUT" | tail -n 1)
+          echo "LAST_LINE=$LAST_LINE" >> "$GITHUB_OUTPUT"
+          echo "$OUTPUT"
+        continue-on-error: true
 
-      - name: Run getAptData.py
+      - name: Check Last Line Output
+        run: |
+          if [[ "${{ steps.run_merger.outputs.LAST_LINE }}" == *"close #"* ]]; then
+            echo "Expected string found in LAST_LINE."
+          else
+            echo "Expected string not found in LAST_LINE."
+            exit 1
+          fi
+            
+      - name: 🛸 Setup MITRE APT Data
+        uses: ./.github/actions/shared-job
+        with:
+          REQUIREMENTS_FILE: 'apts/requirements.txt'
+      - name: 👽 Get MITRE APT Data
         run: python apts/getAptData.py
-  # Run the python script merger/merge.py
-  merge:
-    name: 🧩 Merge
-    runs-on: ubuntu-latest
+              
+      # - name: 📦 Upload Artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: generated files
+      #     path: |
+      #       dist/apts.json
+      #       dist/apts_min.json
+      #       dist/techniques.json
+      #       dist/tools.json
+      #     retention-days: 1
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
+      - name: 📝 Commit output files
         run: |
-          python -m pip install --upgrade pip
-          pip install -r merger/requirements.txt
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/
+          git commit -m "${{ steps.run_merger.outputs.LAST_LINE }}"
+          git push
 
-      - name: Run merge.py
-        run: python merger/merge.py
   web-deploy:
+    needs: [execute-merger]
     name: 🎉 Deploying
     runs-on: ubuntu-latest
     
@@ -66,6 +80,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GH_PAT }}
-          repository: Patrick-DE/RTT-Website
+          repository: ${{ secrets.REPO }}
           event-type: web-deploy
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'

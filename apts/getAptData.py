@@ -51,10 +51,10 @@ for g in groups:
   apt_list_min.append(APT_min(g['name'], techniques_list_min))
 
 
-with open("apts.json", "w") as f:
+with open("dist/apts.json", "w") as f:
   json.dump([apt.__dict__ for apt in apt_list], f, indent=2)
 
-with open("apts_min.json", "w") as f:
+with open("dist/apts_min.json", "w") as f:
   json.dump([apt.__dict__ for apt in apt_list_min], f, indent=2)
 
 print("Fetching release dates...")
