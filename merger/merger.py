@@ -91,9 +91,9 @@ for issue in issues:
 
     merged_issues.append(issue)
 
+print("\n\nFetching latest commits for git sources...")
+fetchAllGitData(tools_file)
+
 print ("Commit message:")
 for iss in merged_issues:
     print ("close #" + str(iss["number"]),end=', ')
-
-print("\n\nFetching latest commits for git sources...")
-fetchAllGitData(tools_file)

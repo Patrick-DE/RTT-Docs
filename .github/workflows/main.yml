@@ -33,7 +33,6 @@ jobs:
           LAST_LINE=$(echo "$OUTPUT" | tail -n 1)
           echo "LAST_LINE=$LAST_LINE" >> "$GITHUB_OUTPUT"
           echo "$OUTPUT"
-          echo "$LAST_LINE"
         continue-on-error: true
 
       - name: Check Last Line Output
