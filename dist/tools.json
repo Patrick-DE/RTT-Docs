@@ -748,7 +748,7 @@
     "platforms": [
       "Windows"
     ],
-    "source": "http//www.rohitab.com/",
+    "source": "https://www.rohitab.com/",
     "description": "",
     "undetected": [],
     "detected": [],
@@ -1000,7 +1000,9 @@
   },
   {
     "name": "CoffeeLdr",
-    "phases": [],
+    "phases": [
+      "01. Initial Access"
+    ],
     "category": "",
     "stealthy": false,
     "platforms": [
@@ -1273,7 +1275,7 @@
     "references": [
       "https://www.kali.org/tools/dnsrecon/#:~:text=DNSRecon%20is%20a%20Python%20script,Perform%20common%20SRV%20Record%20Enumeration"
     ],
-    "latest_commit": "2024-10-28T14:35:55Z",
+    "latest_commit": "2024-10-29T11:06:58Z",
     "language": "Python"
   },
   {
@@ -2498,12 +2500,14 @@
     "platforms": [
       "Linux"
     ],
-    "source": "Impacket",
+    "source": "https://github.com/fortra/impacket/blob/master/examples/mssqlclient.py",
     "description": "Interact with MSSQL DB",
     "undetected": [],
     "detected": [],
     "content": "# mssqlclient.py\n\n## [[MS SQL Servers]]\n```bash\nproxychains python3 /usr/local/bin/mssqlclient.py -windows-auth EDU/john@10.10.1.20\n\nProxyChains-3.1 (http://proxychains.sf.net)\nImpacket v0.9.22 - Copyright 2020 SecureAuth Corporation\n\nPassword:\n|S-chain|-<>-127.0.0.1:1080-<><>-10.10.1.20:1433-<><>-OK\n[*] Encryption required, switching to TLS\n[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master\n[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english\n[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192\n[*] INFO(SRV1): Line 1: Changed database context to 'master'.\n[*] INFO(SRV1): Line 1: Changed language setting to us_english.\n[*] ACK: Result: 1 - Microsoft SQL Server (130 19162)\n[<>] Press help for extra shell commands\nSQL> select @@servername;\n\nSRV1\n```\n\n\n",
-    "commands": []
+    "commands": [],
+    "latest_commit": "2024-10-24T12:00:12Z",
+    "language": "Python"
   },
   {
     "name": "MultiRelay",
@@ -2516,12 +2520,17 @@
     "platforms": [
       "Linux"
     ],
-    "source": "",
+    "source": "https://github.com/lgandx/Responder/tree/master/tools/MultiRelay",
     "description": "Relaying like NTLM",
     "undetected": [],
     "detected": [],
     "content": "# MultiRelay\n\n## [[NTLM Relaying]] [[NTLM Relaying to ADCS]]\n\n\n",
-    "commands": []
+    "commands": [],
+    "references": [
+      "https://gist.github.com/Crambus34/cf062448c010790a4d6f0b1eaeb72743"
+    ],
+    "latest_commit": "2024-09-24T14:08:48Z",
+    "language": "Python"
   },
   {
     "name": "nbtscan",
@@ -2639,7 +2648,7 @@
     "platforms": [
       "Windows"
     ],
-    "source": "http//netcat.sourceforge.net/",
+    "source": "https://netcat.sourceforge.net/",
     "description": "Netcat is a featured networking utility which reads and writes data across network connections, using the TCP/IP protocol.",
     "undetected": [],
     "detected": [],
@@ -2656,7 +2665,7 @@
     "platforms": [
       "Windows"
     ],
-    "source": "",
+    "source": "https://learn.microsoft.com/de-de/windows-server/networking/technologies/netsh/netsh-contexts",
     "description": "",
     "undetected": [],
     "detected": [],
@@ -2742,12 +2751,16 @@
     "platforms": [
       "Windows"
     ],
-    "source": "",
+    "source": "https://networkmanager.dev/docs/api/latest/nmcli.html",
     "description": "",
     "undetected": [],
     "detected": [],
     "content": "\n## [[Domain Controller]]\nShow domain name & dns  \n`nmcli edu show eth0`\n\n\n",
-    "commands": []
+    "commands": [],
+    "references": [
+      "https://www.cyberciti.biz/faq/linux-list-network-interfaces-using-nmcli-command/",
+      "https://wiki.ubuntuusers.de/NetworkManager/nmcli/"
+    ]
   },
   {
     "name": "Nslookup",
@@ -3655,7 +3668,7 @@
     "detected": [],
     "content": "# Process Hacker\n\n## [[DLL Sideloading]] [[COM Hijacking]]\n\n",
     "commands": [],
-    "latest_commit": "2024-10-27T15:01:19Z",
+    "latest_commit": "2024-10-29T02:19:37Z",
     "language": "C"
   },
   {
@@ -3830,7 +3843,7 @@
     "platforms": [
       "Windows"
     ],
-    "source": "Windows",
+    "source": "https://learn.microsoft.com/de-de/windows-server/administration/windows-commands/reg",
     "description": "Registry query stuff",
     "undetected": [],
     "detected": [],
@@ -3872,7 +3885,7 @@
     "platforms": [
       "Windows"
     ],
-    "source": "Windows additional features",
+    "source": "https://www.microsoft.com/en-us/download/details.aspx?id=45520",
     "description": "Help administrate AD environments",
     "undetected": [],
     "detected": [],
@@ -4310,7 +4323,9 @@
     ],
     "category": "",
     "stealthy": false,
-    "platforms": [],
+    "platforms": [
+      "Windows"
+    ],
     "source": "https://github.com/FSecureLABS/SharpGPOAbuse",
     "description": "",
     "undetected": [],
@@ -4744,7 +4759,7 @@
       "Linux",
       "Windows"
     ],
-    "source": "n/a",
+    "source": "https://www.openssh.com/",
     "description": "SSH or Secure Shell is a network communication protocol that enables two computers to communicate (c.f http or hypertext transfer protocol, which is the protocol used to transfer hypertext such as web pages) and share data.",
     "undetected": [],
     "detected": [],
@@ -4861,7 +4876,9 @@
   },
   {
     "name": "tpotce",
-    "phases": [],
+    "phases": [
+      "10. Bypassing Defenses"
+    ],
     "category": "",
     "stealthy": false,
     "platforms": [
@@ -4878,7 +4895,10 @@
   },
   {
     "name": "trufflehog",
-    "phases": [],
+    "phases": [
+      "02. Reconnaissance",
+      "08. Credentials & User Impersonation"
+    ],
     "category": "",
     "stealthy": false,
     "platforms": [
@@ -4890,7 +4910,7 @@
     "detected": [],
     "content": "## [Credentials]\n\n\n",
     "commands": [],
-    "latest_commit": "2024-10-28T21:59:10Z",
+    "latest_commit": "2024-10-29T16:09:51Z",
     "language": "Go"
   },
   {
@@ -5651,7 +5671,7 @@
     ],
     "content": "",
     "references": [],
-    "latest_commit": "2024-07-30T09:32:52Z",
+    "latest_commit": "2024-10-29T15:27:35Z",
     "language": "Python"
   },
   {
@@ -5847,7 +5867,7 @@
   {
     "name": "HandleKatz_BOF",
     "phases": [
-      "Credential Access"
+      "08. Credentials & User Impersonation"
     ],
     "category": "Credential Dumping",
     "stealthy": false,
@@ -6299,12 +6319,11 @@
     "language": ""
   },
   {
-    "id": "efa21c7f-73e0-4d1b-ae10-4e366ba27c47",
     "name": "CertUtil",
     "phases": [
-      "Initial Access",
-      "Persistence",
-      "Credentials & User Impersonation"
+      "01. Initial Access",
+      "04. Persistence",
+      "08. Credentials & User Impersonation"
     ],
     "category": "Windows Utility",
     "stealthy": false,
@@ -6355,11 +6374,10 @@
     "language": "Windows Command Line"
   },
   {
-    "id": "71f7a06f-0587-44f3-a78f-80ad2a3b0f36",
     "name": "Bitsadmin",
     "phases": [
-      "Initial Access",
-      "Bypassing Defenses"
+      "01. Initial Access",
+      "10. Bypassing Defenses"
     ],
     "category": "Windows Utility",
     "stealthy": false,
@@ -6396,11 +6414,10 @@
     "language": "Windows Command Line"
   },
   {
-    "id": "6e58962a-6e1d-4b0b-8b93-13f14f2a274b",
     "name": "InstallUtil",
     "phases": [
-      "Initial Access",
-      "Bypassing Defenses"
+      "01. Initial Access",
+      "10. Bypassing Defenses"
     ],
     "category": "Windows Utility",
     "stealthy": true,
@@ -6448,11 +6465,10 @@
     "language": ".NET Framework"
   },
   {
-    "id": "f052bc52-ff05-4a0a-93d1-0f91f0e2c7aa",
     "name": "icacls",
     "phases": [
-      "Host Enumeration",
-      "Privilege Escalation"
+      "03. Host Enumeration",
+      "05. Privilege Escalation"
     ],
     "category": "Windows Utility",
     "stealthy": false,
@@ -6512,11 +6528,10 @@
     "language": "Windows Command Line"
   },
   {
-    "id": "7dcb5f48-ef61-49a2-bd4e-8d98bcfa83a0",
     "name": "AccessChk",
     "phases": [
-      "Privilege Escalation",
-      "Host Enumeration"
+      "05. Privilege Escalation",
+      "03. Host Enumeration"
     ],
     "category": "Sysinternals Tool",
     "stealthy": true,
@@ -6624,9 +6639,9 @@
   {
     "name": "Internal-Monologue",
     "phases": [
-      "Credential Access"
+      "08. Credentials & User Impersonation"
     ],
-    "category": "Credential Dumping",
+    "category": "08. Credentials & User Impersonation",
     "stealthy": false,
     "platforms": [
       "Windows"
@@ -6648,9 +6663,7 @@
         "cmd": "InternalMonologue.exe",
         "tag": "Credential Dumping",
         "results": [
-          {
-            "tag": "DATA::NTLM_HASHES"
-          }
+          "DATA::NTLM_HASHES"
         ],
         "requirements": {
           "and": [
@@ -6677,9 +6690,7 @@
         "cmd": "InternalMonologue.exe /downgrade",
         "tag": "Credential Dumping",
         "results": [
-          {
-            "tag": "DATA::DOWNGRADED_NETNTLM_RESPONSES"
-          }
+          "DATA::DOWNGRADED_NETNTLM_RESPONSES"
         ],
         "requirements": {
           "and": [

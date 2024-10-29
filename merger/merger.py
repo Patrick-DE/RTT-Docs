@@ -4,10 +4,8 @@ import sys
 import json
 import os
 from fetchAllGitData import fetchAllGitData
-from tools import ToolSchema
-from techniques import TechniqueSchema
-from jsonschema import validate
 from dotenv import load_dotenv
+from validator import custom_validate
 
 load_dotenv("..\.env")
 GITHUB_API_KEY = os.getenv('GITHUB_API_KEY')
@@ -26,22 +24,23 @@ if "message" in issues:
 print("[+] Found " + str(len(issues)) + " issues.")
 
 # read base files
-with open(tools_file, 'r') as f:
+with open(tools_file, 'r', encoding="UTF-8") as f:
     toolBase = json.load(f)
-with open(techniques_file, 'r') as f:
+with open(techniques_file, 'r', encoding="UTF-8") as f:
     techniqueBase = json.load(f)
 
 for issue in issues:
     if not any(label["name"] == 'reviewed' for label in issue["labels"]) and issue['author_association'] != 'OWNER':
         continue
 
+    # Check if issue is a tool or technique
     if "New tool:" in issue["title"]:
-        typ = ToolSchema
+        typ = "tool"
         base = toolBase
         print("[+] Loading tool json for " + issue["title"])
         
     elif "New technique:" in issue["title"]:
-        typ = TechniqueSchema
+        typ = "technique"
         base = techniqueBase
         print("[+] Loading technique json for \"" + issue["title"] + "\"")
 
@@ -59,21 +58,23 @@ for issue in issues:
     # Validation of JSON
     print("  [+] Validating json...")
     try:
-        validate(body, schema=typ)
+        custom_validate(body, typ)
     except Exception as ex:
         print("  [-]: " + issue["title"] + " is not a valid serialized json!\n" + ex.message)
         continue
     
+    # Check if entry already exists
     count = 0
     for elem in base:
-        if typ == ToolSchema:
+        if typ == "tool":
             if elem["name"] == body["name"]:
                 break
-        elif typ == TechniqueSchema:
+        elif typ == "technique":
             if elem["id"] == body["id"]:
                 break
         count+=1
     
+    # Merge or add new entry
     if count < len(base):
         print("  [+] Merging existing entry")
         base[count] = body
@@ -81,19 +82,47 @@ for issue in issues:
         print("  [+] Adding new entry")
         base.append(body)
 
-    if typ == ToolSchema:
-        f = open(tools_file, 'w')
-    elif typ == TechniqueSchema:
-        f = open(techniques_file, 'w')
+    valid = custom_validate(base, typ)
+    if not valid:
+        print("[-] Error: Validation of tools.json failed.")
+        sys.exit(-1)
+
+    # Write to file
+    if typ == "tool":
+        f = open(tools_file, 'w', encoding="UTF-8")
+    elif typ == "technique":
+        f = open(techniques_file, 'w', encoding="UTF-8")
 
     f.write(json.dumps(base, indent=4))
     f.close
 
+    # store issue number for closing
     merged_issues.append(issue)
+
+# Validate the final JSON
+print("[+] Validating final JSON...")
+with open(tools_file, 'r') as f:
+    valid = custom_validate(f.read(), "tool")
+error = 0
+if not valid:
+    print("[-] Error: Validation of tools.json failed.")
+    error = 1
+
+with open(techniques_file, 'r', encoding="UTF-8") as f:
+    valid = custom_validate(f.read(), "technique")
+if not valid:
+    print("[-] Error: Validation of techniques.json failed.")
+    error = 1
+
+if error:
+    sys.exit(-1)
 
 print("\n\nFetching latest commits for git sources...")
 fetchAllGitData(tools_file)
 
-print ("Commit message:")
-for iss in merged_issues:
-    print ("close #" + str(iss["number"]),end=', ')
+if merged_issues:
+    print ("Commit message:")
+    for iss in merged_issues:
+        print ("close #" + str(iss["number"]),end=', ')
+else:
+    print ("No issues to close.")
