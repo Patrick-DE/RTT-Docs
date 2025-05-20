@@ -4,21 +4,23 @@ from jsonschema import validate
 
 
 def custom_validate(data, select):
-    body = parse_json(data)
+    # if data is string, parse it
+    if isinstance(data, str):
+        data = parse_json(data)
     error = 0
     # custom validation
     if select == 'technique':
         schema = TechniqueSchema
     elif select == 'tool':
         schema = ToolSchema
-        data = autofix(body, select)
-        error = validate_commands(body)
-        error = validate_results(body)
+        data = autofix(data, select)
+        error = validate_commands(data)
+        error = validate_results(data)
     else:
         raise ValueError('Invalid schema type')
 
     # General validation
-    error = validate_schema(body, schema)
+    error = validate_schema(data, schema)
 
     return error
 
@@ -34,6 +36,9 @@ def parse_json(data):
 
 def validate_commands(data):
     print("  [+] Validating commands...")
+    if not isinstance(data, list):
+        data = [data]
+
     for tool in data:
         for command in tool['commands']:
             if not command:
@@ -43,6 +48,9 @@ def validate_commands(data):
 
 def validate_results(data):
     print("  [+] Validating results...")
+    if not isinstance(data, list):
+        data = [data]
+
     for tool in data:
         for command in tool['commands']:
             if command and 'results' not in command:
@@ -213,14 +221,14 @@ TechniqueSchema = {
                 "name",
                 "id",
                 "category",
-                "changes",
-                "content",
+                #"changes",
+                #"content",
                 "description",
                 "external",
                 "phase",
                 "stealthy",
                 "steps",
-                "tools",
+                #"tools",
                 "ttp"
             ],
             "title": "Technique"
